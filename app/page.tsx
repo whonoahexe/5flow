@@ -1,8 +1,10 @@
 // import { Cta } from '@/components/layout';
+import { Hero } from "@/components/page/home/Hero";
 
 export default function Home() {
   return (
     <>
+    <Hero />
       {/* <Cta
         leftTitle="Experience"
         leftSubtitle="What’s Next in"
