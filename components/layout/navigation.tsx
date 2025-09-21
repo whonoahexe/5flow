@@ -33,12 +33,10 @@ export function Navigation() {
           </Link>
         ))}
       </div>
-      <div className="flex min-h-[36px] items-center justify-center gap-2 px-4 py-[7.5px] text-center text-sm">
-        <Button variant="success" className="rounded-none font-semibold tracking-tight">
-          Book A Demo
-          <ArrowRight className="h-4 w-4" />
-        </Button>
-      </div>
+      <Button variant="success" className="rounded-none font-semibold tracking-tight">
+        Book A Demo
+        <ArrowRight className="h-4 w-4" />
+      </Button>
     </nav>
   );
 }
