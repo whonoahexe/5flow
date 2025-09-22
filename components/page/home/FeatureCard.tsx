@@ -1,15 +1,9 @@
 import { ArrowUpRight, ClockFading, Layers2, ServerOff, ZapOff } from 'lucide-react';
-import type { NextPage } from 'next';
 import { Card } from '@/components/ui/card';
-import PatternOverlay from '@/components/core/pattern-overlay';
-import { Separator } from '@/components/ui/separator';
-const FeatureCard: NextPage = () => {
+
+const FeatureCard = () => {
   return (
-    <div className="font-heading relative box-border flex w-full flex-col items-start gap-16 px-48 py-16 text-left text-6xl">
-      {/* Pattern overlays on both sides */}
-      <PatternOverlay />
-      <PatternOverlay left="auto" right="152px" height="100vh" />
-      <Separator className="absolute left-0 w-full" />
+    <div className="font-heading relative box-border flex w-full flex-col items-start gap-16 py-16 text-left text-6xl">
       <div className="flex items-end self-stretch">
         <div className="flex flex-1 items-end justify-between gap-0 px-2 py-7">
           <div className="relative h-32 w-full max-w-4xl">
@@ -27,15 +21,13 @@ const FeatureCard: NextPage = () => {
                 <span className="absolute inset-0 -z-10 rounded"></span>
                 <span className="text-background relative">Content</span>
               </span>
-              <span> Supply Chain</span>
+              <span>Supply Chain</span>
             </b>
           </div>
           <ArrowUpRight size={126} className="text-accent1" />
         </div>
-        <Separator className="absolute left-0 w-full" />
       </div>
       <div className="self-stretch">
-        <Separator className="absolute left-0 w-full" />
         <div className="bg-foreground/10 flex flex-col items-start gap-2 self-stretch overflow-hidden p-2 text-4xl">
           {[
             [
@@ -96,7 +88,6 @@ const FeatureCard: NextPage = () => {
             </div>
           ))}
         </div>
-        <Separator className="absolute left-0 w-full" />
       </div>
     </div>
   );

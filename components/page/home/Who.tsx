@@ -1,18 +1,10 @@
 import { ArrowDown, ArrowLeft, ArrowRight, Layers2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import type { NextPage } from 'next';
 import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
-import PatternOverlay from '@/components/core/pattern-overlay';
 
-const Who: NextPage = () => (
-  <div className="text-foreground font-heading relative box-border flex w-full flex-col items-start gap-16 px-48 py-16 text-left text-6xl">
-    {/* Left-side pattern overlay */}
-    <PatternOverlay />
-    <PatternOverlay left="auto" right="152px" height="100vh" />
-
+const Who = () => (
+  <div className="text-foreground font-heading relative box-border flex w-full flex-col items-start gap-16 py-16 text-left text-6xl">
     <div className="text-background flex items-start justify-between gap-0 self-stretch">
-      <Separator className="absolute left-0 mt-4 w-full" />
       <div className="flex items-center justify-center gap-8 px-2">
         <ArrowDown className="text-accent1" size={126} />
         <div className="relative h-16 w-2xl">
@@ -31,10 +23,8 @@ const Who: NextPage = () => (
           <ArrowRight size={48} />
         </Button>
       </div>
-      <Separator className="absolute left-0 mt-30 w-full" />
     </div>
     <div className="self-stretch">
-      <Separator className="absolute left-0 w-full" />
       <div className="bg-foreground/10 flex items-start gap-2 self-stretch overflow-hidden p-2 text-4xl">
         {[{ label: 'Logo !' }, { label: 'Logo @' }, { label: 'Logo #' }].map((item, idx) => (
           <Card
@@ -50,8 +40,8 @@ const Who: NextPage = () => (
           </Card>
         ))}
       </div>
-      <Separator className="absolute left-0 w-full" />
     </div>
   </div>
 );
+
 export default Who;

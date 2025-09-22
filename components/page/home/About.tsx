@@ -1,16 +1,11 @@
-import PatternOverlay from '@/components/core/pattern-overlay';
 import { ArrowUpRight, Award, Shuffle, Zap } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
+
 const About: NextPage = () => (
-  <div className="font-heading relative box-border flex w-full flex-col items-start gap-16 px-48 py-16 text-left text-6xl">
-    {/* Left-side pattern overlay */}
-    <PatternOverlay />
-    <PatternOverlay left="auto" right="152px" height="100vh" />
-    <Separator className="absolute left-0 w-full" />
+  <div className="font-heading relative box-border flex w-full flex-col items-start gap-16 py-16 text-left text-6xl">
     <div className="bg-foreground/10 self-stretch p-2">
       <div className="text-background font-body bg-primary flex flex-col items-start self-stretch overflow-hidden rounded-2xl text-base">
         <div className="bg-darkblue box-border flex h-144 items-center justify-between gap-0 self-stretch rounded-2xl py-7 pr-8 pl-0">
@@ -100,7 +95,6 @@ const About: NextPage = () => (
           </div>
         </div>
       </div>
-      <Separator className="absolute left-0 mt-2 w-full" />
     </div>
   </div>
 );

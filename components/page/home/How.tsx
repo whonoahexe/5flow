@@ -2,17 +2,11 @@ import { ArrowDown, ArrowUpRight, Cloud, Puzzle, UserCheck } from 'lucide-react'
 import { Card } from '@/components/ui/card';
 import type { NextPage } from 'next';
 import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
-import PatternOverlay from '@/components/core/pattern-overlay';
 
 const How: NextPage = () => (
   <>
-    <div className="font-heading relative box-border flex w-full flex-col items-start gap-16 px-48 py-16 text-left text-6xl">
-      {/* Left-side pattern overlay */}
-      <PatternOverlay />
-      <PatternOverlay left="auto" right="152px" height="100vh" />
+    <div className="font-heading relative box-border flex w-full flex-col items-start gap-16 py-16 text-left text-6xl">
       <div>
-        <Separator className="absolute left-0 mt-4 w-full" />
         <div className="text-background flex items-center justify-between gap-0 self-stretch">
           <div className="flex flex-1 items-center gap-2 px-2 py-7">
             <div className="relative h-16 w-md">
@@ -32,11 +26,8 @@ const How: NextPage = () => (
             </div>
           </div>
         </div>
-        <Separator className="absolute left-0 -mt-4 w-full" />
       </div>
       <div className="self-stretch">
-        <Separator className="absolute left-0 w-full" />
-
         <div className="bg-foreground/10 flex flex-col items-start gap-2 self-stretch overflow-hidden p-2 text-4xl">
           <div className="flex items-start gap-2 self-stretch">
             {[
@@ -92,9 +83,9 @@ const How: NextPage = () => (
             </div>
           </Card>
         </div>
-        <Separator className="absolute left-0 w-full" />
       </div>
     </div>
   </>
 );
+
 export default How;
