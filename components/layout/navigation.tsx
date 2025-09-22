@@ -18,7 +18,7 @@ export function Navigation() {
   const activeItem = navigationItems.find(item => item.href === pathname);
 
   return (
-    <nav className="bg-background border-border sticky flex h-[88px] w-full items-center justify-between border-[1px] border-b border-solid px-28 py-4">
+    <nav className="bg-background border-border fixed top-0 z-[999] flex h-[88px] w-full items-center justify-between border-[1px] border-b border-solid px-28 py-4">
       <Link href="/" className="cursor-pointer">
         <Image src="/brand.svg" width={103} height={24} alt="5Flow Brand Logo" />
       </Link>

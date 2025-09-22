@@ -1,12 +1,11 @@
 interface pixelProps {
   size?: string | number;
   background?: string;
-  style?: React.CSSProperties;
   className?: string;
   children?: React.ReactNode;
 }
 
-const Pixel: React.FC<pixelProps> = ({ size = '100%', background = 'transparent', style, className, children }) => (
+const Pixel: React.FC<pixelProps> = ({ size = '100%', background = 'transparent', className, children }) => (
   <div
     className={className}
     style={{
@@ -17,7 +16,6 @@ const Pixel: React.FC<pixelProps> = ({ size = '100%', background = 'transparent'
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      ...style,
     }}
   >
     {children}
