@@ -14,7 +14,7 @@ const PatternOverlay: React.FC<PatternOverlayProps> = ({
   top = 0,
   width = '40px',
   height = '100%',
-  zIndex = 40,
+  zIndex = 0,
   className = '',
 }) => (
   <div

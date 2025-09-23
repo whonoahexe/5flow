@@ -4,7 +4,7 @@ import FullBleedLines from '@/components/core/full-bleed-lines';
 
 const FeatureCard = () => {
   return (
-    <div className="font-heading relative box-border w-full flex-col items-start gap-16 py-16 text-left text-6xl">
+    <div className="font-heading w-full flex-col items-start gap-16 py-16 text-left text-6xl">
       <FullBleedLines>
         <div className="flex items-end self-stretch">
           <div className="flex flex-1 items-end justify-between gap-0 self-stretch px-2 py-7">
