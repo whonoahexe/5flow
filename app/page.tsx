@@ -14,7 +14,7 @@ export default function Home() {
     <div className="relative">
       {/* Fixed*/}
       <PatternOverlay />
-      <PatternOverlay left="auto" right="152px" />
+      <PatternOverlay left="auto" right="152px" zIndex={-20} />
 
       {/* Scrolls */}
       <div className="container mx-auto mb-32">

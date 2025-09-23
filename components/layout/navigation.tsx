@@ -8,9 +8,9 @@ import { Button } from '../ui/button';
 
 const navigationItems = [
   { href: '/about', label: '[ ABOUT ]' },
-  { href: '/company', label: '[ COMPANY ]' },
+  { href: '/products', label: '[ PRODUCTS ]' },
   { href: '/solutions', label: '[ SOLUTIONS ]' },
-  { href: '/careers', label: '[ CAREERS ]' },
+  { href: '/applications', label: '[ APPLICATIONS ]' },
 ];
 
 export function Navigation() {
