@@ -1,12 +1,12 @@
-interface pixelProps {
+interface pixelProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: string | number;
   background?: string;
-  className?: string;
   children?: React.ReactNode;
 }
 
-const Pixel: React.FC<pixelProps> = ({ size = '100%', background = 'transparent', className, children }) => (
+const Pixel = ({ size = '100%', background = 'transparent', className, children, ...rest }: pixelProps) => (
   <div
+    {...rest}
     className={className}
     style={{
       width: size,

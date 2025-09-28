@@ -1,13 +1,10 @@
-import { Cta } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import PatternOverlay from '@/components/core/pattern-overlay';
 import Hero from '@/components/page/home/Hero';
-import About from '@/components/page/home/About';
-import Contact from '@/components/page/home/Contact';
-import FeatureCard from '@/components/page/home/FeatureCard';
+import What from '@/components/page/home/What';
 import How from '@/components/page/home/How';
 import Who from '@/components/page/home/Who';
-import Why1 from '@/components/page/home/Why1';
-import Why2 from '@/components/page/home/Why2';
+import Why from '@/components/page/home/Why';
 
 export default function Home() {
   return (
@@ -19,15 +16,16 @@ export default function Home() {
       {/* Scrolls */}
       <div className="container mx-auto mb-32">
         <Hero />
-        <FeatureCard />
-        <Who />
-        <How />
-        <Why1 />
-        <About />
-        <Why2 />
-        <Contact />
+        <div className="flex flex-col gap-32">
+          <What />
+          <Who />
+          <How />
+          <Why />
+          <Contact />
+        </div>
       </div>
 
+      {/* Cta */}
       <Cta
         leftTitle="Experience"
         leftSubtitle="What’s Next in"

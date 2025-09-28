@@ -1,53 +1,66 @@
+'use client';
+
+import { useRef } from 'react';
 import { ArrowDown, ArrowLeft, ArrowRight, Layers2 } from 'lucide-react';
-import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import FullBleedLines from '@/components/core/full-bleed-lines';
+import InlineHighlight from '@/components/core/inline-highlight';
 
-const Who = () => (
-  <div className="text-foreground font-heading relative box-border flex w-full flex-col items-stretch gap-16 py-16 text-left text-6xl">
-    <FullBleedLines>
-      <div className="text-background flex items-stretch justify-between gap-0 self-stretch">
-        <div className="flex items-center justify-center gap-8 px-2">
+const Who = () => {
+  const logosRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollByAmount = (direction: 'left' | 'right') => {
+    const el = logosRef.current;
+    if (!el) return;
+
+    const amount = direction === 'left' ? -el.clientWidth : el.clientWidth;
+    el.scrollBy({ left: amount, behavior: 'smooth' });
+  };
+
+  return (
+    <div className="flex w-full flex-col gap-8">
+      <FullBleedLines className="flex justify-between">
+        <div className="flex items-center gap-8 px-8">
           <ArrowDown className="text-accent1" size={126} />
-          <div className="relative h-16 w-2xl">
-            <div className="absolutew-32 h-12" />
-            <b className="text-foreground absolute top-0 left-2 inline-block w-full leading-none tracking-tighter">
-              <span>{`Who `}</span>
-              <span>Do We Solve It For?</span>
-            </b>
-          </div>
+          <p className="font-heading w-full text-[64px] leading-none font-bold tracking-tight">
+            <InlineHighlight>Who</InlineHighlight> Do We Solve It For?
+          </p>
         </div>
-        <div className="flex items-center justify-center gap-3 self-stretch px-2 py-7">
-          <Button className="bg-primary flex h-20 min-h-10 w-20 items-center justify-center rounded-none p-0">
-            <ArrowLeft size={48} />
+        <div className="flex items-center justify-center gap-8 self-stretch px-2">
+          <Button
+            className="bg-primary size-20 rounded-none"
+            onClick={() => scrollByAmount('left')}
+            aria-label="Scroll left"
+          >
+            <ArrowLeft size={48} className="size-8" />
           </Button>
-          <Button className="bg-primary flex h-20 min-h-10 w-20 items-center justify-center rounded-none p-0">
-            <ArrowRight size={48} />
+          <Button
+            className="bg-primary size-20 rounded-none"
+            onClick={() => scrollByAmount('right')}
+            aria-label="Scroll right"
+          >
+            <ArrowRight size={48} className="size-8" />
           </Button>
         </div>
-      </div>
-    </FullBleedLines>
+      </FullBleedLines>
 
-    <div className="self-stretch">
       <FullBleedLines>
-        <div className="bg-foreground/10 flex items-start gap-2 self-stretch overflow-hidden p-2 text-4xl">
-          {[{ label: 'Logo !' }, { label: 'Logo @' }, { label: 'Logo #' }].map((item, idx) => (
-            <Card
-              className="border-gainsboro bg-background flex h-36 w-2xl shrink-0 flex-col items-center justify-center rounded-2xl border-solid p-2"
-              key={item.label}
+        <div ref={logosRef} className="bg-foreground/5 flex gap-2 overflow-x-auto p-2">
+          {[{ label: 'Logo !' }, { label: 'Logo @' }, { label: 'Logo #' }].map((item, i) => (
+            <div
+              className="bg-background border-border flex h-38 min-w-2xl flex-col items-center justify-start rounded-2xl border p-2"
+              key={i}
             >
-              <div className="flex items-center justify-between gap-0 self-stretch p-8">
-                <div className="flex flex-col items-start">
-                  <b className="relative leading-none tracking-tight">{item.label}</b>
-                </div>
-                <Layers2 strokeWidth={1.5} className="text-primary" size={80} />
+              <div className="flex w-full items-center justify-between p-8">
+                <p className="relative text-4xl leading-none font-bold tracking-tight">{item.label}</p>
+                <Layers2 strokeWidth={1.5} className="text-primary" size={72} />
               </div>
-            </Card>
+            </div>
           ))}
         </div>
       </FullBleedLines>
     </div>
-  </div>
-);
+  );
+};
 
 export default Who;
