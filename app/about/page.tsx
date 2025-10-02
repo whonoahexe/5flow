@@ -1,6 +1,11 @@
 import PatternOverlay from '@/components/core/pattern-overlay';
 import { Cta } from '@/components/layout';
 import { Hero } from '@/components/page/about/Hero';
+import Vision from '@/components/page/about/Vision';
+import Mission from '@/components/page/about/Mission';
+import Workflow from '@/components/page/about/Workflow';
+import Apart from '@/components/page/about/Apart';
+import Team from '@/components/page/about/Team';
 
 export default function About() {
   return (
@@ -10,6 +15,11 @@ export default function About() {
       <PatternOverlay left="auto" right="152px" zIndex={-20} />
 
       <Hero />
+      <Vision />
+      <Mission />
+      <Workflow />
+      <Apart />
+      <Team />
       <Cta
         leftTitle="Experience"
         leftSubtitle="What’s Next in"
