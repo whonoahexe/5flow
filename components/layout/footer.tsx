@@ -35,7 +35,7 @@ export function Footer() {
   const footerLink = 'inline-block w-auto text-background/80 underline-offset-4 hover:text-primary hover:underline';
 
   return (
-    <footer className="bg-foreground px-48 py-24">
+    <footer className="bg-primary px-48 py-24">
       <div className="mx-auto flex flex-col gap-12">
         {/* Product Links */}
         <div className="flex flex-col justify-between gap-6 tracking-tight md:flex-row">

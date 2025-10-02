@@ -77,9 +77,7 @@ const HeroBg: React.FC<HeroBgProps> = ({
                     key={rowIdx}
                     className="w-full"
                     style={{
-                      // Keep tiles square: width is column width; aspect-square ensures height equals width
                       aspectRatio: '1 / 1',
-                      // When color is undefined/null (no explicit override), fall back to defaultColor
                       background: color ?? defaultColor,
                     }}
                   />
