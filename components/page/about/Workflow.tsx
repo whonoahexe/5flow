@@ -24,7 +24,7 @@ const Workflow: NextPage = () => {
             </b>
           </FullBleedLines>
         </div>
-        <b className="w-4xl text-2xl leading-tight">
+        <b className="w-5xl text-2xl leading-none tracking-tight">
           <FullBleedLines>
             At 5Flow, security is the foundation of how we work. Every workflow, every approval, every piece of data is
             protected with enterprise-grade security standards.
@@ -53,11 +53,11 @@ const Workflow: NextPage = () => {
         </FullBleedLines>
         <div className="font-heading flex flex-col items-center justify-center self-stretch">
           <div className="relative h-36 w-full max-w-5xl">
-            <div className="absolute top-0 left-0 inline-block leading-none">
+            <div className="absolute top-0 left-0 inline-block leading-none tracking-tight">
               <FullBleedLines>
-                We’re ISO 27001 certified, but we go beyond compliance. Our Information Security Management System
+                {`We’re ISO 27001 certified, but we go beyond compliance. Our Information Security Management System
                 (ISMS) continuously monitors risks, applies preventive measures, and evolves to stay ahead of emerging
-                threats.
+                threats.`}
               </FullBleedLines>
             </div>
           </div>

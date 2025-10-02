@@ -9,6 +9,7 @@ export function Hero() {
 
   return (
     <>
+      {/* Page header */}
       <div className="text-gray font-heading relative box-border w-full flex-col items-start gap-32 px-48 py-52 text-left text-4xl">
         <FullBleedLines>
           <div className="font-heading relative flex w-full items-end justify-end text-right text-5xl">
@@ -18,7 +19,9 @@ export function Hero() {
             </div>
           </div>
         </FullBleedLines>
-        <div className="flex flex-col items-start gap-12 self-stretch">
+
+        {/* Content */}
+        <div className="mt-32 flex flex-col items-start gap-12 self-stretch">
           <div className="box-border flex h-20 items-start gap-1 overflow-hidden">
             <Image
               className="relative h-20 w-86"
@@ -59,9 +62,9 @@ export function Hero() {
                     <div className="relative self-stretch leading-none font-semibold tracking-tight">We are 5Flow.</div>
 
                     <div className="font-heading relative self-stretch text-xl leading-tight tracking-tight">
-                      The technology backbone for modern brand execution. Our intelligent platform services simplify
+                      {`The technology backbone for modern brand execution. Our intelligent platform services simplify
                       complexity, connect workflows, and give brands the speed, accuracy and agility to thrive in
-                      today’s fast moving world.
+                      today’s fast moving world.`}
                     </div>
                   </div>
                 </div>
@@ -95,11 +98,11 @@ export function Hero() {
             </b>
           </div>
           <div className="flex items-center justify-center self-stretch text-4xl">
-            <div className="relative inline-block w-full max-w-4xl shrink-0 py-14 leading-none tracking-tight">
+            <div className="relative inline-block w-full max-w-6xl shrink-0 py-14 leading-none tracking-tight">
               <FullBleedLines>
-                We bring together decades of global brand expertise with the technology to define what's next. A
+                {`We bring together decades of global brand expertise with the technology to define what’s next. A
                 powerful blend of creative mastery and intelligent automation that transforms the way brands move from
-                concept to market.
+                concept to market.`}
               </FullBleedLines>
             </div>
           </div>

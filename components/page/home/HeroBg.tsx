@@ -60,7 +60,6 @@ const HeroBg: React.FC<HeroBgProps> = ({
       style={{
         // Create a new stacking context to be safe, actual z-index should be managed by parent
         contain: 'layout paint size style',
-        position: 'relative',
       }}
     >
       {ready && (
@@ -73,8 +72,6 @@ const HeroBg: React.FC<HeroBgProps> = ({
                 const color = tileColors
                   ? explicit // may be undefined/null
                   : colors[(colIdx + rowIdx) % colors.length];
-                // For the last row, add a fractal glass effect overlay
-                const isLastRow = rowIdx === rows - 1;
                 return (
                   <div
                     key={rowIdx}
@@ -82,26 +79,8 @@ const HeroBg: React.FC<HeroBgProps> = ({
                     style={{
                       aspectRatio: '1 / 1',
                       background: color ?? defaultColor,
-                      position: isLastRow ? 'relative' : undefined,
-                      overflow: isLastRow ? 'hidden' : undefined,
                     }}
-                  >
-                    {isLastRow && (
-                      <div
-                        style={{
-                          position: 'absolute',
-                          inset: 0,
-                          pointerEvents: 'none',
-                          // Fractal glass effect: white faded at bottom, glassy blur
-                          background:
-                            'linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.7) 80%, #fff 100%)',
-                          backdropFilter: 'blur(6px) saturate(1.2)',
-                          WebkitBackdropFilter: 'blur(6px) saturate(1.2)',
-                          borderRadius: 'inherit',
-                        }}
-                      />
-                    )}
-                  </div>
+                  />
                 );
               })}
             </div>

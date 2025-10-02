@@ -52,18 +52,17 @@ const Apart: NextPage = () => {
 
             <div className="flex items-start justify-between gap-0 self-stretch text-2xl">
               {features.map((feature, index) => {
-                const IconComponent = feature.icon;
                 return (
                   <div key={index} className="flex flex-1 flex-col items-start gap-4 self-stretch px-8 py-0">
                     <div className="flex flex-col items-start justify-center gap-2 py-7">
-                      <div className="bg-primary/10 box-border flex min-h-9 min-w-9 items-center justify-center rounded-lg">
-                        <IconComponent className="text-primary h-5 w-5" strokeWidth={2} />
+                      <div className="bg-primary/10 box-border flex min-h-10 min-w-10 items-center justify-center rounded-lg">
+                        <feature.icon className="text-primary h-5 w-5" strokeWidth={2} />
                       </div>
                       <div className="flex flex-col items-start">
-                        <b className="relative leading-relaxed tracking-tight">{feature.title}</b>
+                        <b className="relative text-2xl leading-relaxed tracking-tight">{feature.title}</b>
                       </div>
                     </div>
-                    <div className="font-metropolis flex flex-col items-start justify-center self-stretch px-0 py-7 text-base">
+                    <div className="flex flex-col items-start justify-center self-stretch px-0 py-7 text-base">
                       <div className="relative self-stretch leading-relaxed font-medium tracking-tight">
                         {feature.description}
                       </div>

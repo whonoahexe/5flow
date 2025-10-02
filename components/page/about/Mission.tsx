@@ -9,7 +9,7 @@ const Mission: NextPage = () => {
         <div className="text-gray font-heading relative box-border flex w-full flex-col items-start gap-32 px-48 text-left">
           <div className="text-gray font-heading relative box-border flex w-full flex-col items-start px-0 text-left text-4xl">
             <div className="flex items-center justify-between gap-0 self-stretch">
-              <div className="relative inline-block w-180 shrink-0 leading-none tracking-tight">
+              <div className="relative inline-block w-full max-w-2xl shrink-0 leading-none tracking-tight">
                 Develop industry leading tools across the entire GTM funnel, ultimately becoming a platform used by all
                 manufacturers, brand owners, and retailers.
               </div>
@@ -25,7 +25,7 @@ const Mission: NextPage = () => {
                 <div className="bg-accent1 absolute h-48 w-48" />
               </div>
               <div className="flex w-3xl items-start justify-between gap-0">
-                <ArrowUpLeft className="text-accent1 h-52 w-52" strokeWidth={0.8} />
+                <ArrowUpLeft className="text-accent1 h-52 w-52" strokeWidth={1} />
                 <b className="relative inline-block shrink-0 leading-none tracking-tighter">
                   The. <br /> Mission.
                 </b>

@@ -28,7 +28,7 @@ const Vision: NextPage = () => {
                 </b>
               </div>
               <div className="relative flex items-center justify-center">
-                <ArrowUpRight className="text-accent1 h-52 w-52" strokeWidth={0.8} />
+                <ArrowUpRight className="text-accent1 h-52 w-52" strokeWidth={1} />
               </div>
 
               <div className="flex flex-1 items-end justify-end">
