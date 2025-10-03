@@ -3,10 +3,6 @@ import FullBleedLines from '@/components/core/full-bleed-lines';
 import { ArrowDownLeft } from 'lucide-react';
 
 export function Hero() {
-  // Define image arrays for mapping
-  const topRowImages = ['/about1.png', '/about2.png', '/about3.png'];
-  const bottomRowImages = ['/about5.png', '/about6.png'];
-
   return (
     <>
       {/* Page header */}
