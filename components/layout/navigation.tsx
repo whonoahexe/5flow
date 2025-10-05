@@ -64,10 +64,12 @@ export function Navigation() {
           </Link>
         ))}
       </div>
-      <Button variant="success" className="rounded-none font-semibold tracking-tight">
-        Book A Demo
-        <ArrowRight className="h-4 w-4" />
-      </Button>
+      <Link href="/contact">
+        <Button variant="success" className="rounded-none font-semibold tracking-tight">
+          Book A Demo
+          <ArrowRight className="h-4 w-4" />
+        </Button>
+      </Link>
     </nav>
   );
 }

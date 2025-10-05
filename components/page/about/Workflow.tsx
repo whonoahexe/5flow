@@ -5,9 +5,9 @@ import Image from 'next/image';
 
 const Workflow: NextPage = () => {
   const workflowImages = [
-    { src: '/workflow2.png', width: 400, height: 120, alt: 'Workflow security process 1' },
-    { src: '/workflow1.png', width: 250, height: 120, alt: 'Workflow security process 2' },
-    { src: '/workflow2.png', width: 400, height: 120, alt: 'Workflow security process 3' },
+    { src: '/about/workflow2.png', width: 400, height: 120, alt: 'Workflow security process 1' },
+    { src: '/about/workflow1.png', width: 250, height: 120, alt: 'Workflow security process 2' },
+    { src: '/about/workflow2.png', width: 400, height: 120, alt: 'Workflow security process 3' },
   ];
 
   return (
