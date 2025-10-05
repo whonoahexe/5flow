@@ -4,8 +4,8 @@ import FullBleedLines from '@/components/core/full-bleed-lines';
 
 export function Hero() {
   // Define image arrays for mapping
-  const topRowImages = ['/about1.png', '/about2.png', '/about3.png'];
-  const bottomRowImages = ['/about5.png', '/about6.png'];
+  const topRowImages = ['/about/about1.png', '/about/about2.png', '/about/about3.png'];
+  const bottomRowImages = ['/about/about5.png', '/about/about6.png'];
 
   return (
     <>
@@ -53,7 +53,7 @@ export function Hero() {
                   height={295}
                   sizes="100vw"
                   alt="About image 4"
-                  src="/about4.png"
+                  src="/about/about4.png"
                 />
               </div>
               <div className="border-gainsboro font-body bg-primary relative box-border flex w-full items-start overflow-hidden border border-solid text-left text-4xl text-white">
@@ -108,7 +108,7 @@ export function Hero() {
           </div>
           <div className="relative box-border flex flex-col items-center justify-center self-stretch px-0 py-2.5">
             <FullBleedLines>
-              <Image width={400} height={60} alt="Propelis Group" src="/propelis.svg" />
+              <Image width={400} height={60} alt="Propelis Group" src="/about/propelis.svg" />
             </FullBleedLines>
           </div>
         </div>

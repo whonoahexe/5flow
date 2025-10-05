@@ -34,11 +34,11 @@ export function Hero() {
               </div>
               <div className="flex flex-col items-start gap-4 text-3xl lg:text-5xl">
                 <div className="text-primary relative inline-block max-w-5xl leading-tight tracking-tight">
-                  We're here to help you move faster, smarter, and with less complexity
+                  {`We're here to help you move faster, smarter, and with less complexity`}
                 </div>
                 <div className="font-body text-gray relative inline-block max-w-3xl text-base leading-relaxed">
-                  Whether you want a product demo, a pricing discussion, or just answers to your workflow questions, the
-                  5Flow team is ready. Reach out to us by filling the form and we'll get back to you quickly.
+                  {`Whether you want a product demo, a pricing discussion, or just answers to your workflow questions, the
+                  5Flow team is ready. Reach out to us by filling the form and we'll get back to you quickly.`}
                 </div>
               </div>
             </div>

@@ -42,8 +42,8 @@ const Form = () => (
             <div className="flex items-center gap-2">
               <Checkbox className="h-4 w-4 rounded-none border-white bg-white" />
               <div className="text-xs leading-relaxed">
-                We'd love to keep in touch with solutions that may be of interest to you. Check this box if <br />
-                you authorize 5Flow to contact you by phone or email. You can opt out at any time.
+                {`We'd love to keep in touch with solutions that may be of interest to you. Check this box if ${(<br />)}
+                you authorize 5Flow to contact you by phone or email. You can opt out at any time.`}
               </div>
             </div>
           </div>
