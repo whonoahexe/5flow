@@ -1,44 +1,15 @@
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import { Button } from '@/components/ui/button';
 import { MoveUpRight } from 'lucide-react';
-import HeroBg from './HeroBg';
+// import HeroBg from './HeroBg';
+import HeroLottieBg from './HeroLottieBg';
 
 const Hero = () => {
   return (
     <div className="relative flex min-h-dvh flex-col justify-center">
-      {/* Hero Bg pixels */}
+      {/* Hero background: Lottie (replaces pixel grid for now) */}
       <div className="pointer-events-none absolute top-[88px] bottom-0 left-1/2 -z-10 w-screen -translate-x-1/2">
-        <HeroBg
-          defaultColor="#ffffff"
-          tileColors={[
-            // row 0
-            [undefined, undefined, undefined, '#D1DAFD', 'var(--accent1)', 'var(--success)', 'var(--primary)'],
-            // row 1
-            [
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              '#D1DAFD',
-              'var(--accent2)',
-              'var(--success)',
-              'var(--primary)',
-            ],
-            // row 2
-            [
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              '#D1DAFD',
-              'var(--accent1)',
-              'var(--accent2)',
-              'var(--primary)',
-            ],
-            // row 3
-            [undefined, undefined, undefined, '#D1DAFD', '#D1DAFD', '#D1DAFD', 'var(--accent1)', 'var(--primary)'],
-          ]}
-        />
+        <HeroLottieBg />
       </div>
 
       {/* Hero content */}
