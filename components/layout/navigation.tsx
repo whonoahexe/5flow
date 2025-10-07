@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ArrowRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
 import { Button } from '../ui/button';
 
 const navigationItems = [
@@ -54,15 +55,20 @@ export function Navigation() {
         <Image src="/brand.svg" width={103} height={24} alt="5Flow Brand Logo" />
       </Link>
       <div className="flex gap-6">
-        {navigationItems.map(item => (
-          <Link key={item.href} href={item.href}>
-            <div
-              className={`flex items-center justify-center px-4 ${activeItem === item ? 'bg-success text-foreground' : 'text-foreground'}`}
+        {navigationItems.map(item => {
+          const isActive = activeItem === item;
+
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={cn('nav-pill px-4', isActive && 'nav-pill--active')}
+              aria-current={isActive ? 'page' : undefined}
             >
-              <div className="leading-[150%] font-semibold tracking-tight">{item.label}</div>
-            </div>
-          </Link>
-        ))}
+              <span className="leading-[150%] font-bold tracking-tight">{item.label}</span>
+            </Link>
+          );
+        })}
       </div>
       <Link href="/contact">
         <Button variant="success" className="rounded-none font-semibold tracking-tight">

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { centuryGothic, metropolis } from '@/lib/fonts';
 import { Navigation, Footer } from '@/components/layout';
-import './globals.css';
+import '@/styles/globals.css';
 
 export const metadata: Metadata = {
   title: '5Flow | Brand & Artwork Management Solutions',
