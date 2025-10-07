@@ -1,4 +1,3 @@
-import PatternOverlay from '@/components/core/pattern-overlay';
 import { Cta } from '@/components/layout';
 import Form from '@/components/page/contact/Form';
 import { Hero } from '@/components/page/contact/Hero';
@@ -6,10 +5,6 @@ import { Hero } from '@/components/page/contact/Hero';
 export default function Contact() {
   return (
     <div className="relative">
-      {/* Fixed*/}
-      <PatternOverlay />
-      <PatternOverlay left="auto" right="152px" zIndex={-20} />
-
       <Hero />
       <Form />
       <Cta

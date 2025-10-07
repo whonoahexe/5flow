@@ -1,4 +1,3 @@
-import PatternOverlay from '@/components/core/pattern-overlay';
 import { Cta } from '@/components/layout';
 import { Hero } from '@/components/page/about/Hero';
 import Vision from '@/components/page/about/Vision';
@@ -10,10 +9,6 @@ import Team from '@/components/page/about/Team';
 export default function About() {
   return (
     <div className="relative">
-      {/* Fixed*/}
-      <PatternOverlay />
-      <PatternOverlay left="auto" right="152px" zIndex={-20} />
-
       <Hero />
       <Vision />
       <Mission />

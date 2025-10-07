@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import PatternOverlay from '@/components/core/pattern-overlay';
 import { centuryGothic, metropolis } from '@/lib/fonts';
 import { Navigation, Footer } from '@/components/layout';
 import '@/styles/globals.css';
@@ -20,7 +21,10 @@ export default function RootLayout({
         className={`${centuryGothic.variable} ${metropolis.variable} bg-background flex min-h-screen flex-col font-sans antialiased`}
       >
         <Navigation />
-        <main className="flex-1">{children}</main>
+        <main className="relative flex-1">
+          <PatternOverlay side="both" margin="152px" />
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

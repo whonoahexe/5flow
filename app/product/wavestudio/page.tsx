@@ -1,4 +1,3 @@
-import PatternOverlay from '@/components/core/pattern-overlay';
 import { Cta } from '@/components/layout';
 import { Hero } from '@/components/page/product/Hero';
 import How from '@/components/page/product/How';
@@ -142,10 +141,6 @@ const contactData = {
 export default function Wavestudio() {
   return (
     <div className="relative">
-      {/* Fixed*/}
-      <PatternOverlay />
-      <PatternOverlay left="auto" right="152px" zIndex={-20} />
-
       <Hero
         brandName="wavestudio"
         logoSrc="/product/wave.svg"

@@ -1,5 +1,4 @@
 import { Contact, Cta } from '@/components/layout';
-import PatternOverlay from '@/components/core/pattern-overlay';
 import Hero from '@/components/page/home/Hero';
 import What from '@/components/page/home/What';
 import How from '@/components/page/home/How';
@@ -9,10 +8,6 @@ import Why from '@/components/page/home/Why';
 export default function Home() {
   return (
     <div className="relative">
-      {/* Fixed*/}
-      <PatternOverlay />
-      <PatternOverlay left="auto" right="152px" zIndex={-20} />
-
       {/* Scrolls */}
       <div className="container mx-auto mb-32">
         <Hero />

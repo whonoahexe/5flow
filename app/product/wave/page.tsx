@@ -1,11 +1,9 @@
-import PatternOverlay from '@/components/core/pattern-overlay';
 import { Cta } from '@/components/layout';
 import { Hero } from '@/components/page/product/Hero';
 import Need from '@/components/page/product/Need';
 import What from '@/components/page/product/What';
 import Workflow from '@/components/page/product/Workflow';
 import Contact from '@/components/page/product/Contact';
-import { BadgeDollarSign, HeartHandshake, ShieldCheck, ZapIcon } from 'lucide-react';
 
 const whatData = [
   [
@@ -32,66 +30,6 @@ const whatData = [
       description: 'Without live progress tracking, projects derail, deadlines slip, and accountability gets lost.',
     },
   ],
-];
-
-const howData = [
-  {
-    title: 'Smarter approvals',
-    subtitle: 'Traceable, transparent, and faster loops',
-    description:
-      'WAVE digitizes approvals with annotations, comparisons, and automated reminders, keeping reviews clear and accountable.',
-    buttonText: 'Discover Approvals',
-    imageSrc: '/product/rectangle.png',
-  },
-  {
-    title: 'Centralized files',
-    subtitle: 'One version, one source of truth',
-    description: 'Every artwork, asset, and update lives in one platform, so teams always work from the right file.',
-    buttonText: 'Discover Asset Hub',
-    imageSrc: '/product/rectangle.png',
-  },
-  {
-    title: 'Compliance built in',
-    subtitle: 'Every step documented, every change tracked',
-    description:
-      'With audit-ready records, version control, and regulatory checks, WAVE makes compliance part of the process.',
-    buttonText: 'Discover Compliance',
-    imageSrc: '/product/rectangle.png',
-  },
-  {
-    title: 'Live project visibility',
-    subtitle: 'See status, spot bottlenecks, stay in control',
-    description: 'Dashboards, milestones, and timelines give managers instant clarity with no chasing updates.',
-    buttonText: 'Discover Visibility',
-    imageSrc: '/product/rectangle.png',
-  },
-];
-
-const whyData = [
-  {
-    title: 'Speed to market',
-    desc: 'Cut approval times by up to 52 percent',
-    sub: 'Faster launches mean earlier shelf presence, stronger campaigns, and quicker ROI.',
-    icon: ZapIcon,
-  },
-  {
-    title: 'Team confidence',
-    desc: 'Clear roles, clear files, clear results',
-    sub: 'Teams spend less time firefighting and more time delivering work that makes an impact.',
-    icon: HeartHandshake,
-  },
-  {
-    title: 'Risk reduction',
-    desc: 'Protect revenue, reputation, and compliance',
-    sub: 'Traceable workflows reduce costly errors, recalls, and regulatory fines.',
-    icon: ShieldCheck,
-  },
-  {
-    title: 'Cost efficiency',
-    desc: 'Fewer errors, fewer reprints',
-    sub: 'With accuracy built in, brands save on correction rounds and avoid wasted print runs.',
-    icon: BadgeDollarSign,
-  },
 ];
 
 const workflowData = {
@@ -141,10 +79,6 @@ const contactData = {
 export default function Wave() {
   return (
     <div className="relative">
-      {/* Fixed*/}
-      <PatternOverlay />
-      <PatternOverlay left="auto" right="152px" zIndex={-20} />
-
       <Hero
         brandName="wave"
         logoSrc="/product/wave.svg"
