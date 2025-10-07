@@ -79,7 +79,7 @@ const HeroLottieBg = () => {
       if (!totalFrames) initFrames();
       const progress = calcProgress();
       const frame = Math.floor((1 - progress) * totalFrames);
-      lottieRef.current.goToAndStop?.(frame + 4, true);
+      lottieRef.current.goToAndStop?.(frame + 8, true);
     };
 
     const onScroll = () => {
