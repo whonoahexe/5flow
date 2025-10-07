@@ -1,10 +1,8 @@
 import PatternOverlay from '@/components/core/pattern-overlay';
 import { Cta } from '@/components/layout';
 import { Hero } from '@/components/page/product/Hero';
-import How from '@/components/page/product/How';
 import Need from '@/components/page/product/Need';
 import What from '@/components/page/product/What';
-import Why from '@/components/page/product/Why';
 import Workflow from '@/components/page/product/Workflow';
 import Contact from '@/components/page/product/Contact';
 import { BadgeDollarSign, HeartHandshake, ShieldCheck, ZapIcon } from 'lucide-react';

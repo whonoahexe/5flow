@@ -6,7 +6,7 @@ interface WhyCard {
   title: string;
   desc: string;
   sub: string;
-  icon: any;
+  icon: React.ElementType;
 }
 
 interface WhyProps {

@@ -9,7 +9,7 @@ import { Button } from '../ui/button';
 
 const navigationItems = [
   { href: '/about', label: '[ ABOUT ]' },
-  { href: '/products', label: '[ PRODUCTS ]' },
+  { href: '/product/wave', label: '[ PRODUCTS ]' },
   { href: '/solutions', label: '[ SOLUTIONS ]' },
   { href: '/applications', label: '[ APPLICATIONS ]' },
 ];
