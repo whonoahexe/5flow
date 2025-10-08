@@ -1,23 +1,99 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '../ui/button';
 
-const navigationItems = [
-  { href: '/about', label: '[ ABOUT ]' },
-  { href: '/product/wave', label: '[ PRODUCTS ]' },
-  { href: '/solutions', label: '[ SOLUTIONS ]' },
-  { href: '/applications', label: '[ APPLICATIONS ]' },
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+
+type SimpleLink = { href: string; label: string };
+
+type DropdownMenuConfig = {
+  items: SimpleLink[];
+  offsetClass?: string;
+  itemWidthClass?: string;
+  columns?: number; // default 1
+};
+
+type NavItemLink = {
+  type: 'link';
+  href: string;
+  label: string;
+};
+
+type NavItemDropdown = {
+  type: 'dropdown';
+  href: string;
+  label: string;
+  menu: DropdownMenuConfig;
+};
+
+type NavItem = NavItemLink | NavItemDropdown;
+
+const NAV_ITEMS: NavItem[] = [
+  { type: 'link', href: '/about', label: '[ ABOUT ]' },
+  {
+    type: 'dropdown',
+    href: '/products',
+    label: '[ PRODUCTS ]',
+    menu: {
+      items: [
+        { href: '/products/wave', label: '[ WAVE ]' },
+        { href: '/products/dragonfly', label: '[ DRAGONFLY ]' },
+        { href: '/products/mediabox', label: '[ MEDIABOX ]' },
+        { href: '/products/wavestudio', label: '[ WAVESTUDIO ]' },
+      ],
+      offsetClass: 'ml-36',
+      itemWidthClass: 'w-72',
+      columns: 1,
+    },
+  },
+  {
+    type: 'dropdown',
+    href: '/solutions',
+    label: '[ SOLUTIONS ]',
+    menu: {
+      items: [
+        { href: '/solutions/artwork-management', label: '[ ARTWORK MANAGEMENT ]' },
+        { href: '/solutions/online-proofing', label: '[ ONLINE PROOFING ]' },
+        { href: '/solutions/content-management', label: '[ CONTENT MANAGEMENT ]' },
+        { href: '/solutions/asset-library', label: '[ ASSET LIBRARY ]' },
+        { href: '/solutions/automated-artwork', label: '[ AUTOMATED ARTWORK ]' },
+        { href: '/solutions/integration', label: '[ INTEGRATION ]' },
+      ],
+      offsetClass: 'ml-92',
+      itemWidthClass: 'w-lg',
+      columns: 1,
+    },
+  },
+  { type: 'link', href: '/applications', label: '[ APPLICATIONS ]' },
 ];
+
+function isActive(pathname: string, item: NavItem): boolean {
+  if (item.type === 'link') return pathname === item.href;
+  // Active when on parent base route or any child route
+  if (pathname === item.href || pathname.startsWith(item.href + '/')) return true;
+  return item.menu.items.some(i => pathname === i.href || pathname.startsWith(i.href + '/'));
+}
 
 export function Navigation() {
   const pathname = usePathname();
-  const activeItem = navigationItems.find(item => item.href === pathname);
+  const activeMap = useMemo(() => {
+    const map = new Map<string, boolean>();
+    for (const item of NAV_ITEMS) {
+      map.set(item.href, isActive(pathname, item));
+    }
+    return map;
+  }, [pathname]);
 
   const [footerVisible, setFooterVisible] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
@@ -55,15 +131,64 @@ export function Navigation() {
         <Image src="/brand.svg" width={103} height={24} alt="5Flow Brand Logo" />
       </Link>
       <div className="flex gap-6">
-        {navigationItems.map(item => {
-          const isActive = activeItem === item;
+        {NAV_ITEMS.map(item => {
+          const itemActive = activeMap.get(item.href) ?? false;
+
+          if (item.type === 'dropdown') {
+            const { menu } = item;
+            const columns = menu.columns ?? 1;
+            const listLayoutClass = columns > 1 ? 'grid grid-cols-2' : 'flex flex-col';
+            const offsetClass = menu.offsetClass ?? '';
+            const itemWidthClass = menu.itemWidthClass ?? '';
+
+            return (
+              <DropdownMenu key={item.href}>
+                <DropdownMenuTrigger asChild>
+                  <Link
+                    href={item.href}
+                    className={cn('nav-pill px-4', itemActive && 'nav-pill--active')}
+                    aria-current={itemActive ? 'page' : undefined}
+                  >
+                    <span className="leading-[150%] font-bold tracking-tight">{item.label}</span>
+                  </Link>
+                </DropdownMenuTrigger>
+
+                <DropdownMenuContent
+                  className={cn(
+                    'z-[999] mt-10 translate-y-2 gap-2 p-2 opacity-0 transition-all duration-300 ease-[var(--easing-smooth)] data-[state=open]:translate-y-0 data-[state=open]:opacity-100',
+                    listLayoutClass,
+                    offsetClass
+                  )}
+                >
+                  {menu.items.map(({ href, label }) => (
+                    <DropdownMenuItem asChild key={href}>
+                      <Link
+                        href={href}
+                        className={cn(
+                          'group/item active:ring-primary/50 active:ring-offset-background flex h-12 cursor-pointer items-stretch overflow-hidden bg-[#F4F4F5] p-0 no-underline transition-all duration-200 ease-[var(--easing-smooth)] active:translate-x-[1px] active:scale-[0.98] active:ring-2 active:ring-offset-2 active:outline-none',
+                          itemWidthClass
+                        )}
+                      >
+                        <div className="bg-primary text-background flex h-full shrink-0 grow-0 basis-12 items-center justify-center transition-all duration-500 ease-[var(--easing-smooth)] group-hover/item:basis-1/2">
+                          <ArrowUpRight className="text-background !h-8 !w-8" strokeWidth={2} />
+                        </div>
+                        <span className="text-foreground bg-background flex h-full min-w-0 flex-1 items-center justify-start px-3 text-left font-semibold tracking-tight">
+                          {label}
+                        </span>
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            );
+          }
 
           return (
             <Link
               key={item.href}
               href={item.href}
-              className={cn('nav-pill px-4', isActive && 'nav-pill--active')}
-              aria-current={isActive ? 'page' : undefined}
+              className={cn('nav-pill px-4', itemActive && 'nav-pill--active')}
+              aria-current={itemActive ? 'page' : undefined}
             >
               <span className="leading-[150%] font-bold tracking-tight">{item.label}</span>
             </Link>
