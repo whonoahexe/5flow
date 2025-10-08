@@ -32,7 +32,8 @@ const otherLinks = [
 ];
 
 export function Footer() {
-  const footerLink = 'inline-block w-auto text-background/80 underline-offset-4 hover:text-primary hover:underline';
+  const footerLink =
+    'inline-block w-auto text-background/80 hover:text-success transition-all duration-500 ease-[var(--easing-smooth)]';
 
   return (
     <footer className="bg-primary px-48 py-24">
@@ -59,7 +60,7 @@ export function Footer() {
                     key={s.label}
                     href={s.href}
                     aria-label={s.label}
-                    className="text-background/80 hover:text-primary-700 inline-block"
+                    className="text-background/80 hover:text-success inline-block transition-all duration-500 ease-[var(--easing-smooth)]"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
