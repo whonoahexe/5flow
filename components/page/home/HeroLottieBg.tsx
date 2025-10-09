@@ -85,7 +85,15 @@ const HeroLottieBg = () => {
     const onScroll = () => {
       // If user scrolls while playing, switch to scrub mode immediately
       if (mode === 'playing') {
-        lottieRef.current?.stop?.();
+        // Do not clear the canvas, pause keeps the last rendered frame
+        lottieRef.current?.pause?.();
+        // Immediately set the correct frame so there's no visual gap
+        try {
+          if (!totalFrames) initFrames();
+          const progress = calcProgress();
+          const frame = Math.floor((1 - progress) * totalFrames);
+          lottieRef.current?.goToAndStop?.(frame + 8, true);
+        } catch {}
         setMode('scrub');
       }
       if (!ticking) {
@@ -110,40 +118,20 @@ const HeroLottieBg = () => {
 
   return (
     <div ref={containerRef} className="pointer-events-none absolute inset-0 -z-10">
-      {/* Static fallback for reduced motion only */}
-      {reduced ? (
-        <HeroBg
-          defaultColor="#ffffff"
-          tileColors={[
-            // row 0
-            [undefined, undefined, undefined, '#D1DAFD', 'var(--accent1)', 'var(--success)', 'var(--primary)'],
-            // row 1
-            [
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              '#D1DAFD',
-              'var(--accent2)',
-              'var(--success)',
-              'var(--primary)',
-            ],
-            // row 2
-            [
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              '#D1DAFD',
-              'var(--accent1)',
-              'var(--accent2)',
-              'var(--primary)',
-            ],
-            // row 3
-            [undefined, undefined, undefined, '#D1DAFD', '#D1DAFD', '#D1DAFD', 'var(--accent1)', 'var(--primary)'],
-          ]}
-        />
-      ) : null}
+      {/* Always render a safe background so the canvas can never flash white */}
+      {/* <HeroBg
+        defaultColor="#ffffff"
+        tileColors={[
+          // row 0
+          [undefined, undefined, undefined, '#D1DAFD', 'var(--accent1)', 'var(--success)', 'var(--primary)'],
+          // row 1
+          [undefined, undefined, undefined, undefined, '#D1DAFD', 'var(--accent2)', 'var(--success)', 'var(--primary)'],
+          // row 2
+          [undefined, undefined, undefined, undefined, '#D1DAFD', 'var(--accent1)', 'var(--accent2)', 'var(--primary)'],
+          // row 3
+          [undefined, undefined, undefined, '#D1DAFD', '#D1DAFD', '#D1DAFD', 'var(--accent1)', 'var(--primary)'],
+        ]}
+      /> */}
 
       {/* Lottie overlay */}
       {!reduced && data ? (
@@ -153,7 +141,14 @@ const HeroLottieBg = () => {
             animationData={data}
             loop={false}
             autoplay={mode === 'playing'}
-            onComplete={() => setMode('scrub')}
+            onComplete={() => {
+              // Ensure we stay on the last frame and transition to scrubbing seamlessly
+              try {
+                const total = Math.floor(lottieRef.current?.getDuration?.(true) || 0);
+                if (total) lottieRef.current?.goToAndStop?.(total - 1, true);
+              } catch {}
+              setMode('scrub');
+            }}
             className="h-full w-full"
             rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
           />

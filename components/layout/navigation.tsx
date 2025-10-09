@@ -6,8 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Button } from '../ui/button';
-
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -127,9 +126,12 @@ export function Navigation() {
       }`}
       aria-hidden={footerVisible}
     >
+      {/* Logo */}
       <Link href="/" className="cursor-pointer">
         <Image src="/brand.svg" width={103} height={24} alt="5Flow Brand Logo" />
       </Link>
+
+      {/* Nav links */}
       <div className="flex gap-6">
         {NAV_ITEMS.map(item => {
           const itemActive = activeMap.get(item.href) ?? false;
@@ -195,12 +197,24 @@ export function Navigation() {
           );
         })}
       </div>
-      <Link href="/contact">
-        <Button variant="success" className="rounded-none font-semibold tracking-tight">
-          Book A Demo
-          <ArrowRight className="h-4 w-4" />
-        </Button>
-      </Link>
+
+      {/* Cta */}
+      <Button
+        asChild
+        className="group/cta active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-0 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-transform duration-150 ease-[var(--easing-smooth)] active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2 has-[>svg]:px-0"
+      >
+        <Link href="/contact" aria-label="Book a demo">
+          <span className="bg-success text-success-foreground group-hover/cta:bg-success/90 group-active/cta:bg-success/80 inline-flex h-9 items-center px-4 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta:px-3">
+            Book A Demo
+          </span>
+          <span
+            className="bg-success text-success-foreground group-hover/cta:bg-success/90 group-active/cta:bg-success/80 ml-0 inline-flex h-9 w-9 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta:ml-2"
+            aria-hidden="true"
+          >
+            <ArrowRight className="h-4 w-4" />
+          </span>
+        </Link>
+      </Button>
     </nav>
   );
 }
