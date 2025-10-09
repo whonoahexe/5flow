@@ -11,16 +11,20 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
 type SimpleLink = { href: string; label: string };
 
 type DropdownMenuConfig = {
-  items: SimpleLink[];
+  items?: SimpleLink[];
   offsetClass?: string;
   itemWidthClass?: string;
   columns?: number; // default 1
+  // Optional grouped columns: array of groups with a heading and items
+  groups?: { heading: string; items: SimpleLink[] }[];
 };
 
 type NavItemLink = {
@@ -69,19 +73,63 @@ const NAV_ITEMS: NavItem[] = [
         { href: '/solutions/automated-artwork', label: '[ AUTOMATED ARTWORK ]' },
         { href: '/solutions/integration', label: '[ INTEGRATION ]' },
       ],
-      offsetClass: 'ml-92',
-      itemWidthClass: 'w-lg',
+      offsetClass: 'ml-76',
+      itemWidthClass: 'w-112',
       columns: 1,
     },
   },
-  { type: 'link', href: '/applications', label: '[ APPLICATIONS ]' },
+  {
+    type: 'dropdown',
+    href: '/applications',
+    label: '[ APPLICATIONS ]',
+    menu: {
+      groups: [
+        {
+          heading: 'ROLE',
+          items: [
+            { href: '/applications/role/brand-manager', label: '[ BRAND MANAGER ]' },
+            { href: '/applications/role/quality-regulatory', label: '[ QUALITY & REGULATORY ]' },
+            { href: '/applications/role/creative-studio', label: '[ CREATIVE / STUDIO ]' },
+            { href: '/applications/role/procurement-sourcing', label: '[ PROCUREMENT & SOURCING ]' },
+          ],
+        },
+        {
+          heading: 'INDUSTRY',
+          items: [
+            { href: '/applications/industry/retail', label: '[ RETAIL ]' },
+            { href: '/applications/industry/health-pharma', label: '[ HEALTH & PHARMA ]' },
+            { href: '/applications/industry/food-beverages', label: '[ FOOD & BEVERAGES ]' },
+            { href: '/applications/industry/beauty-cosmetics', label: '[ BEAUTY & COSMETICS ]' },
+            { href: '/applications/industry/consumer-goods', label: '[ CONSUMER GOODS ]' },
+          ],
+        },
+      ],
+      offsetClass: 'ml-204',
+      itemWidthClass: 'w-120',
+      columns: 2,
+    },
+  },
 ];
 
 function isActive(pathname: string, item: NavItem): boolean {
   if (item.type === 'link') return pathname === item.href;
   // Active when on parent base route or any child route
   if (pathname === item.href || pathname.startsWith(item.href + '/')) return true;
-  return item.menu.items.some(i => pathname === i.href || pathname.startsWith(i.href + '/'));
+
+  // Check flat items if present
+  if (item.menu.items && item.menu.items.some(i => pathname === i.href || pathname.startsWith(i.href + '/'))) {
+    return true;
+  }
+
+  // Check grouped items if present
+  if (
+    item.menu.groups &&
+    item.menu.groups.some(group => group.items.some(i => pathname === i.href || pathname.startsWith(i.href + '/')))
+  ) {
+    return true;
+  }
+
+  return false;
 }
 
 export function Navigation() {
@@ -114,7 +162,6 @@ export function Navigation() {
     );
 
     observer.observe(footer);
-
     return () => observer.disconnect();
   }, []);
 
@@ -139,7 +186,11 @@ export function Navigation() {
           if (item.type === 'dropdown') {
             const { menu } = item;
             const columns = menu.columns ?? 1;
-            const listLayoutClass = columns > 1 ? 'grid grid-cols-2' : 'flex flex-col';
+            const listLayoutClass = menu.groups
+              ? 'grid grid-cols-2 gap-4'
+              : columns > 1
+                ? 'grid grid-cols-' + columns
+                : 'flex flex-col';
             const offsetClass = menu.offsetClass ?? '';
             const itemWidthClass = menu.itemWidthClass ?? '';
 
@@ -162,24 +213,58 @@ export function Navigation() {
                     offsetClass
                   )}
                 >
-                  {menu.items.map(({ href, label }) => (
-                    <DropdownMenuItem asChild key={href}>
-                      <Link
-                        href={href}
-                        className={cn(
-                          'group/item active:ring-primary/50 active:ring-offset-background flex h-12 cursor-pointer items-stretch overflow-hidden bg-[#F4F4F5] p-0 no-underline transition-all duration-200 ease-[var(--easing-smooth)] active:translate-x-[1px] active:scale-[0.98] active:ring-2 active:ring-offset-2 active:outline-none',
-                          itemWidthClass
-                        )}
-                      >
-                        <div className="bg-primary text-background flex h-full shrink-0 grow-0 basis-12 items-center justify-center transition-all duration-500 ease-[var(--easing-smooth)] group-hover/item:basis-1/2">
-                          <ArrowUpRight className="text-background !h-8 !w-8" strokeWidth={2} />
+                  {menu.groups
+                    ? // Render grouped columns with headings
+                      menu.groups.map(group => (
+                        <div key={group.heading} className="flex flex-col">
+                          <div className="border-accent1 mb-4 border-l-4 bg-[#F4F4F5] p-2">
+                            <div className="bg-background">
+                              <DropdownMenuLabel className="text-accent1 text-base font-semibold tracking-tight">
+                                {group.heading}
+                              </DropdownMenuLabel>
+                            </div>
+                          </div>
+
+                          <div className="flex flex-col gap-2">
+                            {group.items.map(({ href, label }) => (
+                              <DropdownMenuItem asChild key={href}>
+                                <Link
+                                  href={href}
+                                  className={cn(
+                                    'group/item active:ring-primary/50 active:ring-offset-background flex h-12 cursor-pointer items-stretch overflow-hidden bg-[#F4F4F5] p-0 no-underline transition-all duration-200 ease-[var(--easing-smooth)] active:translate-x-[1px] active:scale-[0.98] active:ring-2 active:ring-offset-2 active:outline-none',
+                                    itemWidthClass
+                                  )}
+                                >
+                                  <div className="bg-primary text-background flex h-full shrink-0 grow-0 basis-12 items-center justify-center transition-all duration-500 ease-[var(--easing-smooth)] group-hover/item:basis-1/2">
+                                    <ArrowUpRight className="text-background !h-8 !w-8" strokeWidth={2} />
+                                  </div>
+                                  <span className="text-foreground bg-background flex h-full min-w-0 flex-1 items-center justify-start px-3 text-left font-semibold tracking-tight">
+                                    {label}
+                                  </span>
+                                </Link>
+                              </DropdownMenuItem>
+                            ))}
+                          </div>
                         </div>
-                        <span className="text-foreground bg-background flex h-full min-w-0 flex-1 items-center justify-start px-3 text-left font-semibold tracking-tight">
-                          {label}
-                        </span>
-                      </Link>
-                    </DropdownMenuItem>
-                  ))}
+                      ))
+                    : (menu.items ?? []).map(({ href, label }) => (
+                        <DropdownMenuItem asChild key={href}>
+                          <Link
+                            href={href}
+                            className={cn(
+                              'group/item active:ring-primary/50 active:ring-offset-background flex h-12 cursor-pointer items-stretch overflow-hidden bg-[#F4F4F5] p-0 no-underline transition-all duration-200 ease-[var(--easing-smooth)] active:translate-x-[1px] active:scale-[0.98] active:ring-2 active:ring-offset-2 active:outline-none',
+                              itemWidthClass
+                            )}
+                          >
+                            <div className="bg-primary text-background flex h-full shrink-0 grow-0 basis-12 items-center justify-center transition-all duration-500 ease-[var(--easing-smooth)] group-hover/item:basis-1/2">
+                              <ArrowUpRight className="text-background !h-8 !w-8" strokeWidth={2} />
+                            </div>
+                            <span className="text-foreground bg-background flex h-full min-w-0 flex-1 items-center justify-start px-3 text-left font-semibold tracking-tight">
+                              {label}
+                            </span>
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
                 </DropdownMenuContent>
               </DropdownMenu>
             );

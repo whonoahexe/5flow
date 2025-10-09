@@ -20,16 +20,16 @@ export function Contact() {
           <div className="bg-success absolute top-0 left-0 z-50 h-10 w-10" />
           <div className="bg-success absolute bottom-0 left-0 z-50 h-10 w-10" />
 
-          <div className="bg-primary flex w-full items-center justify-between rounded-2xl">
-            <div className="flex flex-col items-end justify-center gap-6 pl-40">
+          <div className="bg-primary relative flex h-[562px] w-full items-center justify-between overflow-hidden rounded-2xl px-16">
+            <form className="flex w-full max-w-4xl flex-col items-end justify-center gap-6">
               <InlineHighlight className="bg-success">
                 <span className="font-heading text-foreground px-1 text-[64px] leading-none font-bold tracking-tighter">
                   Contact Us
                 </span>
               </InlineHighlight>
-              <div className="flex items-center gap-6">
+              <div className="flex w-full items-center gap-6">
                 {/* First Name Input */}
-                <div className="text-foreground relative min-h-10 w-80">
+                <div className="text-foreground relative min-h-10 w-full">
                   <span className="pointer-events-none absolute top-1/2 left-4 -translate-y-1/2">
                     <User size={20} />
                   </span>
@@ -40,7 +40,7 @@ export function Contact() {
                   />
                 </div>
                 {/* Last Name Input */}
-                <div className="relative min-h-10 w-80">
+                <div className="relative min-h-10 w-full">
                   <span className="pointer-events-none absolute top-1/2 left-4 -translate-y-1/2">
                     <User size={20} />
                   </span>
@@ -65,17 +65,15 @@ export function Contact() {
               <Button className="bg-success text-foreground hover:bg-success/90 min-h-10 w-full rounded-none font-semibold tracking-tight transition-colors duration-300 ease-[var(--easing-smooth)]">
                 Book a Demo <ArrowUpRight />
               </Button>
-            </div>
+            </form>
 
-            <div className="relative">
-              <Image
-                className="left-0 object-contain"
-                width={977}
-                height={540}
-                alt="vector"
-                src="/img/contact-form.png"
-              />
-            </div>
+            <Image
+              className="absolute top-0 right-0 w-full object-cover"
+              width={1520}
+              height={562}
+              alt="vector"
+              src="/img/contact-form.png"
+            />
           </div>
         </div>
       </FullBleedLines>
