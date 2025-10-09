@@ -17,7 +17,7 @@ interface ContactProps {
 
 const Contact = ({ title1, highlightTitle, title2, description, buttonText, imageSrc, imageAlt }: ContactProps) => {
   return (
-    <div className="text-gray font-heading box-border items-start gap-2 px-48 text-left">
+    <div className="text-gray font-heading box-border items-start gap-2 text-left">
       <div className="text-gray font-century-gothic relative flex w-full flex-col items-start gap-8 text-center text-8xl">
         <div className="box-border flex w-full flex-col items-center justify-center overflow-hidden px-2 py-7">
           <div className="relative h-48 max-w-6xl">

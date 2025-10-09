@@ -34,7 +34,7 @@ const Apart: NextPage = () => {
   return (
     <div className="py-16">
       <FullBleedLines>
-        <div className="text-gray font-heading relative box-border flex w-full flex-col items-start gap-32 px-48 text-left">
+        <div className="text-gray font-heading relative box-border flex w-full flex-col items-start gap-32 text-left">
           <div className="text-gray relative flex w-full flex-col items-start gap-8 text-left text-6xl">
             <div className="box-border flex w-full flex-row items-start gap-8 px-2 text-left">
               <div className="flex h-32">

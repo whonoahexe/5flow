@@ -18,7 +18,7 @@ interface HowProps {
 
 const How = ({ howData }: HowProps) => {
   return (
-    <div className="text-gray font-heading relative box-border flex w-full flex-col items-start gap-5 px-48 py-16 text-left">
+    <div className="text-gray font-heading relative box-border flex w-full flex-col items-start gap-5 py-16 text-left">
       <FullBleedLines className="flex w-full justify-between">
         <p className="font-heading w-full max-w-4xl text-6xl leading-none font-bold tracking-tight">
           <InlineHighlight>How</InlineHighlight> does it <br /> Work ?

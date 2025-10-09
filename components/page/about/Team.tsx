@@ -7,7 +7,7 @@ const Team: NextPage = () => {
   return (
     <div className="py-16">
       <FullBleedLines></FullBleedLines>
-      <div className="text-gray font-heading relative box-border flex w-full flex-col items-start gap-32 px-48 text-left">
+      <div className="text-gray font-heading relative box-border flex w-full flex-col items-start gap-32 text-left">
         <div className="text-gray font-heading text- relative flex w-full flex-col items-start gap-8 text-right text-6xl">
           <div className="flex flex-col items-start self-stretch">
             <div className="flex items-start justify-end gap-8 self-stretch px-2">

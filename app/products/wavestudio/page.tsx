@@ -141,43 +141,45 @@ const contactData = {
 export default function Wavestudio() {
   return (
     <div className="relative">
-      <Hero
-        brandName="wavestudio"
-        logoSrc="/product/wave.svg"
-        logoAlt="Wave Brand"
-        title="Big ideas. Bigger execution"
-        subtitle="Scale your artwork production without scaling your team"
-        description="WaveStudio combines automation with creative expertise. We turn endless artwork requests into fast, accurate, on-brand outputs so you can keep creating without burning out."
-        buttonText="Start A Project"
-        imageSrc="/product/rectangle.png"
-        imageAlt="rectangle"
-      />
-      <What whatData={whatData} />
-      <How howData={howData} />
-      <Why whyData={whyData} />
-      <Need
-        title1={needData.title1}
-        highlightTitle={needData.highlightTitle}
-        title2={needData.title2}
-        subtitle={needData.subtitle}
-        description={needData.description}
-        buttonText={needData.buttonText}
-      />
-      <Workflow
-        title={workflowData.title}
-        subtitle={workflowData.subtitle}
-        buttonText={workflowData.buttonText}
-        statsData={workflowData.statsData}
-      />
-      <Contact
-        title1={contactData.title1}
-        highlightTitle={contactData.highlightTitle}
-        title2={contactData.title2}
-        description={contactData.description}
-        buttonText={contactData.buttonText}
-        imageSrc={contactData.imageSrc}
-        imageAlt={contactData.imageAlt}
-      />
+      <div className="container mx-auto mb-32">
+        <Hero
+          brandName="wavestudio"
+          logoSrc="/product/wave.svg"
+          logoAlt="Wave Brand"
+          title="Big ideas. Bigger execution"
+          subtitle="Scale your artwork production without scaling your team"
+          description="WaveStudio combines automation with creative expertise. We turn endless artwork requests into fast, accurate, on-brand outputs so you can keep creating without burning out."
+          buttonText="Start A Project"
+          imageSrc="/product/rectangle.png"
+          imageAlt="rectangle"
+        />
+        <What whatData={whatData} />
+        <How howData={howData} />
+        <Why whyData={whyData} />
+        <Need
+          title1={needData.title1}
+          highlightTitle={needData.highlightTitle}
+          title2={needData.title2}
+          subtitle={needData.subtitle}
+          description={needData.description}
+          buttonText={needData.buttonText}
+        />
+        <Workflow
+          title={workflowData.title}
+          subtitle={workflowData.subtitle}
+          buttonText={workflowData.buttonText}
+          statsData={workflowData.statsData}
+        />
+        <Contact
+          title1={contactData.title1}
+          highlightTitle={contactData.highlightTitle}
+          title2={contactData.title2}
+          description={contactData.description}
+          buttonText={contactData.buttonText}
+          imageSrc={contactData.imageSrc}
+          imageAlt={contactData.imageAlt}
+        />
+      </div>
       <Cta
         leftTitle="Experience"
         leftSubtitle="What’s Next in"

@@ -6,7 +6,7 @@ const Mission: NextPage = () => {
   return (
     <div className="py-16">
       <FullBleedLines>
-        <div className="text-gray font-heading relative box-border flex w-full flex-col items-start gap-32 px-48 text-left">
+        <div className="text-gray font-heading relative box-border flex w-full flex-col items-start gap-32 text-left">
           <div className="text-gray font-heading relative box-border flex w-full flex-col items-start px-0 text-left text-4xl">
             <div className="flex items-center justify-between gap-0 self-stretch">
               <div className="relative inline-block w-full max-w-2xl shrink-0 leading-none tracking-tight">

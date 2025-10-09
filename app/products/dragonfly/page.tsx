@@ -141,43 +141,45 @@ const contactData = {
 export default function Dragonfly() {
   return (
     <div className="relative">
-      <Hero
-        brandName="dragonfly"
-        logoSrc="/product/wave.svg"
-        logoAlt="Wave Brand"
-        title="Make your projects fly"
-        subtitle="Streamlined workflows for complex brand execution"
-        description="Dragonfly is a web-based graphics and packaging management platform that cuts through miscommunication, complexity, and delays. Built for agility and scale, it keeps your brand projects moving on time, on budget, every time."
-        buttonText="Book A Demo"
-        imageSrc="/product/rectangle.png"
-        imageAlt="rectangle"
-      />
-      <What whatData={whatData} />
-      <How howData={howData} />
-      <Why whyData={whyData} />
-      <Need
-        title1={needData.title1}
-        highlightTitle={needData.highlightTitle}
-        title2={needData.title2}
-        subtitle={needData.subtitle}
-        description={needData.description}
-        buttonText={needData.buttonText}
-      />
-      <Workflow
-        title={workflowData.title}
-        subtitle={workflowData.subtitle}
-        buttonText={workflowData.buttonText}
-        statsData={workflowData.statsData}
-      />
-      <Contact
-        title1={contactData.title1}
-        highlightTitle={contactData.highlightTitle}
-        title2={contactData.title2}
-        description={contactData.description}
-        buttonText={contactData.buttonText}
-        imageSrc={contactData.imageSrc}
-        imageAlt={contactData.imageAlt}
-      />
+      <div className="container mx-auto mb-32">
+        <Hero
+          brandName="dragonfly"
+          logoSrc="/product/wave.svg"
+          logoAlt="Wave Brand"
+          title="Make your projects fly"
+          subtitle="Streamlined workflows for complex brand execution"
+          description="Dragonfly is a web-based graphics and packaging management platform that cuts through miscommunication, complexity, and delays. Built for agility and scale, it keeps your brand projects moving on time, on budget, every time."
+          buttonText="Book A Demo"
+          imageSrc="/product/rectangle.png"
+          imageAlt="rectangle"
+        />
+        <What whatData={whatData} />
+        <How howData={howData} />
+        <Why whyData={whyData} />
+        <Need
+          title1={needData.title1}
+          highlightTitle={needData.highlightTitle}
+          title2={needData.title2}
+          subtitle={needData.subtitle}
+          description={needData.description}
+          buttonText={needData.buttonText}
+        />
+        <Workflow
+          title={workflowData.title}
+          subtitle={workflowData.subtitle}
+          buttonText={workflowData.buttonText}
+          statsData={workflowData.statsData}
+        />
+        <Contact
+          title1={contactData.title1}
+          highlightTitle={contactData.highlightTitle}
+          title2={contactData.title2}
+          description={contactData.description}
+          buttonText={contactData.buttonText}
+          imageSrc={contactData.imageSrc}
+          imageAlt={contactData.imageAlt}
+        />
+      </div>
       <Cta
         leftTitle="Experience"
         leftSubtitle="What’s Next in"

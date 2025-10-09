@@ -1,7 +1,7 @@
+import Link from 'next/link';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import { Button } from '@/components/ui/button';
 import { MoveUpRight } from 'lucide-react';
-// import HeroBg from './HeroBg';
 import HeroLottieBg from './HeroLottieBg';
 
 const Hero = () => {
@@ -33,7 +33,7 @@ const Hero = () => {
           </div>
         </FullBleedLines>
         <FullBleedLines>
-          <div className="flex">
+          <Link href="/contact" className="flex">
             <Button
               size="lg"
               className="group/cta-hero active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-3 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-300 ease-[var(--easing-smooth)] hover:gap-0 active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2"
@@ -48,7 +48,7 @@ const Hero = () => {
                 <MoveUpRight className="h-4 w-4" />
               </span>
             </Button>
-          </div>
+          </Link>
         </FullBleedLines>
       </div>
     </div>

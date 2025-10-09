@@ -5,8 +5,10 @@ import { Hero } from '@/components/page/contact/Hero';
 export default function Contact() {
   return (
     <div className="relative">
-      <Hero />
-      <Form />
+      <div className="container mx-auto mb-32">
+        <Hero />
+        <Form />
+      </div>
       <Cta
         leftTitle="Experience"
         leftSubtitle="What’s Next in"

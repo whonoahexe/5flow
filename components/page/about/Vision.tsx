@@ -6,7 +6,7 @@ const Vision: NextPage = () => {
   return (
     <div className="pb-16">
       <FullBleedLines>
-        <div className="font-heading relative box-border flex w-full flex-col items-start gap-32 px-48 text-left">
+        <div className="font-heading relative box-border flex w-full flex-col items-start gap-32 text-left">
           <div className="font-heading relative box-border flex w-full flex-col items-start px-0 text-right text-4xl">
             <div className="flex items-center justify-between gap-0 self-stretch">
               <div className="flex h-48 w-96 flex-1 flex-row">

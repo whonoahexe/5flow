@@ -15,7 +15,7 @@ interface WorkflowProps {
 
 const Workflow = ({ title, subtitle, buttonText, statsData }: WorkflowProps) => {
   return (
-    <div className="font-heading relative box-border flex w-full flex-col items-start gap-12 px-48 py-16 text-left">
+    <div className="font-heading relative box-border flex w-full flex-col items-start gap-12 py-16 text-left">
       <div className="font-heading relative flex w-full flex-col items-center justify-center gap-8 text-left">
         <div className="relative flex w-full items-center justify-between gap-0 text-left text-6xl">
           <div className="items-top flex flex-1 gap-8">

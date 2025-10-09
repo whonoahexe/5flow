@@ -6,7 +6,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import Image from 'next/image';
 
 const Form = () => (
-  <div className="font-heading relative box-border flex w-full flex-col items-start gap-32 px-12 py-20 text-left lg:px-48">
+  <div className="font-heading relative box-border flex w-full flex-col items-start gap-32 py-20 text-left">
     <div className="bg-primary relative box-border flex w-full items-center justify-between rounded-2xl py-12 pr-8 pl-0 text-left">
       <div className="w-full max-w-3xl">
         <Image

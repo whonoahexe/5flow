@@ -9,12 +9,14 @@ import Team from '@/components/page/about/Team';
 export default function About() {
   return (
     <div className="relative">
-      <Hero />
-      <Vision />
-      <Mission />
-      <Workflow />
-      <Apart />
-      <Team />
+      <div className="container mx-auto mb-32">
+        <Hero />
+        <Vision />
+        <Mission />
+        <Workflow />
+        <Apart />
+        <Team />
+      </div>
       <Cta
         leftTitle="Experience"
         leftSubtitle="What’s Next in"

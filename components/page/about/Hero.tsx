@@ -10,7 +10,7 @@ export function Hero() {
   return (
     <>
       {/* Page header */}
-      <div className="text-gray font-heading relative box-border w-full flex-col items-start gap-32 px-48 py-52 text-left text-4xl">
+      <div className="text-gray font-heading relative box-border w-full flex-col items-start gap-32 py-52 text-left text-4xl">
         <FullBleedLines>
           <div className="font-heading relative flex w-full items-end justify-end text-right text-5xl">
             <div className="flex items-center gap-2">

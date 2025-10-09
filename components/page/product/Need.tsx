@@ -13,7 +13,7 @@ interface NeedProps {
 
 const Need = ({ title1, highlightTitle, title2, subtitle, description, buttonText }: NeedProps) => {
   return (
-    <div className="text-gray font-heading relative box-border flex w-full flex-col items-start gap-12 px-48 py-16 text-left">
+    <div className="text-gray font-heading relative box-border flex w-full flex-col items-start gap-12 py-16 text-left">
       <div className="bg-foreground/5 font-century-gothic relative box-border flex w-full flex-col items-start overflow-hidden p-2 text-left text-6xl text-white">
         <div className="bg-primary flex flex-col items-center justify-center self-stretch rounded-2xl py-16 pr-0 pl-8">
           <div className="flex flex-col items-start gap-14 self-stretch px-2 py-0">

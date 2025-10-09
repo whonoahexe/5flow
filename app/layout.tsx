@@ -22,7 +22,7 @@ export default function RootLayout({
       >
         <Navigation />
         <main className="relative flex-1">
-          <PatternOverlay side="both" margin="152px" />
+          <PatternOverlay side="both" margin="container" containerAlign="outside" />
           {children}
         </main>
         <Footer />

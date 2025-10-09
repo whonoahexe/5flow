@@ -79,41 +79,43 @@ const contactData = {
 export default function Wave() {
   return (
     <div className="relative">
-      <Hero
-        brandName="wave"
-        logoSrc="/product/wave.svg"
-        logoAlt="Wave Brand"
-        title="Artwork management, without the chaos"
-        subtitle="Faster progress from first draft to final approval."
-        description="WAVE gives brand, packaging, and regulatory teams a single platform to brief, review, and approve artwork. No more confusion, no more delays. Just clear workflows that move projects forward."
-        buttonText="Let's Talk Transformation"
-        imageSrc="/product/rectangle.png"
-        imageAlt="rectangle"
-      />
-      <What whatData={whatData} />
-      <Need
-        title1={needData.title}
-        highlightTitle={needData.highlightTitle}
-        title2={needData.title2}
-        subtitle={needData.subtitle}
-        description={needData.description}
-        buttonText={needData.buttonText}
-      />
-      <Workflow
-        title={workflowData.title}
-        subtitle={workflowData.subtitle}
-        buttonText={workflowData.buttonText}
-        statsData={workflowData.statsData}
-      />
-      <Contact
-        title1={contactData.title1}
-        highlightTitle={contactData.highlightTitle}
-        title2={contactData.title2}
-        description={contactData.description}
-        buttonText={contactData.buttonText}
-        imageSrc={contactData.imageSrc}
-        imageAlt={contactData.imageAlt}
-      />
+      <div className="container mx-auto mb-32">
+        <Hero
+          brandName="wave"
+          logoSrc="/product/wave.svg"
+          logoAlt="Wave Brand"
+          title="Artwork management, without the chaos"
+          subtitle="Faster progress from first draft to final approval."
+          description="WAVE gives brand, packaging, and regulatory teams a single platform to brief, review, and approve artwork. No more confusion, no more delays. Just clear workflows that move projects forward."
+          buttonText="Let's Talk Transformation"
+          imageSrc="/product/rectangle.png"
+          imageAlt="rectangle"
+        />
+        <What whatData={whatData} />
+        <Need
+          title1={needData.title}
+          highlightTitle={needData.highlightTitle}
+          title2={needData.title2}
+          subtitle={needData.subtitle}
+          description={needData.description}
+          buttonText={needData.buttonText}
+        />
+        <Workflow
+          title={workflowData.title}
+          subtitle={workflowData.subtitle}
+          buttonText={workflowData.buttonText}
+          statsData={workflowData.statsData}
+        />
+        <Contact
+          title1={contactData.title1}
+          highlightTitle={contactData.highlightTitle}
+          title2={contactData.title2}
+          description={contactData.description}
+          buttonText={contactData.buttonText}
+          imageSrc={contactData.imageSrc}
+          imageAlt={contactData.imageAlt}
+        />
+      </div>
       <Cta
         leftTitle="Experience"
         leftSubtitle="What’s Next in"

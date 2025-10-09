@@ -11,7 +11,7 @@ const Workflow: NextPage = () => {
   ];
 
   return (
-    <div className="font-heading relative box-border flex w-full flex-col items-start gap-32 px-48 py-16">
+    <div className="font-heading relative box-border flex w-full flex-col items-start gap-32 py-16">
       <div className="relative flex w-full flex-col items-center justify-center gap-14 text-center text-4xl">
         <div className="relative text-7xl">
           <FullBleedLines>

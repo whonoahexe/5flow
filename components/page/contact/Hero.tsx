@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <>
       {/* Page header */}
-      <div className="text-gray font-heading relative box-border w-full flex-col items-start gap-32 px-12 pt-52 text-left text-4xl lg:px-48">
+      <div className="text-gray font-heading relative box-border w-full flex-col items-start gap-32 pt-52 text-left text-4xl">
         <FullBleedLines>
           <div className="font-heading relative flex w-full items-end justify-end text-right text-5xl">
             <div className="flex items-center gap-6">
