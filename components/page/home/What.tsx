@@ -1,6 +1,7 @@
 import { ArrowUpRight, ClockFading, Layers2, ServerOff, ZapOff } from 'lucide-react';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
+import Link from 'next/link';
 
 const PainPoints = [
   {
@@ -38,7 +39,13 @@ const What = () => {
             Breaking Barriers in the <InlineHighlight>Modern</InlineHighlight>{' '}
             <InlineHighlight>Content</InlineHighlight> Supply Chain
           </p>
-          <ArrowUpRight size={126} className="text-accent1" />
+          <Link href="/about">
+            <ArrowUpRight
+              size={126}
+              strokeWidth={1.5}
+              className="text-background bg-accent1 hover:ring-primary/50 hover:ring-offset-background origin-center cursor-pointer transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6"
+            />
+          </Link>
         </FullBleedLines>
       </div>
 

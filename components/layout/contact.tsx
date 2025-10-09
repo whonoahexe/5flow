@@ -21,7 +21,7 @@ export function Contact() {
           <div className="bg-success absolute bottom-0 left-0 z-50 h-10 w-10" />
 
           <div className="bg-primary relative flex h-[562px] w-full items-center justify-between overflow-hidden rounded-2xl px-16">
-            <form className="flex w-full max-w-4xl flex-col items-end justify-center gap-6">
+            <form className="z-20 flex w-full max-w-4xl flex-col items-end justify-center gap-6">
               <InlineHighlight className="bg-success">
                 <span className="font-heading text-foreground px-1 text-[64px] leading-none font-bold tracking-tighter">
                   Contact Us
@@ -36,7 +36,7 @@ export function Contact() {
                   <Input
                     type="text"
                     placeholder="First Name"
-                    className="font-body border-boder bg-background w-full rounded-none border pl-12"
+                    className="font-body border-boder bg-background focus:ring-success w-full rounded-none border pl-12 transition-all duration-300 ease-[var(--easing-smooth)] focus:ring-2 focus:ring-offset-2"
                   />
                 </div>
                 {/* Last Name Input */}
@@ -47,7 +47,7 @@ export function Contact() {
                   <Input
                     type="text"
                     placeholder="Last Name"
-                    className="font-body border-boder bg-background w-full rounded-none border pl-12"
+                    className="font-body border-boder bg-background focus:ring-success w-full rounded-none border pl-12 transition-all duration-300 ease-[var(--easing-smooth)] focus:ring-2 focus:ring-offset-2"
                   />
                 </div>
               </div>
@@ -59,7 +59,7 @@ export function Contact() {
                 <Input
                   type="email"
                   placeholder="Email"
-                  className="font-body border-boder bg-background w-full rounded-none border pl-12"
+                  className="font-body border-boder bg-background focus:ring-success w-full rounded-none border pl-12 transition-all duration-300 ease-[var(--easing-smooth)] focus:ring-2 focus:ring-offset-2"
                 />
               </div>
               <Button className="bg-success text-foreground hover:bg-success/90 min-h-10 w-full rounded-none font-semibold tracking-tight transition-colors duration-300 ease-[var(--easing-smooth)]">

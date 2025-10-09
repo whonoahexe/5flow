@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import CtaPixelGrid from '@/components/core/cta-pixel-grid';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ArrowUp, ArrowUpRight } from 'lucide-react';
@@ -46,9 +47,21 @@ export function Cta({ leftTitle, leftSubtitle, rightTitle, rightDesc, buttonText
             <b className="text-5xl tracking-tighter">{rightTitle}</b>
             <div className="flex w-full flex-col items-end justify-end gap-4 sm:flex-row sm:items-center">
               <p className="w-full max-w-96 text-right tracking-tight">{rightDesc}</p>
-              <Button variant="success" className="rounded-none" size="lg">
-                {buttonText}
-                <ArrowUpRight className="h-4 w-4" />
+              <Button
+                asChild
+                className="group/cta active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-0 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-150 ease-[var(--easing-smooth)] active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2 has-[>svg]:px-0"
+              >
+                <Link href="/contact" aria-label="Book a demo">
+                  <span className="bg-success text-success-foreground group-hover/cta:bg-success/90 group-active/cta:bg-success/80 inline-flex h-9 items-center px-4 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta:px-3">
+                    {buttonText}
+                  </span>
+                  <span
+                    className="bg-success text-success-foreground group-hover/cta:bg-success/90 group-active/cta:bg-success/80 ml-0 inline-flex h-9 w-9 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta:ml-2"
+                    aria-hidden="true"
+                  >
+                    <ArrowUpRight className="h-4 w-4" />
+                  </span>
+                </Link>
               </Button>
             </div>
           </div>

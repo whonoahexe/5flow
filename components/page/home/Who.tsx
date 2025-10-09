@@ -28,14 +28,14 @@ const Who = () => {
         </div>
         <div className="flex items-center justify-center gap-8 self-stretch px-2">
           <Button
-            className="bg-primary size-20 rounded-none"
+            className="bg-primary hover:ring-primary/50 hover:ring-offset-background size-20 origin-center cursor-pointer rounded-none transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6"
             onClick={() => scrollByAmount('left')}
             aria-label="Scroll left"
           >
             <ArrowLeft size={48} className="size-8" />
           </Button>
           <Button
-            className="bg-primary size-20 rounded-none"
+            className="bg-primary hover:ring-primary/50 hover:ring-offset-background size-20 origin-center cursor-pointer rounded-none transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6"
             onClick={() => scrollByAmount('right')}
             aria-label="Scroll right"
           >

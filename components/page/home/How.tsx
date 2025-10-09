@@ -52,7 +52,7 @@ const How = () => (
               </div>{' '}
               <div className="flex w-full items-center justify-between gap-8 p-8">
                 <p className="text-sm tracking-tight">{item.desc}</p>
-                <Button className="bg-primary size-16 rounded-none">
+                <Button className="bg-primary hover:ring-primary/50 hover:ring-offset-background size-16 origin-center cursor-pointer rounded-none transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6">
                   <ArrowUpRight size={48} className="size-8" />
                 </Button>
               </div>
