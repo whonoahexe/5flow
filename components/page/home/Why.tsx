@@ -32,7 +32,7 @@ const Why = () => (
               ecosystem for the modern brand.
             </p>
 
-            <div className="w-full p-2">
+            <div className="w-full">
               <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
                 <div className="bg-background flex items-center justify-between rounded-lg p-3">
                   <Shuffle size={32} className="text-primary" strokeWidth={1.5} />

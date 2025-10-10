@@ -1,4 +1,5 @@
 import { Cta } from '@/components/layout';
+import PageHeader from '@/components/core/page-header';
 import { Hero } from '@/components/page/about/Hero';
 import Vision from '@/components/page/about/Vision';
 import Mission from '@/components/page/about/Mission';
@@ -10,12 +11,15 @@ export default function About() {
   return (
     <div className="relative">
       <div className="container mx-auto mb-32">
-        <Hero />
-        <Vision />
-        <Mission />
-        <Workflow />
-        <Apart />
-        <Team />
+        <PageHeader title="we. are." />
+        <div className="flex flex-col gap-32">
+          <Hero />
+          <Vision />
+          <Mission />
+          <Workflow />
+          <Apart />
+          <Team />
+        </div>
       </div>
       <Cta
         leftTitle="Experience"
