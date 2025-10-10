@@ -4,57 +4,93 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import Image from 'next/image';
+import FullBleedLines from '@/components/core/full-bleed-lines';
+import Link from 'next/link';
 
 const Form = () => (
-  <div className="font-heading relative box-border flex w-full flex-col items-start gap-32 py-20 text-left">
-    <div className="bg-primary relative box-border flex w-full items-center justify-between rounded-2xl py-12 pr-8 pl-0 text-left">
-      <div className="w-full max-w-3xl">
+  <FullBleedLines className="bg-foreground/5 w-full p-2">
+    <div className="bg-primary border-border flex w-full items-center justify-between rounded-2xl border py-8 pr-8">
+      <div className="flex-1">
         <Image
           className="object-cover"
           width={450}
           height={450}
-          alt="rings showcasing brand identity"
+          alt="Rings showcasing brand identity"
           src="/svg/rings.svg"
         />
       </div>
-      <div className="text-success font-metropolis relative flex w-full flex-1 flex-col items-start gap-8 text-left">
-        <b className="relative flex h-14 w-full max-w-xs shrink-0 items-center justify-center text-center text-5xl leading-tight tracking-tight lg:text-6xl">
-          Contact Us
-        </b>
-        <div className="flex flex-col items-start gap-2 self-stretch">
-          <div className="flex items-start justify-between gap-3 self-stretch">
-            <Input placeholder="First Name or Pseudonym*" className="bg-background flex-1 rounded-none" />
-            <Input placeholder="Last Name" className="bg-background flex-1 rounded-none" />
+
+      {/* Form */}
+      <form className="flex flex-1 flex-col gap-8">
+        <b className="text-success font-heading flex w-full text-6xl leading-none tracking-tight">Contact Us</b>
+        {/* Inputs */}
+        <div className="flex flex-col gap-2">
+          <div className="flex justify-between gap-2">
+            <Input
+              placeholder="First Name or Pseudonym"
+              className="font-body border-boder bg-background focus:ring-success min-h-10 w-full flex-1 rounded-none border transition-all duration-300 ease-[var(--easing-smooth)] focus:ring-2 focus:ring-offset-2"
+            />
+            <Input
+              placeholder="Last Name"
+              className="font-body border-boder bg-background focus:ring-success min-h-10 w-full flex-1 rounded-none border transition-all duration-300 ease-[var(--easing-smooth)] focus:ring-2 focus:ring-offset-2"
+            />
           </div>
-          <Input type="email" placeholder="Work Email" className="bg-background w-full rounded-none" />
-          <Input placeholder="I'm interested in..." className="bg-background w-full rounded-none" />
-          <Textarea placeholder="Here's my message.." className="bg-background resize-none rounded-none" />
+          <Input
+            type="email"
+            placeholder="Work Email"
+            className="font-body border-boder bg-background focus:ring-success min-h-10 w-full flex-1 rounded-none border transition-all duration-300 ease-[var(--easing-smooth)] focus:ring-2 focus:ring-offset-2"
+          />
+          <Input
+            placeholder="I'm interested in..."
+            className="font-body border-boder bg-background focus:ring-success min-h-10 w-full flex-1 rounded-none border transition-all duration-300 ease-[var(--easing-smooth)] focus:ring-2 focus:ring-offset-2"
+          />
+          <Textarea
+            placeholder="Here's my message.."
+            className="font-body border-boder bg-background focus:ring-success w-full flex-1 rounded-none border transition-all duration-300 ease-[var(--easing-smooth)] focus:ring-2 focus:ring-offset-2"
+          />
         </div>
-        <div className="flex items-center justify-between gap-2 self-stretch text-white">
-          <div className="flex max-w-xl flex-col items-start gap-2">
-            <div className="flex h-6 items-center gap-2 self-stretch">
-              <Checkbox className="h-4 w-4 rounded-none border-white bg-white" />
-              <div className="text-xs">
+        {/* Terms */}
+        <div className="text-background flex justify-between">
+          <div className="flex max-w-xl flex-col gap-2">
+            <div className="flex items-center gap-2">
+              <Checkbox className="border-border bg-background cursor-pointer rounded-none" />
+              <p className="text-xs leading-relaxed">
                 {`I have read the `}
-                <span className="underline">Privacy Policy</span>.
-              </div>
+                <Link href="/privacy" target="_blank" className="underline">
+                  Privacy Policy
+                </Link>
+                .
+              </p>
             </div>
             <div className="flex items-center gap-2">
-              <Checkbox className="h-4 w-4 rounded-none border-white bg-white" />
-              <div className="text-xs leading-relaxed">
-                {`We'd love to keep in touch with solutions that may be of interest to you. Check this box if ${(<br />)}
+              <Checkbox className="border-border bg-background cursor-pointer rounded-none" />
+              <p className="text-xs leading-relaxed">
+                {`We'd love to keep in touch with solutions that may be of interest to you. Check this box if
                 you authorize 5Flow to contact you by phone or email. You can opt out at any time.`}
-              </div>
+              </p>
             </div>
           </div>
-          <Button className="bg-success text-foreground h-8 gap-1.5 rounded-none px-3">
-            <div className="relative font-semibold">Submit</div>
-            <MoveRightIcon className="h-4 w-4" strokeWidth={1.5} />
+          <Button
+            asChild
+            type="submit"
+            className="group/cta active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-0 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-150 ease-[var(--easing-smooth)] active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2 has-[>svg]:px-0"
+          >
+            <Link href="#" aria-label="Submit the contact form">
+              <span className="bg-success text-success-foreground group-hover/cta:bg-success/90 group-active/cta:bg-success/80 inline-flex h-9 items-center px-4 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta:px-3">
+                Submit
+              </span>
+              <span
+                className="bg-success text-success-foreground group-hover/cta:bg-success/90 group-active/cta:bg-success/80 ml-0 inline-flex h-9 w-9 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta:ml-2"
+                aria-hidden="true"
+              >
+                <MoveRightIcon className="h-4 w-4" />
+              </span>
+            </Link>
           </Button>
         </div>
-      </div>
+      </form>
     </div>
-  </div>
+  </FullBleedLines>
 );
 
 export default Form;

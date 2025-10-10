@@ -7,7 +7,11 @@ const Team: NextPage = () => {
   return (
     <div className="font-heading flex w-full flex-col gap-8 text-6xl">
       <FullBleedLines className="flex items-start justify-end gap-8 px-2">
-        <ArrowUpRight className="bg-accent1 text-background h-32 w-32" strokeWidth={1.5} />
+        <ArrowUpRight
+          size={126}
+          strokeWidth={1.5}
+          className="text-background bg-accent1 hover:ring-primary/50 hover:ring-offset-background origin-center cursor-pointer transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6"
+        />
         <b className="text-right leading-none tracking-tighter">
           <span>{`Meet The `}</span>
           <br />
