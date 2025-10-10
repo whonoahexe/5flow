@@ -1,7 +1,7 @@
-import PageHeader from '@/components/core/page-header';
 import { Cta } from '@/components/layout';
+import PageHeader from '@/components/core/page-header';
 import Form from '@/components/page/contact/Form';
-import { Hero } from '@/components/page/contact/Hero';
+import Hero from '@/components/page/contact/Hero';
 
 export default function Contact() {
   return (

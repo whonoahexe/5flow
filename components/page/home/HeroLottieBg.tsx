@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Lottie, { type LottieRefCurrentProps } from 'lottie-react';
-import HeroBg from './HeroBg';
+// import HeroBg from './HeroBg';
 
 type AnimationData = Record<string, unknown>;
 

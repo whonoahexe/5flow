@@ -1,15 +1,14 @@
+import Image from 'next/image';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
-import type { NextPage } from 'next';
-import Image from 'next/image';
 
-const Workflow: NextPage = () => {
-  const workflowImages = [
-    { src: '/about/workflow2.png', width: 400, height: 120, alt: 'Workflow security process 1' },
-    { src: '/about/workflow1.png', width: 250, height: 120, alt: 'Workflow security process 2' },
-    { src: '/about/workflow2.png', width: 400, height: 120, alt: 'Workflow security process 3' },
-  ];
+const workflowImages = [
+  { src: '/about/workflow2.png', width: 400, height: 120, alt: 'Workflow security process 1' },
+  { src: '/about/workflow1.png', width: 250, height: 120, alt: 'Workflow security process 2' },
+  { src: '/about/workflow2.png', width: 400, height: 120, alt: 'Workflow security process 3' },
+];
 
+const Workflow = () => {
   return (
     <div className="flex w-full flex-col items-start gap-14 text-center">
       <FullBleedLines className="font-heading flex w-full justify-center">

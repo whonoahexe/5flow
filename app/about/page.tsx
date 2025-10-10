@@ -1,6 +1,6 @@
 import { Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
-import { Hero } from '@/components/page/about/Hero';
+import Hero from '@/components/page/about/Hero';
 import Vision from '@/components/page/about/Vision';
 import Mission from '@/components/page/about/Mission';
 import Workflow from '@/components/page/about/Workflow';

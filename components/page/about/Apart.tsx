@@ -1,9 +1,8 @@
+import { ArrowDown, Award, BadgeCheck, ShieldCheck, TrendingUp } from 'lucide-react';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
-import { ArrowDown, Award, BadgeCheck, ShieldCheck, TrendingUp } from 'lucide-react';
-import type { NextPage } from 'next';
 
-const Apart: NextPage = () => {
+const Apart = () => {
   const features = [
     {
       icon: BadgeCheck,

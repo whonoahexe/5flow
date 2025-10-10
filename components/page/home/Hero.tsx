@@ -1,13 +1,12 @@
 import Link from 'next/link';
+import { MoveUpRight } from 'lucide-react';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import { Button } from '@/components/ui/button';
-import { MoveUpRight } from 'lucide-react';
 import HeroLottieBg from './HeroLottieBg';
 
 const Hero = () => {
   return (
     <div className="relative flex min-h-dvh flex-col justify-center">
-      {/* Hero background: Lottie (replaces pixel grid for now) */}
       <div className="pointer-events-none absolute top-[88px] bottom-0 left-1/2 -z-10 w-screen -translate-x-1/2">
         <HeroLottieBg />
       </div>

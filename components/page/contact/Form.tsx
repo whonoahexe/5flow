@@ -1,11 +1,11 @@
+import Link from 'next/link';
+import Image from 'next/image';
 import { MoveRightIcon } from 'lucide-react';
+import FullBleedLines from '@/components/core/full-bleed-lines';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
-import Image from 'next/image';
-import FullBleedLines from '@/components/core/full-bleed-lines';
-import Link from 'next/link';
 
 const Form = () => (
   <FullBleedLines className="bg-foreground/5 w-full p-2">

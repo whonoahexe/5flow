@@ -1,9 +1,8 @@
+import { ArrowUpRight } from 'lucide-react';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
-import { ArrowUpRight } from 'lucide-react';
-import type { NextPage } from 'next';
 
-const Team: NextPage = () => {
+const Team = () => {
   return (
     <div className="font-heading flex w-full flex-col gap-8 text-6xl">
       <FullBleedLines className="flex items-start justify-end gap-8 px-2">

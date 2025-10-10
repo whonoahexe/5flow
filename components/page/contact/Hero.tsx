@@ -1,8 +1,8 @@
+import { ArrowDownLeft } from 'lucide-react';
 import InlineHighlight from '@/components/core/inline-highlight';
 import FullBleedLines from '@/components/core/full-bleed-lines';
-import { ArrowDownLeft } from 'lucide-react';
 
-export function Hero() {
+const Hero = () => {
   return (
     <div className="mt-32 flex flex-col gap-14 px-2">
       <FullBleedLines className="flex w-full justify-between">
@@ -24,4 +24,6 @@ export function Hero() {
       </div>
     </div>
   );
-}
+};
+
+export default Hero;

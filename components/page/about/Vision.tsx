@@ -1,8 +1,7 @@
-import FullBleedLines from '@/components/core/full-bleed-lines';
 import { ArrowUpRight } from 'lucide-react';
-import type { NextPage } from 'next';
+import FullBleedLines from '@/components/core/full-bleed-lines';
 
-const Vision: NextPage = () => {
+const Vision = () => {
   return (
     <FullBleedLines>
       <div className="font-heading flex w-full flex-col items-start">
