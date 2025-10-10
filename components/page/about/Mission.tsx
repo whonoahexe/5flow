@@ -7,7 +7,7 @@ const Mission: NextPage = () => {
     <FullBleedLines>
       <div className="font-heading flex w-full flex-col items-start">
         <div className="flex items-center justify-between gap-0 self-stretch">
-          <p className="w-full max-w-2xl text-3xl leading-none tracking-tight">
+          <p className="w-full max-w-2xl text-4xl leading-none tracking-tight">
             Develop industry leading tools across the entire GTM funnel, ultimately becoming a platform used by all
             manufacturers, brand owners, and retailers.
           </p>
@@ -25,7 +25,7 @@ const Mission: NextPage = () => {
           </div>
           <div className="flex w-3xl items-start justify-between gap-0">
             <ArrowUpLeft className="text-accent1 h-52 w-52" strokeWidth={1} />
-            <b className="leading-none tracking-tighter">
+            <b className="text-8xl leading-none tracking-tighter">
               The. <br /> Mission.
             </b>
           </div>

@@ -12,7 +12,7 @@ const Vision: NextPage = () => {
             <div className="bg-accent1 h-48 w-48" />
             <div className="bg-success h-48 w-48" />
           </div>
-          <p className="w-full max-w-4xl text-right text-3xl leading-none tracking-tight">
+          <p className="w-full max-w-4xl text-right text-4xl leading-none tracking-tight">
             To develop innovative cloud-smart solutions for brand owners supercharged by data, tech, and AI in order to
             streamline and accelerate the GTM process from ideation-to implementation so brand owners can adapt to
             changes faster.

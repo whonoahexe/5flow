@@ -32,49 +32,39 @@ const Apart: NextPage = () => {
   ];
 
   return (
-    <div className="py-16">
-      <FullBleedLines>
-        <div className="text-gray font-heading relative box-border flex w-full flex-col items-start gap-32 text-left">
-          <div className="text-gray relative flex w-full flex-col items-start gap-8 text-left text-6xl">
-            <div className="box-border flex w-full flex-row items-start gap-8 px-2 text-left">
-              <div className="flex h-32">
-                <b className="top-0 left-0 inline-block leading-none tracking-tighter">
-                  <span>{`What Sets`}</span>
-                  <br />
-                  <span>{`Us `}</span>
-                  <span className="text-white">
-                    <InlineHighlight>Apart?</InlineHighlight>
-                  </span>
-                </b>
-              </div>
-              <ArrowDown className="text-accent1 h-32 w-32" strokeWidth={2} />
-            </div>
+    <>
+      <div className="flex w-full flex-col gap-8">
+        <FullBleedLines className="font-heading flex w-full gap-8 px-2">
+          <b className="text-foreground text-6xl leading-none tracking-tighter">
+            <span>What Sets</span>
+            <br />
+            <span>{`Us `}</span>
+            <span>
+              <InlineHighlight className="text-background">Apart?</InlineHighlight>
+            </span>
+          </b>
+          <ArrowDown className="text-accent1 h-32 w-32" strokeWidth={1.5} />
+        </FullBleedLines>
 
-            <div className="flex items-start justify-between gap-0 self-stretch text-2xl">
-              {features.map((feature, index) => {
-                return (
-                  <div key={index} className="flex flex-1 flex-col items-start gap-4 self-stretch px-8 py-0">
-                    <div className="flex flex-col items-start justify-center gap-2 py-7">
-                      <div className="bg-primary/10 box-border flex min-h-10 min-w-10 items-center justify-center rounded-lg">
-                        <feature.icon className="text-primary h-5 w-5" strokeWidth={2} />
-                      </div>
-                      <div className="flex flex-col items-start">
-                        <b className="relative text-2xl leading-relaxed tracking-tight">{feature.title}</b>
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-start justify-center self-stretch px-0 py-7 text-base">
-                      <div className="relative self-stretch leading-relaxed font-medium tracking-tight">
-                        {feature.description}
-                      </div>
-                    </div>
+        <FullBleedLines className="flex w-full justify-between">
+          {features.map((feature, index) => {
+            return (
+              <div key={index} className="flex flex-1 flex-col gap-4 px-8">
+                <div className="flex flex-col gap-2 py-7">
+                  <div className="bg-primary/10 flex h-10 w-10 items-center justify-center rounded-lg">
+                    <feature.icon className="text-primary h-5 w-5" strokeWidth={2} />
                   </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </FullBleedLines>
-    </div>
+                  <b className="text-foreground relative text-2xl leading-relaxed tracking-tight">{feature.title}</b>
+                </div>
+                <div className="flex items-center px-0 py-7">
+                  <p className="text-foreground text-base leading-relaxed tracking-tight">{feature.description}</p>
+                </div>
+              </div>
+            );
+          })}
+        </FullBleedLines>
+      </div>
+    </>
   );
 };
 

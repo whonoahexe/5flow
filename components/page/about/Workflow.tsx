@@ -11,58 +11,40 @@ const Workflow: NextPage = () => {
   ];
 
   return (
-    <div className="font-heading relative box-border flex w-full flex-col items-start gap-32 py-16">
-      <div className="relative flex w-full flex-col items-center justify-center gap-14 text-center text-4xl">
-        <div className="relative text-7xl">
-          <FullBleedLines>
-            <b className="inline-block leading-none tracking-tighter">
-              <span>{`Trust Built into Every `}</span>
-              <br />
-              <span className="text-white">
-                <InlineHighlight>Workflow.</InlineHighlight>
-              </span>
-            </b>
-          </FullBleedLines>
-        </div>
-        <b className="w-5xl text-2xl leading-none tracking-tight">
-          <FullBleedLines>
-            At 5Flow, security is the foundation of how we work. Every workflow, every approval, every piece of data is
-            protected with enterprise-grade security standards.
-          </FullBleedLines>
+    <div className="flex w-full flex-col items-start gap-14 text-center">
+      <FullBleedLines className="font-heading flex w-full justify-center">
+        <b className="text-foreground text-6xl leading-none tracking-tighter">
+          <span>{`Trust Built into Every `}</span>
+          <br />
+          <InlineHighlight className="text-background">Workflow.</InlineHighlight>
         </b>
-        <FullBleedLines>
-          <div className="bg-foreground/5 flex items-center gap-2 self-stretch overflow-hidden p-2">
-            {workflowImages.map((image, index) => (
-              <div
-                key={index}
-                className="box-border flex h-38 flex-1 flex-col items-center justify-center overflow-hidden rounded-2xl border border-gray-300 bg-white"
-              >
-                <div className="flex items-center justify-center self-stretch">
-                  <Image
-                    className="max-h-full object-cover"
-                    width={image.width}
-                    height={image.height}
-                    sizes="100vw"
-                    alt={image.alt}
-                    src={image.src}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </FullBleedLines>
-        <div className="font-heading flex flex-col items-center justify-center self-stretch">
-          <div className="relative h-36 w-full max-w-5xl">
-            <div className="absolute top-0 left-0 inline-block leading-none tracking-tight">
-              <FullBleedLines>
-                {`We’re ISO 27001 certified, but we go beyond compliance. Our Information Security Management System
-                (ISMS) continuously monitors risks, applies preventive measures, and evolves to stay ahead of emerging
-                threats.`}
-              </FullBleedLines>
+      </FullBleedLines>
+      <FullBleedLines className="text-foreground mx-auto w-full max-w-5xl text-center text-2xl leading-none tracking-tight">
+        At 5Flow, security is the foundation of how we work. Every workflow, every approval, every piece of data is
+        protected with enterprise-grade security standards.
+      </FullBleedLines>
+      <FullBleedLines className="w-full">
+        <div className="bg-foreground/5 flex items-center gap-2 self-stretch overflow-hidden p-2">
+          {workflowImages.map((image, index) => (
+            <div
+              key={index}
+              className="border-border bg-background flex h-38 flex-1 items-center justify-center overflow-hidden rounded-2xl border"
+            >
+              <Image
+                className="object-cover"
+                width={image.width}
+                height={image.height}
+                sizes="100vw"
+                alt={image.alt}
+                src={image.src}
+              />
             </div>
-          </div>
+          ))}
         </div>
-      </div>
+      </FullBleedLines>
+      <FullBleedLines className="text-foreground mx-auto w-full max-w-6xl text-center text-4xl leading-none tracking-tight">
+        {`We’re ISO 27001 certified, but we go beyond compliance. Our Information Security Management System (ISMS) continuously monitors risks, applies preventive measures, and evolves to stay ahead of emerging threats.`}
+      </FullBleedLines>
     </div>
   );
 };

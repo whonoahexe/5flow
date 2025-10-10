@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${centuryGothic.variable} ${metropolis.variable} bg-background flex min-h-screen flex-col font-sans antialiased`}
+        className={`${centuryGothic.variable} ${metropolis.variable} bg-background text-foreground flex min-h-screen flex-col font-sans antialiased`}
       >
         <Navigation />
         <main className="relative flex-1">
