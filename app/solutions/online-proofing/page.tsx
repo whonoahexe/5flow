@@ -92,7 +92,7 @@ export default function OnlineProofing() {
   return (
     <div className="relative">
       <div className="container mx-auto mb-32">
-        <PageHeader title="wave" />
+        <PageHeader title="online proofing" />
 
         <div className="flex flex-col gap-32">
           <Hero {...heroData} />

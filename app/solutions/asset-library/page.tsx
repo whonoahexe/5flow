@@ -92,7 +92,7 @@ export default function AssetLibrary() {
   return (
     <div className="relative">
       <div className="container mx-auto mb-32">
-        <PageHeader title="wave" />
+        <PageHeader title="asset library" />
 
         <div className="flex flex-col gap-32">
           <Hero {...heroData} />

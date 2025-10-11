@@ -9,8 +9,8 @@ interface WorkflowStat {
 
 interface WorkflowProps {
   title1: string;
-  title2: String;
-  highlightTitle: String;
+  title2: string;
+  highlightTitle: string;
   subtitle: string;
   buttonText: string;
   statsData: WorkflowStat[];

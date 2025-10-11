@@ -1,6 +1,5 @@
 import { ArrowDownLeft } from 'lucide-react';
 import FullBleedLines from '@/components/core/full-bleed-lines';
-import InlineHighlight from '@/components/core/inline-highlight';
 
 interface WhyCard {
   title: string;

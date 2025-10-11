@@ -93,7 +93,7 @@ export default function AutomatedArtwork() {
   return (
     <div className="relative">
       <div className="container mx-auto mb-32">
-        <PageHeader title="wave" />
+        <PageHeader title="automated artwork" />
 
         <div className="flex flex-col gap-32">
           <Hero {...heroData} />
