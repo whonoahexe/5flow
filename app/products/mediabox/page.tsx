@@ -1,5 +1,6 @@
 import { BadgeDollarSign, HeartHandshake, ShieldCheck, ZapIcon } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
+import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/product/Hero';
 import How from '@/components/page/product/How';
@@ -147,7 +148,15 @@ export default function Mediabox() {
           />
           <What whatData={whatData} />
           <How howData={howData} />
-          <Why whyData={whyData} />
+          <Why
+            sectionTitle={
+              <>
+                <span className="text-foreground">Why You Need</span>
+                <InlineHighlight className="text-background">Mediabox</InlineHighlight>
+              </>
+            }
+            whyData={whyData}
+          />
           <Need
             title1={needData.title1}
             highlightTitle={needData.highlightTitle}
@@ -156,7 +165,15 @@ export default function Mediabox() {
             description={needData.description}
             buttonText={needData.buttonText}
           />
-          <Workflow title={workflowData.title} subtitle={workflowData.subtitle} statsData={workflowData.statsData} />
+          <Workflow
+            title={
+              <>
+                Trusted by <InlineHighlight>global brands</InlineHighlight>
+              </>
+            }
+            subtitle={workflowData.subtitle}
+            statsData={workflowData.statsData}
+          />
           <Contact />
         </div>
       </div>

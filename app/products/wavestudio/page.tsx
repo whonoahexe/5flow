@@ -7,6 +7,7 @@ import Need from '@/components/page/product/Need';
 import What from '@/components/page/product/What';
 import Why from '@/components/page/product/Why';
 import Workflow from '@/components/page/product/Workflow';
+import InlineHighlight from '@/components/core/inline-highlight';
 
 const whatData = [
   [
@@ -136,18 +137,26 @@ export default function Wavestudio() {
 
         <div className="flex flex-col gap-32">
           <Hero
-            logoSrc="/product/wave.svg"
+            logoSrc="/product/wave-studio.svg"
             logoAlt="Wave Brand"
             title="Big ideas. Bigger execution"
             subtitle="Scale your artwork production without scaling your team"
             description="WaveStudio combines automation with creative expertise. We turn endless artwork requests into fast, accurate, on-brand outputs so you can keep creating without burning out."
             imageSrc="/product/rectangle.png"
-            imageWidth={292}
+            imageWidth={682}
             imageAlt="rectangle"
           />
           <What whatData={whatData} />
           <How howData={howData} />
-          <Why whyData={whyData} />
+          <Why
+            sectionTitle={
+              <>
+                <span className="text-foreground">Why You Need</span>
+                <InlineHighlight className="text-background">WaveStudio</InlineHighlight>
+              </>
+            }
+            whyData={whyData}
+          />
           <Need
             title1={needData.title1}
             highlightTitle={needData.highlightTitle}
@@ -156,7 +165,15 @@ export default function Wavestudio() {
             description={needData.description}
             buttonText={needData.buttonText}
           />
-          <Workflow title={workflowData.title} subtitle={workflowData.subtitle} statsData={workflowData.statsData} />
+          <Workflow
+            title={
+              <>
+                <InlineHighlight>Faster</InlineHighlight> rollouts, <InlineHighlight>fewer </InlineHighlight> headaches
+              </>
+            }
+            subtitle={workflowData.subtitle}
+            statsData={workflowData.statsData}
+          />
           <Contact />
         </div>
       </div>

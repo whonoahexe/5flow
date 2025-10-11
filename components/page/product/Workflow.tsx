@@ -8,7 +8,7 @@ interface WorkflowStat {
 }
 
 interface WorkflowProps {
-  title: string;
+  title: React.ReactNode;
   subtitle: string;
   statsData: WorkflowStat[];
 }
@@ -16,9 +16,9 @@ interface WorkflowProps {
 const Workflow = ({ title, subtitle, statsData }: WorkflowProps) => {
   return (
     <div className="font-heading relative flex w-full flex-col gap-8">
-      <FullBleedLines className="flex w-full items-center justify-between">
-        <div className="flex flex-1 gap-8">
-          <b className="max-w-md text-6xl leading-none tracking-tight">{title}</b>
+      <FullBleedLines className="flex flex-1 items-center justify-between">
+        <div className="flex flex-1 items-center gap-8">
+          <b className="max-w-lg text-6xl leading-none tracking-tight">{title}</b>
           <ArrowDown className="text-accent1 h-32 w-32" strokeWidth={1.5} />
         </div>
 
@@ -26,7 +26,7 @@ const Workflow = ({ title, subtitle, statsData }: WorkflowProps) => {
           <b className="relative max-w-xl text-2xl leading-none tracking-tight">{subtitle}</b>
           <Button
             size="lg"
-            className="group/cta-hero active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-3 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-300 ease-[var(--easing-smooth)] hover:gap-0 active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2"
+            className="group/cta-hero active:ring-primary/50 active:ring-offset-background inline-flex w-fit origin-left items-center justify-start gap-3 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-300 ease-[var(--easing-smooth)] hover:gap-0 active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2"
           >
             <span className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 items-center px-6 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta-hero:px-7">
               See Case Studies
@@ -41,7 +41,7 @@ const Workflow = ({ title, subtitle, statsData }: WorkflowProps) => {
         </div>
       </FullBleedLines>
 
-      <FullBleedLines className="bg-foreground/5 flex w-full gap-2 p-2">
+      <FullBleedLines className="bg-foreground/5 flex w-full flex-1 gap-2 p-2">
         {statsData.map((stat, index) => (
           <div
             key={index}

@@ -1,9 +1,13 @@
+import { BadgeDollarSign, HeartHandshake, ShieldCheck, ZapIcon } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
+import InlineHighlight from '@/components/core/inline-highlight';
 import Hero from '@/components/page/product/Hero';
 import Need from '@/components/page/product/Need';
 import What from '@/components/page/product/What';
 import Workflow from '@/components/page/product/Workflow';
+import How from '@/components/page/product/How';
+import Why from '@/components/page/product/Why';
 
 const whatData = [
   [
@@ -32,8 +36,67 @@ const whatData = [
   ],
 ];
 
+const howData = [
+  {
+    title: 'Smarter approvals',
+    subtitle: 'Traceable, transparent, and faster loops',
+    description:
+      'WAVE digitizes approvals with annotations, comparisons, and automated reminders, keeping reviews clear and accountable.',
+    buttonText: 'Discover Approvals',
+    imageSrc: '/product/rectangle.png',
+  },
+  {
+    title: 'Centralized files',
+    subtitle: 'One version, one source of truth',
+    description: 'Every artwork, asset, and update lives in one platform, so teams always work from the right file.',
+    buttonText: 'Discover Asset Hub',
+    imageSrc: '/product/rectangle.png',
+  },
+  {
+    title: 'Compliance built in',
+    subtitle: 'Every step documented, every change tracked',
+    description:
+      'With audit-ready records, version control, and regulatory checks, WAVE makes compliance part of the process.',
+    buttonText: 'Discover Compliance',
+    imageSrc: '/product/rectangle.png',
+  },
+  {
+    title: 'Live project visibility',
+    subtitle: 'See status, spot bottlenecks, stay in control',
+    description: 'Dashboards, milestones, and timelines give managers instant clarity with no chasing updates.',
+    buttonText: 'Discover Visibility',
+    imageSrc: '/product/rectangle.png',
+  },
+];
+
+const whyData = [
+  {
+    title: 'Speed to market',
+    desc: 'Cut approval times by up to 52%',
+    sub: 'Faster launches mean earlier shelf presence, stronger campaigns, and quicker ROI.',
+    icon: ZapIcon,
+  },
+  {
+    title: 'Team confidence',
+    desc: 'Clear roles, clear files, clear results',
+    sub: 'Teams spend less time firefighting and more time delivering work that makes an impact.',
+    icon: HeartHandshake,
+  },
+  {
+    title: 'Risk reduction',
+    desc: 'Protect revenue, reputation, and compliance',
+    sub: 'Traceable workflows reduce costly errors, recalls, and regulatory fines.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Cost efficiency',
+    desc: 'Fewer errors, fewer reprints',
+    sub: 'With accuracy built in, brands save on correction rounds and avoid wasted print runs.',
+    icon: BadgeDollarSign,
+  },
+];
+
 const workflowData = {
-  title: 'Trusted',
   subtitle: 'From retailers to pharma to FMCG, everyone loves to surf the WAVE',
   buttonText: 'See Case Studies',
   statsData: [
@@ -81,9 +144,19 @@ export default function Wave() {
             description="WAVE gives brand, packaging, and regulatory teams a single platform to brief, review, and approve artwork. No more confusion, no more delays. Just clear workflows that move projects forward."
             imageSrc="/product/rectangle.png"
             imageWidth={292}
-            imageAlt="Product logo"
+            imageAlt="rectangle"
           />
           <What whatData={whatData} />
+          <How howData={howData} />
+          <Why
+            sectionTitle={
+              <>
+                <span className="text-foreground">Why You Need</span>
+                <InlineHighlight className="text-background">WAVE</InlineHighlight>
+              </>
+            }
+            whyData={whyData}
+          />
           <Need
             title1={needData.title}
             highlightTitle={needData.highlightTitle}
@@ -92,7 +165,15 @@ export default function Wave() {
             description={needData.description}
             buttonText={needData.buttonText}
           />
-          <Workflow title={workflowData.title} subtitle={workflowData.subtitle} statsData={workflowData.statsData} />
+          <Workflow
+            title={
+              <>
+                Trusted <InlineHighlight>worldwide</InlineHighlight>
+              </>
+            }
+            subtitle={workflowData.subtitle}
+            statsData={workflowData.statsData}
+          />
           <Contact />
         </div>
       </div>
