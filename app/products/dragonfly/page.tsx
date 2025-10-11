@@ -1,12 +1,13 @@
-import { Cta } from '@/components/layout';
-import { Hero } from '@/components/page/product/Hero';
+import { BadgeDollarSign, HeartHandshake, ShieldCheck, ZapIcon } from 'lucide-react';
+import { Contact, Cta } from '@/components/layout';
+import InlineHighlight from '@/components/core/inline-highlight';
+import PageHeader from '@/components/core/page-header';
+import Hero from '@/components/page/product/Hero';
 import How from '@/components/page/product/How';
 import Need from '@/components/page/product/Need';
 import What from '@/components/page/product/What';
 import Why from '@/components/page/product/Why';
 import Workflow from '@/components/page/product/Workflow';
-import Contact from '@/components/page/product/Contact';
-import { BadgeDollarSign, HeartHandshake, ShieldCheck, ZapIcon } from 'lucide-react';
 
 const whatData = [
   [
@@ -128,58 +129,55 @@ const needData = {
   buttonText: 'Talk to Us',
 };
 
-const contactData = {
-  title1: 'Ready to make your projects ',
-  highlightTitle: 'fly',
-  title2: '?',
-  description: 'See how Dragonfly unifies packaging, marketing, and creative workflows into one agile system.',
-  buttonText: 'Book A Demo',
-  imageSrc: '/product/contact.png',
-  imageAlt: 'contact-image',
-};
-
 export default function Dragonfly() {
   return (
     <div className="relative">
       <div className="container mx-auto mb-32">
-        <Hero
-          brandName="dragonfly"
-          logoSrc="/product/wave.svg"
-          logoAlt="Wave Brand"
-          title="Make your projects fly"
-          subtitle="Streamlined workflows for complex brand execution"
-          description="Dragonfly is a web-based graphics and packaging management platform that cuts through miscommunication, complexity, and delays. Built for agility and scale, it keeps your brand projects moving on time, on budget, every time."
-          buttonText="Book A Demo"
-          imageSrc="/product/rectangle.png"
-          imageAlt="rectangle"
-        />
-        <What whatData={whatData} />
-        <How howData={howData} />
-        <Why whyData={whyData} />
-        <Need
-          title1={needData.title1}
-          highlightTitle={needData.highlightTitle}
-          title2={needData.title2}
-          subtitle={needData.subtitle}
-          description={needData.description}
-          buttonText={needData.buttonText}
-        />
-        <Workflow
-          title={workflowData.title}
-          subtitle={workflowData.subtitle}
-          buttonText={workflowData.buttonText}
-          statsData={workflowData.statsData}
-        />
-        <Contact
-          title1={contactData.title1}
-          highlightTitle={contactData.highlightTitle}
-          title2={contactData.title2}
-          description={contactData.description}
-          buttonText={contactData.buttonText}
-          imageSrc={contactData.imageSrc}
-          imageAlt={contactData.imageAlt}
-        />
+        <PageHeader title="dragonfly" />
+
+        <div className="flex flex-col gap-32">
+          <Hero
+            logoSrc="/product/wave.svg"
+            logoAlt="Wave Brand"
+            title="Make your projects fly"
+            subtitle="Streamlined workflows for complex brand execution"
+            description="Dragonfly is a web-based graphics and packaging management platform that cuts through miscommunication, complexity, and delays. Built for agility and scale, it keeps your brand projects moving on time, on budget, every time."
+            imageSrc="/product/rectangle.png"
+            imageWidth={292}
+            imageAlt="rectangle"
+          />
+          <What whatData={whatData} />
+          <How howData={howData} />
+          <Why
+            sectionTitle={
+              <>
+                <span className="text-foreground">Why You Need</span>
+                <InlineHighlight className="text-background">Dragonfly</InlineHighlight>
+              </>
+            }
+            whyData={whyData}
+          />
+          <Need
+            title1={needData.title1}
+            highlightTitle={needData.highlightTitle}
+            title2={needData.title2}
+            subtitle={needData.subtitle}
+            description={needData.description}
+            buttonText={needData.buttonText}
+          />
+          <Workflow
+            title={
+              <>
+                Trusted by <InlineHighlight>global leaders</InlineHighlight>
+              </>
+            }
+            subtitle={workflowData.subtitle}
+            statsData={workflowData.statsData}
+          />
+          <Contact />
+        </div>
       </div>
+
       <Cta
         leftTitle="Experience"
         leftSubtitle="What’s Next in"

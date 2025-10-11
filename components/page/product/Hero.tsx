@@ -1,85 +1,68 @@
-import FullBleedLines from '@/components/core/full-bleed-lines';
-import { MoveUpRight } from 'lucide-react';
-import Image from 'next/image';
-import { Button } from '@/components/ui/button';
 import React from 'react';
+import Image from 'next/image';
+import { MoveUpRight } from 'lucide-react';
+import FullBleedLines from '@/components/core/full-bleed-lines';
+import { Button } from '@/components/ui/button';
 
 interface HeroProps {
-  brandName: string;
   logoSrc: string;
   logoAlt: string;
   title: string;
   subtitle: string;
   description: string;
-  buttonText: string;
   imageSrc: string;
+  imageWidth: number;
   imageAlt?: string;
 }
 
-export function Hero({
-  brandName,
-  logoSrc,
-  logoAlt,
-  title,
-  subtitle,
-  description,
-  buttonText,
-  imageSrc,
-  imageAlt = '',
-}: HeroProps) {
+const Hero = ({ logoSrc, logoAlt, title, subtitle, description, imageSrc, imageWidth, imageAlt = '' }: HeroProps) => {
   return (
-    <>
-      {/* Page header */}
-      <div className="text-gray font-heading relative box-border w-full flex-col items-start gap-32 pt-52 text-left text-4xl">
+    <div className="relative mt-32 w-full flex-col">
+      {/* Product logo */}
+      <FullBleedLines className="flex h-20">
+        <Image className="relative h-20" width={imageWidth} height={80} alt={logoAlt} src={logoSrc} />
+      </FullBleedLines>
+
+      {/* Product headling */}
+      <div className="font-heading mt-14 flex flex-col gap-4">
         <FullBleedLines>
-          <div className="font-heading relative flex w-full items-end justify-end text-right text-5xl">
-            <div className="flex items-center gap-6">
-              <b className="text-foreground leading-none tracking-tight">{brandName}</b>
-              <div className="bg-primary h-10 w-10" />
-            </div>
+          <div className="max-w-5xl">
+            <b className="text-8xl leading-none tracking-tighter">{title}</b>
           </div>
         </FullBleedLines>
-
-        {/* Content */}
-        <div className="text-gray font-body relative mt-32 box-border flex w-full flex-col items-start gap-14 px-2 py-0 text-left text-8xl">
-          <div className="box-border flex h-20 items-start gap-1 overflow-hidden">
-            <Image className="relative h-20 w-76" width={384} height={80} sizes="100vw" alt={logoAlt} src={logoSrc} />
-          </div>
-          <div className="font-heading flex flex-col items-start gap-4">
-            <FullBleedLines>
-              <div className="max-w-5xl">
-                <b className="leading-none tracking-tighter">{title}</b>
-              </div>
-            </FullBleedLines>
-            <div className="text-primary text-5xl leading-none tracking-tighter">
-              <FullBleedLines>{subtitle}</FullBleedLines>
-            </div>
-          </div>
-          <div className="font-body relative inline-block w-[642px] text-base leading-[150%] tracking-[-0.04em]">
-            <FullBleedLines>{description}</FullBleedLines>
-          </div>
-          <FullBleedLines>
-            <div className="flex gap-8">
-              <Button variant="default" size="lg" className="rounded-none">
-                {buttonText}
-              </Button>
-              <div className="bg-primary flex h-10 w-10 items-center justify-center">
-                <MoveUpRight className="text-background" />
-              </div>
-            </div>
-          </FullBleedLines>
-          <div className="bg-foreground/5 flex flex-col items-center justify-center self-stretch overflow-hidden p-2">
-            <Image
-              className="relative w-full max-w-full shrink-0 self-stretch overflow-hidden rounded-[20px] object-contain"
-              width={1520}
-              height={480}
-              sizes="100vw"
-              alt={imageAlt}
-              src={imageSrc}
-            />
-          </div>
+        <div className="text-primary text-5xl leading-none tracking-tighter">
+          <FullBleedLines>{subtitle}</FullBleedLines>
         </div>
       </div>
-    </>
+
+      {/* Product details */}
+      <div className="relative mt-14 w-[642px] text-base leading-[150%] tracking-tight">
+        <FullBleedLines>{description}</FullBleedLines>
+      </div>
+
+      <FullBleedLines className="mt-14">
+        <Button
+          size="lg"
+          className="group/cta-hero active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-3 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-300 ease-[var(--easing-smooth)] hover:gap-0 active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2"
+        >
+          <span className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 items-center px-6 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta-hero:px-7">
+            {`Let’s Talk Transformation`}
+          </span>
+          <span
+            className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 w-10 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)]"
+            aria-hidden="true"
+          >
+            <MoveUpRight className="h-4 w-4" />
+          </span>
+        </Button>
+      </FullBleedLines>
+
+      {/* Product image */}
+      <FullBleedLines className="bg-foreground/5 mt-16 p-2">
+        <Image className="relative w-full rounded-[20px]" width={1520} height={480} alt={imageAlt} src={imageSrc} />
+      </FullBleedLines>
+    </div>
   );
-}
+};
+
+export default Hero;

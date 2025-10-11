@@ -1,7 +1,7 @@
 import { ArrowDownLeft, MoveUpRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
-import { Button } from '@/components/ui/button';
 
 interface Problem {
   title: string;
@@ -15,48 +15,46 @@ interface WhatProps {
 
 const What = ({ whatData }: WhatProps) => {
   return (
-    <div className="text-gray font-heading relative box-border flex w-full flex-col items-start gap-12 py-16 text-left">
+    <div className="relative flex w-full flex-col gap-14">
       <FullBleedLines className="flex w-full justify-between">
-        <p className="font-heading w-full max-w-4xl text-6xl leading-none font-bold tracking-tight">
-          <InlineHighlight>What</InlineHighlight> do we <br /> Solve ?
-        </p>
-        <ArrowDownLeft strokeWidth={1.5} className="text-accent1 h-32 w-32" />
+        <div className="relative h-32 w-full max-w-sm">
+          <b className="font-heading text-6xl leading-none tracking-tighter">
+            <InlineHighlight className="text-background">What</InlineHighlight>
+            <span className="text-foreground"> Do We Solve?</span>
+          </b>
+        </div>
+        <ArrowDownLeft size={126} className="text-accent1" strokeWidth={1.5} />
       </FullBleedLines>
 
-      <div className="text-gray font-heading flex w-full flex-col gap-8">
+      <FullBleedLines className="flex w-full flex-col gap-8">
         {whatData.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex justify-between gap-8 self-stretch">
+          <div key={rowIndex} className="flex w-full justify-between gap-8">
             {row.map((problem, colIndex) => (
-              <div
-                key={colIndex}
-                className="text-gray font-heading relative flex h-full w-full flex-1 flex-col items-start gap-8 text-left text-4xl"
-              >
-                <b className="relative self-stretch leading-none tracking-tight">{problem.title}</b>
-                <div className="flex h-18 items-start justify-between gap-0 self-stretch text-xl">
-                  <div className="flex flex-1 flex-col items-start self-stretch">
-                    <div className="relative inline-block max-w-sm leading-tight tracking-tight">
-                      {problem.subtitle}
-                    </div>
-                  </div>
-                  <div className="flex flex-1 flex-col items-center justify-center">
-                    <div className="relative inline-block max-w-sm leading-tight tracking-tight">
-                      {problem.description}
-                    </div>
-                  </div>
+              <div key={colIndex} className="relative flex flex-1 flex-col gap-8">
+                <b className="text-4xl leading-none tracking-tight">{problem.title}</b>
+                <div className="flex justify-between text-xl">
+                  <p className="flex max-w-88 flex-1 leading-none tracking-tight">{problem.subtitle}</p>
+                  <p className="flex max-w-88 flex-1 leading-none tracking-tight">{problem.description}</p>
                 </div>
-                <div className="flex gap-8">
-                  <Button variant="default" size="lg" className="rounded-none">
+                <Button
+                  size="sm"
+                  className="group/cta-hero active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-3 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-300 ease-[var(--easing-smooth)] hover:gap-0 active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2"
+                >
+                  <span className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 items-center px-6 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta-hero:px-7">
                     See the fix
-                  </Button>
-                  <div className="bg-primary flex h-10 w-10 items-center justify-center">
-                    <MoveUpRight className="text-background" />
-                  </div>
-                </div>
+                  </span>
+                  <span
+                    className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 w-10 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)]"
+                    aria-hidden="true"
+                  >
+                    <MoveUpRight className="h-4 w-4" />
+                  </span>
+                </Button>
               </div>
             ))}
           </div>
         ))}
-      </div>
+      </FullBleedLines>
     </div>
   );
 };
