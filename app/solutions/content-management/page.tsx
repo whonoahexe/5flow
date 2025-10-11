@@ -1,9 +1,10 @@
-import { Cta } from '@/components/layout';
-import Contact from '@/components/page/solutions/Contact';
-import { Hero } from '@/components/page/solutions/Hero';
-import How from '@/components/page/solutions/How';
+import { Contact, Cta } from '@/components/layout';
+import PageHeader from '@/components/core/page-header';
+import Hero from '@/components/page/solutions/Hero';
+import How from '@/components/page/product/How';
 import Why from '@/components/page/solutions/Why';
-import Workflow from '@/components/page/solutions/Workflow';
+import Workflow from '@/components/page/product/Workflow';
+import InlineHighlight from '@/components/core/inline-highlight';
 
 export default function ContentManagement() {
   const heroData = {
@@ -94,31 +95,29 @@ export default function ContentManagement() {
   return (
     <div className="relative">
       <div className="container mx-auto mb-32">
-        <Hero {...heroData} />
-        <How howData={howData} />
-        <Why whyData={whyData} />
-        <Workflow
-          title1="Trusted across "
-          title2=""
-          highlightTitle="industries"
-          subtitle="Content that scales without errors"
-          buttonText="See Case Studies"
-          statsData={[
-            { label: 'faster product launches', value: '75%' },
-            { label: 'fewer late files', value: '50%' },
-            { label: 'across Retail, Pharma, FMCG, and Beauty', value: 'Trusted' },
-          ]}
-        />
-        <Contact
-          highlightTitle="start feeling"
-          title1="Prepared to "
-          title2="content?"
-          description="Discover how 5Flow’s Content Management solution centralizes data, simplifies approvals, and accelerates global launches."
-          buttonText="Book A Demo"
-          imageSrc="/product/contact.png"
-          imageAlt="Contact illustration"
-        />
+        <PageHeader title="wave" />
+
+        <div className="flex flex-col gap-32">
+          <Hero {...heroData} />
+          <How howData={howData} />
+          <Why whyData={whyData} />
+          <Workflow
+            title={
+              <>
+                Trusted by <InlineHighlight>global leaders</InlineHighlight>
+              </>
+            }
+            subtitle="Numbers that matter"
+            statsData={[
+              { label: 'faster product launches', value: '75%' },
+              { label: 'fewer late files', value: '50%' },
+              { label: 'across Retail, Pharma, FMCG, and Beauty', value: 'Trusted' },
+            ]}
+          />
+          <Contact />
+        </div>
       </div>
+
       <Cta
         leftTitle="Experience"
         leftSubtitle="What’s Next in"

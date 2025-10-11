@@ -1,28 +1,24 @@
-import { Cta } from '@/components/layout';
-import Contact from '@/components/page/solutions/Contact';
-import { Hero } from '@/components/page/solutions/Hero';
-import How from '@/components/page/solutions/How';
+import { Contact, Cta } from '@/components/layout';
+import PageHeader from '@/components/core/page-header';
+import Hero from '@/components/page/solutions/Hero';
+import How from '@/components/page/product/How';
 import Why from '@/components/page/solutions/Why';
-import Workflow from '@/components/page/solutions/Workflow';
+import Workflow from '@/components/page/product/Workflow';
+import InlineHighlight from '@/components/core/inline-highlight';
 
 export default function ArtworkManagement() {
   const heroData = {
-    brandName: 'artwork management',
-    logoSrc: '/logo.svg',
-    logoAlt: '5Flow logo',
     title: 'Artwork management without the chaos',
     subtitle: 'Centralize, streamline, and simplify every artwork project',
     description:
       'Our Artwork Management ensures that brands, designers, and regulatory teams finally get one source of truth. No more version hunts, long email threads, or missed deadlines. Just a clear, connected workflow that keeps projects accurate and on time.',
-    buttonText: 'See it in Action',
-    buttonLink: '/contact', // dynamic target for CTA
     imageSrc: '/product/rectangle.png',
     imageAlt: 'Artwork management preview',
   };
 
   const howData = [
     {
-      heading: 'Artwork Management', // kept for top heading
+      heading: 'Artwork Management',
       title: 'Centralized platform',
       subtitle: 'One hub for every file',
       description:
@@ -100,30 +96,27 @@ export default function ArtworkManagement() {
   return (
     <div className="relative">
       <div className="container mx-auto mb-32">
-        <Hero {...heroData} />
-        <How howData={howData} />
-        <Why whyData={whyData} />
-        <Workflow
-          title1="Trusted by "
-          title2=""
-          highlightTitle="global leaders"
-          subtitle="Numbers that matter"
-          buttonText="See Case Studies"
-          statsData={[
-            { label: 'faster product launches', value: '75%' },
-            { label: 'fewer late files', value: '50%' },
-            { label: 'across Retail, Pharma, FMCG, and Beauty', value: 'Trusted' },
-          ]}
-        />
-        <Contact
-          highlightTitle="Simplify"
-          title1="Ready to "
-          title2=" Artwork Management ?"
-          description="See how 5Flow’s Artwork Management solution can streamline your process, reduce errors, and accelerate launches."
-          buttonText="Book A Demo"
-          imageSrc="/product/contact.png"
-          imageAlt="Contact illustration"
-        />
+        <PageHeader title="wave" />
+
+        <div className="flex flex-col gap-32">
+          <Hero {...heroData} />
+          <How howData={howData} />
+          <Why whyData={whyData} />
+          <Workflow
+            title={
+              <>
+                Trusted by <InlineHighlight>global leaders</InlineHighlight>
+              </>
+            }
+            subtitle="Numbers that matter"
+            statsData={[
+              { label: 'faster product launches', value: '75%' },
+              { label: 'fewer late files', value: '50%' },
+              { label: 'across Retail, Pharma, FMCG, and Beauty', value: 'Trusted' },
+            ]}
+          />
+          <Contact />
+        </div>
       </div>
 
       <Cta

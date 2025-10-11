@@ -21,7 +21,7 @@ interface HowProps {
 const How = ({ howData }: HowProps) => {
   const headingTopic = howData?.[0]?.heading ?? 'Artwork Management'; // dynamic part
   return (
-    <div className="text-gray font-heading relative box-border flex w-full flex-col items-start gap-5 py-16 text-left">
+    <div className="text-gray font-heading relative box-border flex w-full flex-col items-start gap-5 text-left">
       <FullBleedLines className="flex w-full justify-between">
         <p className="font-heading w-full max-w-4xl text-6xl leading-none font-bold tracking-tight">
           <InlineHighlight>How</InlineHighlight> {headingTopic} <br /> Work ?
