@@ -1,9 +1,9 @@
-import { Cta } from '@/components/layout';
-import { Hero } from '@/components/page/product/Hero';
+import { Contact, Cta } from '@/components/layout';
+import PageHeader from '@/components/core/page-header';
+import Hero from '@/components/page/product/Hero';
 import Need from '@/components/page/product/Need';
 import What from '@/components/page/product/What';
 import Workflow from '@/components/page/product/Workflow';
-import Contact from '@/components/page/product/Contact';
 
 const whatData = [
   [
@@ -66,56 +66,37 @@ const needData = {
   buttonText: 'Talk to Us',
 };
 
-const contactData = {
-  title1: 'Ready to ',
-  highlightTitle: 'simplify',
-  title2: ' artwork management?',
-  description: 'See how WAVE can cut approval cycles, improve compliance, and give your team more control.',
-  buttonText: 'Book A Demo',
-  imageSrc: '/product/contact.png',
-  imageAlt: 'contact-image',
-};
-
 export default function Wave() {
   return (
     <div className="relative">
       <div className="container mx-auto mb-32">
-        <Hero
-          brandName="wave"
-          logoSrc="/product/wave.svg"
-          logoAlt="Wave Brand"
-          title="Artwork management, without the chaos"
-          subtitle="Faster progress from first draft to final approval."
-          description="WAVE gives brand, packaging, and regulatory teams a single platform to brief, review, and approve artwork. No more confusion, no more delays. Just clear workflows that move projects forward."
-          buttonText="Let's Talk Transformation"
-          imageSrc="/product/rectangle.png"
-          imageAlt="rectangle"
-        />
-        <What whatData={whatData} />
-        <Need
-          title1={needData.title}
-          highlightTitle={needData.highlightTitle}
-          title2={needData.title2}
-          subtitle={needData.subtitle}
-          description={needData.description}
-          buttonText={needData.buttonText}
-        />
-        <Workflow
-          title={workflowData.title}
-          subtitle={workflowData.subtitle}
-          buttonText={workflowData.buttonText}
-          statsData={workflowData.statsData}
-        />
-        <Contact
-          title1={contactData.title1}
-          highlightTitle={contactData.highlightTitle}
-          title2={contactData.title2}
-          description={contactData.description}
-          buttonText={contactData.buttonText}
-          imageSrc={contactData.imageSrc}
-          imageAlt={contactData.imageAlt}
-        />
+        <PageHeader title="wave" />
+
+        <div className="flex flex-col gap-32">
+          <Hero
+            logoSrc="/product/wave.svg"
+            logoAlt="Wave Brand"
+            title="Artwork management, without the chaos"
+            subtitle="Faster progress from first draft to final approval."
+            description="WAVE gives brand, packaging, and regulatory teams a single platform to brief, review, and approve artwork. No more confusion, no more delays. Just clear workflows that move projects forward."
+            imageSrc="/product/rectangle.png"
+            imageWidth={292}
+            imageAlt="Product logo"
+          />
+          <What whatData={whatData} />
+          <Need
+            title1={needData.title}
+            highlightTitle={needData.highlightTitle}
+            title2={needData.title2}
+            subtitle={needData.subtitle}
+            description={needData.description}
+            buttonText={needData.buttonText}
+          />
+          <Workflow title={workflowData.title} subtitle={workflowData.subtitle} statsData={workflowData.statsData} />
+          <Contact />
+        </div>
       </div>
+
       <Cta
         leftTitle="Experience"
         leftSubtitle="What’s Next in"
