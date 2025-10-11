@@ -2,7 +2,7 @@ import Image from 'next/image';
 import InlineHighlight from '@/components/core/inline-highlight';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 
-export function Hero() {
+const Hero = () => {
   // Define image arrays for mapping
   const topRowImages = ['/about/about1.png', '/about/about2.png', '/about/about3.png'];
   const bottomRowImages = ['/about/about5.png', '/about/about6.png'];
@@ -86,4 +86,6 @@ export function Hero() {
       </div>
     </>
   );
-}
+};
+
+export default Hero;

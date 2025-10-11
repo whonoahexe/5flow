@@ -1,9 +1,9 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight, Award, Shuffle, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
-import Link from 'next/link';
 
 const Why = () => (
   <div className="flex flex-col gap-8">

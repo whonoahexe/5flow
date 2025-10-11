@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import PatternOverlay from '@/components/core/pattern-overlay';
 import { centuryGothic, metropolis } from '@/lib/fonts';
 import { Navigation, Footer } from '@/components/layout';
+import PatternOverlay from '@/components/core/pattern-overlay';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
