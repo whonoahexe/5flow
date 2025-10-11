@@ -18,7 +18,7 @@ const Why = ({ whyData }: WhyProps) => {
     <div className="text-gray font-heading box-border items-start gap-2 text-left">
       <FullBleedLines className="flex w-full justify-between">
         <p className="font-heading w-full max-w-4xl text-6xl leading-none font-bold tracking-tight">
-          <InlineHighlight>What</InlineHighlight> do we <br /> Solve ?
+          <InlineHighlight>Why</InlineHighlight> do we <br /> Solve ?
         </p>
         <ArrowDownLeft strokeWidth={1.5} className="text-accent1 h-32 w-32" />
       </FullBleedLines>
