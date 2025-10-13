@@ -31,7 +31,7 @@ const How = ({ howData }: HowProps) => {
       </FullBleedLines>
 
       {howData.map((feature, index) => (
-        <FullBleedLines key={index} className="flex w-full gap-2 p-2">
+        <div key={index} className="flex w-full gap-2 p-2">
           <div className="flex flex-1 flex-col justify-center">
             <div className="flex items-center gap-6 p-6">
               <BadgeCheck className="text-foreground h-18 w-18" strokeWidth={1.5} />
@@ -71,7 +71,7 @@ const How = ({ howData }: HowProps) => {
             alt=""
             src={feature.imageSrc}
           />
-        </FullBleedLines>
+        </div>
       ))}
     </div>
   );

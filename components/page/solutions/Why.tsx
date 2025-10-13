@@ -38,7 +38,7 @@ const Why = ({ whyData }: WhyProps) => {
         const isEven = index % 2 === 0;
 
         return (
-          <div key={index} className="flex items-start gap-2 self-stretch bg-white p-2">
+          <div key={index} className="flex items-start gap-2 p-2">
             <FullBleedLines key={index} className={`flex w-full gap-2 p-2 ${isEven ? 'flex-row' : 'flex-row-reverse'}`}>
               <div className="flex flex-1 flex-col justify-center">
                 <div className="flex items-center gap-6 p-6">

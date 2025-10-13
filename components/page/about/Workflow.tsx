@@ -18,7 +18,7 @@ const Workflow = () => {
           <InlineHighlight className="text-background">Workflow.</InlineHighlight>
         </b>
       </FullBleedLines>
-      <FullBleedLines className="text-foreground mx-auto w-full max-w-5xl text-center text-2xl leading-none tracking-tight">
+      <FullBleedLines className="text-foreground mx-auto w-full max-w-5xl text-center text-4xl leading-none tracking-tight">
         At 5Flow, security is the foundation of how we work. Every workflow, every approval, every piece of data is
         protected with enterprise-grade security standards.
       </FullBleedLines>
