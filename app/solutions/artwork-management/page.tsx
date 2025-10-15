@@ -115,7 +115,7 @@ export default function ArtworkManagement() {
               { label: 'across Retail, Pharma, FMCG, and Beauty', value: 'Trusted' },
             ]}
           />
-          <Contact />
+          <Contact leadingText="Ready to " highlightedText="simplify" trailingText=" artwork management?" />
         </div>
       </div>
 
