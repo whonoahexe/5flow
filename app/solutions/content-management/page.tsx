@@ -114,7 +114,7 @@ export default function ContentManagement() {
               { label: 'across Retail, Pharma, FMCG, and Beauty', value: 'Trusted' },
             ]}
           />
-          <Contact />
+          <Contact leadingText="Prepared to " highlightedText="start feeling" trailingText=" content?" />
         </div>
       </div>
 

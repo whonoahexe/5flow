@@ -4,13 +4,25 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '../core/inline-highlight';
+import React from 'react';
 
-export function Contact() {
+type ContactProps = {
+  leadingText?: string;
+  highlightedText?: string;
+  trailingText?: string;
+};
+
+export function Contact({
+  leadingText = 'Built for the Way Brands',
+  highlightedText = 'Work Today.',
+  trailingText = '',
+}: ContactProps) {
   return (
     <div className="flex flex-col gap-8">
-      <FullBleedLines className="font-heading mx-auto w-full max-w-2xl gap-16 px-2 py-8">
-        <p className="text-center text-[64px] leading-none font-bold tracking-tight">
-          Built for the Way Brands <InlineHighlight>Work Today.</InlineHighlight>
+      <FullBleedLines className="font-heading mx-auto w-full max-w-3xl gap-16 px-2 py-8">
+        <p className="text-center text-6xl leading-none font-bold tracking-tight">
+          {leadingText} <InlineHighlight>{highlightedText}</InlineHighlight>
+          {trailingText && <> {trailingText}</>}
         </p>
       </FullBleedLines>
 

@@ -111,7 +111,7 @@ export default function AssetLibrary() {
               { label: 'across Retail, Pharma, FMCG, and Beauty', value: 'Trusted' },
             ]}
           />
-          <Contact />
+          <Contact leadingText="Time to turn your packaging liabilities into " highlightedText="assets" />
         </div>
       </div>
 

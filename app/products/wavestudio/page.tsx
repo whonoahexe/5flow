@@ -174,7 +174,7 @@ export default function Wavestudio() {
             subtitle={workflowData.subtitle}
             statsData={workflowData.statsData}
           />
-          <Contact />
+          <Contact leadingText="Ready to make " highlightedText="more" trailingText=" with less?" />
         </div>
       </div>
 

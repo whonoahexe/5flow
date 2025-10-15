@@ -112,7 +112,7 @@ export default function AutomatedArtwork() {
               { label: 'across Retail, Pharma, FMCG, and Beauty', value: 'Trusted' },
             ]}
           />
-          <Contact />
+          <Contact leadingText="Create artworks the " highlightedText="smart way" />
         </div>
       </div>
 

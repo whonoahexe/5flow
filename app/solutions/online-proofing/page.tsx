@@ -111,7 +111,7 @@ export default function OnlineProofing() {
               { label: 'across Retail, Pharma, FMCG, and Beauty', value: 'Trusted' },
             ]}
           />
-          <Contact />
+          <Contact leadingText="Ready to " highlightedText="error-proof" trailingText=" your launches?" />
         </div>
       </div>
 

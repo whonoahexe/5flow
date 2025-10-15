@@ -174,7 +174,7 @@ export default function Wave() {
             subtitle={workflowData.subtitle}
             statsData={workflowData.statsData}
           />
-          <Contact />
+          <Contact leadingText="Ready to " highlightedText="simplify" trailingText=" artwork management?" />
         </div>
       </div>
 

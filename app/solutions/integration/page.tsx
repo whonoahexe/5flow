@@ -111,7 +111,7 @@ export default function Integration() {
               { label: 'across Retail, Pharma, FMCG, and Beauty', value: 'Trusted' },
             ]}
           />
-          <Contact />
+          <Contact leadingText="Ready to connect your " highlightedText="artwork systems?" />
         </div>
       </div>
 

@@ -174,7 +174,7 @@ export default function Mediabox() {
             subtitle={workflowData.subtitle}
             statsData={workflowData.statsData}
           />
-          <Contact />
+          <Contact leadingText="Ready for " highlightedText="out-of-the-box" trailingText=" creative workflows?" />
         </div>
       </div>
 
