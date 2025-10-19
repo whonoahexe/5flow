@@ -1,11 +1,9 @@
+import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck, CheckCircle, ZapIcon, BarChart } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/applications/Hero';
-import Workflow from '@/components/page/applications/Workflow';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
-import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck } from 'lucide-react';
-import { CheckCircle, ZapIcon, BarChart } from 'lucide-react';
 import How from '@/components/page/applications/How';
 
 export default function FoodBeverages() {
@@ -18,51 +16,49 @@ export default function FoodBeverages() {
     imageAlt: 'Artwork management preview',
   };
 
-  // challenge items passed into Challenges component
   const challengeItems = [
     {
       id: 'constant-reformulations',
       title: 'Constant recipe reformulations',
-      lead: 'Packaging can’t keep up',
-      body: '5Flow centralizes ingredient data and pushes updates into artwork automatically, keeping labels accurate.',
+      desc: 'Packaging can’t keep up',
+      sub: '5Flow centralizes ingredient data and pushes updates into artwork automatically, keeping labels accurate.',
       icon: Grid2X2,
       buttonText: 'See How 5Flow Helps Pharma Teams',
     },
     {
       id: 'allergen-nutrition-risks',
       title: 'Allergen and nutritional labeling risks',
-      lead: 'Small errors create big recalls',
-      body: 'Automated validation rules check allergen and nutrition panels to prevent mislabeling.',
+      desc: 'Small errors create big recalls',
+      sub: 'Automated validation rules check allergen and nutrition panels to prevent mislabeling.',
       icon: Timer,
       buttonText: 'See How 5Flow Helps Pharma Teams',
     },
     {
       id: 'sustainability-claims',
       title: 'Sustainability and compliance claims',
-      lead: 'Green messaging often inconsistent',
-      body: 'Content hubs manage sustainability claims and certifications, ensuring consistent and compliant messaging.',
+      desc: 'Green messaging often inconsistent',
+      sub: 'Content hubs manage sustainability claims and certifications, ensuring consistent and compliant messaging.',
       icon: ShieldCheck,
       buttonText: 'See How 5Flow Helps Pharma Teams',
     },
     {
       id: 'regional-regulations',
       title: 'Regional packaging regulations',
-      lead: 'One product, multiple standards',
-      body: 'Multi-language and regional workflows adapt packaging for each market without losing control.',
+      desc: 'One product, multiple standards',
+      sub: 'Multi-language and regional workflows adapt packaging for each market without losing control.',
       icon: Eye,
       buttonText: 'See How 5Flow Helps Pharma Teams',
     },
     {
       id: 'slow-approvals',
       title: 'Slow approvals delay launches',
-      lead: 'Campaigns miss their shelf window',
-      body: 'Automated workflows streamline approvals across marketing, regulatory, and suppliers, cutting delays.',
+      desc: 'Campaigns miss their shelf window',
+      sub: 'Automated workflows streamline approvals across marketing, regulatory, and suppliers, cutting delays.',
       icon: FileCheck,
       buttonText: 'See How 5Flow Helps Pharma Teams',
     },
   ];
 
-  // added: benefit items passed into Benefits component
   const benefitItems = [
     {
       id: 'consumer-safety',
@@ -123,14 +119,9 @@ export default function FoodBeverages() {
 
         <div className="flex flex-col gap-32">
           <Hero {...heroData} />
-
-          {/* pass items into Challenges */}
           <Challenges items={challengeItems} />
           <How howData={howData} />
-
-          {/* added: Benefits section */}
           <Benefits items={benefitItems} highlightedText="Food & Beverages" />
-
           <Contact leadingText="The " highlightedText="Best Software" trailingText=" For Food & Beverage Brands" />
         </div>
       </div>

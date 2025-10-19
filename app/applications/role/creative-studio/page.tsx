@@ -1,11 +1,11 @@
+import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck, CheckCircle, ZapIcon, BarChart } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
+import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/applications/Hero';
 import Workflow from '@/components/page/applications/Workflow';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
-import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck } from 'lucide-react';
-import { CheckCircle, ZapIcon, BarChart } from 'lucide-react';
 
 export default function CreativeStudio() {
   const heroData = {
@@ -17,51 +17,44 @@ export default function CreativeStudio() {
     imageAlt: 'Artwork management preview',
   };
 
-  // challenge items passed into Challenges component
   const challengeItems = [
     {
-      id: 'endless-revisions',
       title: 'Endless revisions',
-      lead: 'Feedback chaos from multiple stakeholders',
-      body: '5Flow consolidates markups, comments, and approvals in one place, so designers act on clear direction instead of conflicting feedback.',
+      desc: 'Feedback chaos from multiple stakeholders',
+      sub: '5Flow consolidates markups, comments, and approvals in one place, so designers act on clear direction instead of conflicting feedback.',
       icon: Grid2X2,
       buttonText: 'See How It Helps Creatives',
     },
     {
-      id: 'repetitive-production',
       title: 'Repetitive production work',
-      lead: 'Creativity lost to resizing and adaptations',
-      body: 'Automated artwork tools handle resizing, formatting, and multilingual rollouts, freeing teams to focus on design.',
+      desc: 'Creativity lost to resizing and adaptations',
+      sub: 'Automated artwork tools handle resizing, formatting, and multilingual rollouts, freeing teams to focus on design.',
       icon: Timer,
       buttonText: 'See How It Helps Creatives',
     },
     {
-      id: 'no-version-clarity',
       title: 'No version clarity',
-      lead: 'Teams rework the wrong files',
-      body: 'Centralized version control ensures studios always work with the latest, approved artwork.',
+      desc: 'Teams rework the wrong files',
+      sub: 'Centralized version control ensures studios always work with the latest, approved artwork.',
       icon: ShieldCheck,
       buttonText: 'See How It Helps Creatives',
     },
     {
-      id: 'fragmented-collaboration',
       title: 'Fragmented collaboration',
-      lead: 'File sharing across email, drives, and chats',
-      body: 'Integrated communication tools connect creative, brand, and regulatory teams directly to the artwork.',
+      desc: 'File sharing across email, drives, and chats',
+      sub: 'Integrated communication tools connect creative, brand, and regulatory teams directly to the artwork.',
       icon: Eye,
       buttonText: 'See How It Helps Creatives',
     },
     {
-      id: 'bottlenecks-stall',
       title: 'Bottlenecks stall campaigns',
-      lead: 'Designers left waiting for approvals',
-      body: 'Automated workflows route files to the right stakeholders at the right time, keeping creative projects on schedule.',
+      desc: 'Designers left waiting for approvals',
+      sub: 'Automated workflows route files to the right stakeholders at the right time, keeping creative projects on schedule.',
       icon: FileCheck,
       buttonText: 'See How It Helps Creatives',
     },
   ];
 
-  // added: benefit items passed into Benefits component
   const benefitItems = [
     {
       id: 'creative-focus',
@@ -100,25 +93,22 @@ export default function CreativeStudio() {
 
         <div className="flex flex-col gap-32">
           <Hero {...heroData} />
-
-          {/* pass items into Challenges */}
           <Challenges items={challengeItems} />
-
-          {/* added: Benefits section */}
           <Benefits items={benefitItems} highlightedText="Creative Studios" />
           <Workflow
-            title1="The "
-            title2=" for Creative & Design Studios"
-            highlightTitle="Best Software"
+            title={
+              <>
+                The <InlineHighlight>Best Software </InlineHighlight> for Creative & Design Studios
+              </>
+            }
             subtitle="Proven results across industries."
-            buttonText="See Case Studies"
             statsData={[
               { label: 'faster product launches', value: '75%' },
               { label: 'fewer late files', value: '50%' },
-              { label: 'faster artwork adaptations', value: 'Up to 80%' },
+              { label: 'faster artwork adaptations', value: '80%' },
             ]}
           />
-          <Contact leadingText="The " highlightedText="Best Software" trailingText="For Creative & Design Studios" />
+          <Contact leadingText="The Best Software For " highlightedText="Brand Managers" />
         </div>
       </div>
 

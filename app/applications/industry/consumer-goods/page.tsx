@@ -1,11 +1,9 @@
+import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck, CheckCircle, ZapIcon, BarChart } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/applications/Hero';
-import Workflow from '@/components/page/applications/Workflow';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
-import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck } from 'lucide-react';
-import { CheckCircle, ZapIcon, BarChart } from 'lucide-react';
 import How from '@/components/page/applications/How';
 
 export default function ConsumerGoods() {
@@ -18,51 +16,49 @@ export default function ConsumerGoods() {
     imageAlt: 'Artwork management preview',
   };
 
-  // challenge items passed into Challenges component
   const challengeItems = [
     {
       id: 'multi-part-packaging',
       title: 'Multi-part packaging stalls launches',
-      lead: 'Leaflet approved, label delayed, carton missing updates',
-      body: '5Flow links every component in one workflow so labels, cartons, and inserts move forward together.',
+      desc: 'Leaflet approved, label delayed, carton missing updates',
+      sub: '5Flow links every component in one workflow so labels, cartons, and inserts move forward together.',
       icon: Grid2X2,
       buttonText: 'See How 5Flow Helps Consumer Goods Brands',
     },
     {
       id: 'language-heavy-packs',
       title: 'Language-heavy packs drive reprints',
-      lead: 'Multilingual detergent or appliance packs rarely pass error-free',
-      body: 'Centralized translation and version control ensure approved text flows into every SKU variant without manual copy-paste errors.',
+      desc: 'Multilingual detergent or appliance packs rarely pass error-free',
+      sub: 'Centralized translation and version control ensure approved text flows into every SKU variant without manual copy-paste errors.',
       icon: Timer,
       buttonText: 'See How 5Flow Helps Consumer Goods Brands',
     },
     {
       id: 'regional-promo-packs',
       title: 'Regional promo packs overwhelm sourcing',
-      lead: 'Holiday or event packaging fragments supplier timelines',
-      body: 'Automated workflows align suppliers and vendors on promo pack assets, cutting delays and misprints.',
+      desc: 'Holiday or event packaging fragments supplier timelines',
+      sub: 'Automated workflows align suppliers and vendors on promo pack assets, cutting delays and misprints.',
       icon: ShieldCheck,
       buttonText: 'See How 5Flow Helps Consumer Goods Brands',
     },
     {
       id: 'global-sku-compliance',
       title: 'Global SKUs lack local compliance',
-      lead: 'Same product, different labeling rules by region',
-      body: 'Market-specific workflows adapt global packs to local labeling requirements while preserving brand consistency.',
+      desc: 'Same product, different labeling rules by region',
+      sub: 'Market-specific workflows adapt global packs to local labeling requirements while preserving brand consistency.',
       icon: FileCheck,
       buttonText: 'See How 5Flow Helps Consumer Goods Brands',
     },
     {
       id: 'zero-visibility',
       title: 'Zero visibility into bottlenecks',
-      lead: 'One late component delays the entire launch',
-      body: 'Dashboards give real-time status on every carton, leaflet, and label, so managers can unblock projects early.',
+      desc: 'One late component delays the entire launch',
+      sub: 'Dashboards give real-time status on every carton, leaflet, and label, so managers can unblock projects early.',
       icon: Eye,
       buttonText: 'See How 5Flow Helps Consumer Goods Brands',
     },
   ];
 
-  // added: benefit items passed into Benefits component
   const benefitItems = [
     {
       id: 'launch-reliability',
@@ -123,14 +119,9 @@ export default function ConsumerGoods() {
 
         <div className="flex flex-col gap-32">
           <Hero {...heroData} />
-
-          {/* pass items into Challenges */}
           <Challenges items={challengeItems} />
           <How howData={howData} />
-
-          {/* added: Benefits section */}
           <Benefits items={benefitItems} highlightedText="Consumer Goods" />
-
           <Contact leadingText="The " highlightedText="Best Software" trailingText=" For Consumer Goods Brands" />
         </div>
       </div>

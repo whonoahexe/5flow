@@ -1,16 +1,12 @@
+import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck, CheckCircle, ZapIcon, BarChart } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/applications/Hero';
-import Workflow from '@/components/page/applications/Workflow';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
-import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck } from 'lucide-react';
-import { CheckCircle, ZapIcon, BarChart } from 'lucide-react';
 import How from '@/components/page/applications/How';
-import { head } from 'framer-motion/client';
 
 export default function Retail() {
-  // replaced hero content per request
   const heroData = {
     title: 'Retail moves fast. So should your brand.',
     subtitle: 'Tools built for retailers dealing with high SKU velocity and seasonal pressure',
@@ -20,51 +16,49 @@ export default function Retail() {
     imageAlt: 'Artwork management preview',
   };
 
-  // challenge items passed into Challenges component
   const challengeItems = [
     {
       id: 'sku-refresh-overload',
       title: 'SKU refresh overload',
-      lead: 'Too much volume, no control',
-      body: '5Flow centralizes artwork and content so retailers can manage SKU refreshes at scale without losing consistency.',
+      desc: 'Too much volume, no control',
+      sub: '5Flow centralizes artwork and content so retailers can manage SKU refreshes at scale without losing consistency.',
       icon: Grid2X2,
       buttonText: 'See How 5Flow Helps Retail',
     },
     {
       id: 'seasonal-promos-slip',
       title: 'Seasonal promos slip',
-      lead: 'Campaigns miss the shelf date',
-      body: 'Automated workflows move approvals faster and give teams full visibility into promo deadlines.',
+      desc: 'Campaigns miss the shelf date',
+      sub: 'Automated workflows move approvals faster and give teams full visibility into promo deadlines.',
       icon: Timer,
       buttonText: 'See How 5Flow Helps Retail',
     },
     {
       id: 'private-label-growth',
       title: 'Private-label packaging growth',
-      lead: 'More complexity, tighter timelines',
-      body: 'Dedicated workflows manage private-label artwork alongside branded products without confusion.',
+      desc: 'More complexity, tighter timelines',
+      sub: 'Dedicated workflows manage private-label artwork alongside branded products without confusion.',
       icon: ShieldCheck,
       buttonText: 'See How 5Flow Helps Retail',
     },
     {
       id: 'fragmented-suppliers',
       title: 'Fragmented supplier collaboration',
-      lead: 'Errors multiply across vendors',
-      body: 'Suppliers access validated assets directly from 5Flow, cutting misprints and delays.',
+      desc: 'Errors multiply across vendors',
+      sub: 'Suppliers access validated assets directly from 5Flow, cutting misprints and delays.',
       icon: FileCheck,
       buttonText: 'See How 5Flow Helps Retail',
     },
     {
       id: 'lack-of-visibility',
       title: 'Lack of visibility',
-      lead: 'Retailers can’t see where campaigns stall',
-      body: 'Dashboards and analytics show bottlenecks in real time, helping managers act before deadlines slip.',
+      desc: 'Retailers can’t see where campaigns stall',
+      sub: 'Dashboards and analytics show bottlenecks in real time, helping managers act before deadlines slip.',
       icon: Eye,
       buttonText: 'See How 5Flow Helps Retail',
     },
   ];
 
-  // added: benefit items passed into Benefits component
   const benefitItems = [
     {
       id: 'on-shelf-availability',
@@ -125,12 +119,8 @@ export default function Retail() {
 
         <div className="flex flex-col gap-32">
           <Hero {...heroData} />
-
-          {/* pass items into Challenges */}
           <Challenges items={challengeItems} />
           <How howData={howData} />
-
-          {/* added: Benefits section */}
           <Benefits items={benefitItems} highlightedText="Retail" />
           <Contact leadingText="The " highlightedText="Best Software" trailingText=" For Retailers" />
         </div>

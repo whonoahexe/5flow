@@ -22,7 +22,7 @@ const Hero = ({ title, subtitle, description, imageSrc, imageAlt = '' }: HeroPro
         </div>
 
         {/* Product details */}
-        <div className="flex h-auto flex-1 flex-col justify-between">
+        <div className="flex h-auto flex-1 flex-col justify-between gap-16">
           <p className="text-primary font-heading text-5xl leading-none tracking-tighter">{subtitle}</p>
 
           <div className="flex flex-col gap-8">

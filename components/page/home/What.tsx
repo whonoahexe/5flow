@@ -58,8 +58,8 @@ const What = () => {
                 {card.icon && <card.icon className="text-primary" size={72} strokeWidth={1.5} />}
               </div>
               <div className="w-full max-w-xl p-8">
-                <div className="w-full max-w-96 text-xl font-bold tracking-tight">{card.desc}</div>
-                <div className="pt-2 tracking-tighter">{card.sub}</div>
+                <p className="w-full max-w-96 text-xl font-bold tracking-tight">{card.desc}</p>
+                <p className="pt-2 tracking-tighter">{card.sub}</p>
               </div>
             </div>
           ))}

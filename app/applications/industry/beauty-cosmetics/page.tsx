@@ -1,15 +1,12 @@
+import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck, CheckCircle, ZapIcon, BarChart } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/applications/Hero';
-import Workflow from '@/components/page/applications/Workflow';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
-import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck } from 'lucide-react';
-import { CheckCircle, ZapIcon, BarChart } from 'lucide-react';
 import How from '@/components/page/applications/How';
 
 export default function BeautyCosmetics() {
-  // replaced hero content per request
   const heroData = {
     title: 'Beauty packaging without the chaos',
     subtitle: 'Built for brands managing endless variants and shade launches',
@@ -19,51 +16,49 @@ export default function BeautyCosmetics() {
     imageAlt: 'Artwork management preview',
   };
 
-  // challenge items passed into Challenges component
   const challengeItems = [
     {
       id: 'shade-finish-launches',
       title: 'Shade and finish launches multiply',
-      lead: 'Variants overwhelm workflows',
-      body: '5Flow automates variant artwork creation so new shades and finishes roll out consistently across packaging lines.',
+      desc: 'Variants overwhelm workflows',
+      sub: '5Flow automates variant artwork creation so new shades and finishes roll out consistently across packaging lines.',
       icon: Grid2X2,
       buttonText: 'See How 5Flow Helps Beauty Brands',
     },
     {
       id: 'inconsistent-claims',
       title: 'Inconsistent claims',
-      lead: 'Marketing and packaging out of sync',
-      body: 'Centralized content hubs keep approved claims aligned across regions, SKUs, and campaigns.',
+      desc: 'Marketing and packaging out of sync',
+      sub: 'Centralized content hubs keep approved claims aligned across regions, SKUs, and campaigns.',
       icon: ShieldCheck,
       buttonText: 'See How 5Flow Helps Beauty Brands',
     },
     {
       id: 'regional-labeling',
       title: 'Regional labeling rules',
-      lead: 'One product, many standards',
-      body: 'Multi-language workflows adapt labels for each region while preserving brand consistency.',
+      desc: 'One product, many standards',
+      sub: 'Multi-language workflows adapt labels for each region while preserving brand consistency.',
       icon: Timer,
       buttonText: 'See How 5Flow Helps Beauty Brands',
     },
     {
       id: 'high-sku-velocity',
       title: 'High SKU velocity',
-      lead: 'Deadlines missed for seasonal launches',
-      body: 'Automated approvals and real-time dashboards keep new launches and promos shelf-ready on time.',
+      desc: 'Deadlines missed for seasonal launches',
+      sub: 'Automated approvals and real-time dashboards keep new launches and promos shelf-ready on time.',
       icon: FileCheck,
       buttonText: 'See How 5Flow Helps Beauty Brands',
     },
     {
       id: 'fragmented-collaboration',
       title: 'Fragmented collaboration',
-      lead: 'Teams and suppliers working in silos',
-      body: 'Integrated workflows connect brand, design, regulatory, and suppliers in one traceable system.',
+      desc: 'Teams and suppliers working in silos',
+      sub: 'Integrated workflows connect brand, design, regulatory, and suppliers in one traceable system.',
       icon: Eye,
       buttonText: 'See How 5Flow Helps Beauty Brands',
     },
   ];
 
-  // added: benefit items passed into Benefits component
   const benefitItems = [
     {
       id: 'consistency-variants',
@@ -97,7 +92,6 @@ export default function BeautyCosmetics() {
 
   const howData = [
     {
-      heading: 'Beauty & Cosmetics',
       title: 'Roll out shade and finish variants with automated artwork generation.',
       description: 'Adapt labels for multi-language and region-specific regulations.',
       icon: '/solutions/rectangle.png',
@@ -124,12 +118,8 @@ export default function BeautyCosmetics() {
 
         <div className="flex flex-col gap-32">
           <Hero {...heroData} />
-
-          {/* pass items into Challenges */}
           <Challenges items={challengeItems} />
           <How howData={howData} />
-
-          {/* added: Benefits section */}
           <Benefits items={benefitItems} highlightedText="Beauty & Cosmetics" />
           <Contact leadingText="The " highlightedText="Best Software" trailingText=" For Beauty & Cosmetics Brands" />
         </div>

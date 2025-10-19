@@ -1,11 +1,11 @@
+import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck, CheckCircle, ZapIcon, BarChart } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
+import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/applications/Hero';
 import Workflow from '@/components/page/applications/Workflow';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
-import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck } from 'lucide-react';
-import { CheckCircle, ZapIcon, BarChart } from 'lucide-react';
 
 export default function ProcurementSourcing() {
   const heroData = {
@@ -17,51 +17,49 @@ export default function ProcurementSourcing() {
     imageAlt: 'Artwork management preview',
   };
 
-  // challenge items passed into Challenges component
   const challengeItems = [
     {
       id: 'costly-reprints',
       title: 'Costly reprints',
-      lead: 'Errors drive wasted spend',
-      body: '5Flow ensures suppliers receive the right, validated files every time, eliminating costly mistakes and reprints.',
+      desc: 'Errors drive wasted spend',
+      sub: '5Flow ensures suppliers receive the right, validated files every time, eliminating costly mistakes and reprints.',
       icon: Grid2X2,
       buttonText: 'See How 5Flow Helps Procurement Teams',
     },
     {
       id: 'supply-chain-delays',
       title: 'Supply chain delays',
-      lead: 'Wrong files stall production',
-      body: 'A centralized asset library gives suppliers direct access to approved artwork and cutter guides, keeping timelines intact.',
+      desc: 'Wrong files stall production',
+      sub: 'A centralized asset library gives suppliers direct access to approved artwork and cutter guides, keeping timelines intact.',
       icon: Timer,
       buttonText: 'See How 5Flow Helps Procurement Teams',
     },
     {
       id: 'lack-of-visibility',
       title: 'Lack of visibility',
-      lead: 'No clarity on project status or supplier readiness',
-      body: 'Dashboards show procurement teams where projects stand, so supplier alignment is proactive, not reactive.',
+      desc: 'No clarity on project status or supplier readiness',
+      sub: 'Dashboards show procurement teams where projects stand, so supplier alignment is proactive, not reactive.',
       icon: Eye,
       buttonText: 'See How 5Flow Helps Procurement Teams',
     },
     {
       id: 'manual-back-and-forth',
       title: 'Manual back-and-forth',
-      lead: 'Email overload with suppliers',
-      body: 'Integrated communication reduces supplier emails by structuring feedback, clarifications, and approvals in one system.',
+      desc: 'Email overload with suppliers',
+      sub: 'Integrated communication reduces supplier emails by structuring feedback, clarifications, and approvals in one system.',
       icon: FileCheck,
       buttonText: 'See How 5Flow Helps Procurement Teams',
     },
     {
       id: 'inconsistent-quality',
       title: 'Inconsistent quality',
-      lead: 'Errors slip through fragmented workflows',
-      body: 'Automated checks and traceability ensure suppliers work only with approved, accurate files.',
+      desc: 'Errors slip through fragmented workflows',
+      sub: 'Automated checks and traceability ensure suppliers work only with approved, accurate files.',
       icon: ShieldCheck,
       buttonText: 'See How 5Flow Helps Procurement Teams',
     },
   ];
 
-  // added: benefit items passed into Benefits component
   const benefitItems = [
     {
       id: 'predictable-supply',
@@ -100,29 +98,22 @@ export default function ProcurementSourcing() {
 
         <div className="flex flex-col gap-32">
           <Hero {...heroData} />
-
-          {/* pass items into Challenges */}
           <Challenges items={challengeItems} />
-
-          {/* added: Benefits section */}
           <Benefits items={benefitItems} highlightedText="Procurement & Sourcing" />
           <Workflow
-            title1=""
-            title2=" across industries"
-            highlightTitle="Proven results"
-            subtitle="Integration that delivers."
-            buttonText="See Case Studies"
+            title={
+              <>
+                The <InlineHighlight>Best Software </InlineHighlight> for Creative & Design Studios
+              </>
+            }
+            subtitle="Proven results across industries."
             statsData={[
               { label: 'faster product launches', value: '75%' },
               { label: 'fewer late files', value: '50%' },
-              { label: 'faster artwork adaptations', value: 'Up to 80%' },
+              { label: 'faster artwork adaptations', value: '80%' },
             ]}
           />
-          <Contact
-            leadingText="The "
-            highlightedText="Best Software"
-            trailingText=" For Procurement & Sourcing Teams"
-          />
+          <Contact leadingText="The Best Software For " highlightedText="Procurement & Sourcing Teams" />
         </div>
       </div>
 

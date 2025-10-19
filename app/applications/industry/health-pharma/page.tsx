@@ -1,11 +1,9 @@
+import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck, CheckCircle, ZapIcon, BarChart } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/applications/Hero';
-import Workflow from '@/components/page/applications/Workflow';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
-import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck } from 'lucide-react';
-import { CheckCircle, ZapIcon, BarChart } from 'lucide-react';
 import How from '@/components/page/applications/How';
 
 export default function HealthPharma() {
@@ -18,51 +16,49 @@ export default function HealthPharma() {
     imageAlt: 'Artwork management preview',
   };
 
-  // challenge items passed into Challenges component
   const challengeItems = [
     {
       id: 'multi-language-labeling',
       title: 'Multi-language labeling requirements',
-      lead: 'One drug, dozens of SKUs',
-      body: '5Flow manages translations centrally and applies them consistently across markets, reducing the risk of mislabeling.',
+      desc: 'One drug, dozens of SKUs',
+      sub: '5Flow manages translations centrally and applies them consistently across markets, reducing the risk of mislabeling.',
       icon: Grid2X2,
       buttonText: 'See How 5Flow Helps Pharma Teams',
     },
     {
       id: 'regulatory-pressure',
       title: '21 CFR and EMA compliance pressure',
-      lead: 'Regulations change, workflows don’t',
-      body: 'Preconfigured compliance checklists and validation rules ensure every label meets FDA, EMA, and regional standards.',
+      desc: 'Regulations change, workflows don’t',
+      sub: 'Preconfigured compliance checklists and validation rules ensure every label meets FDA, EMA, and regional standards.',
       icon: Timer,
       buttonText: 'See How 5Flow Helps Pharma Teams',
     },
     {
       id: 'documentation-burden',
       title: 'High documentation burden',
-      lead: 'Audits require endless proof',
-      body: 'Every approval, annotation, and change is logged, creating an instant audit trail for inspections.',
+      desc: 'Audits require endless proof',
+      sub: 'Every approval, annotation, and change is logged, creating an instant audit trail for inspections.',
       icon: FileCheck,
       buttonText: 'See How 5Flow Helps Pharma Teams',
     },
     {
       id: 'frequent-reformulations',
       title: 'Frequent reformulations and recalls',
-      lead: 'Updates overwhelm manual workflows',
-      body: 'Automated workflows distribute approved changes quickly, keeping packaging aligned with new formulations.',
+      desc: 'Updates overwhelm manual workflows',
+      sub: 'Automated workflows distribute approved changes quickly, keeping packaging aligned with new formulations.',
       icon: Eye,
       buttonText: 'See How 5Flow Helps Pharma Teams',
     },
     {
       id: 'patient-safety',
       title: 'Patient safety on the line',
-      lead: 'Errors aren’t just costly, they’re dangerous',
-      body: 'Built-in validation rules flag missing warnings, dosage errors, or misplaced barcodes before files go to print.',
+      desc: 'Errors aren’t just costly, they’re dangerous',
+      sub: 'Built-in validation rules flag missing warnings, dosage errors, or misplaced barcodes before files go to print.',
       icon: ShieldCheck,
       buttonText: 'See How 5Flow Helps Pharma Teams',
     },
   ];
 
-  // added: benefit items passed into Benefits component
   const benefitItems = [
     {
       id: 'patient-safety-protected',
@@ -123,14 +119,9 @@ export default function HealthPharma() {
 
         <div className="flex flex-col gap-32">
           <Hero {...heroData} />
-
-          {/* pass items into Challenges */}
           <Challenges items={challengeItems} />
           <How howData={howData} />
-
-          {/* added: Benefits section */}
           <Benefits items={benefitItems} highlightedText="Health & Pharma" />
-
           <Contact leadingText="The " highlightedText="Best Software" trailingText=" For Healthcare & Pharma" />
         </div>
       </div>
