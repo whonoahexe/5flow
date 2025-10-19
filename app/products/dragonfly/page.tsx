@@ -174,7 +174,7 @@ export default function Dragonfly() {
             subtitle={workflowData.subtitle}
             statsData={workflowData.statsData}
           />
-          <Contact />
+          <Contact leadingText="Ready to make your projects " highlightedText="fly" trailingText="?" />
         </div>
       </div>
 
