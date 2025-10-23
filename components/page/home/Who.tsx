@@ -1,10 +1,13 @@
 'use client';
 
 import { useRef } from 'react';
-import { ArrowDown, ArrowLeft, ArrowRight, Layers2 } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowDown, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
+
+const clients = ['gropper.webp', 'lanxess.webp', 'ludwig-schokolade.webp', 'maurer-and-wirtz.webp', 'vitakraft.webp'];
 
 const Who = () => {
   const logosRef = useRef<HTMLDivElement | null>(null);
@@ -46,14 +49,13 @@ const Who = () => {
 
       <FullBleedLines>
         <div ref={logosRef} className="bg-foreground/5 flex gap-2 overflow-x-auto p-2">
-          {[{ label: 'Logo !' }, { label: 'Logo @' }, { label: 'Logo #' }].map((item, i) => (
+          {clients.map((item, i) => (
             <div
-              className="bg-background border-border flex h-38 min-w-2xl flex-col items-center justify-start rounded-2xl border p-2"
+              className="bg-background border-border flex h-38 min-w-lg flex-col items-center justify-start rounded-2xl border p-2"
               key={i}
             >
-              <div className="flex w-full items-center justify-between p-8">
-                <p className="relative text-4xl leading-none font-bold tracking-tight">{item.label}</p>
-                <Layers2 strokeWidth={1.5} className="text-primary" size={72} />
+              <div className="flex w-full items-center justify-center p-8">
+                <Image src={`/home/${item}`} alt="Client Logo" width={150} height={75} />
               </div>
             </div>
           ))}

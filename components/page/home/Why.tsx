@@ -39,12 +39,14 @@ const Why = () => (
                   <p className="max-w-72 pr-2 text-xl leading-none font-bold tracking-tight">
                     From fragmented workflows → to connected systems
                   </p>
-                  <Button
-                    className="bg-primary hover:ring-primary/50 hover:ring-offset-background size-16 origin-center cursor-pointer rounded-none transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6"
-                    aria-label="Learn more about connected systems"
-                  >
-                    <ArrowUpRight size={24} className="size-6" />
-                  </Button>
+                  <Link href="/contact">
+                    <Button
+                      className="bg-primary hover:ring-primary/50 hover:ring-offset-background size-16 origin-center cursor-pointer rounded-none transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6"
+                      aria-label="Learn more about connected systems"
+                    >
+                      <ArrowUpRight size={24} className="size-6" />
+                    </Button>
+                  </Link>
                 </div>
 
                 <div className="bg-background flex items-center justify-between rounded-lg p-3">
@@ -52,12 +54,14 @@ const Why = () => (
                   <p className="max-w-72 pr-2 text-xl leading-none font-bold tracking-tight">
                     From slow cycles → to agile execution
                   </p>
-                  <Button
-                    className="bg-primary hover:ring-primary/50 hover:ring-offset-background size-16 origin-center cursor-pointer rounded-none transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6"
-                    aria-label="Learn more about connected systems"
-                  >
-                    <ArrowUpRight size={24} className="size-6" />
-                  </Button>
+                  <Link href="/contact">
+                    <Button
+                      className="bg-primary hover:ring-primary/50 hover:ring-offset-background size-16 origin-center cursor-pointer rounded-none transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6"
+                      aria-label="Learn more about connected systems"
+                    >
+                      <ArrowUpRight size={24} className="size-6" />
+                    </Button>
+                  </Link>
                 </div>
 
                 <div className="bg-background flex items-center justify-between rounded-lg p-3 md:col-span-2">
@@ -67,12 +71,14 @@ const Why = () => (
                       From governance → to brand enablement at scale
                     </p>
                   </div>
-                  <Button
-                    className="bg-primary hover:ring-primary/50 hover:ring-offset-background size-16 origin-center cursor-pointer rounded-none transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6"
-                    aria-label="Learn more about connected systems"
-                  >
-                    <ArrowUpRight size={24} className="size-6" />
-                  </Button>
+                  <Link href="/contact">
+                    <Button
+                      className="bg-primary hover:ring-primary/50 hover:ring-offset-background size-16 origin-center cursor-pointer rounded-none transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6"
+                      aria-label="Learn more about connected systems"
+                    >
+                      <ArrowUpRight size={24} className="size-6" />
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

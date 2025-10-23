@@ -2,6 +2,7 @@ import { ArrowUpRight, MoveUpRight } from 'lucide-react';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 interface NeedProps {
   title1: string;
@@ -32,20 +33,22 @@ const Need = ({ title1, highlightTitle, title2, subtitle, description }: NeedPro
 
         <div className="flex flex-col gap-4">
           <div className="text-background max-w-2xl leading-relaxed tracking-tight">{description}</div>
-          <Button
-            size="sm"
-            className="group/cta-hero active:ring-success/50 active:ring-offset-background inline-flex w-fit origin-left items-center justify-start gap-3 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-300 ease-[var(--easing-smooth)] hover:gap-0 active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2"
-          >
-            <span className="bg-success text-success-foreground group-hover/cta-hero:bg-success/90 group-active/cta-hero:bg-success/80 inline-flex h-10 items-center px-6 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta-hero:px-7">
-              Talk to Us
-            </span>
-            <span
-              className="bg-success text-success-foreground group-hover/cta-hero:bg-success/90 group-active/cta-hero:bg-success/80 inline-flex h-10 w-10 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)]"
-              aria-hidden="true"
+          <Link href="/contact">
+            <Button
+              size="sm"
+              className="group/cta-hero active:ring-success/50 active:ring-offset-background inline-flex w-fit origin-left items-center justify-start gap-3 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-300 ease-[var(--easing-smooth)] hover:gap-0 active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2"
             >
-              <MoveUpRight className="h-4 w-4" />
-            </span>
-          </Button>
+              <span className="bg-success text-success-foreground group-hover/cta-hero:bg-success/90 group-active/cta-hero:bg-success/80 inline-flex h-10 items-center px-6 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta-hero:px-7">
+                Talk to Us
+              </span>
+              <span
+                className="bg-success text-success-foreground group-hover/cta-hero:bg-success/90 group-active/cta-hero:bg-success/80 inline-flex h-10 w-10 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)]"
+                aria-hidden="true"
+              >
+                <MoveUpRight className="h-4 w-4" />
+              </span>
+            </Button>
+          </Link>
         </div>
       </div>
     </FullBleedLines>

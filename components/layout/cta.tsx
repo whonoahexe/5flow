@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import CtaPixelGrid from '@/components/core/cta-pixel-grid';
-import { Button } from '@/components/ui/button';
 import { ArrowRight, ArrowUp, ArrowUpRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import CtaPixelGrid from '@/components/core/cta-pixel-grid';
 
 interface CtaProps {
   leftTitle: string;

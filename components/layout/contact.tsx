@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '../core/inline-highlight';
-import React from 'react';
 
 type ContactProps = {
   leadingText?: string;
@@ -74,7 +73,10 @@ export function Contact({
                   className="font-body border-boder bg-background focus:ring-success w-full rounded-none border pl-12 transition-all duration-300 ease-[var(--easing-smooth)] focus:ring-2 focus:ring-offset-2"
                 />
               </div>
-              <Button className="bg-success text-foreground hover:bg-success/90 min-h-10 w-full rounded-none font-semibold tracking-tight transition-colors duration-300 ease-[var(--easing-smooth)]">
+              <Button
+                className="bg-success text-foreground hover:bg-success/90 min-h-10 w-full rounded-none font-semibold tracking-tight transition-colors duration-300 ease-[var(--easing-smooth)]"
+                type="submit"
+              >
                 Book a Demo <ArrowUpRight />
               </Button>
             </form>
