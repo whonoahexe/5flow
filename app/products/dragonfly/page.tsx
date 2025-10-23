@@ -137,7 +137,7 @@ export default function Dragonfly() {
 
         <div className="flex flex-col gap-32">
           <Hero
-            logoSrc="/product/wave.svg"
+            logoSrc="/product/dragonfly.svg"
             logoAlt="Wave Brand"
             title="Make your projects fly"
             subtitle="Streamlined workflows for complex brand execution"

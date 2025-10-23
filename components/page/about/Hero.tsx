@@ -18,7 +18,7 @@ const Hero = () => {
 
         {/* Images */}
         <FullBleedLines className="bg-foreground/5 flex w-full p-2">
-          <div className="flex w-full flex-col gap-2">
+          <div className="flex w-full flex-col">
             <div className="border-border bg-accent1 flex border">
               {topRowImages.map((src, index) => (
                 <Image

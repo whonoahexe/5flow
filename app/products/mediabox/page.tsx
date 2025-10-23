@@ -137,7 +137,7 @@ export default function Mediabox() {
 
         <div className="flex flex-col gap-32">
           <Hero
-            logoSrc="/product/wave.svg"
+            logoSrc="/product/mediabox.svg"
             logoAlt="Wave Brand"
             title="Bring your brand to life"
             subtitle="Creative workflows made easy and accurate"

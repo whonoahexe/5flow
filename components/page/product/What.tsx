@@ -30,7 +30,7 @@ const What = ({ whatData }: WhatProps) => {
         {whatData.map((row, rowIndex) => (
           <div key={rowIndex} className="flex w-full justify-between gap-8">
             {row.map((problem, colIndex) => (
-              <div key={colIndex} className="relative flex flex-1 flex-col gap-8">
+              <div key={colIndex} className="relative flex flex-1 flex-col justify-between gap-8">
                 <b className="text-4xl leading-none tracking-tight">{problem.title}</b>
                 <div className="flex justify-between text-xl">
                   <p className="flex max-w-88 flex-1 leading-none tracking-tight">{problem.subtitle}</p>

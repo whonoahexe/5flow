@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { ReactLenis } from 'lenis/react';
 import { centuryGothic, metropolis } from '@/lib/fonts';
 import { Navigation, Footer } from '@/components/layout';
+import PageTransition from '@/components/layout/page-transition';
 import PatternOverlay from '@/components/core/pattern-overlay';
 import '@/styles/globals.css';
 
@@ -25,7 +26,7 @@ export default function RootLayout({
         <Navigation />
         <main className="relative flex-1">
           <PatternOverlay side="both" margin="container" containerAlign="outside" />
-          {children}
+          <PageTransition>{children}</PageTransition>
         </main>
         <Footer />
       </body>
