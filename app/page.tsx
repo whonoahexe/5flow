@@ -11,7 +11,7 @@ export default function Home() {
       {/* Scrolls */}
       <div className="container mx-auto mb-32">
         <Hero />
-        <div className="flex flex-col gap-32">
+        <div className="mt-24 flex flex-col gap-32">
           <What />
           <Who />
           <How />

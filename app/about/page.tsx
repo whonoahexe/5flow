@@ -5,7 +5,6 @@ import Vision from '@/components/page/about/Vision';
 import Mission from '@/components/page/about/Mission';
 import Workflow from '@/components/page/about/Workflow';
 import Apart from '@/components/page/about/Apart';
-import Team from '@/components/page/about/Team';
 
 export default function About() {
   return (
@@ -18,7 +17,6 @@ export default function About() {
           <Mission />
           <Workflow />
           <Apart />
-          <Team />
         </div>
       </div>
       <Cta
