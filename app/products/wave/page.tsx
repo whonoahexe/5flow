@@ -142,7 +142,7 @@ export default function Wave() {
             title="Artwork management, without the chaos"
             subtitle="Faster progress from first draft to final approval."
             description="WAVE gives brand, packaging, and regulatory teams a single platform to brief, review, and approve artwork. No more confusion, no more delays. Just clear workflows that move projects forward."
-            imageSrc="/product/rectangle.png"
+            imageSrc="/product/wave-svg.svg"
             imageWidth={292}
             imageAlt="rectangle"
           />
