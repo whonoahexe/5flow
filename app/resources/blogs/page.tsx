@@ -192,8 +192,6 @@ export default function Blogs() {
           <Hero
             title="Insights & Ideas For You"
             subtitle="Stay ahead with expert insights, industry news, and best practices from the 5Flow team."
-            imageSrc="/product/rectangle.png"
-            imageAlt="rectangle"
             buttonLabel="Read our Blogs"
           />
           <FilterSection tabsData={tabsData} />

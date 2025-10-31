@@ -122,8 +122,6 @@ export default function VideoGallery() {
           <Hero
             title="Learn faster, watch smarter"
             subtitle="Short, sharp videos on product walkthroughs, customer stories, and industry best practices."
-            imageSrc="/product/rectangle.png"
-            imageAlt="video gallery"
             buttonLabel="Watch Videos"
           />
           <FilterSection tabsData={tabsData} />

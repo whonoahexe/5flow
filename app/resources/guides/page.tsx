@@ -122,8 +122,6 @@ export default function Guides() {
           <Hero
             title="In-depth resources for leaders in artwork, packaging and more"
             subtitle="Step-by-step guides on artwork management, compliance, automation, and more."
-            imageSrc="/product/rectangle.png"
-            imageAlt="rectangle"
             buttonLabel="Download Guides"
           />
           <FilterSection tabsData={tabsData} />

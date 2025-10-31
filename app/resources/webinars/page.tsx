@@ -95,8 +95,6 @@ export default function Webinars() {
           <Hero
             title="Deep dives with our experts and industry leaders"
             subtitle="Join live sessions or watch on-demand recordings to explore trends, solutions, and case studies."
-            imageSrc="/product/rectangle.png"
-            imageAlt="rectangle"
             buttonLabel="Register / Watch On Demand"
           />
           <FilterSection tabsData={tabsData} />
