@@ -18,7 +18,7 @@ const Hero = () => {
         {/* Images */}
         <FullBleedLines className="bg-foreground/5 flex w-full p-2">
           <div className="flex w-full flex-col">
-            <div className="border-border bg-accent1 flex border">
+            <div className="bg-accent1 flex">
               {topRowImages.map((src, index) => (
                 <Image
                   key={index}
@@ -39,7 +39,7 @@ const Hero = () => {
               />
             </div>
 
-            <div className="border-border bg-primary flex w-full border">
+            <div className="bg-primary flex w-full">
               <div className="relative h-full w-152">
                 <div className="text-background flex h-full w-140 flex-col justify-center gap-6 px-6">
                   <div className="font-heading text-4xl leading-none font-semibold tracking-tight">We are 5Flow.</div>

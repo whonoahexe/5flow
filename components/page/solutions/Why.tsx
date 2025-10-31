@@ -10,8 +10,7 @@ interface WhyFeature {
   title: string;
   subtitle: string;
   description: string;
-  buttonText: string;
-  imageSrc: string;
+  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   heading?: string;
 }
 
@@ -34,55 +33,25 @@ const Why = ({ whyData }: WhyProps) => {
         <ArrowDownLeft size={126} className="text-accent1" strokeWidth={1.5} />
       </FullBleedLines>
 
-      {whyData.map((feature, index) => {
-        const isEven = index % 2 === 0;
-
-        return (
-          <div key={index} className="flex items-start gap-2 p-2">
-            <FullBleedLines key={index} className={`flex w-full gap-2 p-2 ${isEven ? 'flex-row' : 'flex-row-reverse'}`}>
-              <div className="flex flex-1 flex-col justify-center">
-                <div className="flex items-center gap-6 p-6">
-                  <BadgeCheck className="text-foreground h-18 w-18" strokeWidth={1.5} />
-                  <div className="flex flex-col gap-2">
-                    <b className="relative text-4xl leading-none tracking-tight">{feature.title}</b>
-                    <p className="relative text-xl leading-none tracking-tight">{feature.subtitle}</p>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-6 p-6 text-xl">
-                  <p className="relative leading-none tracking-tight">{feature.description}</p>
-                  <div>
-                    <Button
-                      asChild
-                      className="group/cta active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-0 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-150 ease-[var(--easing-smooth)] active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2 has-[>svg]:px-0"
-                    >
-                      <Link href="/" aria-label="Book a demo">
-                        <span className="bg-success text-success-foreground group-hover/cta:bg-success/90 group-active/cta:bg-success/80 inline-flex h-9 items-center px-4 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta:px-3">
-                          {feature.buttonText}
-                        </span>
-                        <span
-                          className="bg-success text-success-foreground group-hover/cta:bg-success/90 group-active/cta:bg-success/80 ml-0 inline-flex h-9 w-9 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta:ml-2"
-                          aria-hidden="true"
-                        >
-                          <ArrowUpRight className="h-4 w-4" />
-                        </span>
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
+      <FullBleedLines>
+        <div className="grid grid-cols-2 gap-2 p-2">
+          {whyData.map((card, i) => (
+            <div
+              key={i}
+              className="bg-background border-border flex flex-col justify-between rounded-2xl border p-2 shadow-[0px_4px_6px_-4px_rgba(0,0,0,0.102),0px_10px_15px_-3px_rgba(0,0,0,0.102)]"
+            >
+              <div className="flex w-full items-start justify-between p-8">
+                <p className="text-4xl font-bold tracking-tight">{card.title}</p>
+                {card.icon && <card.icon className="text-primary h-18 w-18" strokeWidth={1.5} />}
               </div>
-
-              <Image
-                className="h-96 flex-1 rounded-2xl object-cover"
-                width={752}
-                height={400}
-                sizes="100vw"
-                alt=""
-                src={feature.imageSrc}
-              />
-            </FullBleedLines>
-          </div>
-        );
-      })}
+              <div className="w-full max-w-xl p-8">
+                <p className="w-full max-w-96 text-xl font-bold tracking-tight">{card.subtitle}</p>
+                <p className="pt-2 tracking-tighter">{card.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </FullBleedLines>
     </div>
   );
 };

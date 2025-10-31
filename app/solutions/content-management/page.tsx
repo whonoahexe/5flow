@@ -1,3 +1,4 @@
+import { Layers2 } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
@@ -60,35 +61,27 @@ export default function ContentManagement() {
       subtitle: 'Aligned across products and markets',
       description:
         'With one source of truth, brand voice stays clear and consistent globally, no matter the SKU or channel.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Brand Consistency',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
     {
       title: 'Reduced compliance risk',
       subtitle: 'Always accurate, always validated',
       description: 'Content approvals ensure regulatory accuracy in every market, reducing exposure to costly fines.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Compliance Benefits',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
     {
       title: 'Creative efficiency',
       subtitle: 'Designers focus on design, not copy hunts',
       description:
         'Approved content flows directly into artwork, letting creative teams produce faster with fewer errors.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Creative Gains',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
     {
       title: 'Operational agility',
       subtitle: 'Handle changes without chaos',
       description:
         'Ingredient updates, new claims, or product launches are rolled out instantly across all packaging and markets.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Agility Benefits',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
   ];
 

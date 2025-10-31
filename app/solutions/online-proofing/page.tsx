@@ -1,3 +1,4 @@
+import { Layers2 } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
@@ -59,33 +60,25 @@ export default function OnlineProofing() {
       title: 'Faster launches',
       subtitle: 'Cut approval cycles in half',
       description: 'Clear reviews and automated sign offs reduce cycle times, keeping launches on schedule.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Faster Launches',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
     {
       title: 'Stronger compliance',
       subtitle: 'Always audit ready',
       description: 'Every approval loop is documented, giving regulatory teams full traceability.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Compliance in Action',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
     {
       title: 'Lower costs',
       subtitle: 'Reduce error driven waste',
       description: 'Fewer mistakes mean fewer reprints and less wasted time and resources.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Cost Savings',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
     {
       title: 'Better collaboration',
       subtitle: 'Everyone aligned in one system',
       description: 'With centralized proofing, feedback is structured, traceable, and easy to act on.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Collaboration Benefits',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
   ];
 

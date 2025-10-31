@@ -23,11 +23,11 @@ const Workflow = () => {
         protected with enterprise-grade security standards.
       </FullBleedLines>
       <FullBleedLines className="w-full">
-        <div className="bg-foreground/5 flex items-center gap-2 self-stretch overflow-hidden p-2">
+        <div className="flex items-center gap-2 self-stretch overflow-hidden p-2">
           {workflowImages.map((image, index) => (
             <div
               key={index}
-              className="border-border bg-background flex h-38 flex-1 items-center justify-center overflow-hidden rounded-2xl border"
+              className="bg-background flex h-38 flex-1 items-center justify-center overflow-hidden rounded-2xl"
             >
               <Image
                 className="object-cover"

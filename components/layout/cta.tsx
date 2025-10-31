@@ -35,7 +35,7 @@ export function Cta({ leftTitle, leftSubtitle, rightTitle, rightDesc, buttonText
       {/* Cta */}
       <div className="bg-accent1 relative z-0 mt-[-168px] flex min-h-[560px] w-full flex-col items-center justify-center px-6 pt-[200px] pb-[7.5rem] md:px-48">
         <div className="text-background relative flex w-full flex-col gap-12 lg:flex-row lg:justify-between">
-          <div className="flex w-full max-w-md flex-col gap-4">
+          <div className="ml-90 flex w-full max-w-md flex-col gap-4">
             <b className="text-5xl tracking-tighter">{leftTitle}</b>
             <div className="flex items-center justify-between" onClick={() => alert('Arrow clicked!')}>
               <ArrowRight size={48} />

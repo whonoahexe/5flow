@@ -47,13 +47,13 @@ const FilterSection = ({ tabsData }: { tabsData: TabData[] }) => {
 
         <FullBleedLines>
           {tabsData.map(tab => (
-            <TabsContent key={tab.value} value={tab.value} className="bg-foreground/5 p-2">
+            <TabsContent key={tab.value} value={tab.value} className="p-2">
               <div className="flex flex-col gap-2">
                 <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
                   {tab.items.map((item, i) => (
                     <Card
                       key={`${tab.value}-${i}`}
-                      className="border-border relative flex flex-1 flex-col gap-0 rounded-2xl border p-4 shadow-none"
+                      className="relative flex flex-1 flex-col gap-0 rounded-2xl border p-4 shadow-[0px_4px_6px_-4px_rgba(0,0,0,0.102),0px_10px_15px_-3px_rgba(0,0,0,0.102)]"
                     >
                       <div className="relative h-65 w-full overflow-hidden rounded-[20px]">
                         <Image

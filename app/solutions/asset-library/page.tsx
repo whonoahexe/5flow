@@ -1,3 +1,4 @@
+import { Layers2 } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
@@ -59,33 +60,25 @@ export default function AssetLibrary() {
       title: 'Brand consistency',
       subtitle: 'The right asset every time',
       description: 'One central library ensures teams and suppliers always use approved assets.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Brand Consistency',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
     {
       title: 'Productivity boost',
       subtitle: 'Less searching, more doing',
       description: 'Teams save hours by finding assets instantly, freeing time for high-value work.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Productivity Gains',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
     {
       title: 'Supply chain efficiency',
       subtitle: 'Faster collaboration with partners',
       description: 'Suppliers and printers access validated files directly, cutting delays and rework.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Supply Chain Benefits',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
     {
       title: 'Risk reduction',
       subtitle: 'Eliminate errors from outdated files',
       description: 'Always-on version control ensures outdated or unapproved assets never reach production.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Risk Reduction',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
   ];
 

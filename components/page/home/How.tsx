@@ -44,9 +44,12 @@ const How = () => (
       </div>
 
       <FullBleedLines>
-        <div className="bg-foreground/5 flex gap-2 overflow-x-auto p-2">
+        <div className="flex gap-2 overflow-x-auto p-2">
           {Explainers.map((item, i) => (
-            <div className="bg-background border-border flex flex-1 flex-col gap-2 rounded-2xl border p-2" key={i}>
+            <div
+              className="bg-background flex flex-1 flex-col gap-2 rounded-2xl p-2 shadow-[0px_4px_6px_-4px_rgba(0,0,0,0.102),0px_10px_15px_-3px_rgba(0,0,0,0.102)]"
+              key={i}
+            >
               <div className="flex w-full items-center gap-8 p-8">
                 <item.icon className="text-primary" size={72} strokeWidth={1.5} />
                 <p className="text-4xl leading-none font-bold tracking-tight">{item.title}</p>

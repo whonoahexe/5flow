@@ -1,3 +1,4 @@
+import { Layers2 } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
@@ -59,33 +60,25 @@ export default function Integration() {
       title: 'Ecosystem efficiency',
       subtitle: 'Every tool working together',
       description: 'Seamless integrations keep workflows moving without manual intervention.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Efficiency Gains',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
     {
       title: 'Reduced manual work',
       subtitle: 'Less copy-pasting, fewer errors',
       description: 'Automated data flow eliminates human error and saves hours of repetitive effort.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Productivity Benefits',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
     {
       title: 'Greater visibility',
       subtitle: 'One view across systems',
       description: 'Connected systems give managers a clear picture of project status and risks.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Visibility Benefits',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
     {
       title: 'Flexibility at scale',
       subtitle: 'Adapt to any tech landscape',
       description: 'Open architecture means integration works with your current tools, not against them.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Scalability Benefits',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
   ];
 

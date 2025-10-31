@@ -47,9 +47,7 @@ const CtaPixelGrid = ({ pattern, pixelSize = '7.5rem', icon, className }: PixelG
               size="var(--pixel-size)"
               background={background}
               className="flex items-center justify-center"
-            >
-              {isIconCell ? icon.element : null}
-            </Pixel>
+            />
           );
         })
       )}

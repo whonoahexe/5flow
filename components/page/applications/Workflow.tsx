@@ -41,11 +41,11 @@ const Workflow = ({ title, subtitle, statsData }: WorkflowProps) => {
         </div>
       </FullBleedLines>
 
-      <FullBleedLines className="bg-foreground/5 flex w-full flex-1 gap-2 p-2">
+      <FullBleedLines className="flex w-full flex-1 gap-2 p-2">
         {statsData.map((stat, index) => (
           <div
             key={index}
-            className="border-border bg-background flex h-56 flex-1 flex-col items-center justify-center gap-2 rounded-2xl border"
+            className="bg-background flex h-56 flex-1 flex-col items-center justify-center gap-2 rounded-2xl shadow-[0px_4px_6px_-4px_rgba(0,0,0,0.102),0px_10px_15px_-3px_rgba(0,0,0,0.102)]"
           >
             <b className="font-heading text-primary text-6xl">{stat.value}</b>
             <b className="relative text-center text-2xl leading-none">{stat.label}</b>

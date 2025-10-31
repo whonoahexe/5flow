@@ -1,3 +1,4 @@
+import { Layers2 } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
@@ -63,33 +64,25 @@ export default function ArtworkManagement() {
       subtitle: 'Products reach shelves on time',
       description:
         'Automated workflows and clear approvals cut cycle time, helping brands stay ahead in fast-moving markets.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Faster Launches',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
     {
       title: 'Lower costs',
       subtitle: 'Less waste, fewer errors',
       description: 'Accurate artwork reduces reprints, saves money, and improves supplier efficiency.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Cost Savings',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
     {
       title: 'Stronger compliance',
       subtitle: 'Built-in audit readiness',
       description: 'Track every update and approval for audit-ready records that protect against compliance risks.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Compliance in Action',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
     {
       title: 'Scale with clarity',
       subtitle: 'Manage thousands of artworks easily',
       description: 'From ten SKUs to ten thousand, the system scales with your business without adding complexity.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Scalability',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
   ];
 

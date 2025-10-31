@@ -1,3 +1,4 @@
+import { Layers2 } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
@@ -60,33 +61,25 @@ export default function AutomatedArtwork() {
       title: 'Faster market entry',
       subtitle: 'Launch weeks earlier',
       description: 'Cut artwork turnaround from days to minutes, helping products and promos hit shelves faster.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Faster Launches',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
     {
       title: 'Greater creative freedom',
       subtitle: 'Designers focus on ideas, not mechanics',
       description: 'Automation frees creative teams from repetitive edits so they can focus on innovation.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Creative Benefits',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
     {
       title: 'Precision at scale',
       subtitle: 'Consistency across thousands of SKUs',
       description: 'Automation eliminates human error, ensuring every adaptation is accurate and on brand.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Precision at Scale',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
     {
       title: 'Sustainable and low cost',
       subtitle: 'Less waste, fewer reprints',
       description: 'Automated accuracy reduces costly mistakes, reprints, and supplier delays.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'See Cost Benefits',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Layers2,
     },
   ];
 

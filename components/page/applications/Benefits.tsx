@@ -28,9 +28,12 @@ const Benefits = ({ items = [], highlightedText }: BenefitsProps) => {
       </FullBleedLines>
 
       <FullBleedLines className="w-full">
-        <div className="bg-foreground/5 grid grid-cols-2 gap-2 p-2">
+        <div className="b grid grid-cols-2 gap-2 p-2">
           {items.map((card, i) => (
-            <div key={i} className="bg-background border-border flex flex-col justify-between rounded-2xl border p-2">
+            <div
+              key={i}
+              className="bg-background flex flex-col justify-between rounded-2xl p-2 shadow-[0px_4px_6px_-4px_rgba(0,0,0,0.102),0px_10px_15px_-3px_rgba(0,0,0,0.102)]"
+            >
               <div className="flex w-full items-start justify-between p-8">
                 <p className="text-4xl font-bold tracking-tight">{card.title}</p>
                 {card.icon && <card.icon className="text-primary h-18 w-18" strokeWidth={1.5} />}

@@ -27,11 +27,11 @@ const Challenges = ({ items = [] }: ChallengesProps) => {
       </FullBleedLines>
 
       <FullBleedLines>
-        <div className="bg-foreground/5 grid grid-cols-2 gap-2 p-2">
+        <div className="grid grid-cols-2 gap-2 p-2">
           {items.map((card, i) => (
             <div
               key={i}
-              className={`bg-background border-border flex flex-col justify-between rounded-2xl border p-2 ${
+              className={`bg-background flex flex-col justify-between rounded-2xl p-2 shadow-[0px_4px_6px_-4px_rgba(0,0,0,0.102),0px_10px_15px_-3px_rgba(0,0,0,0.102)] ${
                 items.length === 5 && i === items.length - 1 ? 'col-span-2' : ''
               }`}
             >
