@@ -19,7 +19,7 @@ interface TabItem {
 interface TabData {
   value: string;
   label: string;
-  icon: React.ComponentType<any>;
+  icon: React.ElementType;
   items: TabItem[];
 }
 
