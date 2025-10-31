@@ -48,10 +48,10 @@ const Who = () => {
       </FullBleedLines>
 
       <FullBleedLines>
-        <div ref={logosRef} className="bg-foreground/5 flex gap-2 overflow-x-auto p-2">
+        <div ref={logosRef} className="bg-background flex gap-2 overflow-x-auto p-2">
           {clients.map((item, i) => (
             <div
-              className="bg-background border-border flex h-38 min-w-lg flex-col items-center justify-start rounded-2xl border p-2"
+              className="bg-background flex h-38 min-w-lg flex-col items-center justify-start rounded-2xl p-2"
               key={i}
             >
               <div className="flex w-full items-center justify-center p-8">

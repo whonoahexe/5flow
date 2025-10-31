@@ -28,8 +28,8 @@ export function Contact({
       <FullBleedLines>
         <div className="bg-foreground/5 relative w-full p-2">
           {/* Small pixels in top & bottom left corners*/}
-          <div className="bg-success absolute top-0 left-0 z-50 h-10 w-10" />
-          <div className="bg-success absolute bottom-0 left-0 z-50 h-10 w-10" />
+          {/* <div className="bg-success absolute top-0 left-0 z-50 h-10 w-10" />
+          <div className="bg-success absolute bottom-0 left-0 z-50 h-10 w-10" /> */}
 
           <div className="bg-primary relative flex h-[562px] w-full items-center justify-between overflow-hidden rounded-2xl px-16">
             <form className="z-20 flex w-full max-w-4xl flex-col items-end justify-center gap-6">

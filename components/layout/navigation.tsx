@@ -44,7 +44,7 @@ const NAV_ITEMS: NavItem[] = [
   { type: 'link', href: '/about', label: '[ ABOUT ]' },
   {
     type: 'dropdown',
-    href: '/products',
+    href: '/products/wave',
     label: '[ PRODUCTS ]',
     menu: {
       items: [
@@ -60,7 +60,7 @@ const NAV_ITEMS: NavItem[] = [
   },
   {
     type: 'dropdown',
-    href: '/solutions',
+    href: '/solutions/artwork-management',
     label: '[ SOLUTIONS ]',
     menu: {
       items: [
@@ -78,7 +78,7 @@ const NAV_ITEMS: NavItem[] = [
   },
   {
     type: 'dropdown',
-    href: '/applications',
+    href: '/applications/role/brand-manager',
     label: '[ APPLICATIONS ]',
     menu: {
       groups: [
@@ -105,6 +105,23 @@ const NAV_ITEMS: NavItem[] = [
       offsetClass: 'ml-204',
       itemWidthClass: 'w-120',
       columns: 2,
+    },
+  },
+  {
+    type: 'dropdown',
+    href: '/resources/case-studies',
+    label: '[ RESOURCES ]',
+    menu: {
+      items: [
+        { href: '/resources/case-studies', label: 'CASE STUDIES' },
+        { href: '/resources/blogs', label: 'BLOGS' },
+        { href: '/resources/video-gallery', label: 'VIDEO GALLERY' },
+        { href: '/resources/webinars', label: 'WEBINARS' },
+        { href: '/resources/guides', label: 'GUIDES' },
+      ],
+      offsetClass: 'ml-36',
+      itemWidthClass: 'w-72',
+      columns: 1,
     },
   },
 ];
