@@ -7,54 +7,55 @@ import { MoveUpRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
-// changed: accept tabsData as a prop instead of using internal data
-type TabItem = {
+interface TabItem {
   title: string;
   desc: string;
   image?: string;
   link?: string;
   buttonLabel?: string;
-  date?: string; // added: optional date for webinars/upcoming items
-};
-type TabData = {
+  date?: string;
+}
+
+interface TabData {
   value: string;
   label: string;
   icon: React.ComponentType<any>;
   items: TabItem[];
-};
+}
 
 const FilterSection = ({ tabsData }: { tabsData: TabData[] }) => {
   return (
     <div className="relative w-full flex-col">
-      <FullBleedLines className="bg-foreground/5 mt-16 p-2">
-        <Tabs defaultValue={tabsData?.[0]?.value ?? 'industry'} className="w-full rounded-none pt-2">
-          <TabsList className="flex gap-4 rounded-none">
+      <Tabs defaultValue={tabsData?.[0]?.value ?? 'industry'} className="flex w-full flex-col gap-8">
+        <FullBleedLines>
+          <TabsList className="bg-foreground/5 flex min-h-16 gap-5 rounded-none px-3 py-2">
             {tabsData.map(tab => {
               const Icon = tab.icon;
               return (
                 <TabsTrigger
                   key={tab.value}
                   value={tab.value}
-                  className="data-[state=active]:text-primary data-[state=active]:ring-primary data-[state=active]:bg-background flex min-h-[48px] items-center gap-3 px-4 py-3 text-lg data-[state=active]:rounded-lg data-[state=active]:ring-2"
+                  className="data-[state=active]:text-primary data-[state=active]:ring-primary data-[state=active]:bg-background flex min-h-11 min-w-8 cursor-pointer items-center gap-2 px-8 py-3 text-lg data-[state=active]:rounded-sm data-[state=active]:ring-2"
                 >
-                  <Icon className="inline-block h-5 w-5" />
+                  <Icon className="h-5 w-5" />
                   <span className="leading-none">{tab.label}</span>
                 </TabsTrigger>
               );
             })}
           </TabsList>
+        </FullBleedLines>
 
+        <FullBleedLines>
           {tabsData.map(tab => (
-            <TabsContent key={tab.value} value={tab.value} className="">
-              <div className="mt-6 flex flex-col gap-2">
+            <TabsContent key={tab.value} value={tab.value} className="bg-foreground/5 p-2">
+              <div className="flex flex-col gap-2">
                 <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
                   {tab.items.map((item, i) => (
                     <Card
                       key={`${tab.value}-${i}`}
-                      className="border-gainsboro text-gray relative box-border flex w-full flex-1 shrink-0 flex-col items-start overflow-hidden rounded-2xl border border-solid bg-white p-4 text-left text-base"
+                      className="border-border relative flex flex-1 flex-col gap-0 rounded-2xl border p-4 shadow-none"
                     >
-                      {/* use Tailwind sizing for the image container and Image fill */}
-                      <div className="relative h-64 w-full overflow-hidden rounded-2xl">
+                      <div className="relative h-65 w-full overflow-hidden rounded-[20px]">
                         <Image
                           src={item.image ?? '/product/rectangle.png'}
                           alt={item.title}
@@ -63,12 +64,11 @@ const FilterSection = ({ tabsData }: { tabsData: TabData[] }) => {
                         />
                       </div>
 
-                      <div className="flex items-center self-stretch px-2 py-4">
-                        <div className="flex flex-1 flex-col items-start gap-4">
-                          {item.date && <div className="text-muted-foreground text-sm">{item.date}</div>}
-                          <div className="w-full">
-                            <b className="leading-tight tracking-tight">{item.title}</b>
-                            <div className="mt-2 text-lg leading-tight tracking-tight">{item.desc}</div>
+                      <div className="px-2 py-4">
+                        <div className="flex flex-1 flex-col items-start gap-6">
+                          <div className="flex w-full flex-col gap-2">
+                            <b className="font-heading text-2xl leading-tight tracking-tight">{item.title}</b>
+                            <div className="text-lg leading-tight tracking-tight">{item.desc}</div>
                           </div>
                           <Link href={item.link ?? '/contact'}>
                             <Button
@@ -94,8 +94,8 @@ const FilterSection = ({ tabsData }: { tabsData: TabData[] }) => {
               </div>
             </TabsContent>
           ))}
-        </Tabs>
-      </FullBleedLines>
+        </FullBleedLines>
+      </Tabs>
     </div>
   );
 };

@@ -10,7 +10,7 @@ export default function CaseStudies() {
       value: 'industry',
       label: 'By Industry',
       icon: Briefcase,
-      buttonLabel: 'Read Case Study', // added: single button label for the tab
+      buttonLabel: 'Read Case Study',
       items: [
         {
           title: 'Retail Case Study',
@@ -113,8 +113,6 @@ export default function CaseStudies() {
           <Hero
             title="See how leading brands use 5Flow"
             subtitle="Explore real-world success stories from Retail, Pharma, F&B, Beauty, and Consumer Goods."
-            imageSrc="/product/rectangle.png"
-            imageAlt="rectangle"
             buttonLabel="Explore Case Studies"
           />
           <FilterSection tabsData={tabsData} />
