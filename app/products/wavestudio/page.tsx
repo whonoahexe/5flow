@@ -135,7 +135,7 @@ export default function Wavestudio() {
       <div className="container mx-auto mb-32">
         <PageHeader title="wavestudio" />
 
-        <div className="flex flex-col gap-32">
+        <div className="flex flex-col gap-10 md:gap-32">
           <Hero
             logoSrc="/product/wave-studio.svg"
             logoAlt="Wave Brand"

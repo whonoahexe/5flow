@@ -91,7 +91,7 @@ export default function BrandManager() {
       <div className="container mx-auto mb-32">
         <PageHeader title="brand manager" />
 
-        <div className="flex flex-col gap-32">
+        <div className="flex flex-col gap-10 md:gap-32">
           <Hero {...heroData} />
           <Challenges items={challengeItems} />
           <Benefits items={benefitItems} highlightedText="Brand Managers" />

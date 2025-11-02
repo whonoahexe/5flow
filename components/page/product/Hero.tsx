@@ -18,30 +18,30 @@ interface HeroProps {
 
 const Hero = ({ logoSrc, logoAlt, title, subtitle, description, imageSrc, imageWidth, imageAlt = '' }: HeroProps) => {
   return (
-    <div className="relative mt-32 w-full flex-col">
+    <div className="relative mt-32 w-full flex-col px-4 sm:px-6 md:px-0">
       {/* Product logo */}
-      <FullBleedLines className="flex h-20">
+      <FullBleedLines className="flex h-20 justify-center sm:justify-start">
         <Image className="relative h-20" width={imageWidth} height={80} alt={logoAlt} src={logoSrc} />
       </FullBleedLines>
 
       {/* Product headling */}
-      <div className="font-heading mt-14 flex flex-col gap-4">
+      <div className="font-heading mt-14 flex flex-col gap-4 text-center sm:text-left">
         <FullBleedLines>
-          <div className="max-w-5xl">
-            <b className="text-8xl leading-none tracking-tighter">{title}</b>
+          <div className="max-w-full sm:max-w-5xl">
+            <b className="text-4xl leading-tight tracking-tighter sm:text-8xl sm:leading-none">{title}</b>
           </div>
         </FullBleedLines>
-        <div className="text-primary text-5xl leading-none tracking-tighter">
+        <div className="text-primary text-2xl leading-tight tracking-tighter sm:text-5xl sm:leading-none">
           <FullBleedLines>{subtitle}</FullBleedLines>
         </div>
       </div>
 
       {/* Product details */}
-      <div className="relative mt-14 w-[642px] text-base leading-[150%] tracking-tight">
+      <div className="relative mt-8 w-full text-center text-sm leading-[150%] tracking-tight sm:mt-14 sm:w-[642px] sm:text-left sm:text-base">
         <FullBleedLines>{description}</FullBleedLines>
       </div>
 
-      <FullBleedLines className="mt-14">
+      <FullBleedLines className="mt-8 flex justify-center sm:mt-14 sm:justify-start">
         <Link href="/contact">
           <Button
             size="lg"
@@ -61,8 +61,14 @@ const Hero = ({ logoSrc, logoAlt, title, subtitle, description, imageSrc, imageW
       </FullBleedLines>
 
       {/* Product image */}
-      <FullBleedLines className="bg-foreground/5 mt-16 p-2">
-        <Image className="relative w-full rounded-[20px]" width={1520} height={480} alt={imageAlt} src={imageSrc} />
+      <FullBleedLines className="bg-foreground/5 mt-8 p-2 sm:mt-16">
+        <Image
+          className="relative w-full rounded-[10px] sm:rounded-[20px]"
+          width={1520}
+          height={480}
+          alt={imageAlt}
+          src={imageSrc}
+        />
       </FullBleedLines>
     </div>
   );

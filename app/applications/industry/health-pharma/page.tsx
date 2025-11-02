@@ -114,7 +114,7 @@ export default function HealthPharma() {
 
   return (
     <div className="relative">
-      <div className="container mx-auto mb-32">
+      <div className="container mx-auto gap-10 md:gap-32">
         <PageHeader title="health pharma" />
 
         <div className="flex flex-col gap-32">

@@ -95,16 +95,16 @@ const How = ({ howData }: HowProps) => {
   }, [howData.length]);
 
   return (
-    <div className="font-heading relative flex w-full flex-col gap-14">
+    <div className="font-heading relative flex w-full flex-col gap-14 px-4 sm:px-0">
       <div className="bg-background/70 supports-[backdrop-filter]:bg-background/60 sticky top-22 z-20 backdrop-blur">
         <FullBleedLines className="flex w-full justify-between">
-          <div className="relative h-32 w-full max-w-sm">
-            <b className="font-heading text-6xl leading-none tracking-tighter">
+          <div className="relative h-24 w-full max-w-xs sm:h-32 sm:max-w-sm">
+            <b className="font-heading text-4xl leading-none tracking-tighter sm:text-6xl">
               <InlineHighlight className="text-background">How</InlineHighlight>
               <span className="text-foreground"> Does it Work?</span>
             </b>
           </div>
-          <ArrowDownLeft size={126} className="text-accent1" strokeWidth={1.5} />
+          <ArrowDownLeft size={80} className="text-accent1 sm:size-[126px]" strokeWidth={1.5} />
         </FullBleedLines>
       </div>
 
@@ -117,27 +117,27 @@ const How = ({ howData }: HowProps) => {
                 sectionRefs.current[index] = el;
               }}
               data-index={index}
-              className="flex min-h-[65vh] w-full flex-col justify-center gap-4 px-2 py-12 lg:min-h-[70vh] lg:pr-0"
+              className="flex min-h-[50vh] w-full flex-col justify-center gap-4 px-4 py-8 sm:min-h-[65vh] sm:px-6 sm:py-12 lg:min-h-[70vh] lg:pr-0"
             >
-              <div className="flex items-center gap-6 p-6">
-                <BadgeCheck className="text-foreground h-18 w-18" strokeWidth={1.5} />
+              <div className="flex items-center gap-4 p-4 sm:gap-6 sm:p-6">
+                <BadgeCheck className="text-foreground h-12 w-12 sm:h-18 sm:w-18" strokeWidth={1.5} />
                 <div className="flex flex-col gap-2">
-                  <b className="relative text-4xl leading-none tracking-tight">{feature.title}</b>
+                  <b className="relative text-2xl leading-none tracking-tight sm:text-4xl">{feature.title}</b>
                   {feature.subtitle && (
-                    <p className="relative text-xl leading-none tracking-tight">{feature.subtitle}</p>
+                    <p className="relative text-lg leading-none tracking-tight sm:text-xl">{feature.subtitle}</p>
                   )}
                 </div>
               </div>
-              <div className="flex flex-col gap-6 p-6 text-xl">
+              <div className="flex flex-col gap-4 p-4 text-lg sm:gap-6 sm:p-6 sm:text-xl">
                 <p className="relative leading-snug tracking-tight">{feature.description}</p>
               </div>
             </section>
           ))}
         </div>
 
-        <aside className="relative -my-40 hidden lg:block">
+        <aside className="relative -my-20 hidden sm:-my-40 lg:block">
           <div className="sticky top-0 flex h-screen items-center justify-center">
-            <div className="bg-muted relative aspect-[16/9] w-[min(42rem,90%)] overflow-hidden rounded-2xl">
+            <div className="bg-muted relative aspect-[16/9] w-[min(90%,42rem)] overflow-hidden rounded-2xl">
               {howData[activeIndex] && (
                 <Image
                   key={activeIndex}

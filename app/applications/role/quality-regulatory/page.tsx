@@ -96,7 +96,7 @@ export default function QualityRegulatory() {
       <div className="container mx-auto mb-32">
         <PageHeader title="quality regulatory" />
 
-        <div className="flex flex-col gap-32">
+        <div className="flex flex-col gap-10 md:gap-32">
           <Hero {...heroData} />
           <Challenges items={challengeItems} />
           <Benefits items={benefitItems} highlightedText="Quality & Regulatory" />
