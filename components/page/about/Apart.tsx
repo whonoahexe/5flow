@@ -32,9 +32,9 @@ const Apart = () => {
 
   return (
     <>
-      <div className="flex w-full flex-col gap-8">
-        <FullBleedLines className="font-heading flex w-full gap-8 px-2">
-          <b className="text-foreground text-6xl leading-none tracking-tighter">
+      <div className="flex w-full flex-col gap-8 px-4 sm:px-0">
+        <FullBleedLines className="font-heading flex w-full flex-col items-center gap-8 px-2 sm:flex-row sm:items-start">
+          <b className="text-foreground text-center text-4xl leading-snug tracking-tighter sm:text-left sm:text-6xl sm:leading-none">
             <span>What Sets</span>
             <br />
             <span>{`Us `}</span>
@@ -42,21 +42,28 @@ const Apart = () => {
               <InlineHighlight className="text-background">Apart?</InlineHighlight>
             </span>
           </b>
-          <ArrowDown className="text-accent1 h-32 w-32" strokeWidth={1.5} />
+          <ArrowDown className="text-accent1 h-16 w-16 sm:h-32 sm:w-32" strokeWidth={1.5} />
         </FullBleedLines>
 
-        <FullBleedLines className="flex w-full justify-between">
+        <FullBleedLines className="flex w-full flex-col justify-between gap-8 sm:flex-row sm:gap-0">
           {features.map((feature, index) => {
             return (
-              <div key={index} className="flex flex-1 flex-col gap-4 px-8">
-                <div className="flex flex-col gap-2 py-7">
+              <div
+                key={index}
+                className="flex flex-col items-center gap-4 px-4 text-center sm:items-start sm:px-8 sm:text-left"
+              >
+                <div className="flex flex-col items-center gap-2 py-4 sm:items-start sm:py-7">
                   <div className="bg-primary/10 flex h-10 w-10 items-center justify-center rounded-lg">
                     <feature.icon className="text-primary h-5 w-5" strokeWidth={2} />
                   </div>
-                  <b className="text-foreground relative text-2xl leading-relaxed tracking-tight">{feature.title}</b>
+                  <b className="text-foreground relative text-xl leading-relaxed tracking-tight sm:text-2xl">
+                    {feature.title}
+                  </b>
                 </div>
-                <div className="flex items-center px-0 py-7">
-                  <p className="text-foreground text-base leading-relaxed tracking-tight">{feature.description}</p>
+                <div className="flex items-center px-0 py-4 sm:py-7">
+                  <p className="text-foreground text-sm leading-relaxed tracking-tight sm:text-base">
+                    {feature.description}
+                  </p>
                 </div>
               </div>
             );

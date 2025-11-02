@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Menu, X, ChevronDown } from 'lucide-react'; // added ChevronDown
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
@@ -160,6 +160,18 @@ export function Navigation() {
   const [footerVisible, setFooterVisible] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
 
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  // New: track which dropdown is expanded in mobile menu (only one open at a time)
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+  const toggleExpanded = (key: string) => {
+    setExpanded(prev => {
+      const isOpen = !!prev[key];
+      // if currently open, close it; otherwise open this one and close others
+      return isOpen ? {} : { [key]: true };
+    });
+  };
+
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
@@ -180,12 +192,27 @@ export function Navigation() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    setMobileOpen(false);
+    // reset expanded on route change
+    setExpanded({});
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileOpen]);
+
   return (
     <nav
       ref={navRef}
-      className={`bg-background border-border fixed top-0 z-[999] flex h-[88px] w-full items-center justify-between border-[1px] border-b border-solid px-28 py-4 transition-transform duration-500 ease-[var(--easing-smooth)] ${
-        footerVisible ? '-translate-y-[120%]' : 'translate-y-0'
-      }`}
+      className={cn(
+        'bg-background border-border fixed top-0 z-[999] flex w-full items-center justify-between border-[1px] border-b border-solid transition-transform duration-500 ease-[var(--easing-smooth)]',
+        footerVisible ? '-translate-y-[120%]' : 'translate-y-0',
+        'h-16 px-4 py-2 sm:h-20 sm:px-6 md:h-[88px] md:px-28 md:py-4'
+      )}
       aria-hidden={footerVisible}
     >
       {/* Logo */}
@@ -193,8 +220,20 @@ export function Navigation() {
         <Image src="/brand.svg" width={103} height={24} alt="5Flow Brand Logo" />
       </Link>
 
-      {/* Nav links */}
-      <div className="flex gap-6">
+      {/* Mobile menu button (visible on small screens) */}
+      <div className="md:hidden">
+        <button
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen(prev => !prev)}
+          className="text-foreground hover:bg-muted inline-flex h-10 w-10 items-center justify-center rounded-md border border-transparent bg-transparent transition-colors"
+        >
+          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
+      </div>
+
+      {/* Nav links - hidden on small screens */}
+      <div className="hidden gap-6 md:flex">
         {NAV_ITEMS.map(item => {
           const itemActive = activeMap.get(item.href) ?? false;
 
@@ -298,23 +337,122 @@ export function Navigation() {
         })}
       </div>
 
-      {/* Cta */}
-      <Button
-        asChild
-        className="group/cta active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-0 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-150 ease-[var(--easing-smooth)] active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2 has-[>svg]:px-0"
-      >
-        <Link href="/contact" aria-label="Book a demo">
-          <span className="bg-success text-success-foreground group-hover/cta:bg-success/90 group-active/cta:bg-success/80 inline-flex h-9 items-center px-4 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta:px-3">
-            Book A Demo
-          </span>
-          <span
-            className="bg-success text-success-foreground group-hover/cta:bg-success/90 group-active/cta:bg-success/80 ml-0 inline-flex h-9 w-9 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta:ml-2"
-            aria-hidden="true"
-          >
-            <ArrowRight className="h-4 w-4" />
-          </span>
-        </Link>
-      </Button>
+      {/* Cta - hidden on small screens */}
+      <div className="hidden md:inline-flex">
+        <Button
+          asChild
+          className="group/cta active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-0 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-150 ease-[var(--easing-smooth)] active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2 has-[>svg]:px-0"
+        >
+          <Link href="/contact" aria-label="Book a demo">
+            <span className="bg-success text-success-foreground group-hover/cta:bg-success/90 group-active/cta:bg-success/80 inline-flex h-9 items-center px-4 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta:px-3">
+              Book A Demo
+            </span>
+            <span
+              className="bg-success text-success-foreground group-hover/cta:bg-success/90 group-active/cta:bg-success/80 ml-0 inline-flex h-9 w-9 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta:ml-2"
+              aria-hidden="true"
+            >
+              <ArrowRight className="h-4 w-4" />
+            </span>
+          </Link>
+        </Button>
+      </div>
+
+      {/* Mobile menu panel */}
+      {mobileOpen && (
+        <div
+          className="border-border bg-background fixed inset-x-0 top-16 z-[998] max-h-[calc(100vh-4rem)] overflow-auto border-t p-4 md:top-[88px] md:hidden"
+          role="menu"
+        >
+          <nav className="flex flex-col gap-3">
+            {NAV_ITEMS.map(item => {
+              if (item.type === 'link') {
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className={cn(
+                      'block rounded-md px-3 py-2 text-base font-semibold no-underline',
+                      activeMap.get(item.href) && 'bg-muted'
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              }
+
+              // For dropdowns: show a toggle button; children hidden until expanded
+              const menu = item.menu;
+              const isExpanded = !!expanded[item.href];
+
+              return (
+                <div key={item.href} className="flex flex-col gap-2">
+                  <button
+                    type="button"
+                    onClick={() => toggleExpanded(item.href)}
+                    aria-expanded={isExpanded}
+                    className="hover:bg-muted flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-base font-semibold no-underline"
+                  >
+                    <span>{item.label}</span>
+                    <ChevronDown className={cn('h-5 w-5 transition-transform', isExpanded && 'rotate-180')} />
+                  </button>
+
+                  {isExpanded && (
+                    <div className="ml-3 flex flex-col gap-2">
+                      {/* Parent "View ..." link removed on mobile — show only available child items */}
+
+                      {/* flat items */}
+                      {menu.items && (
+                        <div className="flex flex-col gap-1">
+                          {menu.items.map(({ href, label }) => (
+                            <Link
+                              key={href}
+                              href={href}
+                              onClick={() => setMobileOpen(false)}
+                              className="text-foreground/90 block rounded-md px-3 py-2 text-sm no-underline"
+                            >
+                              {label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* grouped items */}
+                      {menu.groups &&
+                        menu.groups.map(group => (
+                          <div key={group.heading} className="flex flex-col gap-1">
+                            <div className="text-accent1 text-xs font-semibold">{group.heading}</div>
+                            {group.items.map(({ href, label }) => (
+                              <Link
+                                key={href}
+                                href={href}
+                                onClick={() => setMobileOpen(false)}
+                                className="text-foreground/90 block rounded-md px-3 py-2 text-sm no-underline"
+                              >
+                                {label}
+                              </Link>
+                            ))}
+                          </div>
+                        ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+
+            {/* Optional: include CTA inside mobile menu */}
+            <div className="mt-3">
+              <Link
+                href="/contact"
+                onClick={() => setMobileOpen(false)}
+                className="bg-success text-success-foreground inline-flex w-full items-center justify-center rounded px-4 py-2 text-sm font-semibold"
+              >
+                Book A Demo
+              </Link>
+            </div>
+          </nav>
+        </div>
+      )}
     </nav>
   );
 }

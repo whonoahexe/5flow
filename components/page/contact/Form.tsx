@@ -9,7 +9,8 @@ import { Checkbox } from '@/components/ui/checkbox';
 
 const Form = () => (
   <FullBleedLines className="bg-foreground/5 w-full p-2">
-    <div className="bg-primary border-border flex w-full items-center justify-between rounded-2xl border py-8 pr-8">
+    {/* Stack image and form vertically on mobile, row on md+ */}
+    <div className="bg-primary border-border flex w-full flex-col items-center justify-between rounded-2xl border md:flex-row md:py-8 md:pr-8">
       <div className="flex-1">
         <Image
           className="object-cover"
@@ -21,11 +22,13 @@ const Form = () => (
       </div>
 
       {/* Form */}
-      <form className="flex flex-1 flex-col gap-8">
-        <b className="text-success font-heading flex w-full text-6xl leading-none tracking-tight">Contact Us</b>
+      <form className="flex flex-1 flex-col gap-6 p-4 md:gap-8 md:p-0">
+        <b className="text-success font-heading flex w-full text-4xl leading-none tracking-tight sm:text-5xl md:text-6xl">
+          Contact Us
+        </b>
         {/* Inputs */}
         <div className="flex flex-col gap-2">
-          <div className="flex justify-between gap-2">
+          <div className="flex flex-col justify-between gap-2 sm:flex-row">
             <Input
               placeholder="First Name or Pseudonym"
               className="font-body border-boder bg-background focus:ring-success min-h-10 w-full flex-1 rounded-none border transition-all duration-300 ease-[var(--easing-smooth)] focus:ring-2 focus:ring-offset-2"
@@ -50,7 +53,7 @@ const Form = () => (
           />
         </div>
         {/* Terms */}
-        <div className="text-background flex justify-between">
+        <div className="text-background flex flex-col gap-4 md:flex-row md:justify-between">
           <div className="flex max-w-xl flex-col gap-2">
             <div className="flex items-center gap-2">
               <Checkbox className="border-border bg-background cursor-pointer rounded-none" />
