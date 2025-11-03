@@ -18,7 +18,7 @@ export default function OnlineProofing() {
       '5Flow’s Online Proofing solution brings all stakeholders into one platform for clear, traceable approvals. From annotations to version comparisons, every review is faster, sharper, and audit ready.',
     buttonText: 'See it in Action',
     buttonLink: '/contact',
-    imageSrc: '/solutions/online-proofing.svg',
+    imageSrc: '/product/rectangle.png',
     imageAlt: 'Artwork management preview',
   };
 
