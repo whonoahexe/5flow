@@ -135,7 +135,7 @@ const needData = {
 };
 
 const clientData = [
-  'bp.svg',
+  'bp.png',
   'Chick-fil-A.png',
   'Dr._Scholls.png',
   'gropper.webp',
