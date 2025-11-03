@@ -17,9 +17,9 @@ export function Contact({
   trailingText = '',
 }: ContactProps) {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-4 md:gap-8">
       <FullBleedLines className="font-heading mx-auto w-full max-w-3xl gap-16 px-2 py-8">
-        <p className="text-center text-6xl leading-none font-bold tracking-tight">
+        <p className="text-center text-4xl leading-none font-bold tracking-tight md:text-6xl">
           {leadingText} <InlineHighlight>{highlightedText}</InlineHighlight>
           {trailingText && <> {trailingText}</>}
         </p>
@@ -27,18 +27,14 @@ export function Contact({
 
       <FullBleedLines>
         <div className="bg-foreground/5 relative w-full p-2">
-          {/* Small pixels in top & bottom left corners*/}
-          {/* <div className="bg-success absolute top-0 left-0 z-50 h-10 w-10" />
-          <div className="bg-success absolute bottom-0 left-0 z-50 h-10 w-10" /> */}
-
-          <div className="bg-primary relative flex h-[562px] w-full items-center justify-between overflow-hidden rounded-2xl px-16">
-            <form className="z-20 flex w-full max-w-4xl flex-col items-end justify-center gap-6">
+          <div className="bg-primary relative flex w-full flex-col items-center justify-between overflow-hidden rounded-2xl px-4 md:h-[562px] md:flex-row md:items-center md:px-16">
+            <form className="z-20 my-12 flex w-full max-w-4xl flex-col items-center justify-center gap-6 md:my-0 md:items-end">
               <InlineHighlight className="bg-success">
-                <span className="font-heading text-foreground px-1 text-[64px] leading-none font-bold tracking-tighter">
+                <span className="font-heading text-foreground px-1 text-4xl leading-none font-bold tracking-tighter sm:text-5xl md:text-[64px]">
                   Contact Us
                 </span>
               </InlineHighlight>
-              <div className="flex w-full items-center gap-6">
+              <div className="flex w-full flex-col items-center gap-6 md:flex-row md:items-center">
                 {/* First Name Input */}
                 <div className="text-foreground relative min-h-10 w-full">
                   <span className="pointer-events-none absolute top-1/2 left-4 -translate-y-1/2">
@@ -82,7 +78,7 @@ export function Contact({
             </form>
 
             <Image
-              className="absolute top-0 right-0 w-full object-cover"
+              className="relative hidden h-full w-full object-cover pt-10 md:absolute md:top-0 md:right-0 md:flex md:h-full md:w-auto md:pt-0"
               width={1520}
               height={562}
               alt="vector"

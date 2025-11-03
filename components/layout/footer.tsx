@@ -33,11 +33,11 @@ const otherLinks = [
 
 export function Footer() {
   const footerLink =
-    'inline-block w-auto text-background/80 hover:text-success transition-all duration-500 ease-[var(--easing-smooth)]';
+    'inline-block w-auto text-background/80 hover:text-success transition-all duration-500 ease-[var(--easing-smooth)] text-sm sm:text-sm md:text-base';
 
   return (
-    <footer className="bg-primary px-48 py-24">
-      <div className="mx-auto flex flex-col gap-12">
+    <footer className="bg-primary px-4 py-8 sm:px-6 sm:py-16 md:px-48 md:py-24">
+      <div className="mx-auto flex flex-col gap-8 md:gap-12">
         {/* Product Links */}
         <div className="flex flex-col justify-between gap-6 tracking-tight md:flex-row">
           <div className="flex min-w-36 flex-1 flex-col gap-6">
@@ -64,7 +64,9 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Icon />
+                    <span className="inline-block scale-90 transform sm:scale-95 md:scale-100">
+                      <Icon />
+                    </span>
                   </a>
                 );
               })}
@@ -77,7 +79,9 @@ export function Footer() {
         {/* Other Links */}
         <div className="flex flex-col justify-between gap-6 tracking-tight md:flex-row">
           <div className="flex-1">
-            <Image src="/brand-mini.svg" alt="5Flow Secondary Logo" width={32} height={32} className="h-8 w-8" />
+            <div className="inline-block scale-90 transform sm:scale-95 md:scale-100">
+              <Image src="/brand-mini.svg" alt="5Flow Secondary Logo" width={32} height={32} className="h-8 w-8" />
+            </div>
           </div>
           <div className="flex min-w-36 flex-1 flex-col items-start gap-4">
             {legalLinks.map(l => (
@@ -103,7 +107,7 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <p className="text-background w-full text-center font-medium tracking-tight">
+        <p className="text-background w-full text-center text-sm font-medium tracking-tight sm:text-sm md:text-base">
           © 5Flow {new Date().getFullYear()}
         </p>
       </div>

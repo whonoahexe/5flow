@@ -1,4 +1,14 @@
-import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck, CheckCircle, ZapIcon, BarChart } from 'lucide-react';
+import {
+  SquareStack,
+  Repeat2,
+  EyeOff,
+  MessageCircleQuestionMark,
+  History,
+  Lightbulb,
+  MessagesSquare,
+  FileStack,
+  CircleCheckBig,
+} from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
@@ -22,35 +32,35 @@ export default function CreativeStudio() {
       title: 'Endless revisions',
       desc: 'Feedback chaos from multiple stakeholders',
       sub: '5Flow consolidates markups, comments, and approvals in one place, so designers act on clear direction instead of conflicting feedback.',
-      icon: Grid2X2,
+      icon: SquareStack,
       buttonText: 'See How It Helps Creatives',
     },
     {
       title: 'Repetitive production work',
       desc: 'Creativity lost to resizing and adaptations',
       sub: 'Automated artwork tools handle resizing, formatting, and multilingual rollouts, freeing teams to focus on design.',
-      icon: Timer,
+      icon: Repeat2,
       buttonText: 'See How It Helps Creatives',
     },
     {
       title: 'No version clarity',
       desc: 'Teams rework the wrong files',
       sub: 'Centralized version control ensures studios always work with the latest, approved artwork.',
-      icon: ShieldCheck,
+      icon: EyeOff,
       buttonText: 'See How It Helps Creatives',
     },
     {
       title: 'Fragmented collaboration',
       desc: 'File sharing across email, drives, and chats',
       sub: 'Integrated communication tools connect creative, brand, and regulatory teams directly to the artwork.',
-      icon: Eye,
+      icon: MessageCircleQuestionMark,
       buttonText: 'See How It Helps Creatives',
     },
     {
       title: 'Bottlenecks stall campaigns',
       desc: 'Designers left waiting for approvals',
       sub: 'Automated workflows route files to the right stakeholders at the right time, keeping creative projects on schedule.',
-      icon: FileCheck,
+      icon: History,
       buttonText: 'See How It Helps Creatives',
     },
   ];
@@ -61,28 +71,28 @@ export default function CreativeStudio() {
       title: 'Creative focus restored',
       desc: 'More time for ideas, less time on admin',
       sub: 'By automating repetitive tasks, designers can focus on producing impactful creative work.',
-      icon: CheckCircle,
+      icon: Lightbulb,
     },
     {
       id: 'seamless-collab',
       title: 'Seamless collaboration',
       desc: 'Everyone aligned in one platform',
       sub: 'With integrated communication, creatives, brand managers, and regulators work together without silos or confusion.',
-      icon: ZapIcon,
+      icon: MessagesSquare,
     },
     {
       id: 'work-scales',
       title: 'Work that scales',
       desc: 'Handle 10 SKUs or 10,000',
       sub: 'Studios can manage high volumes of adaptations without breaking creative flow.',
-      icon: BarChart,
+      icon: FileStack,
     },
     {
       id: 'quality-holds',
       title: 'Quality that holds',
       desc: 'Consistent outputs across markets',
       sub: 'Automated checks and version control ensure design integrity, no matter how many adaptations are needed.',
-      icon: ShieldCheck,
+      icon: CircleCheckBig,
     },
   ];
 
@@ -91,7 +101,7 @@ export default function CreativeStudio() {
       <div className="container mx-auto mb-32">
         <PageHeader title="creative studio" />
 
-        <div className="flex flex-col gap-32">
+        <div className="flex flex-col gap-10 md:gap-32">
           <Hero {...heroData} />
           <Challenges items={challengeItems} />
           <Benefits items={benefitItems} highlightedText="Creative Studios" />

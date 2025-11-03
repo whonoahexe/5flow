@@ -1,4 +1,4 @@
-import { Layers2 } from 'lucide-react';
+import { CircleDollarSign, FileStack, Lightbulb, Rocket } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
@@ -17,7 +17,7 @@ export default function AutomatedArtwork() {
     description:
       '5Flow’s Automated Artwork solution transforms repetitive production work into a streamlined process. From resizing to multilingual rollouts, automation reduces manual effort, cuts errors, and accelerates delivery.',
     buttonText: 'See it in Action',
-    buttonLink: '/contact', // dynamic target for CTA
+    buttonLink: '/contact',
     imageSrc: '/product/rectangle.png',
     imageAlt: 'Artwork management preview',
   };
@@ -29,21 +29,24 @@ export default function AutomatedArtwork() {
       subtitle: 'Automation built into templates',
       description: 'Predefined templates generate artwork variations quickly while keeping brand guidelines intact.',
       buttonText: 'Discover Templates',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/5-1.svg',
+      iconName: 'LayoutList',
     },
     {
       title: 'Multilingual automation',
       subtitle: 'Translations applied instantly',
       description: 'Automated text handling applies approved translations across SKUs, cutting manual entry errors.',
       buttonText: 'Discover Language Tools',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/5-2.svg',
+      iconName: 'Languages',
     },
     {
       title: 'Batch processing',
       subtitle: 'Scale without bottlenecks',
       description: 'Generate dozens or thousands of artworks at once, reducing turnaround from weeks to hours.',
       buttonText: 'Discover Batch Processing',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/5-3.svg',
+      iconName: 'Layers',
     },
     {
       title: 'Validation rules',
@@ -51,7 +54,8 @@ export default function AutomatedArtwork() {
       description:
         'Built-in rules check barcodes, text placement, and compliance automatically before files go to print.',
       buttonText: 'Discover Validation',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/5-4.svg',
+      iconName: 'ShieldCheck',
     },
   ];
 
@@ -61,25 +65,25 @@ export default function AutomatedArtwork() {
       title: 'Faster market entry',
       subtitle: 'Launch weeks earlier',
       description: 'Cut artwork turnaround from days to minutes, helping products and promos hit shelves faster.',
-      icon: Layers2,
+      icon: Rocket,
     },
     {
       title: 'Greater creative freedom',
       subtitle: 'Designers focus on ideas, not mechanics',
       description: 'Automation frees creative teams from repetitive edits so they can focus on innovation.',
-      icon: Layers2,
+      icon: Lightbulb,
     },
     {
       title: 'Precision at scale',
       subtitle: 'Consistency across thousands of SKUs',
       description: 'Automation eliminates human error, ensuring every adaptation is accurate and on brand.',
-      icon: Layers2,
+      icon: FileStack,
     },
     {
       title: 'Sustainable and low cost',
       subtitle: 'Less waste, fewer reprints',
       description: 'Automated accuracy reduces costly mistakes, reprints, and supplier delays.',
-      icon: Layers2,
+      icon: CircleDollarSign,
     },
   ];
 

@@ -1,4 +1,14 @@
-import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck, CheckCircle, ZapIcon, BarChart } from 'lucide-react';
+import {
+  ShieldCheck,
+  Languages,
+  ShieldAlert,
+  UserRoundPen,
+  ListRestart,
+  ShieldPlus,
+  ShieldUser,
+  LockKeyhole,
+  GlobeLock,
+} from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/applications/Hero';
@@ -22,7 +32,7 @@ export default function HealthPharma() {
       title: 'Multi-language labeling requirements',
       desc: 'One drug, dozens of SKUs',
       sub: '5Flow manages translations centrally and applies them consistently across markets, reducing the risk of mislabeling.',
-      icon: Grid2X2,
+      icon: Languages,
       buttonText: 'See How 5Flow Helps Pharma Teams',
     },
     {
@@ -30,7 +40,7 @@ export default function HealthPharma() {
       title: '21 CFR and EMA compliance pressure',
       desc: 'Regulations change, workflows don’t',
       sub: 'Preconfigured compliance checklists and validation rules ensure every label meets FDA, EMA, and regional standards.',
-      icon: Timer,
+      icon: ShieldAlert,
       buttonText: 'See How 5Flow Helps Pharma Teams',
     },
     {
@@ -38,7 +48,7 @@ export default function HealthPharma() {
       title: 'High documentation burden',
       desc: 'Audits require endless proof',
       sub: 'Every approval, annotation, and change is logged, creating an instant audit trail for inspections.',
-      icon: FileCheck,
+      icon: UserRoundPen,
       buttonText: 'See How 5Flow Helps Pharma Teams',
     },
     {
@@ -46,7 +56,7 @@ export default function HealthPharma() {
       title: 'Frequent reformulations and recalls',
       desc: 'Updates overwhelm manual workflows',
       sub: 'Automated workflows distribute approved changes quickly, keeping packaging aligned with new formulations.',
-      icon: Eye,
+      icon: ListRestart,
       buttonText: 'See How 5Flow Helps Pharma Teams',
     },
     {
@@ -54,8 +64,30 @@ export default function HealthPharma() {
       title: 'Patient safety on the line',
       desc: 'Errors aren’t just costly, they’re dangerous',
       sub: 'Built-in validation rules flag missing warnings, dosage errors, or misplaced barcodes before files go to print.',
-      icon: ShieldCheck,
+      icon: ShieldPlus,
       buttonText: 'See How 5Flow Helps Pharma Teams',
+    },
+  ];
+
+  const howData = [
+    {
+      heading: 'Health & Pharma',
+      title: 'Manage multi-language packaging from one central hub.',
+      description: 'Stay audit ready with automated approval logs and version control.',
+      iconName: 'Languages',
+      imageSrc: '/solutions/2-1.svg',
+    },
+    {
+      title: 'Protect patient safety with built-in error detection tools.',
+      description: 'Ensure FDA, EMA, and local compliance with rule-based validation.',
+      iconName: 'ShieldUser',
+      imageSrc: '/solutions/2-2.svg',
+    },
+    {
+      title: 'Speed up reformulation updates with automated workflows.',
+      description: 'Scale compliance globally without adding manual effort.',
+      iconName: 'Workflow',
+      imageSrc: '/solutions/2-3.svg',
     },
   ];
 
@@ -65,56 +97,34 @@ export default function HealthPharma() {
       title: 'Patient safety protected',
       desc: 'Errors caught before they reach market',
       sub: 'With compliance and validation built in, every label is safe, accurate, and consistent.',
-      icon: ShieldCheck,
+      icon: ShieldUser,
     },
     {
       id: 'regulatory-confidence',
       title: 'Regulatory confidence',
       desc: 'Always ready for FDA, EMA, and local audits',
       sub: 'Automatic documentation ensures full compliance evidence for every SKU and region.',
-      icon: CheckCircle,
+      icon: LockKeyhole,
     },
     {
       id: 'faster-approvals',
       title: 'Faster regulatory approvals',
       desc: 'Compliance without bottlenecks',
       sub: 'Structured workflows and automation speed up label approvals without sacrificing accuracy.',
-      icon: ZapIcon,
+      icon: ShieldCheck,
     },
     {
       id: 'global-scale-local',
       title: 'Global scale, local compliance',
       desc: 'Manage thousands of SKUs accurately',
       sub: 'From dosage warnings to language variants, 5Flow scales compliance across regions and product lines.',
-      icon: BarChart,
-    },
-  ];
-
-  const howData = [
-    {
-      heading: 'Health & Pharma',
-      title: 'Manage multi-language packaging from one central hub.',
-      description: 'Stay audit ready with automated approval logs and version control.',
-      icon: '/solutions/rectangle.png',
-      imageSrc: '/solutions/rectangle.png',
-    },
-    {
-      title: 'Protect patient safety with built-in error detection tools.',
-      description: 'Ensure FDA, EMA, and local compliance with rule-based validation.',
-      icon: '/solutions/rectangle.png',
-      imageSrc: '/solutions/rectangle.png',
-    },
-    {
-      title: 'Speed up reformulation updates with automated workflows.',
-      description: 'Scale compliance globally without adding manual effort.',
-      icon: '/solutions/rectangle.png',
-      imageSrc: '/solutions/rectangle.png',
+      icon: GlobeLock,
     },
   ];
 
   return (
     <div className="relative">
-      <div className="container mx-auto mb-32">
+      <div className="container mx-auto gap-10 md:gap-32">
         <PageHeader title="health pharma" />
 
         <div className="flex flex-col gap-32">

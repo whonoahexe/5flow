@@ -15,26 +15,32 @@ interface WhatProps {
 
 const What = ({ whatData }: WhatProps) => {
   return (
-    <div className="relative flex w-full flex-col gap-14">
-      <FullBleedLines className="flex w-full justify-between">
-        <div className="relative h-32 w-full max-w-sm">
-          <b className="font-heading text-6xl leading-none tracking-tighter">
+    <div className="relative flex w-full flex-col gap-12 px-4 sm:gap-14 sm:px-6 md:px-0">
+      <FullBleedLines className="flex w-full items-center justify-between sm:flex-row">
+        <div className="relative h-auto w-full max-w-full text-left sm:h-32 sm:max-w-sm">
+          <b className="font-heading text-4xl leading-tight tracking-tighter sm:text-6xl sm:leading-none">
             <InlineHighlight className="text-background">What</InlineHighlight>
-            <span className="text-foreground"> Do We Solve?</span>
+            <span className="text-foreground"> Do</span>
+            <br className="sm:hidden" />
+            <span className="text-foreground"> We Solve?</span>
           </b>
         </div>
-        <ArrowDownLeft size={126} className="text-accent1" strokeWidth={1.5} />
+        <ArrowDownLeft className="text-accent1 size-24 sm:size-32" strokeWidth={1.5} />
       </FullBleedLines>
 
-      <FullBleedLines className="flex w-full flex-col gap-8">
+      <FullBleedLines className="flex w-full flex-col gap-12 sm:gap-8">
         {whatData.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex w-full justify-between gap-8">
+          <div key={rowIndex} className="flex w-full flex-col justify-between gap-12 sm:flex-row sm:gap-8">
             {row.map((problem, colIndex) => (
-              <div key={colIndex} className="relative flex flex-1 flex-col justify-between gap-8">
-                <b className="text-4xl leading-none tracking-tight">{problem.title}</b>
-                <div className="flex justify-between text-xl">
-                  <p className="flex max-w-88 flex-1 leading-none tracking-tight">{problem.subtitle}</p>
-                  <p className="flex max-w-88 flex-1 leading-none tracking-tight">{problem.description}</p>
+              <div key={colIndex} className="relative flex flex-1 flex-col justify-between gap-6 sm:gap-8">
+                <b className="text-2xl leading-tight tracking-tight sm:text-4xl sm:leading-none">{problem.title}</b>
+                <div className="flex flex-col justify-between gap-4 text-base sm:flex-row sm:gap-0 sm:text-xl">
+                  <p className="flex max-w-full flex-1 leading-tight tracking-tight sm:max-w-88 sm:leading-none">
+                    {problem.subtitle}
+                  </p>
+                  <p className="flex max-w-full flex-1 leading-tight tracking-tight sm:max-w-88 sm:leading-none">
+                    {problem.description}
+                  </p>
                 </div>
                 <Button
                   size="sm"

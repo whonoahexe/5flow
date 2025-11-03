@@ -1,4 +1,4 @@
-import { Layers2 } from 'lucide-react';
+import { CircleDollarSign, Rocket, Scaling, ShieldCheck } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
@@ -24,9 +24,9 @@ export default function ArtworkManagement() {
       subtitle: 'One hub for every file',
       description:
         'Artwork files, cutter guides, and declarations all live in one place. No more scattered assets across teams.',
-      icon: '/solutions/rectangle.png',
       buttonText: 'Discover Centralization',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/1.svg',
+      iconName: 'MonitorCog',
     },
     {
       title: 'Automated workflows',
@@ -35,7 +35,8 @@ export default function ArtworkManagement() {
         'Approvals, reviews, and updates route automatically to the right person, keeping projects on track.',
       icon: '/solutions/rectangle.png',
       buttonText: 'Discover Automation',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/2.svg',
+      iconName: 'Workflow',
     },
     {
       title: 'Version control',
@@ -44,7 +45,8 @@ export default function ArtworkManagement() {
         'Every update is tracked and logged. Teams work with confidence, knowing they always have the latest version.',
       icon: '/solutions/rectangle.png',
       buttonText: 'Discover Version Control',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/3.svg',
+      iconName: 'SearchCheck',
     },
     {
       title: 'Integrated communication',
@@ -53,7 +55,8 @@ export default function ArtworkManagement() {
         'Comments, markups, and approvals happen in-platform, not across email chains, reducing confusion and delays.',
       icon: '/solutions/rectangle.png',
       buttonText: 'Discover Communication',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/4.svg',
+      iconName: 'MessageSquarePlus',
     },
   ];
 
@@ -64,25 +67,25 @@ export default function ArtworkManagement() {
       subtitle: 'Products reach shelves on time',
       description:
         'Automated workflows and clear approvals cut cycle time, helping brands stay ahead in fast-moving markets.',
-      icon: Layers2,
+      icon: Rocket,
     },
     {
       title: 'Lower costs',
       subtitle: 'Less waste, fewer errors',
       description: 'Accurate artwork reduces reprints, saves money, and improves supplier efficiency.',
-      icon: Layers2,
+      icon: CircleDollarSign,
     },
     {
       title: 'Stronger compliance',
       subtitle: 'Built-in audit readiness',
       description: 'Track every update and approval for audit-ready records that protect against compliance risks.',
-      icon: Layers2,
+      icon: ShieldCheck,
     },
     {
       title: 'Scale with clarity',
       subtitle: 'Manage thousands of artworks easily',
       description: 'From ten SKUs to ten thousand, the system scales with your business without adding complexity.',
-      icon: Layers2,
+      icon: Scaling,
     },
   ];
 

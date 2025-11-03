@@ -1,4 +1,14 @@
-import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck, CheckCircle, ZapIcon, BarChart } from 'lucide-react';
+import {
+  ShieldCheck,
+  ListRestart,
+  ShieldAlert,
+  CircleCheckBig,
+  GlobeLock,
+  History,
+  ShieldUser,
+  ClockPlus,
+  RefreshCcw,
+} from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/applications/Hero';
@@ -22,7 +32,7 @@ export default function FoodBeverages() {
       title: 'Constant recipe reformulations',
       desc: 'Packaging can’t keep up',
       sub: '5Flow centralizes ingredient data and pushes updates into artwork automatically, keeping labels accurate.',
-      icon: Grid2X2,
+      icon: ListRestart,
       buttonText: 'See How 5Flow Helps Pharma Teams',
     },
     {
@@ -30,7 +40,7 @@ export default function FoodBeverages() {
       title: 'Allergen and nutritional labeling risks',
       desc: 'Small errors create big recalls',
       sub: 'Automated validation rules check allergen and nutrition panels to prevent mislabeling.',
-      icon: Timer,
+      icon: ShieldAlert,
       buttonText: 'See How 5Flow Helps Pharma Teams',
     },
     {
@@ -38,7 +48,7 @@ export default function FoodBeverages() {
       title: 'Sustainability and compliance claims',
       desc: 'Green messaging often inconsistent',
       sub: 'Content hubs manage sustainability claims and certifications, ensuring consistent and compliant messaging.',
-      icon: ShieldCheck,
+      icon: CircleCheckBig,
       buttonText: 'See How 5Flow Helps Pharma Teams',
     },
     {
@@ -46,7 +56,7 @@ export default function FoodBeverages() {
       title: 'Regional packaging regulations',
       desc: 'One product, multiple standards',
       sub: 'Multi-language and regional workflows adapt packaging for each market without losing control.',
-      icon: Eye,
+      icon: GlobeLock,
       buttonText: 'See How 5Flow Helps Pharma Teams',
     },
     {
@@ -54,8 +64,30 @@ export default function FoodBeverages() {
       title: 'Slow approvals delay launches',
       desc: 'Campaigns miss their shelf window',
       sub: 'Automated workflows streamline approvals across marketing, regulatory, and suppliers, cutting delays.',
-      icon: FileCheck,
+      icon: History,
       buttonText: 'See How 5Flow Helps Pharma Teams',
+    },
+  ];
+
+  const howData = [
+    {
+      heading: 'F&B',
+      title: 'Keep ingredient and allergen labeling accurate with automated updates.',
+      description: 'Manage sustainability claims consistently across SKUs.',
+      iconName: 'RotateCcwSquare',
+      imageSrc: '/solutions/3-1.svg',
+    },
+    {
+      title: 'Speed up reformulation launches with automated workflows.',
+      description: 'Validate nutrition panels and prevent costly misprints.',
+      iconName: 'Rocket',
+      imageSrc: '/solutions/3-2.svg',
+    },
+    {
+      title: 'Adapt packaging for regional regulations and multi-language markets.',
+      description: 'Maintain full traceability for audits and recalls.',
+      iconName: 'Languages',
+      imageSrc: '/solutions/3-3.svg',
     },
   ];
 
@@ -65,21 +97,21 @@ export default function FoodBeverages() {
       title: 'Consumer safety',
       desc: 'Labels you can trust',
       sub: 'Automated validation and version control ensure allergen and nutritional information is always accurate.',
-      icon: CheckCircle,
+      icon: ShieldUser,
     },
     {
       id: 'faster-reformulations',
       title: 'Faster reformulation rollouts',
       desc: 'Updates hit shelves on time',
       sub: 'Ingredient changes flow directly into packaging, cutting delays in product relaunches.',
-      icon: ZapIcon,
+      icon: ClockPlus,
     },
     {
       id: 'consistent-sustainability',
       title: 'Consistent sustainability claims',
       desc: 'Build consumer trust',
       sub: 'Centralized content keeps packaging claims clear, compliant, and aligned across markets.',
-      icon: BarChart,
+      icon: RefreshCcw,
     },
     {
       id: 'regulatory-confidence',
@@ -90,34 +122,12 @@ export default function FoodBeverages() {
     },
   ];
 
-  const howData = [
-    {
-      heading: 'F&B',
-      title: 'Keep ingredient and allergen labeling accurate with automated updates.',
-      description: 'Manage sustainability claims consistently across SKUs.',
-      icon: '/solutions/rectangle.png',
-      imageSrc: '/solutions/rectangle.png',
-    },
-    {
-      title: 'Speed up reformulation launches with automated workflows.',
-      description: 'Validate nutrition panels and prevent costly misprints.',
-      icon: '/solutions/rectangle.png',
-      imageSrc: '/solutions/rectangle.png',
-    },
-    {
-      title: 'Adapt packaging for regional regulations and multi-language markets.',
-      description: 'Maintain full traceability for audits and recalls.',
-      icon: '/solutions/rectangle.png',
-      imageSrc: '/solutions/rectangle.png',
-    },
-  ];
-
   return (
     <div className="relative">
       <div className="container mx-auto mb-32">
         <PageHeader title="food beverages" />
 
-        <div className="flex flex-col gap-32">
+        <div className="flex flex-col gap-10 md:gap-32">
           <Hero {...heroData} />
           <Challenges items={challengeItems} />
           <How howData={howData} />

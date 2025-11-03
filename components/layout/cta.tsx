@@ -22,34 +22,52 @@ export function Cta({ leftTitle, leftSubtitle, rightTitle, rightDesc, buttonText
   ];
 
   return (
-    <section className="relative w-full">
+    <section className="relative w-full overflow-hidden">
       {/* Pixel grid */}
-      <div className="relative z-10 ml-[-40px] flex justify-start px-6 py-10 md:px-16">
-        <CtaPixelGrid
-          pattern={pixelPattern}
-          pixelSize="128px"
-          icon={{ row: 2, col: 1, element: <ArrowUp size={48} className="text-foreground" /> }}
-        />
+      <div className="relative z-10 ml-0 flex justify-start px-4 py-6 sm:ml-[-20px] md:ml-[-40px] md:px-16 md:py-10">
+        {/* Mobile: smaller pixels */}
+        <div className="block w-full max-w-4xl overflow-hidden pb-6.5 md:hidden">
+          <div className="origin-left scale-90 transform">
+            <CtaPixelGrid
+              pattern={pixelPattern}
+              pixelSize="64px"
+              icon={{ row: 2, col: 1, element: <ArrowUp size={20} className="text-foreground" /> }}
+            />
+          </div>
+        </div>
+
+        {/* Desktop / tablet: original pixels */}
+        <div className="hidden w-full max-w-none overflow-hidden md:block">
+          <div className="origin-left scale-100 transform">
+            <CtaPixelGrid
+              pattern={pixelPattern}
+              pixelSize="128px"
+              icon={{ row: 2, col: 1, element: <ArrowUp size={36} className="text-foreground" /> }}
+            />
+          </div>
+        </div>
       </div>
 
       {/* Cta */}
-      <div className="bg-accent1 relative z-0 mt-[-168px] flex min-h-[560px] w-full flex-col items-center justify-center px-6 pt-[200px] pb-[7.5rem] md:px-48">
-        <div className="text-background relative flex w-full flex-col gap-12 lg:flex-row lg:justify-between">
-          <div className="ml-90 flex w-full max-w-md flex-col gap-4">
-            <b className="text-5xl tracking-tighter">{leftTitle}</b>
+      <div className="bg-accent1 relative z-0 mt-[-120px] flex min-h-[420px] w-full flex-col items-center justify-center px-4 pt-[160px] pb-20 md:mt-[-168px] md:min-h-[560px] md:px-48 md:pt-[200px] md:pb-[7.5rem]">
+        <div className="text-background relative flex w-full flex-col gap-8 lg:flex-row lg:justify-between">
+          <div className="flex w-full max-w-md flex-col gap-3 md:ml-90">
+            <b className="text-3xl tracking-tighter sm:text-4xl md:text-5xl">{leftTitle}</b>
             <div className="flex items-center justify-between" onClick={() => alert('Arrow clicked!')}>
-              <ArrowRight size={48} />
-              <b className="text-5xl tracking-tighter">{leftSubtitle}</b>
+              <ArrowRight className="size-8 sm:size-[40px]" />
+              <b className="text-3xl tracking-tighter sm:text-4xl md:text-5xl">{leftSubtitle}</b>
             </div>
           </div>
 
           <div className="flex w-full flex-col items-end justify-center gap-4 lg:max-w-xl">
-            <b className="text-5xl tracking-tighter">{rightTitle}</b>
-            <div className="flex w-full flex-col items-end justify-end gap-4 sm:flex-row sm:items-center">
-              <p className="w-full max-w-96 text-right tracking-tight">{rightDesc}</p>
+            <b className="w-full text-center text-3xl tracking-tighter sm:text-4xl md:text-right md:text-5xl">
+              {rightTitle}
+            </b>
+            <div className="flex w-full flex-col items-center justify-center gap-4 sm:flex-row sm:justify-end">
+              <p className="w-full max-w-xs text-center tracking-tight sm:max-w-96 sm:text-right">{rightDesc}</p>
               <Button
                 asChild
-                className="group/cta active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-0 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-150 ease-[var(--easing-smooth)] active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2 has-[>svg]:px-0"
+                className="group/cta active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-0 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-150 ease-[var(--easing-smooth)] active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2"
               >
                 <Link href="/contact" aria-label="Book a demo">
                   <span className="bg-success text-success-foreground group-hover/cta:bg-success/90 group-active/cta:bg-success/80 inline-flex h-9 items-center px-4 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta:px-3">
