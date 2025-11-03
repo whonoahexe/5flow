@@ -12,7 +12,7 @@ const Workflow = () => {
   return (
     <div className="flex w-full flex-col items-start gap-8 px-4 text-center sm:gap-14 sm:px-0">
       <FullBleedLines className="font-heading flex w-full justify-center">
-        <b className="text-foreground text-4xl leading-snug tracking-tighter sm:text-6xl sm:leading-none">
+        <b className="text-foreground text-4xl leading-none tracking-tighter sm:text-6xl sm:leading-none">
           <span>{`Trust Built into Every `}</span>
           <br />
           <InlineHighlight className="text-background">Workflow.</InlineHighlight>
@@ -27,7 +27,7 @@ const Workflow = () => {
           {workflowImages.map((image, index) => (
             <div
               key={index}
-              className="bg-background flex h-32 w-full items-center justify-center overflow-hidden rounded-xl sm:h-38 sm:flex-1 sm:rounded-2xl"
+              className="bg-background flex h-32 w-full items-center justify-center overflow-hidden rounded-xl px-20 sm:h-38 sm:flex-1 sm:rounded-2xl md:px-0"
             >
               <Image
                 className="object-cover"

@@ -6,7 +6,7 @@ interface PageHeaderProps {
 
 const PageHeader = ({ title }: PageHeaderProps) => {
   return (
-    <FullBleedLines className="mt-50 flex w-full justify-end gap-8">
+    <FullBleedLines className="mt-32 flex w-full justify-end gap-8 md:mt-50">
       <b className="text-foreground text-5xl leading-none tracking-tight">{title}</b>
       <div className="bg-primary h-10 w-10" />
     </FullBleedLines>

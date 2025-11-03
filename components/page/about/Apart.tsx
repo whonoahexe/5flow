@@ -1,17 +1,17 @@
-import { ArrowDown, Award, BadgeCheck, ShieldCheck, TrendingUp } from 'lucide-react';
+import { ArrowDown, ShieldCheck, TrendingUp, Users, UserStar } from 'lucide-react';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
 
 const Apart = () => {
   const features = [
     {
-      icon: BadgeCheck,
+      icon: UserStar,
       title: 'Customer First',
       description:
         'We design around your needs, not ours. Every solution is built in partnership with the people who use it.',
     },
     {
-      icon: Award,
+      icon: Users,
       title: 'Strong & Experienced Team',
       description:
         'Decades of expertise in packaging, creative production, and workflow automation delivered by people who know how brands really work.',
@@ -33,8 +33,8 @@ const Apart = () => {
   return (
     <>
       <div className="flex w-full flex-col gap-8 px-4 sm:px-0">
-        <FullBleedLines className="font-heading flex w-full flex-col items-center gap-8 px-2 sm:flex-row sm:items-start">
-          <b className="text-foreground text-center text-4xl leading-snug tracking-tighter sm:text-left sm:text-6xl sm:leading-none">
+        <FullBleedLines className="font-heading flex w-full flex-col items-center gap-4 px-2 sm:flex-row sm:items-start md:gap-8">
+          <b className="text-foreground text-center text-4xl leading-none tracking-tighter sm:text-left sm:text-6xl sm:leading-none">
             <span>What Sets</span>
             <br />
             <span>{`Us `}</span>
@@ -50,7 +50,7 @@ const Apart = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col items-center gap-4 px-4 text-center sm:items-start sm:px-8 sm:text-left"
+                className="flex flex-col items-center gap-0 px-4 text-center sm:items-start sm:px-8 sm:text-left md:gap-4"
               >
                 <div className="flex flex-col items-center gap-2 py-4 sm:items-start sm:py-7">
                   <div className="bg-primary/10 flex h-10 w-10 items-center justify-center rounded-lg">

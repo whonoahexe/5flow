@@ -11,7 +11,7 @@ export default function About() {
     <div className="relative">
       <div className="container mx-auto mb-32">
         <PageHeader title="we. are." />
-        <div className="flex flex-col gap-32">
+        <div className="mt-16 flex flex-col gap-12 md:mt-32 md:gap-32">
           <Hero />
           <Vision />
           <Mission />
