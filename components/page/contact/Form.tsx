@@ -9,11 +9,10 @@ import { Checkbox } from '@/components/ui/checkbox';
 
 const Form = () => (
   <FullBleedLines className="bg-foreground/5 w-full p-2">
-    {/* Stack image and form vertically on mobile, row on md+ */}
-    <div className="bg-primary border-border flex w-full flex-col items-center justify-between rounded-2xl border md:flex-row md:py-8 md:pr-8">
+    <div className="bg-primary border-border flex w-full flex-col items-center justify-between rounded-2xl border py-12 md:flex-row md:pr-8">
       <div className="flex-1">
         <Image
-          className="object-cover"
+          className="hidden object-cover md:flex"
           width={450}
           height={450}
           alt="Rings showcasing brand identity"

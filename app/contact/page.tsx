@@ -8,7 +8,7 @@ export default function Contact() {
     <div className="relative">
       <div className="container mx-auto mb-32">
         <PageHeader title="let's talk." />
-        <div className="flex flex-col gap-14">
+        <div className="mt-8 flex flex-col gap-14 md:mt-0">
           <Hero />
           <Form />
         </div>

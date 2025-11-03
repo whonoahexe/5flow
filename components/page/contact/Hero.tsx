@@ -4,10 +4,8 @@ import FullBleedLines from '@/components/core/full-bleed-lines';
 
 const Hero = () => {
   return (
-    // mobile-first: smaller top margin and tighter gaps; md+ preserves original sizes
-    <div className="mt-12 flex flex-col gap-6 px-2 md:mt-32 md:gap-14">
-      {/* stack on mobile, row on md+ */}
-      <FullBleedLines className="flex w-full flex-col items-start justify-between gap-4 md:flex-row md:items-center md:gap-0">
+    <div className="mt-12 flex flex-col gap-6 px-4 md:mt-32 md:gap-14 md:px-2">
+      <FullBleedLines className="flex w-full flex-col items-start justify-between gap-2 md:flex-row md:items-center md:gap-0">
         <div className="relative w-full md:max-w-sm">
           <b className="font-heading text-4xl leading-none tracking-tighter sm:text-5xl md:text-6xl">
             <InlineHighlight className="text-background">Ready</InlineHighlight>
@@ -20,7 +18,7 @@ const Hero = () => {
       </FullBleedLines>
 
       <div className="flex flex-col gap-4">
-        <FullBleedLines className="text-primary font-heading max-w-5xl text-2xl leading-none tracking-tight md:text-5xl">
+        <FullBleedLines className="text-primary font-heading max-w-5xl text-xl leading-none tracking-tight md:text-5xl">
           {`We're here to help you move faster, smarter, and with less complexity`}
         </FullBleedLines>
         <FullBleedLines className="max-w-2xl text-sm md:text-base">
