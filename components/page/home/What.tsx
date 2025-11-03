@@ -53,7 +53,7 @@ const What = () => {
           {PainPoints.map((card, i) => (
             <div
               key={i}
-              className="bg-background border-border flex flex-col justify-between rounded-2xl border p-4 shadow-[0px_4px_6px_-4px_rgba(0,0,0,0.102),0px_10px_15px_-3px_rgba(0,0,0,0.102)] sm:p-2"
+              className="bg-background flex flex-col justify-between rounded-2xl p-4 shadow-[0px_4px_6px_-4px_rgba(0,0,0,0.102),0px_10px_15px_-3px_rgba(0,0,0,0.102)] sm:p-2"
             >
               <div className="flex w-full items-start justify-between p-4 sm:p-8">
                 <p className="text-xl font-bold tracking-tight sm:text-2xl md:text-4xl">{card.title}</p>

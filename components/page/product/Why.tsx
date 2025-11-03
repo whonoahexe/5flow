@@ -23,10 +23,10 @@ const Why = ({ sectionTitle, whyData }: WhyProps) => {
             <br className="sm:hidden" />
           </b>
         </div>
-        <ArrowDownLeft size={64} className="text-accent1 mt-4 sm:mt-0 sm:size-[126px]" strokeWidth={1.5} />
+        <ArrowDownLeft className="text-accent1 size-24 sm:size-32" strokeWidth={1.5} />
       </FullBleedLines>
 
-      <FullBleedLines className="grid flex-1 grid-cols-1 gap-4 p-2 sm:grid-cols-2 sm:gap-2">
+      <FullBleedLines className="grid flex-1 grid-cols-1 gap-4 p-0 sm:grid-cols-2 sm:gap-2 md:p-2">
         {whyData.map((card, i) => (
           <div
             key={i}

@@ -1,4 +1,4 @@
-import { BadgeDollarSign, HeartHandshake, ShieldCheck, ZapIcon } from 'lucide-react';
+import { CircleDollarSign, Lightbulb, Rocket, ShieldCheck } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
@@ -43,7 +43,8 @@ const howData = [
     description:
       'Dragonfly adapts to your needs with templates, task-driven processes, and rules that make change easy.',
     buttonText: 'Discover Workflows',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/product/2-1.svg',
+    iconName: 'Workflow',
   },
   {
     title: 'Intuitive dashboards',
@@ -51,7 +52,8 @@ const howData = [
     description:
       'Customizable dashboards and task lists keep information where you need it, improving adoption and speed.',
     buttonText: 'Discover Dashboards',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/product/2-2.svg',
+    iconName: 'LayoutDashboard',
   },
   {
     title: 'Automated reporting',
@@ -59,7 +61,8 @@ const howData = [
     description:
       'Schedule-driven reporting and PowerBI integration turn raw data into instant KPIs and process improvements.',
     buttonText: 'Discover Reporting',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/product/2-3.svg',
+    iconName: 'ChartNoAxesCombined',
   },
   {
     title: 'Rich integrations',
@@ -67,7 +70,8 @@ const howData = [
     description:
       'Out-of-the-box APIs and open architecture integrate Dragonfly with SAP, PLM, DAM, and e-commerce platforms.',
     buttonText: 'Discover Integrations',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/product/2-4.svg',
+    iconName: 'Import',
   },
 ];
 
@@ -76,25 +80,25 @@ const whyData = [
     title: 'Faster execution',
     desc: 'Deliver projects on time, every time',
     sub: 'Agile workflows and automation reduce delays so launches stay on track.',
-    icon: ZapIcon,
+    icon: Rocket,
   },
   {
     title: 'Smarter decisions',
     desc: 'Real-time data you can act on',
     sub: 'Dashboards and automated reporting give leaders clarity without manual effort.',
-    icon: HeartHandshake,
+    icon: Lightbulb,
   },
   {
     title: 'Lower costs',
     desc: 'Less rework, more efficiency',
     sub: 'Integrated workflows reduce duplication, manual input, and costly delays.',
-    icon: ShieldCheck,
+    icon: CircleDollarSign,
   },
   {
     title: 'Confidence at scale',
     desc: 'One system, connected everywhere',
     sub: 'With global integrations, Dragonfly keeps every market aligned while giving local teams the agility they need.',
-    icon: BadgeDollarSign,
+    icon: ShieldCheck,
   },
 ];
 

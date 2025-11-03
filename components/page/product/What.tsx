@@ -15,7 +15,7 @@ interface WhatProps {
 
 const What = ({ whatData }: WhatProps) => {
   return (
-    <div className="relative flex w-full flex-col gap-10 px-4 sm:gap-14 sm:px-6 md:px-0">
+    <div className="relative flex w-full flex-col gap-12 px-4 sm:gap-14 sm:px-6 md:px-0">
       <FullBleedLines className="flex w-full items-center justify-between sm:flex-row">
         <div className="relative h-auto w-full max-w-full text-left sm:h-32 sm:max-w-sm">
           <b className="font-heading text-4xl leading-tight tracking-tighter sm:text-6xl sm:leading-none">
@@ -25,12 +25,12 @@ const What = ({ whatData }: WhatProps) => {
             <span className="text-foreground"> We Solve?</span>
           </b>
         </div>
-        <ArrowDownLeft size={64} className="text-accent1 sm:size-[126px]" strokeWidth={1.5} />
+        <ArrowDownLeft className="text-accent1 size-24 sm:size-32" strokeWidth={1.5} />
       </FullBleedLines>
 
-      <FullBleedLines className="flex w-full flex-col gap-6 sm:gap-8">
+      <FullBleedLines className="flex w-full flex-col gap-12 sm:gap-8">
         {whatData.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex w-full flex-col justify-between gap-6 sm:flex-row sm:gap-8">
+          <div key={rowIndex} className="flex w-full flex-col justify-between gap-12 sm:flex-row sm:gap-8">
             {row.map((problem, colIndex) => (
               <div key={colIndex} className="relative flex flex-1 flex-col justify-between gap-6 sm:gap-8">
                 <b className="text-2xl leading-tight tracking-tight sm:text-4xl sm:leading-none">{problem.title}</b>

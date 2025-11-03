@@ -18,14 +18,14 @@ interface HeroProps {
 
 const Hero = ({ logoSrc, logoAlt, title, subtitle, description, imageSrc, imageWidth, imageAlt = '' }: HeroProps) => {
   return (
-    <div className="relative mt-32 w-full flex-col px-4 sm:px-6 md:px-0">
+    <div className="relative w-full flex-col px-4 sm:px-6 md:px-0">
       {/* Product logo */}
-      <FullBleedLines className="flex h-20 justify-center sm:justify-start">
+      <FullBleedLines className="flex h-20 justify-center px-24 sm:justify-start md:px-0">
         <Image className="relative h-20" width={imageWidth} height={80} alt={logoAlt} src={logoSrc} />
       </FullBleedLines>
 
       {/* Product headling */}
-      <div className="font-heading mt-14 flex flex-col gap-4 text-center sm:text-left">
+      <div className="font-heading mt-8 flex flex-col gap-4 text-center sm:text-left md:mt-14">
         <FullBleedLines>
           <div className="max-w-full sm:max-w-5xl">
             <b className="text-4xl leading-tight tracking-tighter sm:text-8xl sm:leading-none">{title}</b>
@@ -63,11 +63,13 @@ const Hero = ({ logoSrc, logoAlt, title, subtitle, description, imageSrc, imageW
       {/* Product image */}
       <FullBleedLines className="bg-foreground/5 mt-8 p-2 sm:mt-16">
         <Image
-          className="relative w-full rounded-[10px] sm:rounded-[20px]"
+          className="relative h-auto w-full rounded-[10px] sm:rounded-[20px]"
           width={1520}
           height={480}
           alt={imageAlt}
           src={imageSrc}
+          sizes="100vw"
+          priority
         />
       </FullBleedLines>
     </div>

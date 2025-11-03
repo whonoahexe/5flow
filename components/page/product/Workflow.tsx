@@ -16,8 +16,8 @@ interface WorkflowProps {
 const Workflow = ({ title, subtitle, statsData }: WorkflowProps) => {
   return (
     <div className="font-heading relative flex w-full flex-col gap-6 px-4 sm:gap-8 sm:px-6 md:px-0">
-      <FullBleedLines className="flex flex-1 flex-col items-center justify-between gap-6 sm:flex-row sm:items-start sm:gap-0">
-        <div className="flex flex-1 flex-col items-center gap-6 text-center sm:flex-row sm:items-center sm:gap-8 sm:text-left">
+      <FullBleedLines className="flex flex-1 flex-col items-center justify-between gap-2 sm:flex-row sm:items-start sm:gap-0">
+        <div className="flex flex-1 flex-col items-center gap-2 text-center sm:flex-row sm:items-center sm:gap-8 sm:text-left">
           <b className="max-w-full text-4xl leading-tight tracking-tight sm:max-w-lg sm:text-6xl sm:leading-none">
             {title}
           </b>

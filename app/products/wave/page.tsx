@@ -1,4 +1,4 @@
-import { BadgeDollarSign, HeartHandshake, ShieldCheck, ZapIcon } from 'lucide-react';
+import { CircleDollarSign, HeartHandshake, Rocket, ShieldCheck } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import InlineHighlight from '@/components/core/inline-highlight';
@@ -43,14 +43,16 @@ const howData = [
     description:
       'WAVE digitizes approvals with annotations, comparisons, and automated reminders, keeping reviews clear and accountable.',
     buttonText: 'Discover Approvals',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/product/1.svg',
+    iconName: 'CircleCheckBig',
   },
   {
     title: 'Centralized files',
     subtitle: 'One version, one source of truth',
     description: 'Every artwork, asset, and update lives in one platform, so teams always work from the right file.',
     buttonText: 'Discover Asset Hub',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/product/2.svg',
+    iconName: 'FileStack',
   },
   {
     title: 'Compliance built in',
@@ -58,14 +60,16 @@ const howData = [
     description:
       'With audit-ready records, version control, and regulatory checks, WAVE makes compliance part of the process.',
     buttonText: 'Discover Compliance',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/product/3.svg',
+    iconName: 'ShieldCheck',
   },
   {
     title: 'Live project visibility',
     subtitle: 'See status, spot bottlenecks, stay in control',
     description: 'Dashboards, milestones, and timelines give managers instant clarity with no chasing updates.',
     buttonText: 'Discover Visibility',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/product/4.svg',
+    iconName: 'Eye',
   },
 ];
 
@@ -74,7 +78,7 @@ const whyData = [
     title: 'Speed to market',
     desc: 'Cut approval times by up to 52%',
     sub: 'Faster launches mean earlier shelf presence, stronger campaigns, and quicker ROI.',
-    icon: ZapIcon,
+    icon: Rocket,
   },
   {
     title: 'Team confidence',
@@ -92,7 +96,7 @@ const whyData = [
     title: 'Cost efficiency',
     desc: 'Fewer errors, fewer reprints',
     sub: 'With accuracy built in, brands save on correction rounds and avoid wasted print runs.',
-    icon: BadgeDollarSign,
+    icon: CircleDollarSign,
   },
 ];
 
@@ -135,7 +139,7 @@ export default function Wave() {
       <div className="container mx-auto mb-32">
         <PageHeader title="wave" />
 
-        <div className="flex flex-col gap-10 md:gap-32">
+        <div className="mt-16 flex flex-col gap-16 md:mt-24 md:gap-32">
           <Hero
             logoSrc="/product/wave.svg"
             logoAlt="Wave Brand"

@@ -1,4 +1,4 @@
-import { BadgeDollarSign, HeartHandshake, ShieldCheck, ZapIcon } from 'lucide-react';
+import { Lightbulb, Rocket, Scaling, ShieldCheck } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/product/Hero';
@@ -42,14 +42,16 @@ const howData = [
     subtitle: 'Automation handles the repetitive stuff',
     description: "Our tech automates resizing, formatting, and versioning so your designers don't have to.",
     buttonText: 'Discover Automation',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/product/4-1.svg',
+    iconName: 'Settings',
   },
   {
     title: 'Creative consistency',
     subtitle: 'Guardrails built into every file',
     description: 'Templates, brand rules, and quality checks keep everything looking sharp and on brand.',
     buttonText: 'Discover Consistency',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/product/4-2.svg',
+    iconName: 'RefreshCcw',
   },
   {
     title: 'Scalable capacity',
@@ -57,14 +59,16 @@ const howData = [
     description:
       'We extend your team with production firepower so you can handle ten times the work without the stress.',
     buttonText: 'Discover Scale',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/product/4-3.svg',
+    iconName: 'Scaling',
   },
   {
     title: 'Faster delivery',
     subtitle: 'Campaigns go live on time',
     description: 'Agile workflows and parallel production cycles mean deadlines are always met.',
     buttonText: 'Discover Speed',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/product/4-4.svg',
+    iconName: 'Zap',
   },
 ];
 
@@ -73,25 +77,25 @@ const whyData = [
     title: 'Time back for creativity',
     desc: 'Free your team from production grind',
     sub: 'Designers focus on ideas, not endless adaptations. More energy for the work that matters.',
-    icon: ZapIcon,
+    icon: Lightbulb,
   },
   {
     title: 'Confidence in quality',
     desc: 'Every asset, on brand',
     sub: 'Automated checks and smart templates mean fewer mistakes and more consistent results.',
-    icon: HeartHandshake,
+    icon: ShieldCheck,
   },
   {
     title: 'Faster campaigns',
     desc: 'Market ready in record time',
     sub: 'Roll out campaigns across markets in days, not weeks, without cutting corners.',
-    icon: ShieldCheck,
+    icon: Rocket,
   },
   {
     title: 'Scalable production',
     desc: 'Grow without the growing pains',
     sub: 'Handle big bursts of work, seasonal peaks, and global rollouts without adding headcount.',
-    icon: BadgeDollarSign,
+    icon: Scaling,
   },
 ];
 

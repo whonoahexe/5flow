@@ -1,4 +1,4 @@
-import { BadgeDollarSign, HeartHandshake, ShieldCheck, ZapIcon } from 'lucide-react';
+import { CircleDollarSign, Rocket, ShieldAlert, Target } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
@@ -43,28 +43,32 @@ const howData = [
     description:
       'Mediabox organizes creative projects and assets in a single system, reducing duplication and confusion.',
     buttonText: 'Discover the Platform',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/product/3-1.svg',
+    iconName: 'MonitorCloud',
   },
   {
     title: 'Streamlined approvals',
     subtitle: 'Faster, traceable reviews',
     description: 'Online approvals with version history and annotations keep projects clear, compliant, and on track.',
     buttonText: 'Discover Approvals',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/product/3-2.svg',
+    iconName: 'CircleCheckBig',
   },
   {
     title: 'Error reduction',
     subtitle: 'Accuracy built into every step',
     description: 'Automated validation and structured workflows reduce mistakes, reprints, and compliance risks.',
     buttonText: 'Discover Accuracy',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/product/3-3.svg',
+    iconName: 'ShieldAlert',
   },
   {
     title: 'Clear reporting',
     subtitle: 'Real-time insights for better control',
     description: 'Dashboards and analytics give teams full visibility of project health, deadlines, and bottlenecks.',
     buttonText: 'Discover Reporting',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/product/3-4.svg',
+    iconName: 'ChartNoAxesCombined',
   },
 ];
 
@@ -73,25 +77,25 @@ const whyData = [
     title: 'Faster time-to-market',
     desc: 'Launch campaigns without delays',
     sub: 'Cut validation lead time by up to 67 percent with streamlined approvals and workflow automation.',
-    icon: ZapIcon,
+    icon: Rocket,
   },
   {
     title: 'Fewer errors',
     desc: 'Reduce costly mistakes and late files',
     sub: 'Up to 45 percent fewer errors and 50 percent fewer late assets keep campaigns accurate and reliable.',
-    icon: HeartHandshake,
+    icon: ShieldAlert,
   },
   {
     title: 'Cost savings',
     desc: 'Do more with the same resources',
     sub: 'Lower error rates and faster cycles reduce rework, save on budgets, and maximize efficiency.',
-    icon: ShieldCheck,
+    icon: CircleDollarSign,
   },
   {
     title: 'Team productivity',
     desc: 'Clear workflows, confident delivery',
     sub: 'With 60,000 users worldwide, Mediabox empowers teams to collaborate effectively and focus on creative impact.',
-    icon: BadgeDollarSign,
+    icon: Target,
   },
 ];
 

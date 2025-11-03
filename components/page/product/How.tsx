@@ -1,9 +1,10 @@
 'use client';
 
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowDownLeft, ArrowUpRight, BadgeCheck } from 'lucide-react';
+import * as LucideIcons from 'lucide-react';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
 import { Button } from '@/components/ui/button';
@@ -14,6 +15,7 @@ interface HowFeature {
   description: string;
   buttonText: string;
   imageSrc: string;
+  iconName?: string;
 }
 
 interface HowProps {
@@ -22,10 +24,38 @@ interface HowProps {
 
 const How = ({ howData }: HowProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isLarge, setIsLarge] = useState(false);
   const sectionRefs = useRef<Array<HTMLElement | null>>([]);
+
+  // Track viewport size to only enable the scroll effect on large screens
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 1024px)');
+    const update = () => setIsLarge(mq.matches);
+    update();
+    // Safari fallback
+    if (mq.addEventListener) {
+      mq.addEventListener('change', update);
+    } else {
+      // @ts-ignore - older browsers
+      mq.addListener(update);
+    }
+    return () => {
+      if (mq.removeEventListener) {
+        mq.removeEventListener('change', update);
+      } else {
+        // @ts-ignore - older browsers
+        mq.removeListener(update);
+      }
+    };
+  }, []);
 
   // Compute active section on scroll/resize using rAF for smoothness
   useLayoutEffect(() => {
+    // Disable scroll effect for small screens
+    if (!isLarge) {
+      setActiveIndex(0);
+      return;
+    }
     let frame: number | null = null;
     const initialized = { current: false } as { current: boolean };
 
@@ -101,21 +131,19 @@ const How = ({ howData }: HowProps) => {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onResize);
     };
-  }, [howData.length]);
+  }, [howData.length, isLarge]);
 
   return (
-    <div className="font-heading relative flex w-full flex-col gap-14 overflow-x-hidden">
-      <div className="bg-background/70 supports-[backdrop-filter]:bg-background/60 sticky top-22 z-20 px-6 backdrop-blur md:px-0">
-        <FullBleedLines className="flex w-full justify-between">
-          <div className="relative h-24 w-full max-w-xs sm:h-32 sm:max-w-sm">
-            <b className="font-heading text-4xl leading-none tracking-tighter sm:text-6xl">
+    <div className="font-heading relative flex w-full flex-col gap-4 md:gap-14">
+      <div className="bg-background/70 supports-[backdrop-filter]:bg-background/60 z-20 backdrop-blur lg:sticky lg:top-22">
+        <FullBleedLines className="flex w-full items-center justify-between p-4">
+          <div className="relative flex h-32 w-full max-w-sm items-center pr-4 md:pr-0">
+            <b className="font-heading text-4xl leading-none tracking-tighter lg:text-6xl">
               <InlineHighlight className="text-background">How</InlineHighlight>
-              <span className="text-foreground">
-                Does<span className="block sm:inline"> it Work?</span>
-              </span>
+              <span className="text-foreground"> Does it Work?</span>
             </b>
           </div>
-          <ArrowDownLeft size={80} className="text-accent1 sm:size-[126px]" strokeWidth={1.5} />
+          <ArrowDownLeft className="text-accent1 size-24 sm:size-32" strokeWidth={1.5} />
         </FullBleedLines>
       </div>
 
@@ -128,16 +156,23 @@ const How = ({ howData }: HowProps) => {
                 sectionRefs.current[index] = el;
               }}
               data-index={index}
-              className="flex min-h-[50vh] w-full flex-col justify-center gap-4 px-4 sm:min-h-[65vh] sm:px-6 lg:min-h-[70vh] lg:pr-0"
+              className="flex w-full flex-col justify-center gap-4 px-2 lg:min-h-[70vh] lg:pr-0"
             >
-              <div className="flex items-center gap-4 p-4 sm:gap-6 sm:p-6">
-                <BadgeCheck className="text-foreground h-12 w-12 sm:h-18 sm:w-18" strokeWidth={1.5} />
+              <div className="flex items-center gap-6 p-6">
+                {(() => {
+                  const Icon = feature.iconName
+                    ? (LucideIcons[feature.iconName as keyof typeof LucideIcons] as React.ElementType) || BadgeCheck
+                    : BadgeCheck;
+                  return <Icon className="text-foreground h-12 w-12 md:h-18 md:w-18" strokeWidth={1.5} />;
+                })()}
                 <div className="flex flex-col gap-2">
-                  <b className="relative text-2xl leading-none tracking-tight sm:text-4xl">{feature.title}</b>
-                  <p className="relative text-lg leading-none tracking-tight sm:text-xl">{feature.subtitle}</p>
+                  <b className="relative text-2xl leading-none tracking-tight sm:text-3xl lg:text-4xl">
+                    {feature.title}
+                  </b>
+                  <p className="relative text-base leading-none tracking-tight lg:text-xl">{feature.subtitle}</p>
                 </div>
               </div>
-              <div className="flex flex-col gap-4 p-4 text-lg sm:gap-6 sm:p-6 sm:text-xl">
+              <div className="flex flex-col gap-6 p-6 text-base lg:text-xl">
                 <p className="relative leading-snug tracking-tight">{feature.description}</p>
                 <div>
                   <Button
@@ -145,11 +180,11 @@ const How = ({ howData }: HowProps) => {
                     className="group/cta active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-0 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-150 ease-[var(--easing-smooth)] active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2 has-[>svg]:px-0"
                   >
                     <Link href="/" aria-label="Book a demo">
-                      <span className="bg-success text-success-foreground group-hover/cta:bg-success/90 group-active/cta:bg-success/80 inline-flex h-9 items-center px-3 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta:px-2 sm:px-4 sm:group-hover/cta:px-3">
+                      <span className="bg-success text-success-foreground group-hover/cta:bg-success/90 group-active/cta:bg-success/80 inline-flex h-9 items-center px-4 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta:px-3">
                         {feature.buttonText}
                       </span>
                       <span
-                        className="bg-success text-success-foreground group-hover/cta:bg-success/90 group-active/cta:bg-success/80 ml-0 inline-flex h-9 w-9 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta:ml-1 sm:group-hover/cta:ml-2"
+                        className="bg-success text-success-foreground group-hover/cta:bg-success/90 group-active/cta:bg-success/80 ml-0 inline-flex h-9 w-9 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta:ml-2"
                         aria-hidden="true"
                       >
                         <ArrowUpRight className="h-4 w-4" />
@@ -157,20 +192,35 @@ const How = ({ howData }: HowProps) => {
                     </Link>
                   </Button>
                 </div>
+
+                {/* Inline image for small screens (no sticky gallery) */}
+                <div className="lg:hidden">
+                  <div className="relative mt-2 aspect-[16/9] w-full overflow-hidden rounded-xl bg-[#E8ECFE]">
+                    <Image
+                      className="h-full w-full origin-center scale-[0.98] scale-[1.2] transform-gpu"
+                      fill
+                      sizes="100vw"
+                      alt={feature.title}
+                      src={feature.imageSrc}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                      priority={index === 0}
+                    />
+                  </div>
+                </div>
               </div>
             </section>
           ))}
         </div>
 
-        <aside className="relative -my-20 hidden sm:-my-40 lg:block">
+        <aside className="relative -my-40 hidden lg:block">
           <div className="sticky top-0 flex h-screen items-center justify-center">
-            <div className="bg-muted relative aspect-[16/9] w-[min(90%,42rem)] overflow-hidden rounded-2xl">
+            <div className="relative aspect-[16/9] w-[min(38rem,85%)] overflow-hidden rounded-2xl bg-[#E8ECFE]">
               {howData[activeIndex] && (
                 <Image
                   key={activeIndex}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full origin-center scale-[1.2] transform-gpu"
                   fill
-                  sizes="(min-width: 1024px) 42rem, 100vw"
+                  sizes="(min-width: 1024px) 38rem, 100vw"
                   alt=""
                   src={howData[activeIndex].imageSrc}
                   priority={activeIndex === 0}
