@@ -1,15 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, Award, Shuffle, Zap } from 'lucide-react';
+import { ArrowUpRight, Scaling, Shuffle, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
 
 const Why = () => (
-  <div className="flex flex-col gap-8">
+  <div className="flex flex-col gap-4 md:gap-8">
     <FullBleedLines className="font-heading mx-auto w-full max-w-2xl gap-16 px-2 py-8">
-      {/* make heading responsive: smaller on mobile, keep 64px on md+ */}
-      <p className="text-center text-3xl leading-none font-bold tracking-tight sm:text-3xl md:text-[64px]">
+      <p className="text-center text-4xl leading-none font-bold tracking-tight md:text-[64px]">
         Redefining the way brands <InlineHighlight>create, scale,</InlineHighlight> and{' '}
         <InlineHighlight>deliver.</InlineHighlight>
       </p>
@@ -17,11 +16,9 @@ const Why = () => (
 
     <FullBleedLines>
       <div className="bg-foreground/5 w-full p-2">
-        {/* stack content on mobile, keep original horizontal layout on md+ */}
         <div className="bg-primary flex w-full flex-col items-start justify-between gap-6 rounded-2xl py-8 md:flex-row md:items-center md:gap-0">
-          {/* responsive image: small on mobile, original size on md+ */}
           <Image
-            className="h-45 w-44 object-cover sm:h-36 sm:w-36 md:h-[460px] md:w-[450px]"
+            className="hidden h-45 w-44 object-cover sm:h-36 sm:w-36 md:flex md:h-[460px] md:w-[450px]"
             width={450}
             height={450}
             alt="rings showcasing brand identity"
@@ -29,8 +26,7 @@ const Why = () => (
           />
 
           <div className="flex flex-col gap-8 p-2 md:pr-8">
-            {/* paragraph smaller on mobile, keep original weight */}
-            <p className="text-background max-w-4xl text-sm font-medium tracking-tight sm:text-base md:text-base">
+            <p className="text-background max-w-4xl px-4 text-center text-sm font-medium tracking-tight sm:text-base md:px-0 md:text-left md:text-base">
               5FLOW started as a cloud-smart technology spin-off of the Matthews International Group in 2011. Now, a
               part of the Propelis Group, reborn from the merger of SGK and SGS & Co., 5FLOW combines over 150 years of
               creative, packaging, and brand production leadership with our own technology-driven edge, creating a go-to
@@ -39,60 +35,55 @@ const Why = () => (
 
             <div className="w-full">
               <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
-                {/* Card 1 - stack on mobile, row on md+; text size responsive */}
-                <div className="bg-background flex flex-col items-start justify-between gap-3 rounded-lg p-3 md:flex-row md:items-center">
-                  <Shuffle size={32} className="text-primary" strokeWidth={1.5} />
-                  <p className="max-w-72 pr-2 text-base leading-none font-bold tracking-tight md:text-xl">
+                <div className="bg-background flex flex-col items-start justify-between gap-4 rounded-lg p-3 md:flex-row md:items-center">
+                  <Shuffle className="text-primary h-10 w-10" strokeWidth={1.5} />
+                  <p className="max-w-72 pr-2 text-xl leading-none font-bold tracking-tight">
                     From fragmented workflows → to connected systems
                   </p>
                   <Link href="/contact">
                     <Button
-                      className="bg-primary hover:ring-primary/50 hover:ring-offset-background size-16 origin-center cursor-pointer rounded-none transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6"
-                      aria-label="Learn more about connected systems"
+                      className="bg-primary hover:ring-primary/50 hover:ring-offset-background mt-2 size-12 origin-center cursor-pointer rounded-none px-2 py-1 transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6 md:mt-0 md:ml-auto md:size-16 md:px-4 md:py-2"
+                      aria-label="Contact"
                     >
-                      <ArrowUpRight size={24} className="size-6" />
+                      <ArrowUpRight className="size-6 sm:size-8" />
                     </Button>
                   </Link>
                 </div>
 
-                {/* Card 2 - same responsive behavior */}
-                <div className="bg-background flex flex-col items-start justify-between gap-3 rounded-lg p-3 md:flex-row md:items-center">
-                  <Zap size={32} className="text-primary" strokeWidth={1.5} />
+                <div className="bg-background flex flex-col items-start justify-between gap-4 rounded-lg p-3 md:flex-row md:items-center">
+                  <Zap className="text-primary h-10 w-10" strokeWidth={1.5} />
                   <p className="max-w-72 pr-2 text-base leading-none font-bold tracking-tight md:text-xl">
                     From slow cycles → to agile execution
                   </p>
                   <Link href="/contact">
                     <Button
-                      className="bg-primary hover:ring-primary/50 hover:ring-offset-background size-16 origin-center cursor-pointer rounded-none transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6"
-                      aria-label="Learn more about connected systems"
+                      className="bg-primary hover:ring-primary/50 hover:ring-offset-background mt-2 size-12 origin-center cursor-pointer rounded-none px-2 py-1 transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6 md:mt-0 md:ml-auto md:size-16 md:px-4 md:py-2"
+                      aria-label="Contact"
                     >
-                      <ArrowUpRight size={24} className="size-6" />
+                      <ArrowUpRight className="size-6 sm:size-8" />
                     </Button>
                   </Link>
                 </div>
 
-                {/* Card 3 spans columns on md+; keeps responsive stacking on mobile */}
-                <div className="bg-background flex flex-col items-start justify-between gap-3 rounded-lg p-3 md:col-span-2 md:flex-row md:items-center">
-                  {/* stack icon above text on mobile, row on md+ */}
+                <div className="bg-background flex flex-col items-start justify-between gap-4 rounded-lg p-3 md:col-span-2 md:flex-row md:items-center">
                   <div className="flex flex-col items-start gap-3 md:flex-row md:items-center md:gap-6">
-                    <Award size={32} className="text-primary" strokeWidth={1.5} />
+                    <Scaling className="text-primary h-10 w-10" strokeWidth={1.5} />
                     <p className="max-w-72 text-base leading-none font-bold tracking-tight md:text-xl">
                       From governance → to brand enablement at scale
                     </p>
                   </div>
                   <Link href="/contact">
                     <Button
-                      className="bg-primary hover:ring-primary/50 hover:ring-offset-background size-16 origin-center cursor-pointer rounded-none transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6"
-                      aria-label="Learn more about connected systems"
+                      className="bg-primary hover:ring-primary/50 hover:ring-offset-background mt-2 size-12 origin-center cursor-pointer rounded-none px-2 py-1 transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6 md:mt-0 md:ml-auto md:size-16 md:px-4 md:py-2"
+                      aria-label="Contact"
                     >
-                      <ArrowUpRight size={24} className="size-6" />
+                      <ArrowUpRight className="size-6 sm:size-8" />
                     </Button>
                   </Link>
                 </div>
               </div>
             </div>
 
-            {/* center CTA on mobile, keep right on md+ */}
             <div className="flex w-full justify-center md:justify-end">
               <Button
                 asChild
