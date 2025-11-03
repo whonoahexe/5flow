@@ -18,7 +18,7 @@ export default function ContentManagement() {
       '5Flow’s Content Management solution centralizes product data, claims, translations, and packaging content. No more copy-pasting across spreadsheets or chasing the latest version — just accurate content ready for every artwork, label, and market.',
     buttonText: 'See it in Action',
     buttonLink: '/contact',
-    imageSrc: '/product/content-management.svg',
+    imageSrc: '/solutions/content-management.svg',
     imageAlt: 'Artwork management preview',
   };
 

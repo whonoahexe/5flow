@@ -18,7 +18,7 @@ export default function AutomatedArtwork() {
       '5Flow’s Automated Artwork solution transforms repetitive production work into a streamlined process. From resizing to multilingual rollouts, automation reduces manual effort, cuts errors, and accelerates delivery.',
     buttonText: 'See it in Action',
     buttonLink: '/contact',
-    imageSrc: '/product/automated-artwork.svg',
+    imageSrc: '/solutions/automated-artwork.svg',
     imageAlt: 'Artwork management preview',
   };
 

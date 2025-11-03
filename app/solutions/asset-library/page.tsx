@@ -18,7 +18,7 @@ export default function AssetLibrary() {
       '5Flow’s Asset Library brings every artwork, cutter guide, logo, and marketing file into one secure, searchable hub. No more Dropbox chaos, email attachments, or outdated files — just the right asset, always ready.',
     buttonText: 'See it in Action',
     buttonLink: '/contact',
-    imageSrc: '/product/asset-library.svg',
+    imageSrc: '/solutions/asset-library.svg',
     imageAlt: 'Artwork management preview',
   };
 

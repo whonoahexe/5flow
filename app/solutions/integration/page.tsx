@@ -18,7 +18,7 @@ export default function Integration() {
       '5Flow’s Integration solution connects your PIM, DAM, ERP, and design tools into one unified workflow. No more copy-pasting, duplicate files, or disconnected systems. Just data flowing smoothly across your ecosystem.',
     buttonText: 'See it in Action',
     buttonLink: '/contact',
-    imageSrc: '/product/integration.svg',
+    imageSrc: '/solutions/integration.svg',
     imageAlt: 'Artwork management preview',
   };
 
