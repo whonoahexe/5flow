@@ -1,4 +1,4 @@
-import { Layers2 } from 'lucide-react';
+import { ClockPlus, RefreshCcw, Share2Icon, ShieldCheck } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
@@ -17,40 +17,44 @@ export default function ContentManagement() {
     description:
       '5Flow’s Content Management solution centralizes product data, claims, translations, and packaging content. No more copy-pasting across spreadsheets or chasing the latest version — just accurate content ready for every artwork, label, and market.',
     buttonText: 'See it in Action',
-    buttonLink: '/contact', // dynamic target for CTA
+    buttonLink: '/contact',
     imageSrc: '/product/rectangle.png',
     imageAlt: 'Artwork management preview',
   };
 
   const howData = [
     {
-      heading: 'Content Management', // used by How for top heading
+      heading: 'Content Management',
       title: 'Centralized content hub',
       subtitle: 'One place for every claim and translation',
       description: 'Product data, claims, and text live in a single repository connected to artwork workflows.',
       buttonText: 'Discover the Hub',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/3-1.svg',
+      iconName: 'FileText',
     },
     {
       title: 'Structured workflows',
       subtitle: 'Content validated at the source',
       description: 'Approval processes ensure every line of copy is validated before reaching design or production.',
       buttonText: 'Discover Workflows',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/3-2.svg',
+      iconName: 'Workflow',
     },
     {
       title: 'Version history',
       subtitle: 'Track every change across markets',
       description: 'Every edit is logged and accessible, giving teams confidence they’re using the latest content.',
       buttonText: 'Discover Version Control',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/3-3.svg',
+      iconName: 'SearchCheck',
     },
     {
       title: 'Integration ready',
       subtitle: 'Connect with PIM, DAM, and ERP',
       description: 'Open APIs link content directly into your ecosystem, eliminating manual re-entry.',
       buttonText: 'Discover Integrations',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/3-4.svg',
+      iconName: 'Import',
     },
   ];
 
@@ -61,27 +65,27 @@ export default function ContentManagement() {
       subtitle: 'Aligned across products and markets',
       description:
         'With one source of truth, brand voice stays clear and consistent globally, no matter the SKU or channel.',
-      icon: Layers2,
+      icon: RefreshCcw,
     },
     {
       title: 'Reduced compliance risk',
       subtitle: 'Always accurate, always validated',
       description: 'Content approvals ensure regulatory accuracy in every market, reducing exposure to costly fines.',
-      icon: Layers2,
+      icon: ShieldCheck,
     },
     {
       title: 'Creative efficiency',
       subtitle: 'Designers focus on design, not copy hunts',
       description:
         'Approved content flows directly into artwork, letting creative teams produce faster with fewer errors.',
-      icon: Layers2,
+      icon: ClockPlus,
     },
     {
       title: 'Operational agility',
       subtitle: 'Handle changes without chaos',
       description:
         'Ingredient updates, new claims, or product launches are rolled out instantly across all packaging and markets.',
-      icon: Layers2,
+      icon: Share2Icon,
     },
   ];
 

@@ -1,4 +1,4 @@
-import { Layers2 } from 'lucide-react';
+import { CircleDollarSign, Rocket, ShieldCheck, Users } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
@@ -17,7 +17,7 @@ export default function OnlineProofing() {
     description:
       '5Flow’s Online Proofing solution brings all stakeholders into one platform for clear, traceable approvals. From annotations to version comparisons, every review is faster, sharper, and audit ready.',
     buttonText: 'See it in Action',
-    buttonLink: '/contact', // dynamic target for CTA
+    buttonLink: '/contact',
     imageSrc: '/product/rectangle.png',
     imageAlt: 'Artwork management preview',
   };
@@ -29,28 +29,32 @@ export default function OnlineProofing() {
       subtitle: 'Markups where they belong',
       description: 'Reviewers add comments directly on artwork files, eliminating confusion and lost feedback.',
       buttonText: 'Discover Annotations',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/2-1.svg',
+      iconName: 'StickyNote',
     },
     {
       title: 'Version comparison',
       subtitle: 'Spot changes instantly',
       description: 'Compare old and new files side by side to ensure every requested update is complete and correct.',
       buttonText: 'Discover Version Control',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/2-2.svg',
+      iconName: 'SquareSplitHorizontal',
     },
     {
       title: 'Automated approvals',
       subtitle: 'Traceable, transparent sign offs',
       description: 'Sequential or parallel approval paths keep projects moving while documenting every decision.',
       buttonText: 'Discover Approvals',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/2-3.svg',
+      iconName: 'CircleCheckBig',
     },
     {
       title: 'Audit trails',
       subtitle: 'Compliance built into proofing',
       description: 'Every annotation, change, and approval is logged for full regulatory compliance.',
       buttonText: 'Discover Compliance',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/2-4.svg',
+      iconName: 'ShieldCheck',
     },
   ];
 
@@ -60,25 +64,25 @@ export default function OnlineProofing() {
       title: 'Faster launches',
       subtitle: 'Cut approval cycles in half',
       description: 'Clear reviews and automated sign offs reduce cycle times, keeping launches on schedule.',
-      icon: Layers2,
+      icon: Rocket,
     },
     {
       title: 'Stronger compliance',
       subtitle: 'Always audit ready',
       description: 'Every approval loop is documented, giving regulatory teams full traceability.',
-      icon: Layers2,
+      icon: ShieldCheck,
     },
     {
       title: 'Lower costs',
       subtitle: 'Reduce error driven waste',
       description: 'Fewer mistakes mean fewer reprints and less wasted time and resources.',
-      icon: Layers2,
+      icon: CircleDollarSign,
     },
     {
       title: 'Better collaboration',
       subtitle: 'Everyone aligned in one system',
       description: 'With centralized proofing, feedback is structured, traceable, and easy to act on.',
-      icon: Layers2,
+      icon: Users,
     },
   ];
 

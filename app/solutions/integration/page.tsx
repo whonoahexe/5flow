@@ -1,4 +1,4 @@
-import { Layers2 } from 'lucide-react';
+import { Eye, Lightbulb, Scaling, WorkflowIcon } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
@@ -17,7 +17,7 @@ export default function Integration() {
     description:
       '5Flow’s Integration solution connects your PIM, DAM, ERP, and design tools into one unified workflow. No more copy-pasting, duplicate files, or disconnected systems. Just data flowing smoothly across your ecosystem.',
     buttonText: 'See it in Action',
-    buttonLink: '/contact', // dynamic target for CTA
+    buttonLink: '/contact',
     imageSrc: '/product/rectangle.png',
     imageAlt: 'Artwork management preview',
   };
@@ -29,28 +29,32 @@ export default function Integration() {
       subtitle: 'Easy connection to any system',
       description: 'Flexible APIs connect 5Flow to PIM, DAM, ERP, and creative tools with minimal effort.',
       buttonText: 'Discover APIs',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/6-1.svg',
+      iconName: 'ScreenShare',
     },
     {
       title: 'Real-time sync',
       subtitle: 'Data flows instantly',
       description: 'Updates push across systems automatically, ensuring everyone works with the latest information.',
       buttonText: 'Discover Sync',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/6-2.svg',
+      iconName: 'RefreshCcw',
     },
     {
       title: 'Scalable architecture',
       subtitle: 'Built to handle complexity',
       description: 'Integration scales from a few systems to enterprise-wide ecosystems across global teams.',
       buttonText: 'Discover Scalability',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/6-3.svg',
+      iconName: 'Scaling',
     },
     {
       title: 'Secure connections',
       subtitle: 'Data protected end to end',
       description: 'Enterprise-grade security ensures integrations are safe, compliant, and reliable.',
       buttonText: 'Discover Security',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/6-4.svg',
+      iconName: 'ShieldCheck',
     },
   ];
 
@@ -60,25 +64,25 @@ export default function Integration() {
       title: 'Ecosystem efficiency',
       subtitle: 'Every tool working together',
       description: 'Seamless integrations keep workflows moving without manual intervention.',
-      icon: Layers2,
+      icon: WorkflowIcon,
     },
     {
       title: 'Reduced manual work',
       subtitle: 'Less copy-pasting, fewer errors',
       description: 'Automated data flow eliminates human error and saves hours of repetitive effort.',
-      icon: Layers2,
+      icon: Lightbulb,
     },
     {
       title: 'Greater visibility',
       subtitle: 'One view across systems',
       description: 'Connected systems give managers a clear picture of project status and risks.',
-      icon: Layers2,
+      icon: Eye,
     },
     {
       title: 'Flexibility at scale',
       subtitle: 'Adapt to any tech landscape',
       description: 'Open architecture means integration works with your current tools, not against them.',
-      icon: Layers2,
+      icon: Scaling,
     },
   ];
 

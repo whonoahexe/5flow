@@ -1,4 +1,4 @@
-import { Layers2 } from 'lucide-react';
+import { CircleGauge, RefreshCcw, ShieldCheck, Zap } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
@@ -17,40 +17,44 @@ export default function AssetLibrary() {
     description:
       '5Flow’s Asset Library brings every artwork, cutter guide, logo, and marketing file into one secure, searchable hub. No more Dropbox chaos, email attachments, or outdated files — just the right asset, always ready.',
     buttonText: 'See it in Action',
-    buttonLink: '/contact', // dynamic target for CTA
+    buttonLink: '/contact',
     imageSrc: '/product/rectangle.png',
     imageAlt: 'Artwork management preview',
   };
 
   const howData = [
     {
-      heading: 'Asset Library', // used by How for top heading
+      heading: 'Asset Library',
       title: 'Centralized repository',
       subtitle: 'Every file in one hub',
       description: 'Logos, artworks, cutter guides, and more stored securely with access controls.',
       buttonText: 'Discover Repository',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/4-1.svg',
+      iconName: 'LayoutDashboard',
     },
     {
       title: 'Advanced search',
       subtitle: 'Find assets instantly',
       description: 'Metadata tagging and filters make searching fast and accurate.',
       buttonText: 'Discover Search',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/4-2.svg',
+      iconName: 'ScanSearch',
     },
     {
       title: 'Access control',
       subtitle: 'The right file for the right user',
       description: 'Role-based permissions ensure stakeholders only see what they need.',
       buttonText: 'Discover Access Control',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/4-3.svg',
+      iconName: 'LockKeyhole',
     },
     {
       title: 'Connected to workflows',
       subtitle: 'Assets always in sync',
       description: 'Linked directly to artwork and content management for accuracy and speed.',
       buttonText: 'Discover Integration',
-      imageSrc: '/solutions/rectangle.png',
+      imageSrc: '/solutions/4-4.svg',
+      iconName: 'Route',
     },
   ];
 
@@ -60,25 +64,25 @@ export default function AssetLibrary() {
       title: 'Brand consistency',
       subtitle: 'The right asset every time',
       description: 'One central library ensures teams and suppliers always use approved assets.',
-      icon: Layers2,
+      icon: RefreshCcw,
     },
     {
       title: 'Productivity boost',
       subtitle: 'Less searching, more doing',
       description: 'Teams save hours by finding assets instantly, freeing time for high-value work.',
-      icon: Layers2,
+      icon: Zap,
     },
     {
       title: 'Supply chain efficiency',
       subtitle: 'Faster collaboration with partners',
       description: 'Suppliers and printers access validated files directly, cutting delays and rework.',
-      icon: Layers2,
+      icon: CircleGauge,
     },
     {
       title: 'Risk reduction',
       subtitle: 'Eliminate errors from outdated files',
       description: 'Always-on version control ensures outdated or unapproved assets never reach production.',
-      icon: Layers2,
+      icon: ShieldCheck,
     },
   ];
 
