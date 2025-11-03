@@ -1,4 +1,4 @@
-import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck, CheckCircle, ZapIcon, BarChart } from 'lucide-react';
+import { Files, History, FileStack, LaptopMinimalCheck, EyeOff, RotateCw, Share2 } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/applications/Hero';
@@ -22,7 +22,7 @@ export default function Retail() {
       title: 'SKU refresh overload',
       desc: 'Too much volume, no control',
       sub: '5Flow centralizes artwork and content so retailers can manage SKU refreshes at scale without losing consistency.',
-      icon: Grid2X2,
+      icon: Files,
       buttonText: 'See How 5Flow Helps Retail',
     },
     {
@@ -30,7 +30,7 @@ export default function Retail() {
       title: 'Seasonal promos slip',
       desc: 'Campaigns miss the shelf date',
       sub: 'Automated workflows move approvals faster and give teams full visibility into promo deadlines.',
-      icon: Timer,
+      icon: History,
       buttonText: 'See How 5Flow Helps Retail',
     },
     {
@@ -38,7 +38,7 @@ export default function Retail() {
       title: 'Private-label packaging growth',
       desc: 'More complexity, tighter timelines',
       sub: 'Dedicated workflows manage private-label artwork alongside branded products without confusion.',
-      icon: ShieldCheck,
+      icon: FileStack,
       buttonText: 'See How 5Flow Helps Retail',
     },
     {
@@ -46,7 +46,7 @@ export default function Retail() {
       title: 'Fragmented supplier collaboration',
       desc: 'Errors multiply across vendors',
       sub: 'Suppliers access validated assets directly from 5Flow, cutting misprints and delays.',
-      icon: FileCheck,
+      icon: LaptopMinimalCheck,
       buttonText: 'See How 5Flow Helps Retail',
     },
     {
@@ -54,8 +54,29 @@ export default function Retail() {
       title: 'Lack of visibility',
       desc: 'Retailers can’t see where campaigns stall',
       sub: 'Dashboards and analytics show bottlenecks in real time, helping managers act before deadlines slip.',
-      icon: Eye,
+      icon: EyeOff,
       buttonText: 'See How 5Flow Helps Retail',
+    },
+  ];
+
+  const howData = [
+    {
+      title: 'Minimize SKU refresh chaos with automated workflows.',
+      description: 'Keep promotions on schedule using centralized timelines.',
+      imageSrc: '/solutions/1.svg',
+      iconName: 'Workflow',
+    },
+    {
+      title: 'Ensure brand consistency with one secure asset library.',
+      description: 'Capture approvals with online annotations and version control.',
+      imageSrc: '/solutions/2.svg',
+      iconName: 'RefreshCcw',
+    },
+    {
+      title: 'Cut manual work by integrating with PIM and ERP systems.',
+      description: 'Gain visibility with real-time dashboards and alerts.',
+      imageSrc: '/solutions/3.svg',
+      iconName: 'MonitorCog',
     },
   ];
 
@@ -65,50 +86,28 @@ export default function Retail() {
       title: 'On-shelf availability',
       desc: 'Campaigns hit stores on schedule',
       sub: 'Automated workflows keep promos and seasonal launches shelf-ready without delays.',
-      icon: CheckCircle,
+      icon: History,
     },
     {
       id: 'brand-consistency',
       title: 'Brand consistency',
       desc: 'Every SKU on message',
       sub: 'Centralized content and assets keep promotions aligned across channels and regions.',
-      icon: ZapIcon,
+      icon: RotateCw,
     },
     {
       id: 'scalable-operations',
       title: 'Scalable operations',
       desc: 'Handle thousands of SKUs with clarity',
       sub: '5Flow scales with retail complexity, managing massive SKU volumes without added overhead.',
-      icon: BarChart,
+      icon: Files,
     },
     {
       id: 'operational-agility',
       title: 'Operational agility',
       desc: 'Adapt to market shifts quickly',
       sub: 'Real-time visibility into workflows helps retailers pivot faster to seasonal and competitive demands.',
-      icon: ShieldCheck,
-    },
-  ];
-
-  const howData = [
-    {
-      heading: 'Retail',
-      title: 'Minimize SKU refresh chaos with automated workflows.',
-      description: 'Keep promotions on schedule using centralized timelines.',
-      icon: '/solutions/rectangle.png',
-      imageSrc: '/solutions/rectangle.png',
-    },
-    {
-      title: 'Ensure brand consistency with one secure asset library.',
-      description: 'Capture approvals with online annotations and version control.',
-      icon: '/solutions/rectangle.png',
-      imageSrc: '/solutions/rectangle.png',
-    },
-    {
-      title: 'Cut manual work by integrating with PIM and ERP systems.',
-      description: 'Gain visibility with real-time dashboards and alerts.',
-      icon: '/solutions/rectangle.png',
-      imageSrc: '/solutions/rectangle.png',
+      icon: Share2,
     },
   ];
 

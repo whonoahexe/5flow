@@ -1,4 +1,14 @@
-import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck, CheckCircle, ZapIcon, BarChart } from 'lucide-react';
+import {
+  ShieldCheck,
+  History,
+  Languages,
+  ClockAlert,
+  MapPinPlus,
+  EyeOff,
+  CircleCheckBig,
+  Files,
+  CircleGauge,
+} from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/applications/Hero';
@@ -22,7 +32,7 @@ export default function ConsumerGoods() {
       title: 'Multi-part packaging stalls launches',
       desc: 'Leaflet approved, label delayed, carton missing updates',
       sub: '5Flow links every component in one workflow so labels, cartons, and inserts move forward together.',
-      icon: Grid2X2,
+      icon: History,
       buttonText: 'See How 5Flow Helps Consumer Goods Brands',
     },
     {
@@ -30,7 +40,7 @@ export default function ConsumerGoods() {
       title: 'Language-heavy packs drive reprints',
       desc: 'Multilingual detergent or appliance packs rarely pass error-free',
       sub: 'Centralized translation and version control ensure approved text flows into every SKU variant without manual copy-paste errors.',
-      icon: Timer,
+      icon: Languages,
       buttonText: 'See How 5Flow Helps Consumer Goods Brands',
     },
     {
@@ -38,7 +48,7 @@ export default function ConsumerGoods() {
       title: 'Regional promo packs overwhelm sourcing',
       desc: 'Holiday or event packaging fragments supplier timelines',
       sub: 'Automated workflows align suppliers and vendors on promo pack assets, cutting delays and misprints.',
-      icon: ShieldCheck,
+      icon: ClockAlert,
       buttonText: 'See How 5Flow Helps Consumer Goods Brands',
     },
     {
@@ -46,7 +56,7 @@ export default function ConsumerGoods() {
       title: 'Global SKUs lack local compliance',
       desc: 'Same product, different labeling rules by region',
       sub: 'Market-specific workflows adapt global packs to local labeling requirements while preserving brand consistency.',
-      icon: FileCheck,
+      icon: MapPinPlus,
       buttonText: 'See How 5Flow Helps Consumer Goods Brands',
     },
     {
@@ -54,8 +64,30 @@ export default function ConsumerGoods() {
       title: 'Zero visibility into bottlenecks',
       desc: 'One late component delays the entire launch',
       sub: 'Dashboards give real-time status on every carton, leaflet, and label, so managers can unblock projects early.',
-      icon: Eye,
+      icon: EyeOff,
       buttonText: 'See How 5Flow Helps Consumer Goods Brands',
+    },
+  ];
+
+  const howData = [
+    {
+      heading: 'Consumer Goods Brands',
+      title: 'Launch multi-component packs on time by connecting cartons, leaflets, and inserts in one workflow.',
+      description: 'Streamline seasonal and promotional packs with automated supplier workflows.',
+      iconName: 'Workflow',
+      imageSrc: '/applications/5-1.svg',
+    },
+    {
+      title: 'Monitor every component’s progress with real-time dashboards.',
+      description: 'Manage multilingual packaging with centralized translation libraries.',
+      iconName: 'ChartArea',
+      imageSrc: '/applications/5-2.svg',
+    },
+    {
+      title: 'Adapt global SKUs to local regulatory requirements without rework.',
+      description: 'Reduce reprints by ensuring suppliers only access validated assets.',
+      iconName: 'MapPinCheckInside',
+      imageSrc: '/applications/5-3.svg',
     },
   ];
 
@@ -65,50 +97,28 @@ export default function ConsumerGoods() {
       title: 'Launch reliability',
       desc: 'No delays, no last-minute surprises',
       sub: 'With every packaging component linked and tracked, launches run predictably, protecting revenue and shelf commitments.',
-      icon: CheckCircle,
+      icon: CircleCheckBig,
     },
     {
       id: 'portfolio-scalability',
       title: 'Portfolio scalability',
       desc: 'Growth without losing control',
       sub: 'Whether it’s 50 SKUs or 5,000, 5Flow scales with your product portfolio and keeps complexity in check.',
-      icon: ZapIcon,
+      icon: Files,
     },
     {
       id: 'supply-chain-trust',
       title: 'Supply chain trust',
       desc: 'Vendors and partners always aligned',
       sub: 'Direct supplier access to validated files builds trust, reduces disputes, and keeps global vendors in sync.',
-      icon: BarChart,
+      icon: ShieldCheck,
     },
     {
       id: 'sustainable-efficiency',
       title: 'Sustainable efficiency',
       desc: 'Less rework, less waste',
       sub: 'By reducing misprints and reprints, 5Flow saves costs while also helping meet sustainability targets.',
-      icon: ShieldCheck,
-    },
-  ];
-
-  const howData = [
-    {
-      heading: 'Consumer Goods Brands',
-      title: 'Launch multi-component packs on time by connecting cartons, leaflets, and inserts in one workflow.',
-      description: 'Streamline seasonal and promotional packs with automated supplier workflows.',
-      icon: '/solutions/rectangle.png',
-      imageSrc: '/solutions/rectangle.png',
-    },
-    {
-      title: 'Monitor every component’s progress with real-time dashboards.',
-      description: 'Manage multilingual packaging with centralized translation libraries.',
-      icon: '/solutions/rectangle.png',
-      imageSrc: '/solutions/rectangle.png',
-    },
-    {
-      title: 'Adapt global SKUs to local regulatory requirements without rework.',
-      description: 'Reduce reprints by ensuring suppliers only access validated assets.',
-      icon: '/solutions/rectangle.png',
-      imageSrc: '/solutions/rectangle.png',
+      icon: CircleGauge,
     },
   ];
 

@@ -36,7 +36,7 @@ const Challenges = ({ items = [] }: ChallengesProps) => {
               }`}
             >
               <div className="flex w-full flex-col items-start justify-between gap-4 p-4 sm:flex-row sm:gap-0 sm:p-8">
-                <p className="text-2xl font-bold tracking-tight sm:text-4xl">{card.title}</p>
+                <p className="text-left text-2xl font-bold tracking-tight sm:text-4xl">{card.title}</p>
                 {card.icon && <card.icon className="text-primary h-12 w-12 sm:h-18 sm:w-18" strokeWidth={1.5} />}
               </div>
               <div
