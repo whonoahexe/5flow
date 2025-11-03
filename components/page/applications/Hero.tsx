@@ -15,16 +15,18 @@ interface HeroProps {
 
 const Hero = ({ title, subtitle, description, imageSrc, imageAlt = '' }: HeroProps) => {
   return (
-    <div className="relative mt-32 flex w-full flex-col items-center text-center sm:flex-row sm:items-start sm:text-left">
-      <div className="flex w-full flex-col gap-14 sm:flex-row">
+    <div className="relative mt-32 flex w-full flex-col items-center text-center sm:items-start sm:text-left">
+      <div className="flex w-full flex-col gap-4 sm:flex-row md:gap-14">
         {/* Product heading */}
         <div className="font-heading flex flex-1 justify-center sm:justify-start">
-          <b className="max-w-full text-6xl leading-none tracking-tighter sm:max-w-2xl sm:text-8xl">{title}</b>
+          <b className="max-w-full text-4xl leading-tight tracking-tighter sm:text-8xl sm:leading-none">{title}</b>
         </div>
 
         {/* Product details */}
         <div className="flex h-auto flex-1 flex-col items-center gap-8 sm:items-start sm:justify-between sm:gap-16">
-          <p className="text-primary font-heading text-4xl leading-none tracking-tighter sm:text-5xl">{subtitle}</p>
+          <p className="text-primary font-heading text-2xl leading-tight tracking-tighter sm:text-5xl sm:leading-none">
+            {subtitle}
+          </p>
 
           <div className="flex flex-col gap-6 sm:gap-8">
             <p className="relative text-sm leading-[150%] tracking-tight sm:text-base">{description}</p>
@@ -49,7 +51,7 @@ const Hero = ({ title, subtitle, description, imageSrc, imageAlt = '' }: HeroPro
       </div>
 
       {/* Product image */}
-      <FullBleedLines className="bg-foreground/5 mt-16 p-2">
+      <FullBleedLines className="bg-foreground/5 mt-16 w-full p-2">
         <Image
           className="relative w-full rounded-[10px] sm:rounded-[20px]"
           width={1520}

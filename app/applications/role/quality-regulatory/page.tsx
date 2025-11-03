@@ -1,4 +1,13 @@
-import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck, CheckCircle, ZapIcon } from 'lucide-react';
+import {
+  ShieldCheck,
+  ZapIcon,
+  ShieldAlert,
+  FileStack,
+  FileSearch2,
+  ShieldQuestionMark,
+  History,
+  SquareCheckBig,
+} from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
@@ -23,7 +32,7 @@ export default function QualityRegulatory() {
       title: 'High compliance risk',
       desc: 'A single missed warning can trigger fines',
       sub: '5Flow provides audit-ready workflows with version control and approval trails, so nothing slips through.',
-      icon: Grid2X2,
+      icon: ShieldAlert,
       buttonText: 'See How It Helps Regulatory Teams',
     },
     {
@@ -31,7 +40,7 @@ export default function QualityRegulatory() {
       title: 'Cascading label updates',
       desc: 'One change creates errors across markets',
       sub: 'Centralized content management pushes validated updates consistently into every SKU and region.',
-      icon: Timer,
+      icon: FileStack,
       buttonText: 'See How It Helps Regulatory Teams',
     },
     {
@@ -39,7 +48,7 @@ export default function QualityRegulatory() {
       title: 'Lack of traceability',
       desc: 'Approvals get lost in email chains',
       sub: 'All approvals are tracked, timestamped, and linked directly to artwork, giving you end-to-end visibility.',
-      icon: ShieldCheck,
+      icon: FileSearch2,
       buttonText: 'See How It Helps Regulatory Teams',
     },
     {
@@ -47,7 +56,7 @@ export default function QualityRegulatory() {
       title: 'Fragmented documentation',
       desc: 'Teams can’t prove compliance quickly',
       sub: 'With built-in records, reports are generated instantly for audits and inspections.',
-      icon: Eye,
+      icon: ShieldQuestionMark,
       buttonText: 'See How It Helps Regulatory Teams',
     },
     {
@@ -55,7 +64,7 @@ export default function QualityRegulatory() {
       title: 'Slow, manual processes',
       desc: 'Delays put launches at risk',
       sub: 'Automated workflows move files faster while maintaining full accuracy and compliance checks.',
-      icon: FileCheck,
+      icon: History,
       buttonText: 'See How It Helps Regulatory Teams',
     },
   ];
@@ -73,7 +82,7 @@ export default function QualityRegulatory() {
       title: 'Audit readiness',
       desc: 'Be prepared at any moment',
       sub: 'Automatic documentation means audit trails are always up to date, cutting stress and prep time.',
-      icon: FileCheck,
+      icon: SquareCheckBig,
     },
     {
       id: 'faster-approvals',
@@ -87,7 +96,7 @@ export default function QualityRegulatory() {
       title: 'Confidence at scale',
       desc: 'Manage thousands of SKUs accurately',
       sub: 'Even in complex global portfolios, accuracy stays consistent across every product and market.',
-      icon: CheckCircle,
+      icon: FileStack,
     },
   ];
 

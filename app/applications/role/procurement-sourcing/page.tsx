@@ -1,4 +1,13 @@
-import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck, CheckCircle, ZapIcon, BarChart } from 'lucide-react';
+import {
+  ShieldCheck,
+  CircleDollarSign,
+  History,
+  EyeOff,
+  Repeat2,
+  ShieldAlert,
+  CircleCheckBig,
+  LaptopMinimalCheck,
+} from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
@@ -23,7 +32,7 @@ export default function ProcurementSourcing() {
       title: 'Costly reprints',
       desc: 'Errors drive wasted spend',
       sub: '5Flow ensures suppliers receive the right, validated files every time, eliminating costly mistakes and reprints.',
-      icon: Grid2X2,
+      icon: CircleDollarSign,
       buttonText: 'See How 5Flow Helps Procurement Teams',
     },
     {
@@ -31,7 +40,7 @@ export default function ProcurementSourcing() {
       title: 'Supply chain delays',
       desc: 'Wrong files stall production',
       sub: 'A centralized asset library gives suppliers direct access to approved artwork and cutter guides, keeping timelines intact.',
-      icon: Timer,
+      icon: History,
       buttonText: 'See How 5Flow Helps Procurement Teams',
     },
     {
@@ -39,7 +48,7 @@ export default function ProcurementSourcing() {
       title: 'Lack of visibility',
       desc: 'No clarity on project status or supplier readiness',
       sub: 'Dashboards show procurement teams where projects stand, so supplier alignment is proactive, not reactive.',
-      icon: Eye,
+      icon: EyeOff,
       buttonText: 'See How 5Flow Helps Procurement Teams',
     },
     {
@@ -47,7 +56,7 @@ export default function ProcurementSourcing() {
       title: 'Manual back-and-forth',
       desc: 'Email overload with suppliers',
       sub: 'Integrated communication reduces supplier emails by structuring feedback, clarifications, and approvals in one system.',
-      icon: FileCheck,
+      icon: Repeat2,
       buttonText: 'See How 5Flow Helps Procurement Teams',
     },
     {
@@ -55,7 +64,7 @@ export default function ProcurementSourcing() {
       title: 'Inconsistent quality',
       desc: 'Errors slip through fragmented workflows',
       sub: 'Automated checks and traceability ensure suppliers work only with approved, accurate files.',
-      icon: ShieldCheck,
+      icon: ShieldAlert,
       buttonText: 'See How 5Flow Helps Procurement Teams',
     },
   ];
@@ -66,21 +75,21 @@ export default function ProcurementSourcing() {
       title: 'Predictable supply chain',
       desc: 'No surprises, fewer delays',
       sub: 'With validated files and structured workflows, suppliers receive exactly what they need, when they need it.',
-      icon: CheckCircle,
+      icon: CircleCheckBig,
     },
     {
       id: 'cost-efficiency',
       title: 'Cost efficiency',
       desc: 'Save budgets by eliminating waste',
       sub: 'Fewer reprints and less manual rework directly reduce costs across production.',
-      icon: ZapIcon,
+      icon: CircleDollarSign,
     },
     {
       id: 'supplier-alignment',
       title: 'Supplier alignment',
       desc: 'A single source of truth for partners',
       sub: 'Centralized access ensures suppliers always work with approved artwork and assets.',
-      icon: BarChart,
+      icon: LaptopMinimalCheck,
     },
     {
       id: 'risk-reduction',

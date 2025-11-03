@@ -1,4 +1,14 @@
-import { Eye, ShieldCheck, Grid2X2, Timer, FileCheck, CheckCircle, ZapIcon, BarChart } from 'lucide-react';
+import {
+  Eye,
+  ShieldCheck,
+  FileStack,
+  CircleCheckBig,
+  FileText,
+  ShieldQuestionMark,
+  RefreshCcw,
+  Rocket,
+  ChartArea,
+} from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import InlineHighlight from '@/components/core/inline-highlight';
@@ -22,21 +32,21 @@ export default function BrandManager() {
       title: 'SKU refresh overload',
       desc: 'Too many variants to keep track of',
       sub: '5Flow unifies artwork, claims, and content in one platform so every SKU stays visible, aligned, and on brand.',
-      icon: Grid2X2,
+      icon: FileStack,
       buttonText: 'See How It Helps Brand Managers',
     },
     {
       title: 'Approval bottlenecks',
       desc: 'Reviews drag out launch cycle',
       sub: 'Automated workflows route tasks to the right people, track approvals, and cut wasted time.',
-      icon: Timer,
+      icon: CircleCheckBig,
       buttonText: 'See How It Helps Brand Managers',
     },
     {
       title: 'Content drift',
       desc: 'Inconsistent claims across markets',
       sub: 'A central content hub ensures approved copy flows into every artwork and market without manual errors.',
-      icon: ShieldCheck,
+      icon: FileText,
       buttonText: 'See How It Helps Brand Managers',
     },
     {
@@ -50,7 +60,7 @@ export default function BrandManager() {
       title: 'Risk of compliance errors',
       desc: 'A single mistake costs millions',
       sub: 'Built-in version control and audit trails ensure only validated files make it to market.',
-      icon: FileCheck,
+      icon: ShieldQuestionMark,
       buttonText: 'See How It Helps Brand Managers',
     },
   ];
@@ -61,14 +71,14 @@ export default function BrandManager() {
       title: 'Consistency across markets',
       desc: 'Every SKU speaks the same brand language',
       sub: 'With centralized content and artwork, your brand identity stays intact globally while adapting locally.',
-      icon: CheckCircle,
+      icon: RefreshCcw,
     },
     {
       id: 'speed',
       title: 'Faster go-to-market',
       desc: 'Hit launch dates every time',
       sub: 'Automated workflows and clear approvals reduce cycle times and accelerate product rollouts.',
-      icon: ZapIcon,
+      icon: Rocket,
     },
     {
       id: 'reduced-risk',
@@ -82,7 +92,7 @@ export default function BrandManager() {
       title: 'Data-backed decisions',
       desc: 'See exactly where to act',
       sub: 'Analytics show delays, capacity, and trends, helping you fix problems proactively.',
-      icon: BarChart,
+      icon: ChartArea,
     },
   ];
 
