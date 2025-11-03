@@ -197,7 +197,7 @@ const How = ({ howData }: HowProps) => {
                 <div className="lg:hidden">
                   <div className="relative mt-2 aspect-[16/9] w-full overflow-hidden rounded-xl bg-[#E8ECFE]">
                     <Image
-                      className="h-full w-full origin-center scale-[0.98] scale-[1.2] transform-gpu"
+                      className="h-full w-full origin-center scale-[1.2] transform-gpu"
                       fill
                       sizes="100vw"
                       alt={feature.title}

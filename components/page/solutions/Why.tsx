@@ -36,7 +36,7 @@ const Why = ({ whyData }: WhyProps) => {
           >
             <div className="flex w-full flex-col justify-between p-4 sm:flex-row sm:p-8">
               <b className="text-2xl tracking-tight sm:text-4xl">{card.title}</b>
-              {card.icon && <card.icon className="text-primary mt-4 size-18 sm:mt-0" strokeWidth={1.5} />}
+              {card.icon && <card.icon className="text-primary mt-4 size-12 sm:mt-0 md:size-18" strokeWidth={1.5} />}
             </div>
             <div className="w-full max-w-full p-4 sm:max-w-xl sm:p-8">
               <b className="w-full max-w-full text-xl tracking-tight sm:max-w-96 sm:text-2xl">{card.subtitle}</b>
