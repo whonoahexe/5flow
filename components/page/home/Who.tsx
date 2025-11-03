@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
 
-const clients = [
+const clientData = [
   'gropper.webp',
   'lanxess.webp',
   'ludwig-schokolade.webp',
@@ -24,7 +24,12 @@ const clients = [
   'Renault.webp',
 ];
 
-const Who = () => {
+interface WhoProps {
+  path?: string;
+  clients?: string[];
+}
+
+const Who = ({ path = 'home', clients = clientData }: WhoProps) => {
   const logosRef = useRef<HTMLDivElement | null>(null);
 
   const scrollByAmount = (direction: 'left' | 'right') => {
@@ -71,7 +76,7 @@ const Who = () => {
               key={i}
             >
               <div className="flex w-full items-center justify-center p-8">
-                <Image src={`/home/${item}`} alt="Client Logo" width={150} height={75} />
+                <Image src={`/${path}/${item}`} alt="Client Logo" width={150} height={75} />
               </div>
             </div>
           ))}

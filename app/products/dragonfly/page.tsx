@@ -8,6 +8,7 @@ import Need from '@/components/page/product/Need';
 import What from '@/components/page/product/What';
 import Why from '@/components/page/product/Why';
 import Workflow from '@/components/page/product/Workflow';
+import Who from '@/components/page/home/Who';
 
 const whatData = [
   [
@@ -133,6 +134,20 @@ const needData = {
   buttonText: 'Talk to Us',
 };
 
+const clientData = [
+  'Best_Buy.png',
+  'Grupo_BIMBO.png',
+  'Kellanova.png',
+  'MARS_Petcare.png',
+  'Molson_Coors.png',
+  'Mondelez.png',
+  'Morrison.png',
+  'Orkla.png',
+  'Reynolds International Logo.png',
+  'Shiseido.jpg',
+  'Wellness_Pet.png',
+];
+
 export default function Dragonfly() {
   return (
     <div className="relative">
@@ -146,7 +161,7 @@ export default function Dragonfly() {
             title="Make your projects fly"
             subtitle="Streamlined workflows for complex brand execution"
             description="Dragonfly is a web-based graphics and packaging management platform that cuts through miscommunication, complexity, and delays. Built for agility and scale, it keeps your brand projects moving on time, on budget, every time."
-            imageSrc="/product/rectangle.png"
+            imageSrc="/product/wave-svg.png"
             imageWidth={292}
             imageAlt="rectangle"
           />
@@ -169,6 +184,7 @@ export default function Dragonfly() {
             description={needData.description}
             buttonText={needData.buttonText}
           />
+          <Who path="product/dragonfly-clients" clients={clientData} />
           <Workflow
             title={
               <>

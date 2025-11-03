@@ -8,6 +8,7 @@ import What from '@/components/page/product/What';
 import Workflow from '@/components/page/product/Workflow';
 import How from '@/components/page/product/How';
 import Why from '@/components/page/product/Why';
+import Who from '@/components/page/home/Who';
 
 const whatData = [
   [
@@ -133,6 +134,19 @@ const needData = {
   buttonText: 'Talk to Us',
 };
 
+const clientData = [
+  'bp.svg',
+  'Chick-fil-A.png',
+  'Dr._Scholls.png',
+  'gropper.webp',
+  'herrs_snacks.png',
+  'lanxess-2.webp',
+  'ludwig-schokolade.webp',
+  'maurer-and-wirtz.webp',
+  'png-transparent-keurig-logo-household-brands-logos.png',
+  'vitakraft.webp',
+];
+
 export default function Wave() {
   return (
     <div className="relative">
@@ -146,7 +160,7 @@ export default function Wave() {
             title="Artwork management, without the chaos"
             subtitle="Faster progress from first draft to final approval."
             description="WAVE gives brand, packaging, and regulatory teams a single platform to brief, review, and approve artwork. No more confusion, no more delays. Just clear workflows that move projects forward."
-            imageSrc="/product/wave-svg.svg"
+            imageSrc="/product/wave-svg.png"
             imageWidth={292}
             imageAlt="rectangle"
           />
@@ -169,6 +183,7 @@ export default function Wave() {
             description={needData.description}
             buttonText={needData.buttonText}
           />
+          <Who path="product/wave-clients" clients={clientData} />
           <Workflow
             title={
               <>

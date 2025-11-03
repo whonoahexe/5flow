@@ -146,7 +146,7 @@ export default function Wavestudio() {
             title="Big ideas. Bigger execution"
             subtitle="Scale your artwork production without scaling your team"
             description="WaveStudio combines automation with creative expertise. We turn endless artwork requests into fast, accurate, on-brand outputs so you can keep creating without burning out."
-            imageSrc="/product/rectangle.png"
+            imageSrc="/product/wave-svg.png"
             imageWidth={682}
             imageAlt="rectangle"
           />
