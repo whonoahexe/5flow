@@ -161,7 +161,7 @@ export default function Dragonfly() {
             title="Make your projects fly"
             subtitle="Streamlined workflows for complex brand execution"
             description="Dragonfly is a web-based graphics and packaging management platform that cuts through miscommunication, complexity, and delays. Built for agility and scale, it keeps your brand projects moving on time, on budget, every time."
-            imageSrc="/product/wave-svg.png"
+            imageSrc="/product/dragonfly-svg.png"
             imageWidth={292}
             imageAlt="rectangle"
           />
