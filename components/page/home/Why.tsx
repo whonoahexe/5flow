@@ -15,7 +15,7 @@ const Why = () => (
     </FullBleedLines>
 
     <FullBleedLines>
-      <div className="bg-foreground/5 w-full p-2">
+      <div className="w-full">
         <div className="bg-primary flex w-full flex-col items-start justify-between gap-6 rounded-2xl py-8 md:flex-row md:items-center md:gap-0">
           <Image
             className="hidden h-45 w-44 object-cover sm:h-36 sm:w-36 md:flex md:h-[460px] md:w-[450px]"

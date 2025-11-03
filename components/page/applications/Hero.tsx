@@ -51,7 +51,7 @@ const Hero = ({ title, subtitle, description, imageSrc, imageAlt = '' }: HeroPro
       </div>
 
       {/* Product image */}
-      <FullBleedLines className="bg-foreground/5 mt-16 w-full p-2">
+      <FullBleedLines className="mt-16 w-full">
         <Image
           className="relative w-full rounded-[10px] sm:rounded-[20px]"
           width={1520}

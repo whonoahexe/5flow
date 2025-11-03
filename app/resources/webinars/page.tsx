@@ -2,14 +2,13 @@ import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/resources/Hero';
 import FilterSection from '@/components/page/resources/FilterSection';
-import { CalendarDays, Play } from 'lucide-react';
 
 export default function Webinars() {
   const tabsData = [
     {
       value: 'upcoming',
       label: 'Upcoming',
-      icon: CalendarDays,
+      icon: 'calendarDays',
       items: [
         {
           date: 'Date & Time',
@@ -48,7 +47,7 @@ export default function Webinars() {
     {
       value: 'ondemand',
       label: 'On Demand',
-      icon: Play,
+      icon: 'play',
       items: [
         {
           date: 'Date & Time',

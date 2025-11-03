@@ -22,7 +22,7 @@ export default function QualityRegulatory() {
     subtitle: 'Tools built for regulatory and quality descers who can’t afford mistakes',
     description:
       'Regulatory and quality managers need accuracy at every step. From label updates to final approvals, 5Flow ensures complete traceability, audit-ready workflows, and risk-free compliance.',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/applications/icp/Quality.jpg',
     imageAlt: 'Artwork management preview',
   };
 

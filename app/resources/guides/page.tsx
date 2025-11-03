@@ -2,14 +2,13 @@ import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/resources/Hero';
 import FilterSection from '@/components/page/resources/FilterSection';
-import { BookOpen, Briefcase, Users } from 'lucide-react';
 
 export default function Guides() {
   const tabsData = [
     {
       value: 'by-topic',
       label: 'By Topic',
-      icon: BookOpen,
+      icon: 'bookOpen',
       items: [
         {
           title: 'Guide Title 1',
@@ -44,7 +43,7 @@ export default function Guides() {
     {
       value: 'by-industry',
       label: 'By Industry',
-      icon: Briefcase,
+      icon: 'briefcase',
       items: [
         {
           title: 'Guide Title 1',
@@ -79,7 +78,7 @@ export default function Guides() {
     {
       value: 'by-roles',
       label: 'By Roles',
-      icon: Users,
+      icon: 'users',
       items: [
         {
           title: 'Guide Title 1',

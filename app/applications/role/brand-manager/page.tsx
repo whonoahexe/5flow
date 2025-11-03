@@ -23,7 +23,7 @@ export default function BrandManager() {
     subtitle: 'Solutions built for brand managers who need speed and scale',
     description:
       'As a brand manager, you deal with exploding SKUs, endless approvals, and pressure to hit launch dates. 5Flow centralizes workflows, content, and artwork so you can keep projects moving and your brand consistent across markets.',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/applications/icp/BrandManager.jpg',
     imageAlt: 'Artwork management preview',
   };
 

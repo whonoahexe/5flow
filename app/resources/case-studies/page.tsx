@@ -2,14 +2,13 @@ import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/resources/Hero';
 import FilterSection from '@/components/page/resources/FilterSection';
-import { Briefcase, Users, Target } from 'lucide-react';
 
 export default function CaseStudies() {
   const tabsData = [
     {
       value: 'industry',
       label: 'By Industry',
-      icon: Briefcase,
+      icon: 'briefcase',
       buttonLabel: 'Read Case Study',
       items: [
         {
@@ -41,7 +40,7 @@ export default function CaseStudies() {
     {
       value: 'roles',
       label: 'By Roles',
-      icon: Users,
+      icon: 'users',
       buttonLabel: 'Read Case Study',
       items: [
         {
@@ -73,7 +72,7 @@ export default function CaseStudies() {
     {
       value: 'usecase',
       label: 'By Use Case',
-      icon: Target,
+      icon: 'target',
       buttonLabel: 'Read Case Study',
       items: [
         {

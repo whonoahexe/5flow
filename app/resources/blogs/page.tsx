@@ -2,14 +2,13 @@ import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/resources/Hero';
 import FilterSection from '@/components/page/resources/FilterSection';
-import { Package, ShieldCheck, PenTool, Zap, Link as LinkIcon } from 'lucide-react';
 
 export default function Blogs() {
   const tabsData = [
     {
       value: 'packaging',
       label: 'Packaging',
-      icon: Package,
+      icon: 'package',
       items: [
         {
           title: 'Sustainable Packaging Trends',
@@ -44,7 +43,7 @@ export default function Blogs() {
     {
       value: 'compliance',
       label: 'Compliance',
-      icon: ShieldCheck,
+      icon: 'shieldCheck',
       items: [
         {
           title: 'Global Compliance Checklist',
@@ -79,7 +78,7 @@ export default function Blogs() {
     {
       value: 'design',
       label: 'Design',
-      icon: PenTool,
+      icon: 'penTool',
       items: [
         {
           title: 'Brand‑led Packaging Design',
@@ -114,7 +113,7 @@ export default function Blogs() {
     {
       value: 'automation',
       label: 'Automation',
-      icon: Zap,
+      icon: 'zap',
       items: [
         {
           title: 'Automating Workflows',
@@ -149,7 +148,7 @@ export default function Blogs() {
     {
       value: 'integration',
       label: 'Integration',
-      icon: LinkIcon,
+      icon: 'link',
       items: [
         {
           title: 'ERP & PIM Integration',

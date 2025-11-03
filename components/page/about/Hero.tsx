@@ -23,7 +23,7 @@ const Hero = () => {
         </FullBleedLines>
 
         {/* Images */}
-        <FullBleedLines className="bg-foreground/5 flex w-full flex-col gap-4 p-2 sm:flex-row sm:gap-0">
+        <FullBleedLines className="flex w-full flex-col gap-4 sm:flex-row sm:gap-0">
           <div className="flex w-full flex-col">
             <div className="bg-accent1 grid grid-cols-2 sm:flex sm:flex-nowrap">
               {topRowImages.map((src, index) => (

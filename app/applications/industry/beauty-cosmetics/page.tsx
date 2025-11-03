@@ -22,7 +22,7 @@ export default function BeautyCosmetics() {
     subtitle: 'Built for brands managing endless variants and shade launches',
     description:
       'In beauty, packaging complexity grows fast. New shades, finish updates, local claims, and regional rules. 5Flow helps cosmetics brands manage rapid product cycles with workflows that protect consistency, speed up launches, and keep every claim compliant.',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/applications/industries/beauty.png',
     imageAlt: 'Artwork management preview',
   };
 

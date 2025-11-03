@@ -102,7 +102,7 @@ const NAV_ITEMS: NavItem[] = [
           ],
         },
       ],
-      offsetClass: 'ml-204',
+      offsetClass: 'ml-0',
       itemWidthClass: 'w-120',
       columns: 2,
     },
@@ -262,7 +262,7 @@ export function Navigation() {
 
                 <DropdownMenuContent
                   className={cn(
-                    'z-[999] mt-10 translate-y-2 gap-2 p-2 opacity-0 transition-all duration-300 ease-[var(--easing-smooth)] data-[state=open]:translate-y-0 data-[state=open]:opacity-100',
+                    'z-[999] mt-10 translate-y-2 p-2 opacity-0 transition-all duration-300 ease-[var(--easing-smooth)] data-[state=open]:translate-y-0 data-[state=open]:opacity-100',
                     listLayoutClass,
                     offsetClass
                   )}
@@ -279,7 +279,7 @@ export function Navigation() {
                             </div>
                           </div>
 
-                          <div className="flex flex-col gap-2">
+                          <div className="flex flex-col">
                             {group.items.map(({ href, label }) => (
                               <DropdownMenuItem asChild key={href}>
                                 <Link

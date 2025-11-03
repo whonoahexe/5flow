@@ -15,14 +15,14 @@ interface NeedProps {
 
 const Need = ({ title1, highlightTitle, title2, subtitle, description }: NeedProps) => {
   return (
-    <FullBleedLines className="bg-foreground/5 relative w-full p-4 sm:p-2">
+    <FullBleedLines className="relative w-full">
       <div className="bg-primary flex flex-col gap-10 rounded-2xl px-6 py-10 sm:gap-14 sm:py-16 sm:pl-8">
         <div className="flex w-full flex-col items-center justify-between gap-6 sm:flex-row sm:items-start sm:gap-0">
           <div className="font-heading flex flex-col gap-4 text-center sm:text-left">
             <div className="relative max-w-full sm:max-w-4xl">
               <b className="text-background w-full text-4xl leading-tight tracking-tight sm:text-6xl sm:leading-none">
                 <span>{title1}</span>
-                <InlineHighlight>{highlightTitle}</InlineHighlight>
+                <InlineHighlight className="bg-success text-foreground">{highlightTitle}</InlineHighlight>
                 <span>{title2}</span>
               </b>
             </div>

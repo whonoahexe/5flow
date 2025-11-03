@@ -2,14 +2,13 @@ import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/resources/Hero';
 import FilterSection from '@/components/page/resources/FilterSection';
-import { Play, Users, Lightbulb } from 'lucide-react';
 
 export default function VideoGallery() {
   const tabsData = [
     {
       value: 'product-demos',
       label: 'Product demos',
-      icon: Play,
+      icon: 'play',
       items: [
         {
           title: 'Demo: Quick Overview',
@@ -44,7 +43,7 @@ export default function VideoGallery() {
     {
       value: 'customer-success',
       label: 'Customer success',
-      icon: Users,
+      icon: 'users',
       items: [
         {
           title: 'Customer Story: Retailer X',
@@ -79,7 +78,7 @@ export default function VideoGallery() {
     {
       value: 'thought-leadership',
       label: 'Thought leadership',
-      icon: Lightbulb,
+      icon: 'lightbulb',
       items: [
         {
           title: 'Best Practices: Packaging',

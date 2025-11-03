@@ -22,7 +22,7 @@ export default function ConsumerGoods() {
     subtitle: 'Built for consumer goods brands managing scale and variety',
     description:
       'Consumer goods brands deal with endless SKUs, multi-part packaging, and global supply chains. 5Flow keeps packaging accurate, workflows connected, and launches on schedule — no matter the scale.',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/applications/industries/fmcg.jpg',
     imageAlt: 'Artwork management preview',
   };
 

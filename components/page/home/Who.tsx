@@ -72,7 +72,7 @@ const Who = ({ path = 'home', clients = clientData }: WhoProps) => {
         <div ref={logosRef} className="bg-background scrollbar-none flex gap-2 overflow-x-auto p-2">
           {clients.map((item, i) => (
             <div
-              className="bg-background flex h-32 min-w-[180px] flex-col items-center justify-center rounded-2xl p-2 sm:min-w-[220px] md:h-38 md:min-w-lg"
+              className="bg-background flex h-32 min-w-[120px] flex-col items-center justify-center rounded-2xl p-2 md:h-38 md:min-w-92"
               key={i}
             >
               <div className="flex w-full items-center justify-center p-8">

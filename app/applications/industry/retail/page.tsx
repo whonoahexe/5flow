@@ -12,7 +12,7 @@ export default function Retail() {
     subtitle: 'Tools built for retailers dealing with high SKU velocity and seasonal pressure',
     description:
       'Retailers juggle thousands of SKUs, constant refreshes, and time-sensitive promotions. 5Flow helps you simplify workflows, reduce delays, and keep every campaign on shelf, on time, and on brand.',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/applications/industries/retail.jpg',
     imageAlt: 'Artwork management preview',
   };
 

@@ -26,7 +26,7 @@ export function Contact({
       </FullBleedLines>
 
       <FullBleedLines>
-        <div className="bg-foreground/5 relative w-full p-2">
+        <div className="relative w-full">
           <div className="bg-primary relative flex w-full flex-col items-center justify-between overflow-hidden rounded-2xl px-4 md:h-[562px] md:flex-row md:items-center md:px-16">
             <form className="z-20 my-12 flex w-full max-w-4xl flex-col items-center justify-center gap-6 md:my-0 md:items-end">
               <InlineHighlight className="bg-success">

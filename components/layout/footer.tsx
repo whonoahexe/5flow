@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Separator } from '../ui/separator';
-import { Github, Instagram, Twitter } from 'lucide-react';
+import { Instagram, Linkedin, Youtube } from 'lucide-react';
 import Image from 'next/image';
 
 const pageLinks = [
@@ -12,23 +12,27 @@ const pageLinks = [
 
 const socialLinks = [
   { href: '#', label: 'Instagram', Icon: Instagram },
-  { href: '#', label: 'Twitter', Icon: Twitter },
-  { href: '#', label: 'Github', Icon: Github },
+  { href: '#', label: 'Linkedin', Icon: Linkedin },
+  { href: '#', label: 'Youtube', Icon: Youtube },
 ];
 
 const legalLinks = [
-  { href: '/legal', label: 'Legal' },
-  { href: '/feedback', label: 'Feedback' },
+  { href: '/imprint', label: 'Imprint' },
+  { href: '/privacy', label: 'Privacy Policy' },
+  { href: '/disclaimer', label: 'Disclaimer' },
 ];
 
 const policyLinks = [
-  { href: '/privacy', label: 'Privacy Policy' },
   { href: '/terms', label: 'Terms of Service' },
+  { href: '/sitemap', label: 'Sitemap' },
+  { href: '/quality', label: 'Quality' },
 ];
 
 const otherLinks = [
-  { href: '/cookie-policy', label: 'Cookie Policy' },
-  { href: '/sitemap', label: 'Sitemap' },
+  { href: 'https://propelis.com/', label: 'Propelis' },
+  { href: 'https://makemarks.com/', label: 'MakeMarks' },
+  { href: 'https://timetocollide.com/', label: 'TimeToCollide' },
+  { href: 'https://equator-design.com/', label: 'EquatorDesign' },
 ];
 
 export function Footer() {
@@ -107,7 +111,7 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <p className="text-background w-full text-center text-sm font-medium tracking-tight sm:text-sm md:text-base">
+        <p className="text-background w-full text-sm font-medium tracking-tight sm:text-sm md:text-base">
           © 5Flow {new Date().getFullYear()}
         </p>
       </div>

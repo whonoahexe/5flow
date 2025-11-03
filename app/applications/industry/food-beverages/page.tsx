@@ -22,7 +22,7 @@ export default function FoodBeverages() {
     subtitle: 'Built for healthcare and pharma where accuracy saves lives',
     description:
       'In pharma and healthcare, a single label error can cause costly recalls and put patients at risk. 5Flow keeps every update traceable, every approval documented, and every product compliant with global regulations.',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/applications/industries/beverages.jpg',
     imageAlt: 'Artwork management preview',
   };
 
