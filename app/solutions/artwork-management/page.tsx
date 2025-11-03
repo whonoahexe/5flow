@@ -13,7 +13,7 @@ export default function ArtworkManagement() {
     subtitle: 'Centralize, streamline, and simplify every artwork project',
     description:
       'Our Artwork Management ensures that brands, designers, and regulatory teams finally get one source of truth. No more version hunts, long email threads, or missed deadlines. Just a clear, connected workflow that keeps projects accurate and on time.',
-    imageSrc: '/product/rectangle.png',
+    imageSrc: '/product/artwork-management.svg',
     imageAlt: 'Artwork management preview',
   };
 
