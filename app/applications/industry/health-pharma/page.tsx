@@ -1,12 +1,5 @@
 import {
-  Eye,
   ShieldCheck,
-  Grid2X2,
-  Timer,
-  FileCheck,
-  CheckCircle,
-  ZapIcon,
-  BarChart,
   Languages,
   ShieldAlert,
   UserRoundPen,

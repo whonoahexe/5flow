@@ -32,15 +32,13 @@ const How = ({ howData }: HowProps) => {
     if (mq.addEventListener) {
       mq.addEventListener('change', update);
     } else {
-      // @ts-ignore - older browsers
       mq.addListener(update);
     }
     return () => {
       if (mq.removeEventListener) {
         mq.removeEventListener('change', update);
       } else {
-        // @ts-ignore - older browsers
-        mq.removeListener(update);
+        // do nothing
       }
     };
   }, []);

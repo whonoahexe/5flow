@@ -22,7 +22,7 @@ export interface PixelGridProps {
   className?: string;
 }
 
-const CtaPixelGrid = ({ pattern, pixelSize = '7.5rem', icon, className }: PixelGridProps) => {
+const CtaPixelGrid = ({ pattern, pixelSize = '7.5rem', className }: PixelGridProps) => {
   if (!pattern.length) return null;
 
   const columnCount = pattern[0]?.length ?? 0;
@@ -39,7 +39,7 @@ const CtaPixelGrid = ({ pattern, pixelSize = '7.5rem', icon, className }: PixelG
       {pattern.flatMap((row, rowIdx) =>
         row.map((color, colIdx) => {
           const background = colorVarMap[color] ?? 'transparent';
-          const isIconCell = icon && icon.row === rowIdx && icon.col === colIdx;
+          // const isIconCell = icon && icon.row === rowIdx && icon.col === colIdx;
 
           return (
             <Pixel
