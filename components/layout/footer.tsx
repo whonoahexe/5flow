@@ -11,9 +11,9 @@ const pageLinks = [
 ];
 
 const socialLinks = [
-  { href: '#', label: 'Instagram', Icon: Instagram },
-  { href: '#', label: 'Linkedin', Icon: Linkedin },
-  { href: '#', label: 'Youtube', Icon: Youtube },
+  { href: 'https://www.instagram.com/5flow_gmbh/', label: 'Instagram', Icon: Instagram },
+  { href: 'https://www.linkedin.com/company/5flow-wave/', label: 'Linkedin', Icon: Linkedin },
+  { href: 'https://www.youtube.com/@5flowgmbh', label: 'Youtube', Icon: Youtube },
 ];
 
 const legalLinks = [

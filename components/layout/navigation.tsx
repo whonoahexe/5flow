@@ -107,23 +107,24 @@ const NAV_ITEMS: NavItem[] = [
       columns: 2,
     },
   },
-  {
-    type: 'dropdown',
-    href: '/resources/case-studies',
-    label: '[ RESOURCES ]',
-    menu: {
-      items: [
-        { href: '/resources/case-studies', label: 'CASE STUDIES' },
-        { href: '/resources/blogs', label: 'BLOGS' },
-        { href: '/resources/video-gallery', label: 'VIDEO GALLERY' },
-        { href: '/resources/webinars', label: 'WEBINARS' },
-        { href: '/resources/guides', label: 'GUIDES' },
-      ],
-      offsetClass: 'ml-36',
-      itemWidthClass: 'w-72',
-      columns: 1,
-    },
-  },
+  // {
+  //   type: 'dropdown',
+  //   href: '/resources/case-studies',
+  //   label: '[ RESOURCES ]',
+  //   menu: {
+  //     items: [
+  //       { href: '/resources/case-studies', label: 'CASE STUDIES' },
+  //       { href: '/resources/blogs', label: 'BLOGS' },
+  //       { href: '/resources/video-gallery', label: 'VIDEO GALLERY' },
+  //       { href: '/resources/webinars', label: 'WEBINARS' },
+  //       { href: '/resources/guides', label: 'GUIDES' },
+  //     ],
+  //     offsetClass: 'ml-36',
+  //     itemWidthClass: 'w-72',
+  //     columns: 1,
+  //   },
+  // },
+  { type: 'link', href: '/resources/blogs', label: '[ RESOURCES ]' },
 ];
 
 function isActive(pathname: string, item: NavItem): boolean {
@@ -181,11 +182,11 @@ export function Navigation() {
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          // When footer is intersecting viewport, hide the nav
-          setFooterVisible(entry.isIntersecting);
+          // Hide nav only when a significant portion of the footer is visible
+          setFooterVisible(entry.intersectionRatio >= 0.5);
         });
       },
-      { root: null, threshold: 0.01 }
+      { root: null, threshold: 0.5 }
     );
 
     observer.observe(footer);
