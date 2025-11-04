@@ -75,19 +75,19 @@ export default function HealthPharma() {
       title: 'Manage multi-language packaging from one central hub.',
       description: 'Stay audit ready with automated approval logs and version control.',
       iconName: 'Languages',
-      imageSrc: '/solutions/2-1.svg',
+      imageSrc: '/applications/2-1.svg',
     },
     {
       title: 'Protect patient safety with built-in error detection tools.',
       description: 'Ensure FDA, EMA, and local compliance with rule-based validation.',
       iconName: 'ShieldUser',
-      imageSrc: '/solutions/2-2.svg',
+      imageSrc: '/applications/2-2.svg',
     },
     {
       title: 'Speed up reformulation updates with automated workflows.',
       description: 'Scale compliance globally without adding manual effort.',
       iconName: 'Workflow',
-      imageSrc: '/solutions/2-3.svg',
+      imageSrc: '/applications/2-3.svg',
     },
   ];
 

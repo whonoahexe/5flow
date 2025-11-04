@@ -63,19 +63,19 @@ export default function Retail() {
     {
       title: 'Minimize SKU refresh chaos with automated workflows.',
       description: 'Keep promotions on schedule using centralized timelines.',
-      imageSrc: '/solutions/1.svg',
+      imageSrc: '/applications/1.svg',
       iconName: 'Workflow',
     },
     {
       title: 'Ensure brand consistency with one secure asset library.',
       description: 'Capture approvals with online annotations and version control.',
-      imageSrc: '/solutions/2.svg',
+      imageSrc: '/applications/2.svg',
       iconName: 'RefreshCcw',
     },
     {
       title: 'Cut manual work by integrating with PIM and ERP systems.',
       description: 'Gain visibility with real-time dashboards and alerts.',
-      imageSrc: '/solutions/3.svg',
+      imageSrc: '/applications/3.svg',
       iconName: 'MonitorCog',
     },
   ];

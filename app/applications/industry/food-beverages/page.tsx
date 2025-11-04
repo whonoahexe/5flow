@@ -75,19 +75,19 @@ export default function FoodBeverages() {
       title: 'Keep ingredient and allergen labeling accurate with automated updates.',
       description: 'Manage sustainability claims consistently across SKUs.',
       iconName: 'RotateCcwSquare',
-      imageSrc: '/solutions/3-1.svg',
+      imageSrc: '/applications/3-1.svg',
     },
     {
       title: 'Speed up reformulation launches with automated workflows.',
       description: 'Validate nutrition panels and prevent costly misprints.',
       iconName: 'Rocket',
-      imageSrc: '/solutions/3-2.svg',
+      imageSrc: '/applications/3-2.svg',
     },
     {
       title: 'Adapt packaging for regional regulations and multi-language markets.',
       description: 'Maintain full traceability for audits and recalls.',
       iconName: 'Languages',
-      imageSrc: '/solutions/3-3.svg',
+      imageSrc: '/applications/3-3.svg',
     },
   ];
 
