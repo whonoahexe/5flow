@@ -17,9 +17,9 @@ const socialLinks = [
 ];
 
 const legalLinks = [
-  { href: '/imprint', label: 'Imprint' },
   { href: '/privacy', label: 'Privacy Policy' },
   { href: '/disclaimer', label: 'Disclaimer' },
+  { href: '/imprint', label: 'Imprint' },
 ];
 
 const policyLinks = [
