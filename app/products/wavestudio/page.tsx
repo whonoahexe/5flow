@@ -139,15 +139,15 @@ export default function Wavestudio() {
       <div className="container mx-auto mb-32">
         <PageHeader title="wavestudio" />
 
-        <div className="flex flex-col gap-10 md:gap-32">
+        <div className="mt-12 flex flex-col gap-10 md:gap-32">
           <Hero
             logoSrc="/product/wave-studio.svg"
             logoAlt="Wave Brand"
             title="Big ideas. Bigger execution"
             subtitle="Scale your artwork production without scaling your team"
             description="WaveStudio combines automation with creative expertise. We turn endless artwork requests into fast, accurate, on-brand outputs so you can keep creating without burning out."
-            imageSrc="/product/wavestudio-svg.png"
-            imageWidth={682}
+            imageSrc="/product/Solution_Banner_WAVESTUDIO.jpg"
+            imageWidth={677}
             imageAlt="rectangle"
           />
           <What whatData={whatData} />

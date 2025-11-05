@@ -153,15 +153,15 @@ export default function Wave() {
       <div className="container mx-auto mb-32">
         <PageHeader title="wave" />
 
-        <div className="mt-16 flex flex-col gap-16 md:mt-24 md:gap-32">
+        <div className="mt-12 flex flex-col gap-16 md:gap-32">
           <Hero
             logoSrc="/product/wave.svg"
             logoAlt="Wave Brand"
             title="Artwork management, without the chaos"
             subtitle="Faster progress from first draft to final approval."
             description="WAVE gives brand, packaging, and regulatory teams a single platform to brief, review, and approve artwork. No more confusion, no more delays. Just clear workflows that move projects forward."
-            imageSrc="/product/wave-svg.png"
-            imageWidth={292}
+            imageSrc="/product/Solution_Banner_WAVE.jpg"
+            imageWidth={291}
             imageAlt="rectangle"
           />
           <What whatData={whatData} />

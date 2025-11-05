@@ -106,12 +106,12 @@ const whyData = [
 const workflowData = {
   title: 'Trusted by global leaders',
   subtitle:
-    'L’Oréal, Colgate-Palmolive, and global FMCG leaders use Dragonfly as their packaging and marketing execution backbone.',
+    'Mondelez, Kellanova, and global FMCG leaders use Dragonfly as their packaging and marketing execution backbone.',
   buttonText: 'See Case Studies',
   statsData: [
     {
       value: '4,500+',
-      label: 'global users at L’Oréal',
+      label: 'global users at Mondelez',
     },
     {
       value: 'Integration',
@@ -144,7 +144,7 @@ const clientData = [
   'Morrison.png',
   'Orkla.png',
   'Reynolds International Logo.png',
-  'Shiseido.jpg',
+  'Shiseido.png',
   'Wellness_Pet.png',
 ];
 
@@ -154,15 +154,15 @@ export default function Dragonfly() {
       <div className="container mx-auto mb-32">
         <PageHeader title="dragonfly" />
 
-        <div className="flex flex-col gap-10 md:gap-32">
+        <div className="mt-12 flex flex-col gap-10 md:gap-32">
           <Hero
             logoSrc="/product/dragonfly.svg"
             logoAlt="Wave Brand"
             title="Make your projects fly"
             subtitle="Streamlined workflows for complex brand execution"
             description="Dragonfly is a web-based graphics and packaging management platform that cuts through miscommunication, complexity, and delays. Built for agility and scale, it keeps your brand projects moving on time, on budget, every time."
-            imageSrc="/product/dragonfly-svg.png"
-            imageWidth={292}
+            imageSrc="/product/Solution_Banner_Dragonfly.jpg"
+            imageWidth={376}
             imageAlt="rectangle"
           />
           <What whatData={whatData} />

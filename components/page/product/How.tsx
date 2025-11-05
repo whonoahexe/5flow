@@ -193,9 +193,9 @@ const How = ({ howData }: HowProps) => {
 
                 {/* Inline image for small screens (no sticky gallery) */}
                 <div className="lg:hidden">
-                  <div className="relative mt-2 aspect-[16/9] w-full overflow-hidden rounded-xl bg-[#E8ECFE]">
+                  <div className="relative mt-2 aspect-[16/9] w-full overflow-hidden rounded-xl">
                     <Image
-                      className="h-full w-full origin-center scale-[1.2] transform-gpu"
+                      className="h-full w-full origin-center scale-[1.6] transform-gpu"
                       fill
                       sizes="100vw"
                       alt={feature.title}
@@ -212,11 +212,11 @@ const How = ({ howData }: HowProps) => {
 
         <aside className="relative -my-40 hidden lg:block">
           <div className="sticky top-0 flex h-screen items-center justify-center">
-            <div className="relative aspect-[16/9] w-[min(38rem,85%)] overflow-hidden rounded-2xl bg-[#E8ECFE]">
+            <div className="relative aspect-[16/9] w-[min(38rem,85%)] overflow-hidden rounded-2xl">
               {howData[activeIndex] && (
                 <Image
                   key={activeIndex}
-                  className="h-full w-full origin-center scale-[1.2] transform-gpu"
+                  className="h-full w-full origin-center scale-[1.6] transform-gpu"
                   fill
                   sizes="(min-width: 1024px) 38rem, 100vw"
                   alt=""

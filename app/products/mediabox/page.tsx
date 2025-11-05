@@ -156,15 +156,15 @@ export default function Mediabox() {
       <div className="container mx-auto mb-32">
         <PageHeader title="mediabox" />
 
-        <div className="flex flex-col gap-10 md:gap-32">
+        <div className="mt-12 flex flex-col gap-10 md:gap-32">
           <Hero
             logoSrc="/product/mediabox.svg"
             logoAlt="Wave Brand"
             title="Bring your brand to life"
             subtitle="Creative workflows made easy and accurate"
             description="Mediabox is a web-based workflow management platform that simplifies creative and marketing operations. From briefing to approvals, it keeps projects moving, reduces errors, and helps teams deliver on-brand campaigns faster."
-            imageSrc="/product/mediabox-svg.png"
-            imageWidth={292}
+            imageSrc="/product/Solution_Banner_Mediabox.jpg"
+            imageWidth={245}
             imageAlt="rectangle"
           />
           <What whatData={whatData} />

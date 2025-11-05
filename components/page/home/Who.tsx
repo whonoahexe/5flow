@@ -8,19 +8,19 @@ import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
 
 const clientData = [
+  'loreal.webp',
+  'Mondelez_internationa.webp',
+  'ludwig-schokolade.webp',
+  'Kroger.webp',
   'gropper.webp',
   'lanxess.webp',
-  'ludwig-schokolade.webp',
   'maurer-and-wirtz.webp',
   'vitakraft.webp',
   'Anheuser_Busch.webp',
-  'loreal.webp',
-  'Mondelez_internationa.webp',
   'Albertsons.webp',
   'Chick-fil-A_Logo.webp',
   'LVMH-black.webp',
   'Purina.webp',
-  'Kroger.webp',
   'Renault.webp',
 ];
 

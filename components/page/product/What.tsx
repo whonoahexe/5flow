@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ArrowDownLeft, MoveUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import FullBleedLines from '@/components/core/full-bleed-lines';
@@ -30,7 +31,7 @@ const What = ({ whatData }: WhatProps) => {
 
       <FullBleedLines className="flex w-full flex-col gap-12 sm:gap-8">
         {whatData.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex w-full flex-col justify-between gap-12 sm:flex-row sm:gap-8">
+          <div key={rowIndex} className="flex w-full flex-col justify-between gap-12 p-4 sm:flex-row sm:gap-8">
             {row.map((problem, colIndex) => (
               <div key={colIndex} className="relative flex flex-1 flex-col justify-between gap-6 sm:gap-8">
                 <b className="text-2xl leading-tight tracking-tight sm:text-4xl sm:leading-none">{problem.title}</b>
@@ -42,20 +43,22 @@ const What = ({ whatData }: WhatProps) => {
                     {problem.description}
                   </p>
                 </div>
-                <Button
-                  size="sm"
-                  className="group/cta-hero active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-3 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-300 ease-[var(--easing-smooth)] hover:gap-0 active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2"
-                >
-                  <span className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 items-center px-6 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta-hero:px-7">
-                    See the fix
-                  </span>
-                  <span
-                    className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 w-10 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)]"
-                    aria-hidden="true"
+                <Link href="/contact">
+                  <Button
+                    size="sm"
+                    className="group/cta-hero active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-3 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-300 ease-[var(--easing-smooth)] hover:gap-0 active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2"
                   >
-                    <MoveUpRight className="h-4 w-4" />
-                  </span>
-                </Button>
+                    <span className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 items-center px-6 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta-hero:px-7">
+                      See the fix
+                    </span>
+                    <span
+                      className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 w-10 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)]"
+                      aria-hidden="true"
+                    >
+                      <MoveUpRight className="h-4 w-4" />
+                    </span>
+                  </Button>
+                </Link>
               </div>
             ))}
           </div>

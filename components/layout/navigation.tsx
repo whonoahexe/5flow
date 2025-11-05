@@ -41,11 +41,11 @@ type NavItemDropdown = {
 type NavItem = NavItemLink | NavItemDropdown;
 
 const NAV_ITEMS: NavItem[] = [
-  { type: 'link', href: '/about', label: '[ ABOUT ]' },
+  { type: 'link', href: '/about', label: 'ABOUT' },
   {
     type: 'dropdown',
     href: '/products/wave',
-    label: '[ PRODUCTS ]',
+    label: 'PRODUCTS',
     menu: {
       items: [
         { href: '/products/wave', label: 'WAVE' },
@@ -61,7 +61,7 @@ const NAV_ITEMS: NavItem[] = [
   {
     type: 'dropdown',
     href: '/solutions/artwork-management',
-    label: '[ SOLUTIONS ]',
+    label: 'SOLUTIONS',
     menu: {
       items: [
         { href: '/solutions/artwork-management', label: 'ARTWORK MANAGEMENT' },
@@ -79,7 +79,7 @@ const NAV_ITEMS: NavItem[] = [
   {
     type: 'dropdown',
     href: '/applications/role/brand-manager',
-    label: '[ APPLICATIONS ]',
+    label: 'APPLICATIONS',
     menu: {
       groups: [
         {
@@ -124,7 +124,7 @@ const NAV_ITEMS: NavItem[] = [
   //     columns: 1,
   //   },
   // },
-  { type: 'link', href: '/resources/blogs', label: '[ RESOURCES ]' },
+  { type: 'link', href: '/resources/blogs', label: 'RESOURCES' },
 ];
 
 function isActive(pathname: string, item: NavItem): boolean {
