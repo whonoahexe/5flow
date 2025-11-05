@@ -80,7 +80,7 @@ export function getBlogCards(): BlogCardItem[] {
     title: b.title,
     desc: toExcerpt(b.content),
     date: b.date,
-    image: b.image || '/product/rectangle.png',
+    image: b.image || '/product/rectangle.webp',
     link: `/resources/blogs/${b.slug}`,
   }));
 }

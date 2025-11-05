@@ -2,7 +2,7 @@
 slug: how-wave-is-transforming-retail-artwork-management
 title: 'How WAVE is Transforming Retail Artwork Management'
 date: '2025-11-05'
-image: '/product/rectangle.png'
+image: '/product/rectangle.webp'
 ---
 
 # How WAVE is Transforming Retail Artwork Management?

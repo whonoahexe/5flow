@@ -1,4 +1,5 @@
 import type { ComponentType, SVGProps } from 'react';
+import Link from 'next/link';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
 import { Button } from '@/components/ui/button';
@@ -53,20 +54,22 @@ const Challenges = ({ items = [] }: ChallengesProps) => {
                     items.length === 5 && i === items.length - 1 ? 'w-full justify-end' : ''
                   }`}
                 >
-                  <Button
-                    size="sm"
-                    className="group/cta-hero active:ring-primary/50 active:ring-offset-background mt-6 inline-flex w-fit origin-left items-center justify-center gap-3 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-300 ease-[var(--easing-smooth)] hover:gap-0 active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2 sm:justify-start"
-                  >
-                    <span className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 items-center px-4 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta-hero:px-5 sm:px-6 sm:group-hover/cta-hero:px-7">
-                      {card.buttonText || 'Learn More'}
-                    </span>
-                    <span
-                      className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 w-10 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)]"
-                      aria-hidden="true"
+                  <Link href="/contact">
+                    <Button
+                      size="sm"
+                      className="group/cta-hero active:ring-primary/50 active:ring-offset-background mt-6 inline-flex w-fit origin-left items-center justify-center gap-3 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-300 ease-[var(--easing-smooth)] hover:gap-0 active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2 sm:justify-start"
                     >
-                      <MoveUpRight className="h-4 w-4" />
-                    </span>
-                  </Button>
+                      <span className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 items-center px-4 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta-hero:px-5 sm:px-6 sm:group-hover/cta-hero:px-7">
+                        {card.buttonText || 'Learn More'}
+                      </span>
+                      <span
+                        className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 w-10 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)]"
+                        aria-hidden="true"
+                      >
+                        <MoveUpRight className="h-4 w-4" />
+                      </span>
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -2,7 +2,7 @@
 slug: why-are-global-brands-centralizing-their-artwork-approval-processes
 title: 'Why Are Global Brands Centralizing Their Artwork Approval Processes?'
 date: '2025-11-05'
-image: '/product/rectangle.png'
+image: '/product/rectangle.webp'
 ---
 
 # Why Are Global Brands Centralizing Their Artwork Approval Processes?

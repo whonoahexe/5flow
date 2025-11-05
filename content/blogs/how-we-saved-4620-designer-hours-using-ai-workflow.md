@@ -2,7 +2,7 @@
 slug: how-we-saved-4620-designer-hours-using-ai-workflow
 title: 'How We Saved 4,620 Designer Hours Using AI Workflow'
 date: '2025-11-05'
-image: '/product/rectangle.png'
+image: '/product/rectangle.webp'
 ---
 
 # How We Saved 4,620 Designer Hours Using AI Workflow
