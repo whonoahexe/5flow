@@ -26,7 +26,7 @@ export default function RootLayout({
         <ReactLenis root />
         <Navigation />
         <main className="relative flex-1">
-          <PatternOverlay side="both" margin="container" containerAlign="outside" />
+          {/* <PatternOverlay side="both" margin="container" containerAlign="outside" /> */}
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer />
