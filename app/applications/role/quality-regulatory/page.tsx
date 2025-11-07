@@ -34,7 +34,8 @@ export default function QualityRegulatory() {
       desc: 'A single missed warning can trigger fines',
       sub: '5Flow provides audit-ready workflows with version control and approval trails, so nothing slips through.',
       icon: ShieldAlert,
-      buttonText: 'See How It Helps Regulatory Teams',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
     {
       id: 'cascading-label-updates',
@@ -42,7 +43,8 @@ export default function QualityRegulatory() {
       desc: 'One change creates errors across markets',
       sub: 'Centralized content management pushes validated updates consistently into every SKU and region.',
       icon: FileStack,
-      buttonText: 'See How It Helps Regulatory Teams',
+      buttonText: 'Discover Content Management',
+      buttonLink: '/solutions/content-management',
     },
     {
       id: 'lack-of-traceability',
@@ -50,7 +52,8 @@ export default function QualityRegulatory() {
       desc: 'Approvals get lost in email chains',
       sub: 'All approvals are tracked, timestamped, and linked directly to artwork, giving you end-to-end visibility.',
       icon: FileSearch2,
-      buttonText: 'See How It Helps Regulatory Teams',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
     {
       id: 'fragmented-documentation',
@@ -58,7 +61,8 @@ export default function QualityRegulatory() {
       desc: 'Teams can’t prove compliance quickly',
       sub: 'With built-in records, reports are generated instantly for audits and inspections.',
       icon: ShieldQuestionMark,
-      buttonText: 'See How It Helps Regulatory Teams',
+      buttonText: 'Discover Data Analysis',
+      buttonLink: '/solutions/data-analysis',
     },
     {
       id: 'slow-manual-processes',
@@ -66,7 +70,8 @@ export default function QualityRegulatory() {
       desc: 'Delays put launches at risk',
       sub: 'Automated workflows move files faster while maintaining full accuracy and compliance checks.',
       icon: History,
-      buttonText: 'See How It Helps Regulatory Teams',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
   ];
 

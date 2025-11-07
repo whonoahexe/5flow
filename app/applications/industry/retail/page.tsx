@@ -23,7 +23,8 @@ export default function Retail() {
       desc: 'Too much volume, no control',
       sub: '5Flow centralizes artwork and content so retailers can manage SKU refreshes at scale without losing consistency.',
       icon: Files,
-      buttonText: 'See How 5Flow Helps Retail',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
     {
       id: 'seasonal-promos-slip',
@@ -31,7 +32,8 @@ export default function Retail() {
       desc: 'Campaigns miss the shelf date',
       sub: 'Automated workflows move approvals faster and give teams full visibility into promo deadlines.',
       icon: History,
-      buttonText: 'See How 5Flow Helps Retail',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
     {
       id: 'private-label-growth',
@@ -39,7 +41,8 @@ export default function Retail() {
       desc: 'More complexity, tighter timelines',
       sub: 'Dedicated workflows manage private-label artwork alongside branded products without confusion.',
       icon: FileStack,
-      buttonText: 'See How 5Flow Helps Retail',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
     {
       id: 'fragmented-suppliers',
@@ -47,7 +50,8 @@ export default function Retail() {
       desc: 'Errors multiply across vendors',
       sub: 'Suppliers access validated assets directly from 5Flow, cutting misprints and delays.',
       icon: LaptopMinimalCheck,
-      buttonText: 'See How 5Flow Helps Retail',
+      buttonText: 'Discover Asset Library',
+      buttonLink: '/solutions/asset-library',
     },
     {
       id: 'lack-of-visibility',
@@ -55,7 +59,8 @@ export default function Retail() {
       desc: 'Retailers can’t see where campaigns stall',
       sub: 'Dashboards and analytics show bottlenecks in real time, helping managers act before deadlines slip.',
       icon: EyeOff,
-      buttonText: 'See How 5Flow Helps Retail',
+      buttonText: 'Discover Data Analysis',
+      buttonLink: '/solutions/data-analysis',
     },
   ];
 
@@ -65,18 +70,24 @@ export default function Retail() {
       description: 'Keep promotions on schedule using centralized timelines.',
       imageSrc: '/applications/1.svg',
       iconName: 'Workflow',
+      buttonLink: '/solutions/artwork-management',
+      buttonText: 'Discover Artwork Management',
     },
     {
       title: 'Ensure brand consistency with one secure asset library.',
       description: 'Capture approvals with online annotations and version control.',
       imageSrc: '/applications/2.svg',
       iconName: 'RefreshCcw',
+      buttonLink: '/solutions/asset-library',
+      buttonText: 'Discover Asset Library',
     },
     {
       title: 'Cut manual work by integrating with PIM and ERP systems.',
       description: 'Gain visibility with real-time dashboards and alerts.',
       imageSrc: '/applications/3.svg',
       iconName: 'MonitorCog',
+      buttonLink: '/solutions/integration',
+      buttonText: 'Discover Integration',
     },
   ];
 

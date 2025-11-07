@@ -2,16 +2,20 @@
 
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { ArrowDownLeft, BadgeCheck } from 'lucide-react';
+import { ArrowDownLeft, BadgeCheck, MoveUpRight } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 interface HowFeature {
   title: string;
   description: string;
   imageSrc: string;
   iconName?: string;
+  buttonLink?: string; // Added prop for the button link
+  buttonText?: string; // Added prop for the button text
 }
 
 interface HowProps {
@@ -157,7 +161,7 @@ const How = ({ howData }: HowProps) => {
                   const Icon = feature.iconName
                     ? (LucideIcons[feature.iconName as keyof typeof LucideIcons] as React.ElementType) || BadgeCheck
                     : BadgeCheck;
-                  return <Icon className="text-foreground h-12 w-12 md:h-18 md:w-18" strokeWidth={1.5} />;
+                  return <Icon className="text-foreground !h-24 !w-24 md:!h-28 md:!w-28" strokeWidth={1.5} />;
                 })()}
                 <div className="flex flex-col gap-2">
                   <b className="relative text-2xl leading-none tracking-tight sm:text-3xl lg:text-4xl">
@@ -167,7 +171,22 @@ const How = ({ howData }: HowProps) => {
               </div>
               <div className="flex flex-col gap-6 p-6 text-base lg:text-xl">
                 <p className="relative leading-snug tracking-tight">{feature.description}</p>
-
+                <Link href={feature.buttonLink ?? '/contact'}>
+                  <Button
+                    size="sm"
+                    className="group/cta-hero active:ring-primary/50 active:ring-offset-background mt-6 inline-flex w-fit origin-left items-center justify-center gap-3 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-300 ease-[var(--easing-smooth)] hover:gap-0 active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2 sm:justify-start"
+                  >
+                    <span className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 items-center px-4 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta-hero:px-5 sm:px-6 sm:group-hover/cta-hero:px-7">
+                      {feature.buttonText ?? 'Learn More'}
+                    </span>
+                    <span
+                      className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 w-10 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)]"
+                      aria-hidden="true"
+                    >
+                      <MoveUpRight className="h-4 w-4" />
+                    </span>
+                  </Button>
+                </Link>
                 {/* Inline image for small screens (no sticky gallery) */}
                 <div className="lg:hidden">
                   <div className="relative mt-2 aspect-[16/9] w-full overflow-hidden rounded-xl bg-[#E8ECFE]">

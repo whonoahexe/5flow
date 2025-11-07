@@ -4,6 +4,7 @@ import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
 import { Button } from '@/components/ui/button';
 import { MoveUpRight } from 'lucide-react';
+import React from 'react';
 
 interface Item {
   title: string;
@@ -11,6 +12,7 @@ interface Item {
   sub: string;
   icon: ComponentType<SVGProps<SVGSVGElement>>;
   buttonText?: string;
+  buttonLink?: string; // Added prop for the button link
 }
 
 interface ChallengesProps {
@@ -37,7 +39,14 @@ const Challenges = ({ items = [] }: ChallengesProps) => {
               }`}
             >
               <div className="flex w-full flex-col items-start justify-between gap-4 p-4 sm:flex-row sm:gap-0 sm:p-8">
-                <p className="text-left text-2xl font-bold tracking-tight sm:text-4xl">{card.title}</p>
+                <p className="text-left text-2xl font-bold tracking-tight sm:text-4xl">
+                  {card.title.split('\n').map((line, index) => (
+                    <React.Fragment key={index}>
+                      {line}
+                      {index < card.title.split('\n').length - 1 && <br />}
+                    </React.Fragment>
+                  ))}
+                </p>
                 {card.icon && <card.icon className="text-primary h-12 w-12 sm:h-18 sm:w-18" strokeWidth={1.5} />}
               </div>
               <div
@@ -54,7 +63,7 @@ const Challenges = ({ items = [] }: ChallengesProps) => {
                     items.length === 5 && i === items.length - 1 ? 'w-full justify-end' : ''
                   }`}
                 >
-                  <Link href="/contact">
+                  <Link href={card.buttonLink ?? '/contact'}>
                     <Button
                       size="sm"
                       className="group/cta-hero active:ring-primary/50 active:ring-offset-background mt-6 inline-flex w-fit origin-left items-center justify-center gap-3 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-300 ease-[var(--easing-smooth)] hover:gap-0 active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2 sm:justify-start"

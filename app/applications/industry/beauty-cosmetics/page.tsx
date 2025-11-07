@@ -33,7 +33,8 @@ export default function BeautyCosmetics() {
       desc: 'Variants overwhelm workflows',
       sub: '5Flow automates variant artwork creation so new shades and finishes roll out consistently across packaging lines.',
       icon: LayoutDashboard,
-      buttonText: 'See How 5Flow Helps Beauty Brands',
+      buttonText: 'Discover Automated Artwork',
+      buttonLink: '/solutions/automated-artwork',
     },
     {
       id: 'inconsistent-claims',
@@ -41,7 +42,8 @@ export default function BeautyCosmetics() {
       desc: 'Marketing and packaging out of sync',
       sub: 'Centralized content hubs keep approved claims aligned across regions, SKUs, and campaigns.',
       icon: Grid2X2,
-      buttonText: 'See How 5Flow Helps Beauty Brands',
+      buttonText: 'Discover Content Management',
+      buttonLink: '/solutions/content-management',
     },
     {
       id: 'regional-labeling',
@@ -49,7 +51,8 @@ export default function BeautyCosmetics() {
       desc: 'One product, many standards',
       sub: 'Multi-language workflows adapt labels for each region while preserving brand consistency.',
       icon: GlobeLock,
-      buttonText: 'See How 5Flow Helps Beauty Brands',
+      buttonText: 'Discover Content Management',
+      buttonLink: '/solutions/content-management',
     },
     {
       id: 'high-sku-velocity',
@@ -57,7 +60,8 @@ export default function BeautyCosmetics() {
       desc: 'Deadlines missed for seasonal launches',
       sub: 'Automated approvals and real-time dashboards keep new launches and promos shelf-ready on time.',
       icon: History,
-      buttonText: 'See How 5Flow Helps Beauty Brands',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
     {
       id: 'fragmented-collaboration',
@@ -65,7 +69,8 @@ export default function BeautyCosmetics() {
       desc: 'Teams and suppliers working in silos',
       sub: 'Integrated workflows connect brand, design, regulatory, and suppliers in one traceable system.',
       icon: MessageCircleQuestionMark,
-      buttonText: 'See How 5Flow Helps Beauty Brands',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
   ];
 
@@ -75,18 +80,24 @@ export default function BeautyCosmetics() {
       description: 'Adapt labels for multi-language and region-specific regulations.',
       iconName: 'Files',
       imageSrc: '/applications/4-1.svg',
+      buttonText: 'Discover Automated Artwork',
+      buttonLink: '/solutions/automated-artwork',
     },
     {
       title: 'Reduce errors and reprints with centralized asset libraries.',
       description: 'Keep packaging and marketing claims consistent across SKUs.',
       iconName: 'Images',
       imageSrc: '/applications/4-2.svg',
+      buttonText: 'Discover Asset Library',
+      buttonLink: '/solutions/asset-library',
     },
     {
       title: 'Manage seasonal launches with automated workflows and dashboards.',
       description: 'Collaborate seamlessly with design, regulatory, and suppliers.',
       iconName: 'Workflow',
       imageSrc: '/applications/4-3.svg',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
   ];
 
