@@ -112,7 +112,7 @@ export default function ProcurementSourcing() {
           <Workflow
             title={
               <>
-                The <InlineHighlight>Best Software </InlineHighlight> for Creative & Design Studios
+                The <InlineHighlight>Best Software </InlineHighlight> for Procurement & Sourcing
               </>
             }
             subtitle="Proven results across industries."

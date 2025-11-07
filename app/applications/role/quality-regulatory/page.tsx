@@ -24,6 +24,7 @@ export default function QualityRegulatory() {
       'Regulatory and quality managers need accuracy at every step. From label updates to final approvals, 5Flow ensures complete traceability, audit-ready workflows, and risk-free compliance.',
     imageSrc: '/applications/icp/Quality.jpg',
     imageAlt: 'Artwork management preview',
+    ctaText: 'Get a Live Demo',
   };
 
   const challengeItems = [
