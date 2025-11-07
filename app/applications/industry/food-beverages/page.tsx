@@ -18,10 +18,10 @@ import How from '@/components/page/applications/How';
 
 export default function FoodBeverages() {
   const heroData = {
-    title: 'Compliance you can trust',
-    subtitle: 'Built for healthcare and pharma where accuracy saves lives',
+    title: 'Packaging that keeps pace with change',
+    subtitle: 'Built for the fast-moving food and beverage industry',
     description:
-      'In pharma and healthcare, a single label error can cause costly recalls and put patients at risk. 5Flow keeps every update traceable, every approval documented, and every product compliant with global regulations.',
+      'In F&B, packaging changes never stop. From recipe updates to allergen disclosures to sustainability claims, 5Flow keeps every update accurate, traceable, and ready for market. That means, your products stay compliant and your launches stay on time.',
     imageSrc: '/applications/industries/beverages.jpg',
     imageAlt: 'Artwork management preview',
   };

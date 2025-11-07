@@ -11,9 +11,17 @@ interface HeroProps {
   description: string;
   imageSrc: string;
   imageAlt?: string;
+  ctaText?: string; // Added prop for CTA text
 }
 
-const Hero = ({ title, subtitle, description, imageSrc, imageAlt = '' }: HeroProps) => {
+const Hero = ({
+  title,
+  subtitle,
+  description,
+  imageSrc,
+  imageAlt = '',
+  ctaText = 'Book your live demo',
+}: HeroProps) => {
   return (
     <div className="relative mt-32 flex w-full flex-col items-center text-center sm:items-start sm:text-left">
       <div className="flex w-full flex-col gap-4 sm:flex-row md:gap-14">
@@ -36,7 +44,7 @@ const Hero = ({ title, subtitle, description, imageSrc, imageAlt = '' }: HeroPro
                 className="group/cta-hero active:ring-primary/50 active:ring-offset-background inline-flex w-fit origin-left items-center justify-center gap-3 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-300 ease-[var(--easing-smooth)] hover:gap-0 active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2 sm:justify-start"
               >
                 <span className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 items-center px-4 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta-hero:px-5 sm:px-6 sm:group-hover/cta-hero:px-7">
-                  {`See What’s Possible`}
+                  {ctaText}
                 </span>
                 <span
                   className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 w-10 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)]"
