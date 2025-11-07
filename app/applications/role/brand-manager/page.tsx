@@ -16,7 +16,6 @@ import Hero from '@/components/page/applications/Hero';
 import Workflow from '@/components/page/applications/Workflow';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
-import { buttonVariants } from '@/components/ui/button';
 
 export default function BrandManager() {
   const heroData = {
