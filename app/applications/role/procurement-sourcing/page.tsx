@@ -33,7 +33,8 @@ export default function ProcurementSourcing() {
       desc: 'Errors drive wasted spend',
       sub: '5Flow ensures suppliers receive the right, validated files every time, eliminating costly mistakes and reprints.',
       icon: CircleDollarSign,
-      buttonText: 'See How 5Flow Helps Procurement Teams',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
     {
       id: 'supply-chain-delays',
@@ -41,7 +42,8 @@ export default function ProcurementSourcing() {
       desc: 'Wrong files stall production',
       sub: 'A centralized asset library gives suppliers direct access to approved artwork and cutter guides, keeping timelines intact.',
       icon: History,
-      buttonText: 'See How 5Flow Helps Procurement Teams',
+      buttonText: 'Discover Asset Library',
+      buttonLink: '/solutions/asset-library',
     },
     {
       id: 'lack-of-visibility',
@@ -49,7 +51,8 @@ export default function ProcurementSourcing() {
       desc: 'No clarity on project status or supplier readiness',
       sub: 'Dashboards show procurement teams where projects stand, so supplier alignment is proactive, not reactive.',
       icon: EyeOff,
-      buttonText: 'See How 5Flow Helps Procurement Teams',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
     {
       id: 'manual-back-and-forth',
@@ -57,7 +60,8 @@ export default function ProcurementSourcing() {
       desc: 'Email overload with suppliers',
       sub: 'Integrated communication reduces supplier emails by structuring feedback, clarifications, and approvals in one system.',
       icon: Repeat2,
-      buttonText: 'See How 5Flow Helps Procurement Teams',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
     {
       id: 'inconsistent-quality',
@@ -65,7 +69,8 @@ export default function ProcurementSourcing() {
       desc: 'Errors slip through fragmented workflows',
       sub: 'Automated checks and traceability ensure suppliers work only with approved, accurate files.',
       icon: ShieldAlert,
-      buttonText: 'See How 5Flow Helps Procurement Teams',
+      buttonText: 'Discover Online Proofing',
+      buttonLink: '/solutions/online-proofing',
     },
   ];
 

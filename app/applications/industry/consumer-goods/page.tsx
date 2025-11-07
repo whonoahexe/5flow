@@ -33,15 +33,17 @@ export default function ConsumerGoods() {
       desc: 'Leaflet approved, label delayed, carton missing updates',
       sub: '5Flow links every component in one workflow so labels, cartons, and inserts move forward together.',
       icon: History,
-      buttonText: 'See How 5Flow Helps Consumer Goods Brands',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
     {
       id: 'language-heavy-packs',
-      title: 'Language-heavy packs drive reprints',
+      title: 'Language-heavy packs\n drive reprints',
       desc: 'Multilingual detergent or appliance packs rarely pass error-free',
       sub: 'Centralized translation and version control ensure approved text flows into every SKU variant without manual copy-paste errors.',
       icon: Languages,
-      buttonText: 'See How 5Flow Helps Consumer Goods Brands',
+      buttonText: 'Discover Content Management',
+      buttonLink: '/solutions/content-management',
     },
     {
       id: 'regional-promo-packs',
@@ -49,7 +51,8 @@ export default function ConsumerGoods() {
       desc: 'Holiday or event packaging fragments supplier timelines',
       sub: 'Automated workflows align suppliers and vendors on promo pack assets, cutting delays and misprints.',
       icon: ClockAlert,
-      buttonText: 'See How 5Flow Helps Consumer Goods Brands',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
     {
       id: 'global-sku-compliance',
@@ -57,7 +60,8 @@ export default function ConsumerGoods() {
       desc: 'Same product, different labeling rules by region',
       sub: 'Market-specific workflows adapt global packs to local labeling requirements while preserving brand consistency.',
       icon: MapPinPlus,
-      buttonText: 'See How 5Flow Helps Consumer Goods Brands',
+      buttonText: 'Discover Automated Artwork',
+      buttonLink: '/solutions/automated-artwork',
     },
     {
       id: 'zero-visibility',
@@ -65,7 +69,8 @@ export default function ConsumerGoods() {
       desc: 'One late component delays the entire launch',
       sub: 'Dashboards give real-time status on every carton, leaflet, and label, so managers can unblock projects early.',
       icon: EyeOff,
-      buttonText: 'See How 5Flow Helps Consumer Goods Brands',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
   ];
 
@@ -76,18 +81,24 @@ export default function ConsumerGoods() {
       description: 'Streamline seasonal and promotional packs with automated supplier workflows.',
       iconName: 'Workflow',
       imageSrc: '/applications/5-1.svg',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
     {
       title: 'Monitor every component’s progress with real-time dashboards.',
       description: 'Manage multilingual packaging with centralized translation libraries.',
       iconName: 'ChartArea',
       imageSrc: '/applications/5-2.svg',
+      buttonText: 'Discover Content Management',
+      buttonLink: '/solutions/content-management',
     },
     {
       title: 'Adapt global SKUs to local regulatory requirements without rework.',
-      description: 'Reduce reprints by ensuring suppliers only access validated assets.',
+      description: 'Reduce reprints by ensuring suppliers only access validated content.',
       iconName: 'MapPinCheckInside',
       imageSrc: '/applications/5-3.svg',
+      buttonText: 'Discover Content Management',
+      buttonLink: '/solutions/content-management',
     },
   ];
 

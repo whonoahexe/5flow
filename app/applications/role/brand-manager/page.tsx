@@ -16,6 +16,7 @@ import Hero from '@/components/page/applications/Hero';
 import Workflow from '@/components/page/applications/Workflow';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
+import { buttonVariants } from '@/components/ui/button';
 
 export default function BrandManager() {
   const heroData = {
@@ -34,6 +35,7 @@ export default function BrandManager() {
       sub: '5Flow unifies artwork, claims, and content in one platform so every SKU stays visible, aligned, and on brand.',
       icon: FileStack,
       buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
     {
       title: 'Approval bottlenecks',
@@ -41,6 +43,7 @@ export default function BrandManager() {
       sub: 'Automated workflows route tasks to the right people, track approvals, and cut wasted time.',
       icon: CircleCheckBig,
       buttonText: 'Discover Online Proofing',
+      buttonLink: '/solutions/online-proofing',
     },
     {
       title: 'Content drift',
@@ -48,6 +51,7 @@ export default function BrandManager() {
       sub: 'A central content hub ensures approved copy flows into every artwork and market without manual errors.',
       icon: FileText,
       buttonText: 'Discover Content Management',
+      buttonLink: '/solutions/content-management',
     },
     {
       title: 'No visibility',
@@ -55,6 +59,7 @@ export default function BrandManager() {
       sub: 'Dashboards highlight bottlenecks and delays so you can act early and keep launches on track.',
       icon: Eye,
       buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
     {
       title: 'Risk of compliance errors',
@@ -62,6 +67,7 @@ export default function BrandManager() {
       sub: 'Built-in version control and audit trails ensure only validated files make it to market.',
       icon: ShieldQuestionMark,
       buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
   ];
 

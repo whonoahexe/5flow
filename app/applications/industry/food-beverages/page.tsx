@@ -33,7 +33,8 @@ export default function FoodBeverages() {
       desc: 'Packaging can’t keep up',
       sub: '5Flow centralizes ingredient data and pushes updates into artwork automatically, keeping labels accurate.',
       icon: ListRestart,
-      buttonText: 'See How 5Flow Helps Pharma Teams',
+      buttonText: 'Discover Content Management',
+      buttonLink: '/solutions/content-management',
     },
     {
       id: 'allergen-nutrition-risks',
@@ -41,15 +42,17 @@ export default function FoodBeverages() {
       desc: 'Small errors create big recalls',
       sub: 'Automated validation rules check allergen and nutrition panels to prevent mislabeling.',
       icon: ShieldAlert,
-      buttonText: 'See How 5Flow Helps Pharma Teams',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
     {
       id: 'sustainability-claims',
-      title: 'Sustainability and compliance claims',
+      title: 'Sustainability and \ncompliance claims',
       desc: 'Green messaging often inconsistent',
       sub: 'Content hubs manage sustainability claims and certifications, ensuring consistent and compliant messaging.',
       icon: CircleCheckBig,
-      buttonText: 'See How 5Flow Helps Pharma Teams',
+      buttonText: 'Discover Content Management',
+      buttonLink: '/solutions/content-management',
     },
     {
       id: 'regional-regulations',
@@ -57,7 +60,8 @@ export default function FoodBeverages() {
       desc: 'One product, multiple standards',
       sub: 'Multi-language and regional workflows adapt packaging for each market without losing control.',
       icon: GlobeLock,
-      buttonText: 'See How 5Flow Helps Pharma Teams',
+      buttonText: 'Discover Content Management',
+      buttonLink: '/solutions/content-management',
     },
     {
       id: 'slow-approvals',
@@ -65,7 +69,8 @@ export default function FoodBeverages() {
       desc: 'Campaigns miss their shelf window',
       sub: 'Automated workflows streamline approvals across marketing, regulatory, and suppliers, cutting delays.',
       icon: History,
-      buttonText: 'See How 5Flow Helps Pharma Teams',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
   ];
 
@@ -76,18 +81,24 @@ export default function FoodBeverages() {
       description: 'Manage sustainability claims consistently across SKUs.',
       iconName: 'RotateCcwSquare',
       imageSrc: '/applications/3-1.svg',
+      buttonText: 'Discover Content Management',
+      buttonLink: '/solutions/content-management',
     },
     {
       title: 'Speed up reformulation launches with automated workflows.',
       description: 'Validate nutrition panels and prevent costly misprints.',
       iconName: 'Rocket',
       imageSrc: '/applications/3-2.svg',
+      buttonText: 'Discover Artwork Management',
+      buttonLink: '/solutions/artwork-management',
     },
     {
       title: 'Adapt packaging for regional regulations and multi-language markets.',
       description: 'Maintain full traceability for audits and recalls.',
       iconName: 'Languages',
       imageSrc: '/applications/3-3.svg',
+      buttonText: 'Discover Content Management',
+      buttonLink: '/solutions/content-management',
     },
   ];
 

@@ -24,7 +24,7 @@ const Workflow = ({ title, subtitle, statsData }: WorkflowProps) => {
           </b>
           <ArrowDown className="text-accent1 h-20 w-20 sm:h-32 sm:w-32" strokeWidth={1.5} />
         </div>
-
+        {/*  
         <div className="flex flex-col items-center gap-6 py-4 sm:items-start sm:gap-10 sm:py-7">
           <b className="relative max-w-full text-center text-xl leading-none tracking-tight sm:max-w-xl sm:text-left sm:text-2xl">
             {subtitle}
@@ -46,6 +46,7 @@ const Workflow = ({ title, subtitle, statsData }: WorkflowProps) => {
             </Button>
           </Link>
         </div>
+        */}
       </FullBleedLines>
 
       <FullBleedLines
@@ -58,7 +59,7 @@ const Workflow = ({ title, subtitle, statsData }: WorkflowProps) => {
             key={index}
             className="bg-background flex h-48 flex-1 flex-col items-center justify-center gap-2 rounded-2xl shadow-[0px_4px_6px_-4px_rgba(0,0,0,0.102),0px_10px_15px_-3px_rgba(0,0,0,0.102)] sm:h-56"
           >
-            <b className="font-heading text-primary text-4xl sm:text-6xl">{stat.value}</b>
+            <b className="font-body text-primary text-4xl sm:text-6xl">{stat.value}</b>
             <b className="relative text-center text-lg leading-none sm:text-2xl">{stat.label}</b>
           </div>
         ))}
