@@ -14,7 +14,7 @@ interface HeroProps {
   imageAlt?: string;
 }
 
-const Hero = ({ title, subtitle, description, imageSrc, imageAlt = '' }: HeroProps) => {
+const Hero = ({ title, subtitle, description, mobileImageSrc, imageSrc, imageAlt = '' }: HeroProps) => {
   return (
     <div className="relative mt-32 flex w-full flex-col items-center text-center sm:items-start sm:text-left">
       <div className="flex w-full flex-col gap-4 sm:flex-row md:gap-14">
@@ -54,7 +54,7 @@ const Hero = ({ title, subtitle, description, imageSrc, imageAlt = '' }: HeroPro
       {/* Product image */}
       <FullBleedLines className="mt-16 w-full">
         {/* Mobile: square image */}
-        {/* <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-[10px] sm:hidden">
+        <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-[10px] bg-[#E8ECFE] sm:hidden">
           <Image
             src={mobileImageSrc ?? imageSrc}
             alt={imageAlt}
@@ -63,7 +63,7 @@ const Hero = ({ title, subtitle, description, imageSrc, imageAlt = '' }: HeroPro
             sizes="(max-width: 640px) 100vw"
             priority
           />
-        </div> */}
+        </div>
         {/* Desktop+: original wide image */}
         <Image
           className="relative hidden w-full rounded-[10px] sm:block sm:rounded-[20px]"

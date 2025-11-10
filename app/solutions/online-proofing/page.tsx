@@ -20,6 +20,7 @@ export default function OnlineProofing() {
     buttonLink: '/contact',
     imageSrc: '/solutions/online-proofing.png',
     imageAlt: 'Online proofing preview',
+    mobileImageSrc: '/solutions/online-proofing-mobile.png',
   };
 
   const howData = [

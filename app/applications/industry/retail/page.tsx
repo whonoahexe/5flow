@@ -14,6 +14,7 @@ export default function Retail() {
       'Retailers juggle thousands of SKUs, constant refreshes, and time-sensitive promotions. 5Flow helps you simplify workflows, reduce delays, and keep every campaign on shelf, on time, and on brand.',
     imageSrc: '/applications/industries/retail.jpg',
     imageAlt: 'Artwork management preview',
+    mobileImageSrc: '/applications/industries/retail-mobile.jpg',
   };
 
   const challengeItems = [

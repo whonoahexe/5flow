@@ -20,6 +20,7 @@ export default function AutomatedArtwork() {
     buttonLink: '/contact',
     imageSrc: '/solutions/automated-artwork.png',
     imageAlt: 'Automated artwork preview',
+    mobileImageSrc: '/solutions/automated-artwork-mobile.png',
   };
 
   const howData = [

@@ -20,6 +20,7 @@ export default function ContentManagement() {
     buttonLink: '/contact',
     imageSrc: '/solutions/content-management.png',
     imageAlt: 'Content management preview',
+    mobileImageSrc: '/solutions/content-management-mobile.png',
   };
 
   const howData = [

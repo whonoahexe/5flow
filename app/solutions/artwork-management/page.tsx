@@ -15,6 +15,7 @@ export default function ArtworkManagement() {
       'Our Artwork Management ensures that brands, designers, and regulatory teams finally get one source of truth. No more version hunts, long email threads, or missed deadlines. Just a clear, connected workflow that keeps projects accurate and on time.',
     imageSrc: '/solutions/artwork-management.png',
     imageAlt: 'Artwork management preview',
+    mobileImageSrc: '/solutions/artwork-management-mobile.png',
   };
 
   const howData = [

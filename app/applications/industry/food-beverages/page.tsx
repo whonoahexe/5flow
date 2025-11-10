@@ -24,6 +24,7 @@ export default function FoodBeverages() {
       'In F&B, packaging changes never stop. From recipe updates to allergen disclosures to sustainability claims, 5Flow keeps every update accurate, traceable, and ready for market. That means, your products stay compliant and your launches stay on time.',
     imageSrc: '/applications/industries/beverages.jpg',
     imageAlt: 'Artwork management preview',
+    mobileImageSrc: '/applications/industries/beverages-mobile.jpg',
   };
 
   const challengeItems = [

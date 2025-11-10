@@ -24,6 +24,7 @@ export default function ConsumerGoods() {
       'Consumer goods brands deal with endless SKUs, multi-part packaging, and global supply chains. 5Flow keeps packaging accurate, workflows connected, and launches on schedule — no matter the scale.',
     imageSrc: '/applications/industries/fmcg.jpg',
     imageAlt: 'Artwork management preview',
+    mobileImageSrc: '/applications/industries/fmcg-mobile.jpg',
   };
 
   const challengeItems = [

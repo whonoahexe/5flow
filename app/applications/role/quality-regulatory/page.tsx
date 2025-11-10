@@ -25,6 +25,7 @@ export default function QualityRegulatory() {
     imageSrc: '/applications/icp/Quality.jpg',
     imageAlt: 'Artwork management preview',
     ctaText: 'Get a Live Demo',
+    mobileImageSrc: '/applications/icp/Quality-mobile.jpg',
   };
 
   const challengeItems = [

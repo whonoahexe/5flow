@@ -24,6 +24,7 @@ export default function HealthPharma() {
       'In pharma and healthcare, a single label error can cause costly recalls and put patients at risk. 5Flow keeps every update traceable, every approval documented, and every product compliant with global regulations.',
     imageSrc: '/applications/industries/pharma.jpg',
     imageAlt: 'Artwork management preview',
+    mobileImageSrc: '/applications/industries/pharma-mobile.jpg',
   };
 
   const challengeItems = [

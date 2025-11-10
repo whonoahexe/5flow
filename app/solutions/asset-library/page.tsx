@@ -20,6 +20,7 @@ export default function AssetLibrary() {
     buttonLink: '/contact',
     imageSrc: '/solutions/asset-library.png',
     imageAlt: 'Asset library preview',
+    mobileImageSrc: '/solutions/asset-library-mobile.png',
   };
 
   const howData = [

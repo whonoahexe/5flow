@@ -25,6 +25,7 @@ export default function CreativeStudio() {
       'Creative studios should be focused on big ideas, not chasing files or juggling endless markups. 5Flow clears the clutter by automating production work, centralizing approvals, and giving designers back the time to design.',
     imageSrc: '/applications/icp/Marketing.jpg',
     imageAlt: 'Artwork management preview',
+    mobileImageSrc: '/applications/icp/Marketing-mobile.jpg',
   };
 
   const challengeItems = [

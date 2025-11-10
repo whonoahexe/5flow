@@ -20,6 +20,7 @@ export default function Integration() {
     buttonLink: '/contact',
     imageSrc: '/solutions/integration.png',
     imageAlt: 'Integration preview',
+    mobileImageSrc: '/solutions/integration-mobile.png',
   };
 
   const howData = [

@@ -217,7 +217,7 @@ const How = ({ howData }: HowProps) => {
               {howData[activeIndex] && (
                 <Image
                   key={activeIndex}
-                  className="h-full w-full origin-center scale-[1.6] transform-gpu"
+                  className="h-full w-full origin-center scale-[1.3] transform-gpu"
                   fill
                   sizes="(min-width: 1024px) 38rem, 100vw"
                   alt=""

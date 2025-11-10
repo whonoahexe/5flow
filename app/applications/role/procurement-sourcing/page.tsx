@@ -24,6 +24,7 @@ export default function ProcurementSourcing() {
       'Procurement teams are tasked with cutting costs and ensuring supplier efficiency — but artwork errors, misaligned assets, and reprints eat into budgets. 5Flow gives you control over assets, workflows, and approvals, so suppliers always receive the right files the first time.',
     imageSrc: '/applications/icp/Procurement.jpg',
     imageAlt: 'Artwork management preview',
+    mobileImageSrc: '/applications/icp/Procurement-mobile.jpg',
   };
 
   const challengeItems = [
