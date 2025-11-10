@@ -159,6 +159,7 @@ export default function Wavestudio() {
             subtitle="Scale your artwork production without scaling your team"
             description="WaveStudio combines automation with creative expertise. We turn endless artwork requests into fast, accurate, on-brand outputs so you can keep creating without burning out."
             imageSrc="/product/Solution_Banner_WAVESTUDIO.jpg"
+            mobileImageSrc="/product/Solution_Banner_WAVESTUDIO_mobile.jpg"
             imageWidth={677}
             imageAlt="rectangle"
           />

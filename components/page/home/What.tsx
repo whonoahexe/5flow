@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { ArrowUpRight, ClockFading, Layers2, ServerOff, ZapOff } from 'lucide-react';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';

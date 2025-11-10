@@ -36,8 +36,7 @@ const Hero = () => {
                   src={src}
                 />
               ))}
-              {/* Hide blank grid on mobile */}
-              <div className="relative hidden h-48 w-full flex-1 sm:block sm:h-72" />
+              <div className="3xl:block 3xl:h-72 relative hidden h-48 w-full flex-1" />
               <Image
                 className="relative h-48 w-full object-cover sm:h-72 sm:flex-1"
                 width={304}
@@ -48,7 +47,7 @@ const Hero = () => {
             </div>
 
             <div className="bg-primary flex w-full flex-wrap sm:flex-nowrap">
-              <div className="relative h-full w-full sm:w-152">
+              <div className="relative h-full w-full sm:w-[614px]">
                 <div className="text-background flex h-full w-full flex-col justify-center gap-6 px-4 py-6 sm:w-140 sm:px-6 md:py-0">
                   <div className="font-heading text-4xl leading-snug font-semibold tracking-tight sm:leading-none">
                     We are 5Flow.
@@ -61,7 +60,7 @@ const Hero = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-accent2 relative h-48 w-full flex-1 sm:h-74" />
+              <div className="bg-accent2 3xl:block relative hidden h-48 w-full flex-1 sm:h-74" />
               {bottomRowImages.map((src, index) => (
                 <Image
                   key={index}

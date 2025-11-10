@@ -1,6 +1,5 @@
 import InlineHighlight from '@/components/core/inline-highlight';
-import { Button } from '@/components/ui/button';
-import { ArrowDown, MoveUpRight } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
 interface WorkflowStat {
   value: string;
@@ -16,7 +15,7 @@ interface WorkflowProps {
   statsData: WorkflowStat[];
 }
 
-const Workflow = ({ title1, title2, highlightTitle, subtitle, buttonText, statsData }: WorkflowProps) => {
+const Workflow = ({ title1, title2, highlightTitle, subtitle, statsData }: WorkflowProps) => {
   return (
     <div className="font-heading relative box-border flex w-full flex-col items-start gap-8 px-4 text-left sm:gap-12 sm:px-6 md:px-0">
       <div className="font-heading relative flex w-full flex-col items-center justify-center gap-6 text-center sm:items-start sm:gap-8 sm:text-left">

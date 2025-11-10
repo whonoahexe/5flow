@@ -12,11 +12,22 @@ interface HeroProps {
   subtitle: string;
   description: string;
   imageSrc: string;
+  mobileImageSrc?: string;
   imageWidth: number;
   imageAlt?: string;
 }
 
-const Hero = ({ logoSrc, logoAlt, title, subtitle, description, imageSrc, imageWidth, imageAlt = '' }: HeroProps) => {
+const Hero = ({
+  logoSrc,
+  logoAlt,
+  title,
+  subtitle,
+  description,
+  imageSrc,
+  mobileImageSrc,
+  imageWidth,
+  imageAlt = '',
+}: HeroProps) => {
   return (
     <div className="relative w-full flex-col px-4 sm:px-6 md:px-0">
       {/* Product logo */}
@@ -62,15 +73,40 @@ const Hero = ({ logoSrc, logoAlt, title, subtitle, description, imageSrc, imageW
 
       {/* Product image */}
       <FullBleedLines className="mt-8 sm:mt-16">
-        <Image
-          className="relative h-auto w-full rounded-[10px] sm:rounded-[20px]"
-          width={1520}
-          height={480}
-          alt={imageAlt}
-          src={imageSrc}
-          sizes="100vw"
-          priority
-        />
+        {mobileImageSrc ? (
+          <>
+            {/* Mobile image */}
+            <Image
+              className="relative h-auto w-full rounded-[10px] sm:hidden"
+              width={1520}
+              height={480}
+              alt={imageAlt}
+              src={mobileImageSrc}
+              sizes="100vw"
+              priority
+            />
+            {/* Desktop+ image */}
+            <Image
+              className="relative hidden h-auto w-full rounded-[10px] sm:block sm:rounded-[20px]"
+              width={1520}
+              height={480}
+              alt={imageAlt}
+              src={imageSrc}
+              sizes="(min-width: 640px) 100vw, 100vw"
+              priority
+            />
+          </>
+        ) : (
+          <Image
+            className="relative h-auto w-full rounded-[10px] sm:rounded-[20px]"
+            width={1520}
+            height={480}
+            alt={imageAlt}
+            src={imageSrc}
+            sizes="100vw"
+            priority
+          />
+        )}
       </FullBleedLines>
     </div>
   );

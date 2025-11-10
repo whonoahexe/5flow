@@ -183,6 +183,7 @@ export default function Dragonfly() {
             subtitle="Streamlined workflows for complex brand execution"
             description="Dragonfly is a web-based graphics and packaging management platform that cuts through miscommunication, complexity, and delays. Built for agility and scale, it keeps your brand projects moving on time, on budget, every time."
             imageSrc="/product/Solution_Banner_Dragonfly.jpg"
+            mobileImageSrc="/product/Solution_Banner_Dragonfly_mobile.jpg"
             imageWidth={376}
             imageAlt="rectangle"
           />

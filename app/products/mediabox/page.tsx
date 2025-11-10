@@ -176,6 +176,7 @@ export default function Mediabox() {
             subtitle="Creative workflows made easy and accurate"
             description="Mediabox is a web-based workflow management platform that simplifies creative and marketing operations. From briefing to approvals, it keeps projects moving, reduces errors, and helps teams deliver on-brand campaigns faster."
             imageSrc="/product/Solution_Banner_Mediabox.jpg"
+            mobileImageSrc="/product/Solution_Banner_Mediabox_mobile.jpg"
             imageWidth={245}
             imageAlt="rectangle"
           />

@@ -4,7 +4,6 @@ import { centuryGothic, metropolis } from '@/lib/fonts';
 import { Navigation, Footer } from '@/components/layout';
 import { Toaster } from '@/components/ui/sonner';
 import PageTransition from '@/components/layout/page-transition';
-import PatternOverlay from '@/components/core/pattern-overlay';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {

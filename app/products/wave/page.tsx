@@ -4,8 +4,6 @@ import {
   EyeOff,
   FileStack,
   HeartHandshake,
-  Icon,
-  icons,
   Rocket,
   ShieldAlert,
   ShieldCheck,
@@ -184,6 +182,7 @@ export default function Wave() {
             subtitle="Faster progress from first draft to final approval."
             description="WAVE gives brand, packaging, and regulatory teams a single platform to brief, review, and approve artwork. No more confusion, no more delays. Just clear workflows that move projects forward."
             imageSrc="/product/Solution_Banner_WAVE.jpg"
+            mobileImageSrc="/product/Solution_Banner_WAVE_mobile.jpg"
             imageWidth={291}
             imageAlt="rectangle"
           />
