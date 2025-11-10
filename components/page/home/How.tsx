@@ -9,16 +9,19 @@ const Explainers = [
     icon: Cloud,
     title: 'SaaS Platform',
     desc: 'Platform technology that streamlines workflows for packaging, content, and creative. Built for automation, approvals, and compliance, at scale.',
+    link: '/products/wave', // Added dynamic link
   },
   {
     icon: Puzzle,
     title: 'Custom Solutions',
     desc: 'Tailored to your business needs. Enhanced with AI, automation, and seamless integration into your ecosystem.',
+    link: '/products/wave', // Added dynamic link
   },
   {
     icon: MessagesSquare,
     title: 'Consulting',
     desc: 'Expert guidance to simplify complexity, optimize workflows, and unlock growth through strategy, technology, and process transformation.',
+    link: '/contact', // Added dynamic link
   },
 ];
 
@@ -60,7 +63,7 @@ const How = () => (
               <div className="flex w-full flex-col items-start gap-4 p-2 md:flex-row md:items-center md:gap-8 md:p-8">
                 <p className="text-sm tracking-tight">{item.desc}</p>
 
-                <Link href="/contact">
+                <Link href={item.link}>
                   <Button
                     className="bg-primary hover:ring-primary/50 hover:ring-offset-background mt-2 size-12 origin-center cursor-pointer rounded-none px-2 py-1 transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6 md:mt-0 md:ml-auto md:size-16 md:px-4 md:py-2"
                     aria-label="Contact"

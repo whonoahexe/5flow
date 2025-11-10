@@ -28,7 +28,7 @@ export default function AssetLibrary() {
       title: 'Centralized repository',
       subtitle: 'Every file in one hub',
       description: 'Logos, artworks, cutter guides, and more stored securely with access controls.',
-      buttonText: 'Discover Repository',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/4-1.svg',
       iconName: 'LayoutDashboard',
     },
@@ -36,7 +36,7 @@ export default function AssetLibrary() {
       title: 'Advanced search',
       subtitle: 'Find assets instantly',
       description: 'Metadata tagging and filters make searching fast and accurate.',
-      buttonText: 'Discover Search',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/4-2.svg',
       iconName: 'ScanSearch',
     },
@@ -44,7 +44,7 @@ export default function AssetLibrary() {
       title: 'Access control',
       subtitle: 'The right file for the right user',
       description: 'Role-based permissions ensure stakeholders only see what they need.',
-      buttonText: 'Discover Access Control',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/4-3.svg',
       iconName: 'LockKeyhole',
     },
@@ -52,7 +52,7 @@ export default function AssetLibrary() {
       title: 'Connected to workflows',
       subtitle: 'Assets always in sync',
       description: 'Linked directly to artwork and content management for accuracy and speed.',
-      buttonText: 'Discover Integration',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/4-4.svg',
       iconName: 'Route',
     },
@@ -101,11 +101,11 @@ export default function AssetLibrary() {
                 Trusted by <InlineHighlight>global leaders</InlineHighlight>
               </>
             }
-            subtitle="Numbers that matter"
+            subtitle=""
             statsData={[
               { label: 'faster product launches', value: '75%' },
               { label: 'fewer late files', value: '50%' },
-              { label: 'across Retail, Pharma, FMCG, and Beauty', value: 'Trusted' },
+              { label: 'rework reduction', value: '25%' },
             ]}
           />
           <Contact leadingText="Time to turn your packaging liabilities into " highlightedText="assets" />

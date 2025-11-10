@@ -1,4 +1,13 @@
-import { CircleDollarSign, HeartHandshake, Rocket, ShieldCheck } from 'lucide-react';
+import {
+  CalendarSync,
+  CircleDollarSign,
+  EyeOff,
+  FileStack,
+  HeartHandshake,
+  Rocket,
+  ShieldAlert,
+  ShieldCheck,
+} from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import InlineHighlight from '@/components/core/inline-highlight';
@@ -16,11 +25,15 @@ const whatData = [
       title: 'Endless approval loops',
       subtitle: 'Too many rounds, too much wasted time',
       description: 'Without control, multiple versions float around, causing errors, confusion, and rework.',
+      buttonLink: '/solutions/online-proofing',
+      icon: CalendarSync,
     },
     {
       title: 'Version chaos',
       subtitle: 'No one knows which file is final?',
       description: 'Without control, multiple versions float around, causing errors, confusion, and rework.',
+      buttonLink: '/solutions/asset-library',
+      icon: FileStack,
     },
   ],
   [
@@ -28,11 +41,15 @@ const whatData = [
       title: 'Compliance risks',
       subtitle: 'A single missed change can cost millions',
       description: 'Incorrect labels or missed regulatory updates create compliance nightmares and market delays.',
+      buttonLink: '/solutions/artwork-management',
+      icon: ShieldAlert,
     },
     {
       title: 'No visibility',
       subtitle: 'Teams work blind to bottlenecks',
       description: 'Without live progress tracking, projects derail, deadlines slip, and accountability gets lost.',
+      buttonLink: '/solutions/artwork-management',
+      icon: EyeOff,
     },
   ],
 ];
@@ -43,7 +60,8 @@ const howData = [
     subtitle: 'Traceable, transparent, and faster loops',
     description:
       'WAVE digitizes approvals with annotations, comparisons, and automated reminders, keeping reviews clear and accountable.',
-    buttonText: 'Discover Approvals',
+    buttonText: 'Discover Online Proofing',
+    buttonLink: '/solutions/online-proofing',
     imageSrc: '/product/1.svg',
     iconName: 'CircleCheckBig',
   },
@@ -51,7 +69,8 @@ const howData = [
     title: 'Centralized files',
     subtitle: 'One version, one source of truth',
     description: 'Every artwork, asset, and update lives in one platform, so teams always work from the right file.',
-    buttonText: 'Discover Asset Hub',
+    buttonText: 'Discover Asset Library',
+    buttonLink: '/solutions/asset-library',
     imageSrc: '/product/2.svg',
     iconName: 'FileStack',
   },
@@ -60,7 +79,8 @@ const howData = [
     subtitle: 'Every step documented, every change tracked',
     description:
       'With audit-ready records, version control, and regulatory checks, WAVE makes compliance part of the process.',
-    buttonText: 'Discover Compliance',
+    buttonText: 'Discover Artwork Management',
+    buttonLink: '/solutions/artwork-management',
     imageSrc: '/product/3.svg',
     iconName: 'ShieldCheck',
   },
@@ -68,7 +88,8 @@ const howData = [
     title: 'Live project visibility',
     subtitle: 'See status, spot bottlenecks, stay in control',
     description: 'Dashboards, milestones, and timelines give managers instant clarity with no chasing updates.',
-    buttonText: 'Discover Visibility',
+    buttonText: 'Discover Artwork Management',
+    buttonLink: '/solutions/artwork-management',
     imageSrc: '/product/4.svg',
     iconName: 'Eye',
   },
@@ -161,6 +182,7 @@ export default function Wave() {
             subtitle="Faster progress from first draft to final approval."
             description="WAVE gives brand, packaging, and regulatory teams a single platform to brief, review, and approve artwork. No more confusion, no more delays. Just clear workflows that move projects forward."
             imageSrc="/product/Solution_Banner_WAVE.jpg"
+            mobileImageSrc="/product/Solution_Banner_WAVE_mobile.jpg"
             imageWidth={291}
             imageAlt="rectangle"
           />

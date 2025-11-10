@@ -3,9 +3,9 @@ import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
 
 const workflowImages = [
-  { src: '/about/workflow2.png', width: 400, height: 120, alt: 'Workflow security process 1' },
-  { src: '/about/workflow1.png', width: 250, height: 120, alt: 'Workflow security process 2' },
-  { src: '/about/workflow3.png', width: 250, height: 120, alt: 'Workflow security process 3' },
+  { src: '/about/workflow2.png', width: 200, height: 120, alt: 'Workflow security process 1' },
+  { src: '/about/workflow1.png', width: 160, height: 120, alt: 'Workflow security process 2' },
+  { src: '/about/workflow3.png', width: 180, height: 120, alt: 'Workflow security process 3' },
 ];
 
 const Workflow = () => {

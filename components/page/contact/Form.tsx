@@ -336,7 +336,7 @@ const Form = () => {
                     <Link href="/privacy" target="_blank" className="underline">
                       Privacy Policy
                     </Link>
-                    .
+                    {`.*`}
                   </p>
                 </label>
                 <label className="flex items-center gap-2">

@@ -8,6 +8,9 @@ interface Problem {
   title: string;
   subtitle: string;
   description: string;
+  buttonLink?: string; // Added prop for the button link
+  buttonText?: string; // Added prop for the button text
+  icon?: React.ElementType; // Added prop for the dynamic icon
 }
 
 interface WhatProps {
@@ -34,6 +37,7 @@ const What = ({ whatData }: WhatProps) => {
           <div key={rowIndex} className="flex w-full flex-col justify-between gap-12 p-4 sm:flex-row sm:gap-8">
             {row.map((problem, colIndex) => (
               <div key={colIndex} className="relative flex flex-1 flex-col justify-between gap-6 sm:gap-8">
+                {problem.icon && <problem.icon className="text-primary h-8 w-8 sm:h-12 sm:w-12" strokeWidth={1.5} />}
                 <b className="text-2xl leading-tight tracking-tight sm:text-4xl sm:leading-none">{problem.title}</b>
                 <div className="flex flex-col justify-between gap-4 text-base sm:flex-row sm:gap-0 sm:text-xl">
                   <p className="flex max-w-full flex-1 leading-tight tracking-tight sm:max-w-88 sm:leading-none">
@@ -43,13 +47,13 @@ const What = ({ whatData }: WhatProps) => {
                     {problem.description}
                   </p>
                 </div>
-                <Link href="/contact">
+                <Link href={problem.buttonLink ?? '/contact'}>
                   <Button
                     size="sm"
                     className="group/cta-hero active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-3 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-300 ease-[var(--easing-smooth)] hover:gap-0 active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2"
                   >
                     <span className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 items-center px-6 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta-hero:px-7">
-                      See the fix
+                      {problem.buttonText ?? 'See the fix'}
                     </span>
                     <span
                       className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 w-10 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)]"

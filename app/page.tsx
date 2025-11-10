@@ -14,7 +14,17 @@ export default function Home() {
         <div className="mt-12 flex flex-col gap-12 md:mt-24 md:gap-32">
           <What />
           <Who />
+        </div>
+      </div>
+
+      <div className="bg-primary/5 pb-10">
+        <div className="container mx-auto">
           <How />
+        </div>
+      </div>
+
+      <div className="container mx-auto mb-32">
+        <div className="mt-12 flex flex-col gap-12 md:mt-24 md:gap-32">
           <Why />
           <Contact />
         </div>

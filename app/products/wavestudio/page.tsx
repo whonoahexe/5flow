@@ -1,4 +1,4 @@
-import { Lightbulb, Rocket, Scaling, ShieldCheck } from 'lucide-react';
+import { CalendarClock, CalendarX2, FileXIcon, History, Lightbulb, Rocket, Scaling, ShieldCheck } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/product/Hero';
@@ -15,11 +15,15 @@ const whatData = [
       title: 'Endless resizing requests',
       subtitle: 'The same design, 100 times over',
       description: 'Creative teams lose days resizing and adapting assets instead of focusing on new ideas.',
+      buttonLink: '/solutions/automated-artwork',
+      icon: History,
     },
     {
       title: 'Inconsistent outputs',
       subtitle: 'Assets that look off brand',
       description: 'Without guardrails, production work drifts, creating quality issues and brand headaches.',
+      buttonLink: '/solutions/automated-artwork',
+      icon: FileXIcon,
     },
   ],
   [
@@ -27,11 +31,15 @@ const whatData = [
       title: 'Bottlenecked studios',
       subtitle: 'Too much work, not enough people',
       description: 'In house teams get stuck in production loops instead of doing creative work.',
+      buttonLink: '/solutions/artwork-management',
+      icon: CalendarClock,
     },
     {
       title: 'Slow campaign rollouts',
       subtitle: 'Missed deadlines, missed moments',
       description: 'Manual production slows launches, leaving marketing out of sync with market demand.',
+      buttonLink: '/solutions/artwork-management',
+      icon: CalendarX2,
     },
   ],
 ];
@@ -41,7 +49,8 @@ const howData = [
     title: 'Smart automation',
     subtitle: 'Automation handles the repetitive stuff',
     description: "Our tech automates resizing, formatting, and versioning so your designers don't have to.",
-    buttonText: 'Discover Automation',
+    buttonText: 'Discover Automated Artwork',
+    buttonLink: '/solutions/automated-artwork',
     imageSrc: '/product/4-1.svg',
     iconName: 'Settings',
   },
@@ -49,7 +58,8 @@ const howData = [
     title: 'Creative consistency',
     subtitle: 'Guardrails built into every file',
     description: 'Templates, brand rules, and quality checks keep everything looking sharp and on brand.',
-    buttonText: 'Discover Consistency',
+    buttonText: 'Discover Automated Artwork',
+    buttonLink: '/solutions/automated-artwork',
     imageSrc: '/product/4-2.svg',
     iconName: 'RefreshCcw',
   },
@@ -58,7 +68,8 @@ const howData = [
     subtitle: 'More output without more headcount',
     description:
       'We extend your team with production firepower so you can handle ten times the work without the stress.',
-    buttonText: 'Discover Scale',
+    buttonText: 'Discover Artwork Management',
+    buttonLink: '/solutions/artwork-management',
     imageSrc: '/product/4-3.svg',
     iconName: 'Scaling',
   },
@@ -66,7 +77,8 @@ const howData = [
     title: 'Faster delivery',
     subtitle: 'Campaigns go live on time',
     description: 'Agile workflows and parallel production cycles mean deadlines are always met.',
-    buttonText: 'Discover Speed',
+    buttonText: 'Discover Artwork Management',
+    buttonLink: '/solutions/artwork-management',
     imageSrc: '/product/4-4.svg',
     iconName: 'Zap',
   },
@@ -147,6 +159,7 @@ export default function Wavestudio() {
             subtitle="Scale your artwork production without scaling your team"
             description="WaveStudio combines automation with creative expertise. We turn endless artwork requests into fast, accurate, on-brand outputs so you can keep creating without burning out."
             imageSrc="/product/Solution_Banner_WAVESTUDIO.jpg"
+            mobileImageSrc="/product/Solution_Banner_WAVESTUDIO_mobile.jpg"
             imageWidth={677}
             imageAlt="rectangle"
           />

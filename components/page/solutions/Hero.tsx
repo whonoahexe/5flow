@@ -10,6 +10,7 @@ interface HeroProps {
   subtitle: string;
   description: string;
   imageSrc: string;
+  mobileImageSrc?: string;
   imageAlt?: string;
 }
 
@@ -52,12 +53,26 @@ const Hero = ({ title, subtitle, description, imageSrc, imageAlt = '' }: HeroPro
 
       {/* Product image */}
       <FullBleedLines className="mt-16 w-full">
+        {/* Mobile: square image */}
+        {/* <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-[10px] sm:hidden">
+          <Image
+            src={mobileImageSrc ?? imageSrc}
+            alt={imageAlt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw"
+            priority
+          />
+        </div> */}
+        {/* Desktop+: original wide image */}
         <Image
-          className="relative w-full rounded-[10px] sm:rounded-[20px]"
+          className="relative hidden w-full rounded-[10px] sm:block sm:rounded-[20px]"
           width={1520}
           height={480}
           alt={imageAlt}
           src={imageSrc}
+          sizes="(min-width: 640px) 100vw"
+          priority
         />
       </FullBleedLines>
     </div>

@@ -28,7 +28,7 @@ export default function Integration() {
       title: 'Open APIs',
       subtitle: 'Easy connection to any system',
       description: 'Flexible APIs connect 5Flow to PIM, DAM, ERP, and creative tools with minimal effort.',
-      buttonText: 'Discover APIs',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/6-1.svg',
       iconName: 'ScreenShare',
     },
@@ -36,7 +36,7 @@ export default function Integration() {
       title: 'Real-time sync',
       subtitle: 'Data flows instantly',
       description: 'Updates push across systems automatically, ensuring everyone works with the latest information.',
-      buttonText: 'Discover Sync',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/6-2.svg',
       iconName: 'RefreshCcw',
     },
@@ -44,7 +44,7 @@ export default function Integration() {
       title: 'Scalable architecture',
       subtitle: 'Built to handle complexity',
       description: 'Integration scales from a few systems to enterprise-wide ecosystems across global teams.',
-      buttonText: 'Discover Scalability',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/6-3.svg',
       iconName: 'Scaling',
     },
@@ -52,7 +52,7 @@ export default function Integration() {
       title: 'Secure connections',
       subtitle: 'Data protected end to end',
       description: 'Enterprise-grade security ensures integrations are safe, compliant, and reliable.',
-      buttonText: 'Discover Security',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/6-4.svg',
       iconName: 'ShieldCheck',
     },
@@ -101,11 +101,11 @@ export default function Integration() {
                 Trusted by <InlineHighlight>global leaders</InlineHighlight>
               </>
             }
-            subtitle="Numbers that matter"
+            subtitle=""
             statsData={[
               { label: 'faster product launches', value: '75%' },
               { label: 'fewer late files', value: '50%' },
-              { label: 'across Retail, Pharma, FMCG, and Beauty', value: 'Trusted' },
+              { label: 'rework reduction', value: '25%' },
             ]}
           />
           <Contact leadingText="Ready to connect your " highlightedText="artwork systems?" />
