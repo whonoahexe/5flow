@@ -39,12 +39,10 @@ const What = () => {
             Breaking Barriers in the <InlineHighlight>Modern</InlineHighlight>{' '}
             <InlineHighlight>Content</InlineHighlight> Supply Chain
           </p>
-          <Link href="/about">
-            <ArrowUpRight
-              strokeWidth={1.5}
-              className="text-background bg-accent1 hover:ring-primary/50 hover:ring-offset-background h-16 w-16 origin-center cursor-pointer transition-all duration-300 ease-[var(--easing-smooth)] hover:translate-x-[1px] hover:scale-[0.92] hover:ring-4 hover:ring-offset-2 active:scale-[0.9] active:ring-6 sm:h-20 sm:w-20 md:h-32 md:w-32"
-            />
-          </Link>
+          <ArrowUpRight
+            strokeWidth={1.5}
+            className="text-accent1 h-16 w-16 origin-center sm:h-20 sm:w-20 md:h-32 md:w-32"
+          />
         </FullBleedLines>
       </div>
 

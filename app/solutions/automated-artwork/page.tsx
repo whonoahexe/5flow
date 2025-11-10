@@ -28,7 +28,7 @@ export default function AutomatedArtwork() {
       title: 'Template-driven design',
       subtitle: 'Automation built into templates',
       description: 'Predefined templates generate artwork variations quickly while keeping brand guidelines intact.',
-      buttonText: 'Discover Templates',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/5-1.svg',
       iconName: 'LayoutList',
     },
@@ -36,7 +36,7 @@ export default function AutomatedArtwork() {
       title: 'Multilingual automation',
       subtitle: 'Translations applied instantly',
       description: 'Automated text handling applies approved translations across SKUs, cutting manual entry errors.',
-      buttonText: 'Discover Language Tools',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/5-2.svg',
       iconName: 'Languages',
     },
@@ -44,7 +44,7 @@ export default function AutomatedArtwork() {
       title: 'Batch processing',
       subtitle: 'Scale without bottlenecks',
       description: 'Generate dozens or thousands of artworks at once, reducing turnaround from weeks to hours.',
-      buttonText: 'Discover Batch Processing',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/5-3.svg',
       iconName: 'Layers',
     },
@@ -53,7 +53,7 @@ export default function AutomatedArtwork() {
       subtitle: 'Accuracy by default',
       description:
         'Built-in rules check barcodes, text placement, and compliance automatically before files go to print.',
-      buttonText: 'Discover Validation',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/5-4.svg',
       iconName: 'ShieldCheck',
     },
@@ -102,11 +102,11 @@ export default function AutomatedArtwork() {
                 Trusted by <InlineHighlight>global leaders</InlineHighlight>
               </>
             }
-            subtitle="Numbers that matter"
+            subtitle=""
             statsData={[
               { label: 'faster product launches', value: '75%' },
               { label: 'fewer late files', value: '50%' },
-              { label: 'across Retail, Pharma, FMCG, and Beauty', value: 'Trusted' },
+              { label: 'rework reduction', value: '25%' },
             ]}
           />
           <Contact leadingText="Create artworks the " highlightedText="smart way" />

@@ -24,7 +24,7 @@ export default function ArtworkManagement() {
       subtitle: 'One hub for every file',
       description:
         'Artwork files, cutter guides, and declarations all live in one place. No more scattered assets across teams.',
-      buttonText: 'Discover Centralization',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/1.svg',
       iconName: 'MonitorCog',
     },
@@ -34,7 +34,7 @@ export default function ArtworkManagement() {
       description:
         'Approvals, reviews, and updates route automatically to the right person, keeping projects on track.',
       icon: '/solutions/rectangle.png',
-      buttonText: 'Discover Automation',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/2.svg',
       iconName: 'Workflow',
     },
@@ -44,7 +44,7 @@ export default function ArtworkManagement() {
       description:
         'Every update is tracked and logged. Teams work with confidence, knowing they always have the latest version.',
       icon: '/solutions/rectangle.png',
-      buttonText: 'Discover Version Control',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/3.svg',
       iconName: 'SearchCheck',
     },
@@ -54,7 +54,7 @@ export default function ArtworkManagement() {
       description:
         'Comments, markups, and approvals happen in-platform, not across email chains, reducing confusion and delays.',
       icon: '/solutions/rectangle.png',
-      buttonText: 'Discover Communication',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/4.svg',
       iconName: 'MessageSquarePlus',
     },
@@ -104,11 +104,11 @@ export default function ArtworkManagement() {
                 Trusted by <InlineHighlight>global leaders</InlineHighlight>
               </>
             }
-            subtitle="Numbers that matter"
+            subtitle=""
             statsData={[
               { label: 'faster product launches', value: '75%' },
               { label: 'fewer late files', value: '50%' },
-              { label: 'across Retail, Pharma, FMCG, and Beauty', value: 'Trusted' },
+              { label: ' rework reduction', value: '25%' },
             ]}
           />
           <Contact leadingText="Ready to " highlightedText="simplify" trailingText=" artwork management?" />

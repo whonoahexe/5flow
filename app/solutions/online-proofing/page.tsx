@@ -28,7 +28,7 @@ export default function OnlineProofing() {
       title: 'Online annotations',
       subtitle: 'Markups where they belong',
       description: 'Reviewers add comments directly on artwork files, eliminating confusion and lost feedback.',
-      buttonText: 'Discover Annotations',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/2-1.svg',
       iconName: 'StickyNote',
     },
@@ -36,7 +36,7 @@ export default function OnlineProofing() {
       title: 'Version comparison',
       subtitle: 'Spot changes instantly',
       description: 'Compare old and new files side by side to ensure every requested update is complete and correct.',
-      buttonText: 'Discover Version Control',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/2-2.svg',
       iconName: 'SquareSplitHorizontal',
     },
@@ -44,7 +44,7 @@ export default function OnlineProofing() {
       title: 'Automated approvals',
       subtitle: 'Traceable, transparent sign offs',
       description: 'Sequential or parallel approval paths keep projects moving while documenting every decision.',
-      buttonText: 'Discover Approvals',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/2-3.svg',
       iconName: 'CircleCheckBig',
     },
@@ -52,7 +52,7 @@ export default function OnlineProofing() {
       title: 'Audit trails',
       subtitle: 'Compliance built into proofing',
       description: 'Every annotation, change, and approval is logged for full regulatory compliance.',
-      buttonText: 'Discover Compliance',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/2-4.svg',
       iconName: 'ShieldCheck',
     },
@@ -101,11 +101,11 @@ export default function OnlineProofing() {
                 Trusted by <InlineHighlight>global leaders</InlineHighlight>
               </>
             }
-            subtitle="Numbers that matter"
+            subtitle=""
             statsData={[
               { label: 'faster product launches', value: '75%' },
               { label: 'fewer late files', value: '50%' },
-              { label: 'across Retail, Pharma, FMCG, and Beauty', value: 'Trusted' },
+              { label: 'rework reduction', value: '25%' },
             ]}
           />
           <Contact leadingText="Ready to " highlightedText="error-proof" trailingText=" your launches?" />

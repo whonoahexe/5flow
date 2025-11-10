@@ -29,22 +29,6 @@ const Workflow = ({ title, subtitle, statsData }: WorkflowProps) => {
           <b className="relative max-w-full text-xl leading-tight tracking-tight sm:max-w-xl sm:text-2xl sm:leading-none">
             {subtitle}
           </b>
-          <Link href="/contact">
-            <Button
-              size="lg"
-              className="group/cta-hero active:ring-primary/50 active:ring-offset-background inline-flex w-fit origin-left items-center justify-start gap-3 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-300 ease-[var(--easing-smooth)] hover:gap-0 active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2"
-            >
-              <span className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 items-center px-6 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta-hero:px-7">
-                See Case Studies
-              </span>
-              <span
-                className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-10 w-10 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)]"
-                aria-hidden="true"
-              >
-                <MoveUpRight className="h-4 w-4" />
-              </span>
-            </Button>
-          </Link>
         </div>
       </FullBleedLines>
 
@@ -58,7 +42,7 @@ const Workflow = ({ title, subtitle, statsData }: WorkflowProps) => {
             key={index}
             className="bg-background flex h-48 flex-1 flex-col items-center justify-center gap-2 rounded-2xl shadow-[0px_4px_6px_-4px_rgba(0,0,0,0.102),0px_10px_15px_-3px_rgba(0,0,0,0.102)] sm:h-56"
           >
-            <b className="font-heading text-primary text-4xl sm:text-6xl">{stat.value}</b>
+            <b className="font-body text-primary text-4xl sm:text-6xl">{stat.value}</b>
             <b className="relative text-center text-lg leading-tight sm:text-2xl sm:leading-none">{stat.label}</b>
           </div>
         ))}

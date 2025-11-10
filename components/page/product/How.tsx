@@ -16,6 +16,7 @@ interface HowFeature {
   buttonText: string;
   imageSrc: string;
   iconName?: string;
+  buttonLink?: string; // Added prop for the button link
 }
 
 interface HowProps {
@@ -177,7 +178,7 @@ const How = ({ howData }: HowProps) => {
                     asChild
                     className="group/cta active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-0 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-150 ease-[var(--easing-smooth)] active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2 has-[>svg]:px-0"
                   >
-                    <Link href="/contact" aria-label="Book a demo">
+                    <Link href={feature.buttonLink ?? '/contact'} aria-label="Book a demo">
                       <span className="bg-success text-success-foreground group-hover/cta:bg-success/90 group-active/cta:bg-success/80 inline-flex h-9 items-center px-4 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta:px-3">
                         {feature.buttonText}
                       </span>

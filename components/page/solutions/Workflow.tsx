@@ -35,14 +35,6 @@ const Workflow = ({ title1, title2, highlightTitle, subtitle, buttonText, statsD
           </div>
           <div className="flex flex-col items-center justify-center gap-4 py-4 sm:items-start sm:gap-5 sm:py-7">
             <b className="relative inline-block max-w-full text-lg leading-tight sm:max-w-lg sm:text-xl">{subtitle}</b>
-            <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-start sm:gap-8">
-              <Button variant="default" size="lg" className="bg-primary text-background rounded-none font-bold">
-                {buttonText}
-              </Button>
-              <div className="bg-primary flex h-10 w-10 items-center justify-center">
-                <MoveUpRight className="text-background" />
-              </div>
-            </div>
           </div>
         </div>
         <div
@@ -56,7 +48,7 @@ const Workflow = ({ title1, title2, highlightTitle, subtitle, buttonText, statsD
               className="box-border flex h-48 flex-1 flex-col items-center justify-center overflow-hidden rounded-2xl border border-gray-200 bg-white sm:h-56"
             >
               <div className="flex flex-col items-center justify-center gap-2">
-                <b className="font-heading text-primary text-4xl sm:text-5xl">{stat.value}</b>
+                <b className="font-body text-primary text-4xl sm:text-5xl">{stat.value}</b>
                 <b className="font-body relative text-center font-bold">{stat.label}</b>
               </div>
             </div>

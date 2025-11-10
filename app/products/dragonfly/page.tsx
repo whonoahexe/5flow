@@ -1,4 +1,13 @@
-import { CircleDollarSign, Lightbulb, Rocket, ShieldCheck } from 'lucide-react';
+import {
+  CircleDollarSign,
+  Lightbulb,
+  LineSquiggle,
+  MessageSquareWarning,
+  RailSymbol,
+  Rocket,
+  ShieldCheck,
+  UserPen,
+} from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
@@ -16,11 +25,15 @@ const whatData = [
       title: 'Miscommunication',
       subtitle: 'Too many stakeholders, too many silos',
       description: 'Teams lose time and accuracy when information is scattered across emails and tools.',
+      icon: MessageSquareWarning,
+      buttonLink: '/solutions/artwork-management',
     },
     {
       title: 'Rigid workflows',
       subtitle: 'Processes break when projects change',
       description: 'Static workflows cannot handle the pace or complexity of today’s packaging and marketing demands.',
+      icon: RailSymbol,
+      buttonLink: '/solutions/artwork-management',
     },
   ],
   [
@@ -28,11 +41,15 @@ const whatData = [
       title: 'Manual reporting',
       subtitle: 'Hours wasted building spreadsheets',
       description: 'Teams spend more time making reports than moving projects forward.',
+      icon: UserPen,
+      buttonLink: '/solutions/data-analytics',
     },
     {
       title: 'System chaos',
       subtitle: 'Too many tools that don’t connect',
       description: 'Copy-pasting between PIMs, DAMs, and ERPs slows everything down and increases errors.',
+      icon: LineSquiggle,
+      buttonLink: '/solutions/integration',
     },
   ],
 ];
@@ -43,7 +60,8 @@ const howData = [
     subtitle: 'Flexibility built into every project',
     description:
       'Dragonfly adapts to your needs with templates, task-driven processes, and rules that make change easy.',
-    buttonText: 'Discover Workflows',
+    buttonText: 'Discover Artwork Management',
+    buttonLink: '/solutions/artwork-management',
     imageSrc: '/product/2-1.svg',
     iconName: 'Workflow',
   },
@@ -52,7 +70,8 @@ const howData = [
     subtitle: 'Clear visibility for every team member',
     description:
       'Customizable dashboards and task lists keep information where you need it, improving adoption and speed.',
-    buttonText: 'Discover Dashboards',
+    buttonText: 'Discover Artwork Management',
+    buttonLink: '/solutions/artwork-management',
     imageSrc: '/product/2-2.svg',
     iconName: 'LayoutDashboard',
   },
@@ -61,7 +80,8 @@ const howData = [
     subtitle: 'Insights at the click of a button',
     description:
       'Schedule-driven reporting and PowerBI integration turn raw data into instant KPIs and process improvements.',
-    buttonText: 'Discover Reporting',
+    buttonText: 'Discover Data Analysis',
+    buttonLink: '/solutions/data-analytics',
     imageSrc: '/product/2-3.svg',
     iconName: 'ChartNoAxesCombined',
   },
@@ -71,6 +91,7 @@ const howData = [
     description:
       'Out-of-the-box APIs and open architecture integrate Dragonfly with SAP, PLM, DAM, and e-commerce platforms.',
     buttonText: 'Discover Integrations',
+    buttonLink: '/solutions/integration',
     imageSrc: '/product/2-4.svg',
     iconName: 'Import',
   },

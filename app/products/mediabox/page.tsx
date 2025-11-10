@@ -1,4 +1,4 @@
-import { CircleDollarSign, Rocket, ShieldAlert, Target } from 'lucide-react';
+import { CalendarClock, CircleDollarSign, EyeOff, Rocket, ShieldAlert, Target, Unplug } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
@@ -16,11 +16,15 @@ const whatData = [
       title: 'Disconnected tools',
       subtitle: 'Creative work scattered across platforms',
       description: 'Teams waste time moving between systems, losing files, and duplicating tasks.',
+      icon: Unplug,
+      buttonLink: '/solutions/integration',
     },
     {
       title: 'Approval bottlenecks',
       subtitle: 'Campaigns stuck in endless reviews',
       description: 'Delays build when feedback is unstructured and approvals are hard to track.',
+      icon: CalendarClock,
+      buttonLink: '/solutions/online-proofing',
     },
   ],
   [
@@ -28,11 +32,15 @@ const whatData = [
       title: 'Costly errors',
       subtitle: 'Late or inaccurate assets impact campaigns',
       description: 'Wrong files, missed versions, or compliance slip-ups drive costly rework and missed deadlines.',
+      icon: CircleDollarSign,
+      buttonLink: '/solutions/asset-library',
     },
     {
       title: 'Lack of visibility',
       subtitle: 'No clarity on project status',
       description: 'Without transparent workflows, managers struggle to track progress, spot risks, or plan resources.',
+      icon: EyeOff,
+      buttonLink: '/solutions/artwork-management',
     },
   ],
 ];
@@ -43,7 +51,8 @@ const howData = [
     subtitle: 'One place for every asset',
     description:
       'Mediabox organizes creative projects and assets in a single system, reducing duplication and confusion.',
-    buttonText: 'Discover the Platform',
+    buttonText: 'Discover Artwork Management',
+    buttonLink: '/solutions/artwork-management',
     imageSrc: '/product/3-1.svg',
     iconName: 'MonitorCloud',
   },
@@ -51,7 +60,8 @@ const howData = [
     title: 'Streamlined approvals',
     subtitle: 'Faster, traceable reviews',
     description: 'Online approvals with version history and annotations keep projects clear, compliant, and on track.',
-    buttonText: 'Discover Approvals',
+    buttonText: 'Discover Online Proofing',
+    buttonLink: '/solutions/online-proofing',
     imageSrc: '/product/3-2.svg',
     iconName: 'CircleCheckBig',
   },
@@ -59,7 +69,8 @@ const howData = [
     title: 'Error reduction',
     subtitle: 'Accuracy built into every step',
     description: 'Automated validation and structured workflows reduce mistakes, reprints, and compliance risks.',
-    buttonText: 'Discover Accuracy',
+    buttonText: 'Discover Artwork Management',
+    buttonLink: '/solutions/artwork-management',
     imageSrc: '/product/3-3.svg',
     iconName: 'ShieldAlert',
   },
@@ -67,7 +78,8 @@ const howData = [
     title: 'Clear reporting',
     subtitle: 'Real-time insights for better control',
     description: 'Dashboards and analytics give teams full visibility of project health, deadlines, and bottlenecks.',
-    buttonText: 'Discover Reporting',
+    buttonText: 'Discover Data Analysis',
+    buttonLink: '/solutions/data-analytics',
     imageSrc: '/product/3-4.svg',
     iconName: 'ChartNoAxesCombined',
   },

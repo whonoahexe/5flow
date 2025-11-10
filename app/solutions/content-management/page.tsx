@@ -28,7 +28,7 @@ export default function ContentManagement() {
       title: 'Centralized content hub',
       subtitle: 'One place for every claim and translation',
       description: 'Product data, claims, and text live in a single repository connected to artwork workflows.',
-      buttonText: 'Discover the Hub',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/3-1.svg',
       iconName: 'FileText',
     },
@@ -36,7 +36,7 @@ export default function ContentManagement() {
       title: 'Structured workflows',
       subtitle: 'Content validated at the source',
       description: 'Approval processes ensure every line of copy is validated before reaching design or production.',
-      buttonText: 'Discover Workflows',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/3-2.svg',
       iconName: 'Workflow',
     },
@@ -44,7 +44,7 @@ export default function ContentManagement() {
       title: 'Version history',
       subtitle: 'Track every change across markets',
       description: 'Every edit is logged and accessible, giving teams confidence they’re using the latest content.',
-      buttonText: 'Discover Version Control',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/3-3.svg',
       iconName: 'SearchCheck',
     },
@@ -52,7 +52,7 @@ export default function ContentManagement() {
       title: 'Integration ready',
       subtitle: 'Connect with PIM, DAM, and ERP',
       description: 'Open APIs link content directly into your ecosystem, eliminating manual re-entry.',
-      buttonText: 'Discover Integrations',
+      buttonText: 'Book A Demo',
       imageSrc: '/solutions/3-4.svg',
       iconName: 'Import',
     },
@@ -104,11 +104,11 @@ export default function ContentManagement() {
                 Trusted by <InlineHighlight>global leaders</InlineHighlight>
               </>
             }
-            subtitle="Numbers that matter"
+            subtitle=""
             statsData={[
               { label: 'faster product launches', value: '75%' },
               { label: 'fewer late files', value: '50%' },
-              { label: 'across Retail, Pharma, FMCG, and Beauty', value: 'Trusted' },
+              { label: 'rework reduction', value: '25%' },
             ]}
           />
           <Contact leadingText="Prepared to " highlightedText="start feeling" trailingText=" content?" />
