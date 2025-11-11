@@ -1,5 +1,5 @@
 ---
-slug: when-final-Isnt Final-why-label-errors-still-happen-and-how-wave-fixes-that
+slug: when-final-isnt-final-why-label-errors-still-happen-and-how-wave-fixes-that
 title: When Final Isn't Final, Why Label Errors Still Happen and How WAVE Fixes That?
 date: '2025-11-05'
 image: '/resources/when-final-isnt.jpg'
