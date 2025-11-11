@@ -130,7 +130,7 @@ const workflowData = {
       label: 'fewer late files',
     },
     {
-      value: '60,000+',
+      value: '60K+',
       label: 'active users worldwide',
     },
   ],

@@ -122,15 +122,15 @@ const workflowData = {
     },
     {
       value: '90%',
-      label: 'First-time Accuracy',
+      label: 'first-time accuracy',
     },
     {
       value: '1M+',
-      label: 'Designs Created',
+      label: 'designs created',
     },
     {
       value: '50K+',
-      label: 'Active Users',
+      label: 'active users',
     },
   ],
 };

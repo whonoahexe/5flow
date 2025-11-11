@@ -131,7 +131,7 @@ const workflowData = {
   buttonText: 'See Case Studies',
   statsData: [
     {
-      value: '4,500+',
+      value: '4.5K+',
       label: 'global users at Mondelez',
     },
     {

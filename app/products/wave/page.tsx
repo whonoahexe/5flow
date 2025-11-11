@@ -127,11 +127,11 @@ const workflowData = {
   buttonText: 'See Case Studies',
   statsData: [
     {
-      value: '50,000+',
+      value: '50k+',
       label: 'active users',
     },
     {
-      value: '300,000+',
+      value: '300K+',
       label: 'artworks managed',
     },
     {
@@ -139,7 +139,7 @@ const workflowData = {
       label: 'collaboration mails reduced',
     },
     {
-      value: '34-52%',
+      value: '52%',
       label: 'faster with global rollouts',
     },
   ],

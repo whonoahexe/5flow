@@ -70,6 +70,7 @@ const NAV_ITEMS: NavItem[] = [
         { href: '/solutions/asset-library', label: 'ASSET LIBRARY' },
         { href: '/solutions/automated-artwork', label: 'AUTOMATED ARTWORK' },
         { href: '/solutions/integration', label: 'INTEGRATION' },
+        { href: '/solutions/data-analysis', label: 'DATA ANALYSIS' },
       ],
       offsetClass: 'ml-76',
       itemWidthClass: 'w-112',
