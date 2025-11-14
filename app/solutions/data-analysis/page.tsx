@@ -92,7 +92,7 @@ export default function DataAnalysis() {
   return (
     <div className="relative">
       <div className="container mx-auto mb-32">
-        <PageHeader title="artwork management" />
+        <PageHeader title="Data Analysis" />
 
         <div className="flex flex-col gap-32">
           <Hero {...heroData} />
