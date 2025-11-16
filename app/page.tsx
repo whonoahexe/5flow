@@ -1,9 +1,9 @@
 import { Contact } from '@/components/layout';
 import ServerHero from '@/components/page/home/Hero.server';
-import What from '@/components/page/home/What';
-import How from '@/components/page/home/How';
-import Who from '@/components/page/home/Who';
-import Why from '@/components/page/home/Why';
+import ServerWhat from '@/components/page/home/What.server';
+import ServerHow from '@/components/page/home/How.server';
+import ServerWho from '@/components/page/home/Who.server';
+import ServerWhy from '@/components/page/home/Why.server';
 
 export default function Home() {
   return (
@@ -12,20 +12,20 @@ export default function Home() {
       <div className="container mx-auto mb-32">
         <ServerHero />
         <div className="mt-12 flex flex-col gap-12 md:mt-24 md:gap-32">
-          <What />
-          <Who />
+          <ServerWhat />
+          <ServerWho />
         </div>
       </div>
 
       <div className="bg-primary/5 pb-10">
         <div className="container mx-auto">
-          <How />
+          <ServerHow />
         </div>
       </div>
 
       <div className="container mx-auto mb-32">
         <div className="mt-12 flex flex-col gap-12 md:mt-24 md:gap-32">
-          <Why />
+          <ServerWhy />
           <Contact />
         </div>
       </div>

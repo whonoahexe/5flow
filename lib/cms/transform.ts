@@ -1,4 +1,4 @@
-import { CmsCtaBlock, CmsHeroSection, CmsLegalPage, CmsMediaAsset } from './types';
+import { CmsCtaBlock, CmsHeroSection, CmsLegalPage, CmsMediaAsset, CmsContentBlock, CmsContentItem } from './types';
 
 function sanitize(html: string): string {
   return typeof html === 'string' ? html : '';
@@ -75,6 +75,52 @@ export function toHeroSection(rawUnknown: unknown): CmsHeroSection {
       : typeof highlightStyle === 'string'
         ? highlightStyle
         : 'default') as 'default' | 'inline-highlight' | 'pattern-overlay',
+    sortOrder: typeof sort_order === 'number' ? sort_order : typeof sortOrder === 'number' ? sortOrder : 0,
+  };
+}
+
+export function toContentItem(rawUnknown: unknown): CmsContentItem {
+  const raw = (rawUnknown as AnyObj) || {};
+  const id = raw['id'];
+  const title = raw['title'];
+  const subtitle = raw['subtitle'];
+  const body_html = raw['body_html'];
+  const body = raw['body'];
+  const icon_key = raw['icon_key'];
+  const iconKey = raw['iconKey'];
+  const link_url = raw['link_url'];
+  const linkUrl = raw['linkUrl'];
+  const image = raw['image'];
+  const sort_order = raw['sort_order'];
+  const sortOrder = raw['sortOrder'];
+  return {
+    id: typeof id === 'string' || typeof id === 'number' ? String(id) : '',
+    title: typeof title === 'string' ? title : '',
+    subtitle: typeof subtitle === 'string' ? subtitle : undefined,
+    bodyHtml: sanitize(typeof body_html === 'string' ? body_html : typeof body === 'string' ? body : ''),
+    iconKey: typeof icon_key === 'string' ? icon_key : typeof iconKey === 'string' ? iconKey : undefined,
+    image: image ? toMediaAsset(image) : null,
+    linkUrl: typeof link_url === 'string' ? link_url : typeof linkUrl === 'string' ? linkUrl : undefined,
+    sortOrder: typeof sort_order === 'number' ? sort_order : typeof sortOrder === 'number' ? sortOrder : 0,
+  };
+}
+
+export function toContentBlock(rawUnknown: unknown): CmsContentBlock {
+  const raw = (rawUnknown as AnyObj) || {};
+  const id = raw['id'];
+  const identifier = raw['identifier'];
+  const title = raw['title'];
+  const body_html = raw['body_html'];
+  const body = raw['body'];
+  const itemsRaw = Array.isArray(raw['items']) ? (raw['items'] as unknown[]) : [];
+  const sort_order = raw['sort_order'];
+  const sortOrder = raw['sortOrder'];
+  return {
+    id: typeof id === 'string' || typeof id === 'number' ? String(id) : '',
+    identifier: typeof identifier === 'string' ? identifier : '',
+    title: typeof title === 'string' ? title : '',
+    bodyHtml: sanitize(typeof body_html === 'string' ? body_html : typeof body === 'string' ? body : ''),
+    items: itemsRaw.map(toContentItem),
     sortOrder: typeof sort_order === 'number' ? sort_order : typeof sortOrder === 'number' ? sortOrder : 0,
   };
 }

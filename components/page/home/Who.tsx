@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
 
-const clientData = [
+const CLIENT_IMAGE_FILENAMES = [
   'loreal.webp',
   'Mondelez_internationa.webp',
   'ludwig-schokolade.webp',
@@ -24,12 +24,12 @@ const clientData = [
   'Renault.webp',
 ];
 
-interface WhoProps {
-  path?: string;
-  clients?: string[];
-}
+interface WhoClient { imageUrl: string; altText?: string }
+interface WhoProps { path?: string; clients?: WhoClient[]; title?: string }
 
-const Who = ({ path = 'home', clients = clientData }: WhoProps) => {
+const DEFAULT_CLIENTS: WhoClient[] = CLIENT_IMAGE_FILENAMES.map(name => ({ imageUrl: name }));
+
+const Who = ({ path = 'home', clients = DEFAULT_CLIENTS, title }: WhoProps) => {
   const logosRef = useRef<HTMLDivElement | null>(null);
 
   const scrollByAmount = (direction: 'left' | 'right') => {
@@ -46,7 +46,8 @@ const Who = ({ path = 'home', clients = clientData }: WhoProps) => {
         <div className="flex items-center gap-8 px-4 sm:px-8">
           <ArrowDown className="text-accent1 hidden h-16 w-16 sm:h-24 sm:w-24 md:block md:h-32 md:w-32" aria-hidden />
           <p className="font-heading w-full text-center text-4xl leading-none font-bold tracking-tight md:text-left md:text-[64px]">
-            <InlineHighlight>Who</InlineHighlight> Do We Solve It For?
+            <InlineHighlight>{(title || 'Who Do We Solve It For?').split(' ')[0]}</InlineHighlight>{' '}
+            {(title || 'Who Do We Solve It For?').split(' ').slice(1).join(' ')}
           </p>
         </div>
 
@@ -76,7 +77,7 @@ const Who = ({ path = 'home', clients = clientData }: WhoProps) => {
               key={i}
             >
               <div className="flex w-full items-center justify-center p-8">
-                <Image src={`/${path}/${item}`} alt="Client Logo" width={150} height={75} />
+                <Image src={`/${path}/${item.imageUrl}`} alt={item.altText || 'Client Logo'} width={150} height={75} />
               </div>
             </div>
           ))}

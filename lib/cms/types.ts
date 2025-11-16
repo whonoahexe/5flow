@@ -28,6 +28,26 @@ export interface CmsHeroSection {
   sortOrder: number;
 }
 
+export interface CmsContentItem {
+  id: string;
+  title: string;
+  subtitle?: string;
+  bodyHtml?: string;
+  iconKey?: string;
+  image?: CmsMediaAsset | null;
+  linkUrl?: string;
+  sortOrder: number;
+}
+
+export interface CmsContentBlock {
+  id: string;
+  identifier: string;
+  title: string;
+  bodyHtml?: string;
+  items: CmsContentItem[];
+  sortOrder: number;
+}
+
 export interface CmsLegalPage {
   slug: string;
   title: string;

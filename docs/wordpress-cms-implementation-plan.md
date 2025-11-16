@@ -101,6 +101,7 @@ Parallelizable items: Testing framework setup (Week 1-2), Observability scaffold
 - [ ] F1: Migrate hero sections (home, product pages where applicable) to CMS.
 - [x] F2: Implement CTA block injection via adapter (homepage bottom via `ServerCta`, minimal field mapping).
 - [x] F3: Navigation labels dynamic SSR fetch with caching (basic, no-cache for now).
+- [x] F4: Homepage secondary sections (What/How/Who/Why) wired via generic content blocks and server wrappers.
 - [ ] F4: Unit tests for ordering & missing label fallback.
 
 ### Epic G: Product / Solution / Application Pages
