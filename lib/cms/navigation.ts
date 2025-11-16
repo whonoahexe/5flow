@@ -2,7 +2,7 @@ import { wpFetch } from './client';
 import { CmsNavigationLabel } from './types';
 
 export async function getNavigationLabels(): Promise<CmsNavigationLabel[]> {
-  const raw = await wpFetch(`/cms/navigation`);
+  const raw = await wpFetch('/wp-json/wp/v2/navigation_label?per_page=100');
   const arr = Array.isArray(raw) ? (raw as Array<Record<string, unknown>>) : [];
   return arr.map(r => {
     const key = r['key'];

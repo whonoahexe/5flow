@@ -26,7 +26,7 @@ export default async function PrivacyPolicyPage() {
   if (features.enabled) {
     const dm = await draftMode();
     const isPreview = dm.isEnabled;
-    const page = !isPreview ? await getDraftLegalPage('privacy') : await getLegalPage('privacy');
+    const page = isPreview ? await getDraftLegalPage('privacy') : await getLegalPage('privacy');
     return (
       <div className="relative">
         <div className="container mx-auto mb-32">

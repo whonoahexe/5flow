@@ -40,9 +40,9 @@ Parallelizable items: Testing framework setup (Week 1-2), Observability scaffold
 | A (Foundation)                      | Planned     | Awaiting WP env + plugins                                                                                      |
 | B (Adapters & Types)                | In Progress | Core scaffolding (types, client, transforms, modules) completed; legal adapter moved to WP REST; tests pending |
 | C (Legal Migration)                 | In Progress | REST adapter in place; migration script skeleton created; drafts need WP auth; published fallback active       |
-| D (Webhook & Revalidation)          | In Progress | Route implemented with shared secret; HMAC pending                                                             |
+| D (Webhook & Revalidation)          | In Progress | Route implemented with HMAC verification and shared secret fallback                                            |
 | E (Preview Mode)                    | In Progress | Preview route done; draft fetchers for legal implemented                                                       |
-| F (Hero/CTA/Nav)                    | Planned     | Adapters in place; not wired to pages                                                                          |
+| F (Hero/CTA/Nav)                    | In Progress | Adapters in place; navigation labels wired via server wrapper; hero/CTA pending                                |
 | G (Products/Solutions/Applications) | Planned     | Not started                                                                                                    |
 | H (Blogs)                           | Planned     | Behind feature flag                                                                                            |
 | I (Observability)                   | In Progress | Structured logger added; metrics scripts pending                                                               |
@@ -79,6 +79,7 @@ Parallelizable items: Testing framework setup (Week 1-2), Observability scaffold
 - [x] C4: Refactor Next.js legal page routes to consume CMS adapter (Privacy wired behind flag).
 - [ ] C5: Implement fallback stale notice component.
 - [ ] C6: Acceptance test: unauthorized publish blocked (workflow simulation).
+- [x] C7: Wire remaining legal routes (imprint, disclaimer, privacy notices, quality) behind feature flag.
 
 ### Epic D: Webhook & Revalidation
 
@@ -98,8 +99,8 @@ Parallelizable items: Testing framework setup (Week 1-2), Observability scaffold
 ### Epic F: Hero, CTA, Navigation Integration
 
 - [ ] F1: Migrate hero sections (home, product pages where applicable) to CMS.
-- [ ] F2: Implement CTA block injection via adapter.
-- [ ] F3: Navigation labels dynamic SSR fetch with caching.
+- [x] F2: Implement CTA block injection via adapter (homepage bottom via `ServerCta`, minimal field mapping).
+- [x] F3: Navigation labels dynamic SSR fetch with caching (basic, no-cache for now).
 - [ ] F4: Unit tests for ordering & missing label fallback.
 
 ### Epic G: Product / Solution / Application Pages

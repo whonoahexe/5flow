@@ -1,5 +1,5 @@
-import { Contact, Cta } from '@/components/layout';
-import Hero from '@/components/page/home/Hero';
+import { Contact } from '@/components/layout';
+import ServerHero from '@/components/page/home/Hero.server';
 import What from '@/components/page/home/What';
 import How from '@/components/page/home/How';
 import Who from '@/components/page/home/Who';
@@ -10,7 +10,7 @@ export default function Home() {
     <div className="relative">
       {/* Scrolls */}
       <div className="container mx-auto mb-32">
-        <Hero />
+        <ServerHero />
         <div className="mt-12 flex flex-col gap-12 md:mt-24 md:gap-32">
           <What />
           <Who />
@@ -29,15 +29,6 @@ export default function Home() {
           <Contact />
         </div>
       </div>
-
-      {/* Cta */}
-      <Cta
-        leftTitle="Experience"
-        leftSubtitle="What’s Next in"
-        rightTitle="Artwork Management"
-        rightDesc="Get a live demo of our advanced artwork management software by our product experts."
-        buttonText="Book A Demo"
-      />
     </div>
   );
 }

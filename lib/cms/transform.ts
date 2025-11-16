@@ -66,6 +66,7 @@ export function toHeroSection(rawUnknown: unknown): CmsHeroSection {
     id: typeof id === 'string' || typeof id === 'number' ? String(id) : '',
     identifier: typeof identifier === 'string' ? identifier : '',
     title: typeof title === 'string' ? title : '',
+    subtitle: typeof raw['subtitle'] === 'string' ? raw['subtitle'] : '',
     bodyHtml: sanitize(typeof body_html === 'string' ? body_html : typeof body === 'string' ? body : ''),
     media: mediaRaw.map(toMediaAsset),
     cta: cta ? toCtaBlock(cta) : undefined,

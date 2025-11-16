@@ -212,14 +212,6 @@ export default function Mediabox() {
           <Contact leadingText="Ready for " highlightedText="out-of-the-box" trailingText=" creative workflows?" />
         </div>
       </div>
-
-      <Cta
-        leftTitle="Experience"
-        leftSubtitle="What’s Next in"
-        rightTitle="Artwork Management"
-        rightDesc="Get a live demo of our advanced artwork management software by our product experts."
-        buttonText="Book A Demo"
-      />
     </div>
   );
 }

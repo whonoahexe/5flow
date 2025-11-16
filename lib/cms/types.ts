@@ -20,6 +20,7 @@ export interface CmsHeroSection {
   id: string;
   identifier: string;
   title: string;
+  subtitle?: string;
   bodyHtml: string;
   media: CmsMediaAsset[];
   cta?: CmsCtaBlock;
