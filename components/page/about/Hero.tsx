@@ -2,7 +2,9 @@ import Image from 'next/image';
 import InlineHighlight from '@/components/core/inline-highlight';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 
-const Hero = () => {
+type HeroProps = { description?: string };
+
+const Hero = ({ description }: HeroProps) => {
   const topRowImages = ['/about/about1.png', '/about/about2.png', '/about/about3.png'];
   const bottomRowImages = ['/about/about5.png', '/about/about6.png'];
 
@@ -54,7 +56,8 @@ const Hero = () => {
                   </div>
 
                   <div className="text-lg leading-snug tracking-tight sm:text-xl sm:leading-tight">
-                    {`The technology backbone for modern brand execution. Our intelligent platform services simplify
+                    {description ||
+                      `The technology backbone for modern brand execution. Our intelligent platform services simplify
                       complexity, connect workflows, and give brands the speed, accuracy and agility to thrive in
                       today’s fast moving world.`}
                   </div>

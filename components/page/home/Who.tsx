@@ -24,8 +24,15 @@ const CLIENT_IMAGE_FILENAMES = [
   'Renault.webp',
 ];
 
-interface WhoClient { imageUrl: string; altText?: string }
-interface WhoProps { path?: string; clients?: WhoClient[]; title?: string }
+interface WhoClient {
+  imageUrl: string;
+  altText?: string;
+}
+interface WhoProps {
+  path?: string;
+  clients?: WhoClient[];
+  title?: string;
+}
 
 const DEFAULT_CLIENTS: WhoClient[] = CLIENT_IMAGE_FILENAMES.map(name => ({ imageUrl: name }));
 

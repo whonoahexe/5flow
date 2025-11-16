@@ -1,7 +1,9 @@
 import { ArrowUpRight } from 'lucide-react';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 
-const Vision = () => {
+type VisionProps = { visionText?: string };
+
+const Vision = ({ visionText }: VisionProps) => {
   return (
     <FullBleedLines>
       <div className="font-heading flex w-full flex-col items-start gap-8 sm:gap-0">
@@ -12,9 +14,10 @@ const Vision = () => {
             <div className="bg-success h-16 w-16 sm:h-48 sm:w-48" />
           </div>
           <p className="w-full text-center text-lg leading-snug tracking-tight sm:max-w-4xl sm:text-right sm:text-4xl sm:leading-none">
-            To develop innovative cloud-smart solutions for brand owners supercharged by data, tech, and AI in order to
+            {visionText ||
+              `To develop innovative cloud-smart solutions for brand owners supercharged by data, tech, and AI in order to
             streamline and accelerate the GTM process from ideation-to implementation so brand owners can adapt to
-            changes faster.
+            changes faster.`}
           </p>
         </div>
 

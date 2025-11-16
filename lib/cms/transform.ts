@@ -1,4 +1,12 @@
-import { CmsCtaBlock, CmsHeroSection, CmsLegalPage, CmsMediaAsset, CmsContentBlock, CmsContentItem } from './types';
+import {
+  CmsCtaBlock,
+  CmsHeroSection,
+  CmsLegalPage,
+  CmsMediaAsset,
+  CmsContentBlock,
+  CmsContentItem,
+  CmsGenericPage,
+} from './types';
 
 function sanitize(html: string): string {
   return typeof html === 'string' ? html : '';
@@ -163,5 +171,23 @@ export function toLegalPage(rawUnknown: unknown): CmsLegalPage {
     updatedAt:
       typeof modified === 'string' ? modified : typeof updated_at === 'string' ? updated_at : new Date().toISOString(),
     version: typeof version === 'number' ? version : 1,
+  };
+}
+
+export function toGenericPage(rawUnknown: unknown): CmsGenericPage {
+  const raw = (rawUnknown as AnyObj) || {};
+  const slug = raw['slug'];
+  const title = raw['title'];
+  const titleRendered = (title as AnyObj)?.['rendered'];
+  const content = raw['content'];
+  const contentRendered = (content as AnyObj)?.['rendered'];
+  const modified = raw['modified'];
+  return {
+    slug: typeof slug === 'string' ? slug : String(slug ?? ''),
+    title: typeof title === 'string' ? title : typeof titleRendered === 'string' ? titleRendered : '',
+    bodyHtml: sanitize(
+      typeof content === 'string' ? content : typeof contentRendered === 'string' ? contentRendered : ''
+    ),
+    updatedAt: typeof modified === 'string' ? modified : new Date().toISOString(),
   };
 }

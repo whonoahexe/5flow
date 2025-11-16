@@ -1,14 +1,17 @@
 import { ArrowUpLeft } from 'lucide-react';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 
-const Mission = () => {
+type MissionProps = { missionText?: string };
+
+const Mission = ({ missionText }: MissionProps) => {
   return (
     <FullBleedLines>
       <div className="font-heading flex w-full flex-col items-start gap-8 sm:gap-0">
         <div className="flex flex-col items-center justify-between gap-4 self-stretch sm:flex-row sm:items-start sm:gap-0">
           <p className="order-2 w-full text-center text-lg leading-snug tracking-tight sm:order-none sm:max-w-2xl sm:text-left sm:text-4xl sm:leading-none">
-            Develop industry leading tools across the entire GTM funnel, ultimately becoming a platform used by all
-            manufacturers, brand owners, and retailers.
+            {missionText ||
+              `Develop industry leading tools across the entire GTM funnel, ultimately becoming a platform used by all
+            manufacturers, brand owners, and retailers.`}
           </p>
           <div className="order-1 flex h-48 w-96 flex-1 justify-end sm:order-none">
             <div className="bg-success h-16 w-16 sm:h-48 sm:w-48" />

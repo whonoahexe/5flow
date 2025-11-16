@@ -2,33 +2,46 @@ import { ArrowDown, ShieldCheck, TrendingUp, Users, UserStar } from 'lucide-reac
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
 
-const Apart = () => {
-  const features = [
-    {
-      icon: UserStar,
-      title: 'Customer First',
-      description:
-        'We design around your needs, not ours. Every solution is built in partnership with the people who use it.',
-    },
-    {
-      icon: Users,
-      title: 'Strong & Experienced Team',
-      description:
-        'Decades of expertise in packaging, creative production, and workflow automation delivered by people who know how brands really work.',
-    },
-    {
-      icon: TrendingUp,
-      title: 'Flexibility at Scale',
-      description:
-        'One size never fits all. Our platforms adapt to your workflows, with the ability to customize, scale, and integrate seamlessly.',
-    },
-    {
-      icon: ShieldCheck,
-      title: 'Backed by Propelis',
-      description:
-        "As part of the Propelis Group, we're supported by the combined strength of global leaders SGK and SGS & Co.",
-    },
-  ];
+type ApartFeature = { title: string; description: string; iconKey?: string };
+type ApartProps = { features?: ApartFeature[]; titleOverride?: string };
+
+const iconMap: Record<string, any> = {
+  customer: UserStar,
+  team: Users,
+  scale: TrendingUp,
+  security: ShieldCheck,
+  backed: ShieldCheck,
+};
+
+const fallbackFeatures: ApartFeature[] = [
+  {
+    title: 'Customer First',
+    description:
+      'We design around your needs, not ours. Every solution is built in partnership with the people who use it.',
+    iconKey: 'customer',
+  },
+  {
+    title: 'Strong & Experienced Team',
+    description:
+      'Decades of expertise in packaging, creative production, and workflow automation delivered by people who know how brands really work.',
+    iconKey: 'team',
+  },
+  {
+    title: 'Flexibility at Scale',
+    description:
+      'One size never fits all. Our platforms adapt to your workflows, with the ability to customize, scale, and integrate seamlessly.',
+    iconKey: 'scale',
+  },
+  {
+    title: 'Backed by Propelis',
+    description:
+      "As part of the Propelis Group, we're supported by the combined strength of global leaders SGK and SGS & Co.",
+    iconKey: 'backed',
+  },
+];
+
+const Apart = ({ features, titleOverride }: ApartProps) => {
+  const data = features && features.length > 0 ? features : fallbackFeatures;
 
   return (
     <>
@@ -46,7 +59,7 @@ const Apart = () => {
         </FullBleedLines>
 
         <FullBleedLines className="flex w-full flex-col justify-between gap-8 sm:flex-row sm:gap-0">
-          {features.map((feature, index) => {
+          {data.map((feature, index) => {
             return (
               <div
                 key={index}
@@ -54,7 +67,10 @@ const Apart = () => {
               >
                 <div className="flex flex-col items-center gap-2 py-4 sm:items-start sm:py-7">
                   <div className="bg-primary/10 flex h-10 w-10 items-center justify-center rounded-lg">
-                    <feature.icon className="text-primary h-5 w-5" strokeWidth={2} />
+                    {(() => {
+                      const Icon = feature.iconKey && iconMap[feature.iconKey] ? iconMap[feature.iconKey] : UserStar;
+                      return <Icon className="text-primary h-5 w-5" strokeWidth={2} />;
+                    })()}
                   </div>
                   <b className="text-foreground relative text-xl leading-relaxed tracking-tight sm:text-2xl">
                     {feature.title}

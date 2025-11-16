@@ -1,10 +1,6 @@
 import { Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
-import Hero from '@/components/page/about/Hero';
-import Vision from '@/components/page/about/Vision';
-import Mission from '@/components/page/about/Mission';
-import Workflow from '@/components/page/about/Workflow';
-import Apart from '@/components/page/about/Apart';
+import AboutServerSections from '@/components/page/about/About.server';
 
 export default function About() {
   return (
@@ -12,11 +8,7 @@ export default function About() {
       <div className="container mx-auto mb-32">
         <PageHeader title="we. are." />
         <div className="mt-16 flex flex-col gap-16 md:mt-32 md:gap-32">
-          <Hero />
-          <Vision />
-          <Mission />
-          <Workflow />
-          <Apart />
+          <AboutServerSections />
         </div>
       </div>
     </div>

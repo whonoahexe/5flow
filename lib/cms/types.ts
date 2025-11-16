@@ -77,3 +77,10 @@ export interface CmsBlogPost {
   tags?: string[];
   status?: 'draft' | 'published' | 'scheduled';
 }
+
+export interface CmsGenericPage {
+  slug: string;
+  title: string;
+  bodyHtml: string;
+  updatedAt: string;
+}
