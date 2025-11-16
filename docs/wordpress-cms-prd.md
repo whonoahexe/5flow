@@ -1,0 +1,217 @@
+# Product Requirements Document (PRD)
+
+## 1. Overview
+
+Enable marketing / content teams at client organizations to self-manage site copy and media (images, potentially PDF downloads) through a familiar WordPress Admin panel, while preserving the existing Next.js front-end performance, design system, and deployment workflow.
+
+## 2. Goals & Objectives
+
+- Reduce engineering dependency for routine content changes (text edits, image swaps) by >80%.
+- Time-to-publish for simple edits: under 5 minutes from save in WordPress to production reflection (or scheduled release).
+- Maintain existing layout integrity and brand consistency via controlled content models and guardrails.
+- Provide auditability (who changed what, when) for regulated/legal pages (Privacy, Terms, Imprint, Disclaimer, Quality, etc.).
+- Enable preview workflow so editors can validate formatting before publishing.
+
+## 3. Success Metrics (KPIs)
+
+| Metric                              | Target               | Measurement Method                               |
+| ----------------------------------- | -------------------- | ------------------------------------------------ |
+| Engineering content tickets / month | -80% vs baseline     | Jira / internal tracker                          |
+| Average publish latency             | < 5 min (non-cached) | Timestamp diff: WP publish vs. Next.js fetch log |
+| Content errors (rollback events)    | < 2 / quarter        | Git + incident log                               |
+| Editor satisfaction (survey)        | ≥ 8/10               | Quarterly survey                                 |
+| Uptime of integration endpoints     | ≥ 99.9%              | Monitoring / status logs                         |
+
+## 4. Scope
+
+### In Scope
+
+- WordPress instance (managed or self-hosted) configured as headless CMS.
+- Content types for: Home hero text blocks, product pages, solutions pages, applications pages, resource pages (blogs metadata), legal pages (Privacy, Terms, etc.), navigation labels, CTA blocks, footer text.
+- Media library management for images used in hero sections, product/client logos, blog feature images, and static decorative illustrations.
+- Webhook or incremental revalidation to update Next.js front-end.
+- Preview mode integration (Next.js draft queries).
+- Role-based permissions (Editor, Admin, Compliance Reviewer, Viewer).
+- Basic version history and rollback (WordPress revisions).
+- Content scheduling for future publish date.
+
+### Out of Scope (Phase 1)
+
+- Management of complex interactive components (e.g., Lottie animation JSON, dynamic forms logic).
+- Direct management of navigation information architecture beyond label text (structural changes remain engineering-managed).
+- Multi-language localization (consider Phase 2).
+- Custom analytics editing within CMS.
+- User-generated content ingestion.
+
+## 5. User Roles & Personas
+
+| Role                | Description                                             | Key Needs                       |
+| ------------------- | ------------------------------------------------------- | ------------------------------- |
+| Marketing Editor    | Creates & updates general site copy, hero content, CTAs | Safe editing, preview, schedule |
+| Content Strategist  | Owns blog metadata, resource library taxonomy           | Batch edits, image optimization |
+| Compliance Reviewer | Reviews legal/regulated pages before publish            | Approval workflow, diff view    |
+| Admin               | Manages users, settings, plugin updates                 | Stability, backups, monitoring  |
+| Developer           | Integrates front-end with CMS                           | Clear APIs, predictable schemas |
+
+## 6. Content Model (Initial)
+
+### Core Content Types
+
+1. Page Section (generic block): fields: `identifier`, `title`, `body_richtext`, `media_ref[]`, `cta_ref`, `highlight_style`, `sort_order`.
+2. Product Page: `slug`, `name`, `short_description`, `long_description_richtext`, `logo_image`, `client_logo_gallery[]`, `feature_sections[]`, `faq_entries[]`.
+3. Solution Page: similar to Product but with `industry_tags[]`.
+4. Application Page: `slug`, `title`, `intro_richtext`, `use_case_sections[]`.
+5. Blog Post (existing or future): `slug`, `title`, `excerpt`, `author`, `publish_date`, `body_richtext`, `feature_image`, `tags[]`, `status` (draft/published/scheduled).
+6. Legal Page: `slug`, `title`, `effective_date`, `body_richtext`, `revision_notes`.
+7. Navigation Label: `key`, `display_text`, `tooltip_text?`, `is_active`.
+8. CTA Block: `internal_key`, `headline`, `subhead`, `button_text`, `button_url`, `style_variant`, `background_image?`.
+9. Footer Content: `column_key`, `items[]` (each: `label`, `url`).
+
+### Media Asset
+
+- Fields: `id`, `original_filename`, `optimized_variants`, `alt_text`, `usage_count`, `last_used_at`.
+- Image optimization performed via Next.js image pipeline after fetch or pre-generated by WP plugin (decision pending).
+
+### Field Constraints / Guardrails
+
+- Rich text sanitized; allowed tags: `<p><h2><h3><strong><em><ul><ol><li><a><blockquote><code>`.
+- Auto-link domain allowlist.
+- Max hero headline length (e.g., 90 chars) enforced via validation.
+- Alt text required for all media (accessibility).
+
+## 7. Functional Requirements
+
+1. Editors can create, edit, preview, schedule publish, and unpublish content types defined above.
+2. Each publish triggers webhook to Next.js serverless route for selective ISR (Incremental Static Regeneration) revalidation or full cache purge fallback.
+3. Draft and published states separately accessible; Next.js preview mode uses temporary token from WP.
+4. Role-based access controls (RBAC) map to capabilities:
+   - Editor: CRUD non-legal content.
+   - Compliance Reviewer: read + approve workflow on legal pages.
+   - Admin: full access + user management.
+5. Approval workflow for Legal Pages: status progression `draft -> review -> published`; only Compliance Reviewer or Admin can publish.
+6. Automatic image compression on upload; store alt text; disallow images > 1.5MB (configurable).
+7. Version history: show diff (rich text) before revert; record metadata (user id, timestamp, change summary).
+8. Navigation labels: editing text triggers immediate revalidation of affected layout segments.
+9. Graceful fallback if CMS unreachable: serve last built static content + banner indicating stale timestamp for legal pages if >30 days.
+10. Content scheduling: items in scheduled state become published at UTC timestamp via WP cron; triggers webhook.
+11. Audit log export (CSV) for legal pages (fields: `page`, `version_id`, `editor`, `timestamp`, `action`, `effective_date`).
+12. Health endpoint to verify CMS connection / webhook integrity.
+13. Hard delete disabled for legal pages; only soft archive.
+14. Sort order on Page Sections controls front-end render order without layout break.
+
+## 8. Non-Functional Requirements
+
+- Performance: Revalidation cycle finishes within 120s for ≤10 updated pages; single page flush <10s.
+- Reliability: 99.9% uptime for WP + integration endpoints.
+- Security: HTTPS enforced; JWT or signed tokens for preview; IP allowlist optional for admin panel.
+- Scalability: Support 10k blog posts without degrading fetch latency >250ms for single post query.
+- Accessibility: All edited content must meet WCAG AA (editor warnings for missing alt text or improper heading hierarchy).
+- Privacy: Logs must not store PII beyond usernames and timestamps.
+- Observability: Structured logs (JSON) for webhook events; metrics: `webhook_latency_ms`, `revalidation_count`, `preview_requests`.
+
+## 9. Integration Architecture (High-Level)
+
+- WordPress (Headless) exposes REST and/or GraphQL endpoints.
+- Next.js server layer provides API route `/api/revalidate` accepting signed webhook payload specifying changed entity type + slug(s).
+- Content fetch: Static generation at build + ISR on per-page basis using `getStaticProps` with TTL.
+- Preview mode: `GET /api/preview?slug=...&type=...&token=...` validates token by calling WP preview endpoint; returns draft rendering.
+- Media: Use WP CDN plugin or serve originals; Next.js optimizes via `<Image>` component referencing source URL.
+- Secrets: Webhook shared secret stored in environment variables managed via platform secret manager.
+
+## 10. Data Flow (Example: Edit Legal Page)
+
+1. Editor changes text -> sets status to Review -> Compliance Reviewer receives notification.
+2. Reviewer opens diff view -> approves -> status Published.
+3. WordPress fires webhook to Next.js `/api/revalidate` with `{type: "legalPage", slug: "privacy"}`.
+4. Next.js invalidates cached page; fetches fresh content on next request; logs event.
+5. Audit log records publish event and new effective date.
+
+## 11. Dependencies
+
+- Existing Next.js codebase (React components referencing file-based markdown will need abstraction over data source).
+- WordPress plugins: Headless (JWT auth), Revision diff, Media optimization, Scheduling, Role management.
+- Hosting: WP managed (e.g., WP Engine) or containerized deployment.
+- Monitoring: Integration with existing logging stack (e.g., Logtail / Datadog). TBD.
+
+## 12. Migration Plan
+
+Phase 0: Inventory current statically embedded content (markdown/legal files under `public/legal/`, `content/blogs/`).
+Phase 1: Create WP content types; import legal pages (manual or script) -> freeze file-based updates.
+Phase 2: Migrate hero sections, CTA blocks, navigation labels.
+Phase 3: Migrate product & solution pages structured data.
+Phase 4: Migrate blogs (if required); implement historical slug redirects.
+Phase 5: Decommission old markdown sources; remove fallback code.
+
+## 13. Risks & Mitigations
+
+| Risk                                      | Impact                  | Mitigation                                        |
+| ----------------------------------------- | ----------------------- | ------------------------------------------------- |
+| Editors break layout with unexpected HTML | Visual regressions      | Restrict allowed tags; sanitize; preview required |
+| Webhook failures (missed revalidation)    | Stale content           | Retry queue; manual flush endpoint                |
+| Slow WP response under load               | Publish latency         | Caching layer / GraphQL persisted queries         |
+| Security breach (admin panel)             | Data integrity          | Strong passwords + MFA + limited plugins          |
+| Legal content changed without review      | Compliance issue        | Enforced workflow state machine                   |
+| Image bloat (large uploads)               | Performance degradation | Size validation + compression                     |
+| Over-fetching all pages on single edit    | Performance             | Granular invalidation with type+slug targeting    |
+| Plugin updates breaking API               | Downtime                | Staging WP environment + versioned deployment     |
+
+## 14. Open Questions
+
+- Use REST or GraphQL for primary fetch? (Evaluate plugin maturity.)
+- Single WordPress instance vs. multi-site for future localization?
+- Where to store diff snapshots for audit export if WP plugin insufficient?
+- Scheduling precision: is minute-level enough or need seconds?
+- Will blog authors need author bios managed in CMS (Phase 2)?
+
+## 15. Assumptions
+
+- Existing front-end components can consume normalized data shape without heavy refactor.
+- Deployment platform supports on-demand ISR revalidation securely.
+- Clients accept minor delay (≤5 min) for CDN propagation.
+- Legal/compliance stakeholders available to define approval rules.
+
+## 16. Constraints
+
+- Must not degrade current Lighthouse performance (no blocking client-side fetch for primary content).
+- Avoid introducing runtime coupling that prevents static optimization where possible.
+- Limited engineering bandwidth: initial integration should finish within 4-6 weeks.
+
+## 17. Acceptance Criteria (Representative)
+
+1. Editing hero headline in WordPress and publishing updates displayed on site within 5 minutes.
+2. Attempt to publish a Privacy Policy edit without review fails with clear error.
+3. Image over 1.5MB rejected with validation message.
+4. Preview URL shows unpublished draft content only to authenticated editors.
+5. Audit log CSV export includes last 50 publish events for legal pages with correct timestamps.
+6. Stale fallback page served if CMS outage occurs (simulate by disabling WP) and banner displayed.
+7. Navigation label edit updates site navigation without corrupting layout.
+
+## 18. Future Enhancements (Post-Phase 1)
+
+- Multi-language support.
+- Inline A/B testing metadata per CTA block.
+- Structured FAQ content type with search indexing.
+- Asset usage analytics (heatmap of referenced media).
+- Automatic accessibility linting (contrast checks, heading sequence).
+- Content staging across environments (dev/stage/prod sync tooling).
+
+## 19. Appendix: Mapping Existing Files to CMS Types
+
+| Existing Path                               | Target Type      |
+| ------------------------------------------- | ---------------- |
+| `public/legal/Privacy Policy.md`            | Legal Page       |
+| `public/legal/Terms and Conditions.md`      | Legal Page       |
+| `public/legal/Imprint.txt`                  | Legal Page       |
+| `public/legal/Disclaimer.md`                | Legal Page       |
+| `public/legal/Quality.md`                   | Legal Page       |
+| `content/blogs/*.md`                        | Blog Post        |
+| `components/layout/cta.tsx` (content props) | CTA Block        |
+| `components/layout/navigation.tsx` (labels) | Navigation Label |
+| `app/products/*` pages (static copy)        | Product Page     |
+| `app/solutions/*` pages (static copy)       | Solution Page    |
+| `app/applications/*` pages                  | Application Page |
+| `footer.tsx` textual columns                | Footer Content   |
+
+---
+
+Prepared for translation into Technical Design Document and Implementation Plan.

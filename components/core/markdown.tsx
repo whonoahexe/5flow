@@ -36,7 +36,13 @@ export default function Markdown({ content }: MarkdownProps) {
     code: props => (
       <code className={`bg-muted/50 rounded px-1.5 py-0.5 text-[0.9em] ${props.className ?? ''}`} {...props} />
     ),
-    img: props => <img className={`mx-auto my-6 block h-auto max-w-full ${props.className ?? ''}`} {...props} />,
+    img: props => (
+      <img
+        className={`mx-auto my-6 block h-auto max-w-full ${props.className ?? ''}`}
+        alt={props.alt ?? ''}
+        {...props}
+      />
+    ),
   };
 
   return (
