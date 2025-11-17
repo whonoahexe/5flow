@@ -1,14 +1,14 @@
 import { CircleDollarSign, Rocket, Scaling, ShieldCheck } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
-import Hero from '@/components/page/solutions/Hero';
+import SolutionHeroServer from '@/components/page/solutions/SolutionHero.server';
 import How from '@/components/page/product/How';
 import Why from '@/components/page/solutions/Why';
 import Workflow from '@/components/page/product/Workflow';
 import InlineHighlight from '@/components/core/inline-highlight';
 
 export default function ArtworkManagement() {
-  const heroData = {
+  const heroFallback = {
     title: 'Artwork management without the chaos',
     subtitle: 'Centralize, streamline, and simplify every artwork project',
     description:
@@ -96,7 +96,7 @@ export default function ArtworkManagement() {
         <PageHeader title="artwork management" />
 
         <div className="flex flex-col gap-32">
-          <Hero {...heroData} />
+          <SolutionHeroServer slug="artwork-management" fallback={heroFallback} />
           <How howData={howData} />
           <Why whyData={whyData} />
           <Workflow

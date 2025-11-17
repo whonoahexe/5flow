@@ -11,13 +11,13 @@ import {
 import { Contact, Cta } from '@/components/layout';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
-import Hero from '@/components/page/applications/Hero';
+import ApplicationHeroServer from '@/components/page/applications/ApplicationHero.server';
 import Workflow from '@/components/page/applications/Workflow';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
 
 export default function QualityRegulatory() {
-  const heroData = {
+  const heroFallback = {
     title: 'Compliance without compromise',
     subtitle: 'Tools built for regulatory and quality descers who can’t afford mistakes',
     description:
@@ -113,7 +113,7 @@ export default function QualityRegulatory() {
         <PageHeader title="quality regulatory" />
 
         <div className="flex flex-col gap-10 md:gap-32">
-          <Hero {...heroData} />
+          <ApplicationHeroServer slug="quality-regulatory" fallback={heroFallback} />
           <Challenges items={challengeItems} />
           <Benefits items={benefitItems} highlightedText="Quality & Regulatory" />
           <Workflow

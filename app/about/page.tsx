@@ -1,4 +1,3 @@
-import { Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import AboutServerSections from '@/components/page/about/About.server';
 

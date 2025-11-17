@@ -1,14 +1,14 @@
 import { Eye, Lightbulb, Scaling, WorkflowIcon } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
-import Hero from '@/components/page/solutions/Hero';
+import SolutionHeroServer from '@/components/page/solutions/SolutionHero.server';
 import How from '@/components/page/product/How';
 import Why from '@/components/page/solutions/Why';
 import Workflow from '@/components/page/product/Workflow';
 import InlineHighlight from '@/components/core/inline-highlight';
 
 export default function Integration() {
-  const heroData = {
+  const heroFallback = {
     brandName: 'integration',
     logoSrc: '/logo.svg',
     logoAlt: '5Flow logo',
@@ -93,7 +93,7 @@ export default function Integration() {
         <PageHeader title="integration" />
 
         <div className="flex flex-col gap-32">
-          <Hero {...heroData} />
+          <SolutionHeroServer slug="integration" fallback={heroFallback} />
           <How howData={howData} />
           <Why whyData={whyData} />
           <Workflow

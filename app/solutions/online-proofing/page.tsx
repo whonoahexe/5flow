@@ -1,14 +1,14 @@
 import { CircleDollarSign, Rocket, ShieldCheck, Users } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
-import Hero from '@/components/page/solutions/Hero';
+import SolutionHeroServer from '@/components/page/solutions/SolutionHero.server';
 import How from '@/components/page/product/How';
 import Why from '@/components/page/solutions/Why';
 import Workflow from '@/components/page/product/Workflow';
 import InlineHighlight from '@/components/core/inline-highlight';
 
 export default function OnlineProofing() {
-  const heroData = {
+  const heroFallback = {
     brandName: 'online proofing',
     logoSrc: '/logo.svg',
     logoAlt: '5Flow logo',
@@ -93,7 +93,7 @@ export default function OnlineProofing() {
         <PageHeader title="online proofing" />
 
         <div className="flex flex-col gap-32">
-          <Hero {...heroData} />
+          <SolutionHeroServer slug="online-proofing" fallback={heroFallback} />
           <How howData={howData} />
           <Why whyData={whyData} />
           <Workflow

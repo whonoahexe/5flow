@@ -5,7 +5,7 @@ import FullBleedLines from '@/components/core/full-bleed-lines';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
-interface HeroProps {
+export interface HeroProps {
   logoSrc: string;
   logoAlt: string;
   title: string;

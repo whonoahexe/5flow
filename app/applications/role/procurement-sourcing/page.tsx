@@ -11,13 +11,13 @@ import {
 import { Contact, Cta } from '@/components/layout';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
-import Hero from '@/components/page/applications/Hero';
+import ApplicationHeroServer from '@/components/page/applications/ApplicationHero.server';
 import Workflow from '@/components/page/applications/Workflow';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
 
 export default function ProcurementSourcing() {
-  const heroData = {
+  const heroFallback = {
     title: 'Procurement made predictable',
     subtitle: 'Accuracy and efficiency across your supply chain',
     description:
@@ -112,7 +112,7 @@ export default function ProcurementSourcing() {
         <PageHeader title="procurement sourcing" />
 
         <div className="flex flex-col gap-10 md:gap-32">
-          <Hero {...heroData} />
+          <ApplicationHeroServer slug="procurement-sourcing" fallback={heroFallback} />
           <Challenges items={challengeItems} />
           <Benefits items={benefitItems} highlightedText="Procurement & Sourcing" />
           <Workflow

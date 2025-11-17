@@ -1,14 +1,14 @@
 import { AlarmClockCheck, Lightbulb, RefreshCcwDot, Settings } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
-import Hero from '@/components/page/solutions/Hero';
+import SolutionHeroServer from '@/components/page/solutions/SolutionHero.server';
 import How from '@/components/page/product/How';
 import Why from '@/components/page/solutions/Why';
 import Workflow from '@/components/page/product/Workflow';
 import InlineHighlight from '@/components/core/inline-highlight';
 
 export default function DataAnalysis() {
-  const heroData = {
+  const heroFallback = {
     title: 'From Data to Direction',
     subtitle: 'Turn data into insight you can act on',
     description:
@@ -95,7 +95,7 @@ export default function DataAnalysis() {
         <PageHeader title="Data Analysis" />
 
         <div className="flex flex-col gap-32">
-          <Hero {...heroData} />
+          <SolutionHeroServer slug="data-analysis" fallback={heroFallback} />
           <How howData={howData} />
           <Why whyData={whyData} />
           <Workflow

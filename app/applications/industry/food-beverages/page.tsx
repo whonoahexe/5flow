@@ -11,13 +11,13 @@ import {
 } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
-import Hero from '@/components/page/applications/Hero';
+import ApplicationHeroServer from '@/components/page/applications/ApplicationHero.server';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
 import How from '@/components/page/applications/How';
 
 export default function FoodBeverages() {
-  const heroData = {
+  const heroFallback = {
     title: 'Packaging that keeps pace with change',
     subtitle: 'Built for the fast-moving food and beverage industry',
     description:
@@ -140,7 +140,7 @@ export default function FoodBeverages() {
         <PageHeader title="food beverages" />
 
         <div className="flex flex-col gap-10 md:gap-32">
-          <Hero {...heroData} />
+          <ApplicationHeroServer slug="food-beverages" fallback={heroFallback} />
           <Challenges items={challengeItems} />
           <How howData={howData} />
           <Benefits items={benefitItems} highlightedText="Food & Beverages" />

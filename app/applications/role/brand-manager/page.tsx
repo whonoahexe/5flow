@@ -12,13 +12,13 @@ import {
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import InlineHighlight from '@/components/core/inline-highlight';
-import Hero from '@/components/page/applications/Hero';
+import ApplicationHeroServer from '@/components/page/applications/ApplicationHero.server';
 import Workflow from '@/components/page/applications/Workflow';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
 
 export default function BrandManager() {
-  const heroData = {
+  const heroFallback = {
     title: 'Brand control, simplified',
     subtitle: 'Solutions built for brand managers who need speed and scale',
     description:
@@ -108,7 +108,7 @@ export default function BrandManager() {
         <PageHeader title="brand manager" />
 
         <div className="flex flex-col gap-10 md:gap-32">
-          <Hero {...heroData} />
+          <ApplicationHeroServer slug="brand-manager" fallback={heroFallback} />
           <Challenges items={challengeItems} />
           <Benefits items={benefitItems} highlightedText="Brand Managers" />
           <Workflow

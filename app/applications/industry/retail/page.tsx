@@ -1,13 +1,13 @@
 import { Files, History, FileStack, LaptopMinimalCheck, EyeOff, RotateCw, Share2 } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
-import Hero from '@/components/page/applications/Hero';
+import ApplicationHeroServer from '@/components/page/applications/ApplicationHero.server';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
 import How from '@/components/page/applications/How';
 
 export default function Retail() {
-  const heroData = {
+  const heroFallback = {
     title: 'Retail moves fast. So should your brand.',
     subtitle: 'Tools built for retailers dealing with high SKU velocity and seasonal pressure',
     description:
@@ -129,7 +129,7 @@ export default function Retail() {
         <PageHeader title="retail" />
 
         <div className="flex flex-col gap-10 md:gap-32">
-          <Hero {...heroData} />
+          <ApplicationHeroServer slug="retail" fallback={heroFallback} />
           <Challenges items={challengeItems} />
           <How howData={howData} />
           <Benefits items={benefitItems} highlightedText="Retail" />

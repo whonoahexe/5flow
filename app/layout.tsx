@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { ReactLenis } from 'lenis/react';
 import { centuryGothic, metropolis } from '@/lib/fonts';
 import { Cta, Footer } from '@/components/layout';
@@ -20,9 +21,33 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Google Tag Manager */}
+        <Script id="gtm-script" strategy="afterInteractive">{`
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-MG3FF2TP');
+        `}</Script>
+      </head>
       <body
         className={`${centuryGothic.variable} ${metropolis.variable} bg-background text-foreground flex min-h-screen flex-col font-sans antialiased`}
       >
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MG3FF2TP"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
+        <script
+          type="module"
+          src="https://cdn.sitecockpit.com/cdn/app.js"
+          data-easy-vision-key="cce648a2-e780-43a6-a13d-4d4a9721b8f9"
+        ></script>
+
         <ReactLenis root />
         <ServerNavigation />
         <main className="relative flex-1">

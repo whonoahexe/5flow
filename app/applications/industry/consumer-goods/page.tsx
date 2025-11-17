@@ -11,13 +11,13 @@ import {
 } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
-import Hero from '@/components/page/applications/Hero';
+import ApplicationHeroServer from '@/components/page/applications/ApplicationHero.server';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
 import How from '@/components/page/applications/How';
 
 export default function ConsumerGoods() {
-  const heroData = {
+  const heroFallback = {
     title: 'Packaging control for complex product lines',
     subtitle: 'Built for consumer goods brands managing scale and variety',
     description:
@@ -140,7 +140,7 @@ export default function ConsumerGoods() {
         <PageHeader title="consumer goods" />
 
         <div className="flex flex-col gap-10 md:gap-32">
-          <Hero {...heroData} />
+          <ApplicationHeroServer slug="consumer-goods" fallback={heroFallback} />
           <Challenges items={challengeItems} />
           <How howData={howData} />
           <Benefits items={benefitItems} highlightedText="Consumer Goods" />
