@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { ReactLenis } from 'lenis/react';
 import { centuryGothic, metropolis } from '@/lib/fonts';
+import { hideTranslationWidget, customizeAccessibilityWidget } from '@/lib/accessibility-widget';
 import { Cta, Footer } from '@/components/layout';
+import FixedActions from '@/components/layout/fixed-actions';
 import { ServerNavigation } from '@/components/layout/navigation.server';
 import { Toaster } from '@/components/ui/sonner';
 import PageTransition from '@/components/layout/page-transition';
@@ -47,6 +49,12 @@ export default function RootLayout({
           src="https://cdn.sitecockpit.com/cdn/app.js"
           data-easy-vision-key="cce648a2-e780-43a6-a13d-4d4a9721b8f9"
         ></script>
+        <Script id="hide-easy-vision-translation" strategy="afterInteractive">
+          {hideTranslationWidget}
+        </Script>
+        <Script id="customize-accessibility-widget" strategy="afterInteractive">
+          {customizeAccessibilityWidget}
+        </Script>
 
         <ReactLenis root />
         <ServerNavigation />
@@ -65,6 +73,7 @@ export default function RootLayout({
         </div>
         <Footer />
         <Toaster />
+        <FixedActions />
       </body>
     </html>
   );
