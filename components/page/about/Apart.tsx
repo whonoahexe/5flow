@@ -63,7 +63,7 @@ const Apart = ({ features, titleOverride }: ApartProps) => {
             return (
               <div
                 key={index}
-                className="flex flex-col items-center gap-0 px-4 text-center sm:items-start sm:px-8 sm:text-left md:gap-4"
+                className="flex flex-col items-center gap-0 px-4 text-center sm:items-start sm:text-left md:gap-4"
               >
                 <div className="flex flex-col items-center gap-2 py-4 sm:items-start sm:py-7">
                   <div className="bg-primary/10 flex h-10 w-10 items-center justify-center rounded-lg">

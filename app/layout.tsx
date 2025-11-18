@@ -3,11 +3,11 @@ import Script from 'next/script';
 import { ReactLenis } from 'lenis/react';
 import { centuryGothic, metropolis } from '@/lib/fonts';
 import { hideTranslationWidget, customizeAccessibilityWidget } from '@/lib/accessibility-widget';
-import { Cta, Footer } from '@/components/layout';
-import FixedActions from '@/components/layout/fixed-actions';
-import { ServerNavigation } from '@/components/layout/navigation.server';
 import { Toaster } from '@/components/ui/sonner';
+import { Cta, Footer } from '@/components/layout';
+import { ServerNavigation } from '@/components/layout/navigation.server';
 import PageTransition from '@/components/layout/page-transition';
+import FixedActions from '@/components/layout/fixed-actions';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
@@ -36,6 +36,7 @@ export default function RootLayout({
       <body
         className={`${centuryGothic.variable} ${metropolis.variable} bg-background text-foreground flex min-h-screen flex-col font-sans antialiased`}
       >
+        {/* Google Tag Manager */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-MG3FF2TP"
@@ -44,6 +45,7 @@ export default function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
+        {/* Accessibility Scripts */}
         <script
           type="module"
           src="https://cdn.sitecockpit.com/cdn/app.js"
@@ -72,6 +74,8 @@ export default function RootLayout({
           />
         </div>
         <Footer />
+
+        {/* Fixed */}
         <Toaster />
         <FixedActions />
       </body>

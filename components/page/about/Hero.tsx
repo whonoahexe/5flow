@@ -2,9 +2,9 @@ import Image from 'next/image';
 import InlineHighlight from '@/components/core/inline-highlight';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 
-type HeroProps = { description?: string };
+type HeroProps = { description?: string; propelisDescription?: string };
 
-const Hero = ({ description }: HeroProps) => {
+const Hero = ({ description, propelisDescription }: HeroProps) => {
   const topRowImages = ['/about/about1.png', '/about/about2.png', '/about/about3.png'];
   const bottomRowImages = ['/about/about5.png', '/about/about6.png'];
 
@@ -86,7 +86,8 @@ const Hero = ({ description }: HeroProps) => {
             <div>The Propelis Group</div>
           </FullBleedLines>
           <FullBleedLines className="text-foreground max-w-3xl text-lg leading-snug tracking-tight sm:max-w-6xl sm:text-4xl md:leading-none">
-            {`We bring together decades of global brand expertise with the technology to define what’s next. A
+            {propelisDescription ||
+              `We bring together decades of global brand expertise with the technology to define what’s next. A
                 powerful blend of creative mastery and intelligent automation that transforms the way brands move from
                 concept to market.`}
           </FullBleedLines>

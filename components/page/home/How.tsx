@@ -1,39 +1,47 @@
 import Link from 'next/link';
-import { ArrowDown, ArrowUpRight, Cloud, MessagesSquare, Puzzle } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Cloud } from 'lucide-react';
+import * as Lucide from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
 
 type HowItem = { title: string; desc: string; link?: string; iconKey?: string };
-type HowProps = { title?: string; subtitle?: string; items?: HowItem[] };
+type HowProps = { title?: string; subtitle?: string; desc?: string; items?: HowItem[] };
 
-const iconMap: Record<string, any> = { platform: Cloud, solutions: Puzzle, consulting: MessagesSquare };
+function toPascalCase(key: string): string {
+  return key
+    .split(/[^a-zA-Z0-9]+/)
+    .filter(Boolean)
+    .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+    .join('');
+}
 
 const fallbackItems: HowItem[] = [
   {
     title: 'SaaS Platform',
     desc: 'Platform technology that streamlines workflows for packaging, content, and creative. Built for automation, approvals, and compliance, at scale.',
     link: '/products/wave',
-    iconKey: 'platform',
+    iconKey: 'cloud',
   },
   {
     title: 'Custom Solutions',
     desc: 'Tailored to your business needs. Enhanced with AI, automation, and seamless integration into your ecosystem.',
     link: '/products/wave',
-    iconKey: 'solutions',
+    iconKey: 'puzzle',
   },
   {
     title: 'Consulting',
     desc: 'Expert guidance to simplify complexity, optimize workflows, and unlock growth through strategy, technology, and process transformation.',
     link: '/contact',
-    iconKey: 'consulting',
+    iconKey: 'message-square',
   },
 ];
 
-const How = ({ title, subtitle, items }: HowProps) => {
+const How = ({ title, subtitle, desc, items }: HowProps) => {
   const data = items && items.length > 0 ? items : fallbackItems;
   const sectionTitle = title || 'How We Solve?';
   const sectionSubtitle = subtitle || 'Simplifying Complexity Across Marketing & Packaging Ecosystems.';
+  const sectionDesc = desc || 'Driven by AI, automation, and the power of Propelis.';
   return (
     <div className="text-foreground flex w-full flex-col gap-4 md:gap-8">
       <div className="px-2 py-8">
@@ -51,7 +59,7 @@ const How = ({ title, subtitle, items }: HowProps) => {
               {sectionSubtitle}
             </b>
             <p className="w-full text-center text-base font-medium tracking-tight md:text-left md:text-lg">
-              Driven by AI, automation, and the power of Propelis.
+              {sectionDesc}
             </p>
           </div>
         </FullBleedLines>
@@ -60,7 +68,12 @@ const How = ({ title, subtitle, items }: HowProps) => {
       <FullBleedLines>
         <div className="flex flex-col gap-2 p-2 md:flex-row">
           {data.map((item, i) => {
-            const Icon = (item.iconKey && iconMap[item.iconKey]) || Cloud;
+            const Icon = (() => {
+              if (!item.iconKey) return Cloud;
+              const pascal = toPascalCase(item.iconKey);
+              const Dynamic = (Lucide as Record<string, any>)[pascal];
+              return Dynamic || Cloud;
+            })();
             return (
               <div
                 key={i}

@@ -8,7 +8,6 @@ import ServerWhy from '@/components/page/home/Why.server';
 export default function Home() {
   return (
     <div className="relative">
-      {/* Scrolls */}
       <div className="container mx-auto mb-32">
         <ServerHero />
         <div className="mt-12 flex flex-col gap-12 md:mt-24 md:gap-32">

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, Scaling, Shuffle, Zap } from 'lucide-react';
+import { ArrowUpRight, Shuffle } from 'lucide-react';
+import * as Lucide from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
@@ -8,12 +9,18 @@ import InlineHighlight from '@/components/core/inline-highlight';
 type WhyCard = { title: string; iconKey?: string; link?: string };
 type WhyProps = { title?: string; bodyHtml?: string; cards?: WhyCard[] };
 
-const iconMap: Record<string, any> = { systems: Shuffle, execution: Zap, enablement: Scaling };
+function toPascalCase(key: string): string {
+  return key
+    .split(/[^a-zA-Z0-9]+/)
+    .filter(Boolean)
+    .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+    .join('');
+}
 
 const fallbackCards: WhyCard[] = [
-  { title: 'From fragmented workflows → to connected systems', iconKey: 'systems', link: '/contact' },
-  { title: 'From slow cycles → to agile execution', iconKey: 'execution', link: '/contact' },
-  { title: 'From governance → to brand enablement at scale', iconKey: 'enablement', link: '/contact' },
+  { title: 'From fragmented workflows → to connected systems', iconKey: 'shuffle', link: '/contact' },
+  { title: 'From slow cycles → to agile execution', iconKey: 'zap', link: '/contact' },
+  { title: 'From governance → to brand enablement at scale', iconKey: 'scaling', link: '/contact' },
 ];
 
 const Why = ({ title, bodyHtml, cards }: WhyProps) => {
@@ -54,7 +61,12 @@ const Why = ({ title, bodyHtml, cards }: WhyProps) => {
               <div className="w-full">
                 <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
                   {data.map((card, idx) => {
-                    const Icon = (card.iconKey && iconMap[card.iconKey]) || Shuffle;
+                    const Icon = (() => {
+                      if (!card.iconKey) return Shuffle;
+                      const pascal = toPascalCase(card.iconKey);
+                      const Dynamic = (Lucide as Record<string, any>)[pascal];
+                      return Dynamic || Shuffle;
+                    })();
                     const isWide = idx === data.length - 1; // last card spans columns when 3 fallback cards
                     return (
                       <div

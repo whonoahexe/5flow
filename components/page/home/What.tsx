@@ -1,4 +1,5 @@
-import { ArrowUpRight, ClockFading, Layers2, ServerOff, ZapOff } from 'lucide-react';
+import { ArrowUpRight, Layers2 } from 'lucide-react';
+import * as Lucide from 'lucide-react';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
 
@@ -14,37 +15,38 @@ type WhatProps = {
   items?: WhatItem[];
 };
 
-const iconMap: Record<string, any> = {
-  complexity: Layers2,
-  silos: ServerOff,
-  'time-to-market': ClockFading,
-  scaling: ZapOff,
-};
+function toPascalCase(key: string): string {
+  return key
+    .split(/[^a-zA-Z0-9]+/)
+    .filter(Boolean)
+    .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+    .join('');
+}
 
 const fallbackItems: WhatItem[] = [
   {
     title: 'Growing Complexity',
     desc: 'Marketing, content, and supply chains are only getting more complex.',
     sub: 'With 5Flow, Bring everything into a single, connected ecosystem.',
-    iconKey: 'complexity',
+    iconKey: 'layers2',
   },
   {
     title: 'Inefficiencies & Silos',
     desc: 'Brands waste time and money juggling fragmented systems.',
     sub: 'With 5Flow, Eliminate silos and reduce costs with integrated workflows.',
-    iconKey: 'silos',
+    iconKey: 'server-off',
   },
   {
     title: 'Missed Time-to-Market',
     desc: 'Fast-paced markets leave no room for delays.',
     sub: 'With 5Flow, Accelerate approvals and keep launches on schedule.',
-    iconKey: 'time-to-market',
+    iconKey: 'clock-fading',
   },
   {
     title: 'Scaling Without Control',
     desc: 'Global growth often sacrifices clarity and consistency.',
     sub: 'With 5Flow, Scale with a platform built to unify workflows end-to-end.',
-    iconKey: 'scaling',
+    iconKey: 'zap-off',
   },
 ];
 
@@ -75,7 +77,12 @@ const What = ({ title, items }: WhatProps) => {
       <FullBleedLines>
         <div className="grid grid-cols-1 gap-2 p-2 sm:grid-cols-2">
           {data.map((card, i) => {
-            const Icon = (card.iconKey && iconMap[card.iconKey]) || Layers2;
+            const Icon = (() => {
+              if (!card.iconKey) return Layers2;
+              const pascal = toPascalCase(card.iconKey);
+              const Dynamic = (Lucide as Record<string, any>)[pascal];
+              return Dynamic || Layers2;
+            })();
             return (
               <div
                 key={i}
