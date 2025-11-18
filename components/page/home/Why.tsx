@@ -20,7 +20,7 @@ function toPascalCase(key: string): string {
 const fallbackCards: WhyCard[] = [
   { title: 'From fragmented workflows → to connected systems', iconKey: 'shuffle', link: '/contact' },
   { title: 'From slow cycles → to agile execution', iconKey: 'zap', link: '/contact' },
-  { title: 'From governance → to brand enablement at scale', iconKey: 'scaling', link: '/contact' },
+  { title: 'From manual work → to brand enablement at scale', iconKey: 'scaling', link: '/contact' },
 ];
 
 const Why = ({ title, bodyHtml, cards }: WhyProps) => {

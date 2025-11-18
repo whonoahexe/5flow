@@ -24,7 +24,7 @@ const Hero = ({ title, subTitle, bodyHtml, buttonText }: Props) => {
         <div className="mt-12 flex flex-col gap-4 md:mt-24">
           <FullBleedLines>
             <p className="font-heading text-foreground max-w-full text-5xl font-semibold tracking-tighter sm:max-w-2xl sm:text-5xl md:max-w-4xl md:text-8xl">
-              {title ?? 'Take creative vision to market reality'}
+              {title ?? 'Take brand vision to market reality'}
             </p>
           </FullBleedLines>
 
@@ -50,7 +50,7 @@ const Hero = ({ title, subTitle, bodyHtml, buttonText }: Props) => {
               className="group/cta-hero active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-3 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-300 ease-[var(--easing-smooth)] hover:gap-0 active:translate-x-px active:scale-[0.99] active:ring-2 active:ring-offset-2"
             >
               <span className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-9 items-center px-4 transition-all duration-300 ease-[var(--easing-smooth)] group-hover/cta-hero:px-7 sm:h-10 sm:px-6">
-                {buttonText ?? `Book Your Demo`}
+                {buttonText ?? `Let's Talk Transformation`}
               </span>
               <span
                 className="bg-primary text-primary-foreground group-hover/cta-hero:bg-primary/90 group-active/cta-hero:bg-primary/80 inline-flex h-9 w-9 items-center justify-center transition-all duration-300 ease-[var(--easing-smooth)] sm:h-10 sm:w-10"

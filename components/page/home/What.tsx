@@ -26,26 +26,26 @@ function toPascalCase(key: string): string {
 const fallbackItems: WhatItem[] = [
   {
     title: 'Growing Complexity',
-    desc: 'Marketing, content, and supply chains are only getting more complex.',
+    desc: 'Too many solutions, agencies and teams create silos that slow execution.',
     sub: 'With 5Flow, Bring everything into a single, connected ecosystem.',
     iconKey: 'layers2',
   },
   {
-    title: 'Inefficiencies & Silos',
-    desc: 'Brands waste time and money juggling fragmented systems.',
-    sub: 'With 5Flow, Eliminate silos and reduce costs with integrated workflows.',
+    title: 'Faster Time-to-Market',
+    desc: 'Increased pressure to deliver more, sooner',
+    sub: 'With 5Flow: Meet demand and work faster with integrated workflows.',
     iconKey: 'server-off',
   },
   {
-    title: 'Missed Time-to-Market',
-    desc: 'Fast-paced markets leave no room for delays.',
-    sub: 'With 5Flow, Accelerate approvals and keep launches on schedule.',
+    title: 'Rising Content Demands',
+    desc: 'Always-on channels require more assets than teams can keep up with.',
+    sub: 'With 5Flow: Accelerate approvals and keep launches on schedule.',
     iconKey: 'clock-fading',
   },
   {
-    title: 'Scaling Without Control',
-    desc: 'Global growth often sacrifices clarity and consistency.',
-    sub: 'With 5Flow, Scale with a platform built to unify workflows end-to-end.',
+    title: 'Risk of Errors',
+    desc: 'Inconsistent data and processes make it harder to stay on-brand and compliant.',
+    sub: '5FLOW scales execution globally while keeping it locally responsive and consistent.',
     iconKey: 'zap-off',
   },
 ];

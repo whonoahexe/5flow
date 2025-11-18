@@ -1,4 +1,4 @@
-import Image from 'next/image';
+﻿import Image from 'next/image';
 import InlineHighlight from '@/components/core/inline-highlight';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 
@@ -27,20 +27,21 @@ const Hero = ({ description, propelisDescription }: HeroProps) => {
         {/* Images */}
         <FullBleedLines className="flex w-full flex-col gap-4 sm:flex-row sm:gap-0">
           <div className="flex w-full flex-col">
-            <div className="bg-accent1 grid grid-cols-2 sm:flex sm:flex-nowrap">
+            {/* Top row: 5 columns at sm+ */}
+            <div className="bg-accent1 grid grid-cols-2 sm:grid-cols-5">
               {topRowImages.map((src, index) => (
                 <Image
                   key={index}
-                  className="relative h-48 w-full object-cover sm:h-72 sm:flex-1"
+                  className="relative h-48 w-full object-cover sm:h-72"
                   width={304}
                   height={295}
                   alt={`About image ${index + 1}`}
                   src={src}
                 />
               ))}
-              <div className="3xl:block 3xl:h-72 relative hidden h-48 w-full flex-1" />
+              <div className="3xl:block 3xl:h-72 relative hidden h-48 w-full" />
               <Image
-                className="relative h-48 w-full object-cover sm:h-72 sm:flex-1"
+                className="relative h-48 w-full object-cover sm:h-72"
                 width={304}
                 height={295}
                 alt="About image 4"
@@ -48,26 +49,29 @@ const Hero = ({ description, propelisDescription }: HeroProps) => {
               />
             </div>
 
-            <div className="bg-primary flex w-full flex-wrap sm:flex-nowrap">
-              <div className="relative h-full w-full sm:w-[614px]">
+            {/* Bottom row: 4 columns at sm+; 5 at 3xl to include accent */}
+            <div className="bg-primary 3xl:grid-cols-5 grid w-full grid-cols-1 sm:grid-cols-4">
+              <div className="relative h-48 w-full sm:col-span-2 sm:h-74">
                 <div className="text-background flex h-full w-full flex-col justify-center gap-6 px-4 py-6 sm:w-140 sm:px-6 md:py-0">
                   <div className="font-heading text-4xl leading-snug font-semibold tracking-tight sm:leading-none">
                     We are 5Flow.
                   </div>
 
-                  <div className="text-lg leading-snug tracking-tight sm:text-xl sm:leading-tight">
+                  <div className="text-lg leading-snug tracking-tighter sm:text-xl sm:leading-tight">
                     {description ||
-                      `The technology backbone for modern brand execution. Our intelligent platform services simplify
-                      complexity, connect workflows, and give brands the speed, accuracy and agility to thrive in
-                      today’s fast moving world.`}
+                      `We are 5Flow - The technology company transforming how brands leverage content to their advantage.
+                      As the critical backbone of modern content management, our intelligent platforms, tools & services streamline every part of
+                      the go-to-market journey, empowering brands to move faster, adapt quicker and stay ahead of change.
+                      Our smart, innovation-fuelled and restless mindset means we don't just see the future, we define it.
+                    `}
                   </div>
                 </div>
               </div>
-              <div className="bg-accent2 3xl:block relative hidden h-48 w-full flex-1 sm:h-74" />
+              <div className="bg-accent2 3xl:block relative hidden h-48 w-full sm:h-74" />
               {bottomRowImages.map((src, index) => (
                 <Image
                   key={index}
-                  className="relative h-48 w-full object-cover sm:h-74 sm:flex-1"
+                  className="relative h-48 w-full object-cover sm:h-74"
                   width={304}
                   height={295}
                   sizes="100vw"
@@ -87,7 +91,7 @@ const Hero = ({ description, propelisDescription }: HeroProps) => {
           </FullBleedLines>
           <FullBleedLines className="text-foreground max-w-3xl text-lg leading-snug tracking-tight sm:max-w-6xl sm:text-4xl md:leading-none">
             {propelisDescription ||
-              `We bring together decades of global brand expertise with the technology to define what’s next. A
+              `We bring together decades of global brand expertise with the technology to define whats next. A
                 powerful blend of creative mastery and intelligent automation that transforms the way brands move from
                 concept to market.`}
           </FullBleedLines>

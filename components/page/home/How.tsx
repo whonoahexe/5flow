@@ -18,7 +18,7 @@ function toPascalCase(key: string): string {
 
 const fallbackItems: HowItem[] = [
   {
-    title: 'SaaS Platform',
+    title: 'WAVE Platform',
     desc: 'Platform technology that streamlines workflows for packaging, content, and creative. Built for automation, approvals, and compliance, at scale.',
     link: '/products/wave',
     iconKey: 'cloud',

@@ -15,9 +15,7 @@ const Vision = ({ visionText }: VisionProps) => {
           </div>
           <p className="w-full text-center text-lg leading-snug tracking-tight sm:max-w-4xl sm:text-right sm:text-4xl sm:leading-none">
             {visionText ||
-              `To develop innovative cloud-smart solutions for brand owners supercharged by data, tech, and AI in order to
-            streamline and accelerate the GTM process from ideation-to implementation so brand owners can adapt to
-            changes faster.`}
+              `We will revolutionise how brands leverage content - to transform the entire go-to market journey and become their indispensable partner`}
           </p>
         </div>
 

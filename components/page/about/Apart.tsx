@@ -17,13 +17,13 @@ const fallbackFeatures: ApartFeature[] = [
   {
     title: 'Customer First',
     description:
-      'We design around your needs, not ours. Every solution is built in partnership with the people who use it.',
+      'We design around your needs, not ours. Every solution is built in partnership with the people who use it. We design around your needs, not ours. Every solution is built in partnership with the people who use it.',
     iconKey: 'customer',
   },
   {
     title: 'Strong & Experienced Team',
     description:
-      'Decades of expertise in packaging, creative production, and workflow automation delivered by people who know how brands really work.',
+      'Built by experts with decades of knowledge in packaging, creative production, and workflow automation delivered by people who know how brands really work.',
     iconKey: 'team',
   },
   {
@@ -77,7 +77,7 @@ const Apart = ({ features }: ApartProps) => {
                   </b>
                 </div>
                 <div className="flex items-center px-0 py-4 sm:py-7">
-                  <p className="text-foreground text-sm leading-relaxed tracking-tight sm:text-base">
+                  <p className="text-foreground text-sm leading-relaxed tracking-tight sm:text-lg">
                     {feature.description}
                   </p>
                 </div>

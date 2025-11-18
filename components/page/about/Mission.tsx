@@ -10,8 +10,10 @@ const Mission = ({ missionText }: MissionProps) => {
         <div className="flex flex-col items-center justify-between gap-4 self-stretch sm:flex-row sm:items-start sm:gap-0">
           <p className="order-2 w-full text-center text-lg leading-snug tracking-tight sm:order-none sm:max-w-2xl sm:text-left sm:text-4xl sm:leading-none">
             {missionText ||
-              `Develop industry leading tools across the entire GTM funnel, ultimately becoming a platform used by all
-            manufacturers, brand owners, and retailers.`}
+              `We unite technology, data and creativity
+              to pioneer innovative software platforms
+              that deliver content with speed, simplicity,
+              accuracy and connectivity. `}
           </p>
           <div className="order-1 flex h-48 w-96 flex-1 justify-end sm:order-none">
             <div className="bg-success h-16 w-16 sm:h-48 sm:w-48" />
