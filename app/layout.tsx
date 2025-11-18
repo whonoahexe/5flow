@@ -46,11 +46,12 @@ export default function RootLayout({
           />
         </noscript>
         {/* Accessibility Scripts */}
-        <script
-          type="module"
+        <Script
+          id="easy-vision-app"
           src="https://cdn.sitecockpit.com/cdn/app.js"
           data-easy-vision-key="cce648a2-e780-43a6-a13d-4d4a9721b8f9"
-        ></script>
+          strategy="afterInteractive"
+        />
         <Script id="hide-easy-vision-translation" strategy="afterInteractive">
           {hideTranslationWidget}
         </Script>

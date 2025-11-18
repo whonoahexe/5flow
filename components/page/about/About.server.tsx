@@ -19,7 +19,7 @@ function decodeEntities(str: string): string {
 function splitParagraphs(html: string): string[] {
   if (!html) return [];
   // Remove headings and blockquotes entirely
-  let cleaned = html
+  const cleaned = html
     .replace(/<h[1-6][^>]*>[\s\S]*?<\/h[1-6]>/gi, '')
     .replace(/<blockquote[^>]*>[\s\S]*?<\/blockquote>/gi, '');
   // Strip newlines, split on <p> tags, decode entities
