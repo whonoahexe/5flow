@@ -1,4 +1,4 @@
-import { Contact, Cta } from '@/components/layout';
+import { Contact } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/resources/Hero';
 import FilterSection from '@/components/page/resources/FilterSection';

@@ -40,7 +40,7 @@ const fallbackFeatures: ApartFeature[] = [
   },
 ];
 
-const Apart = ({ features, titleOverride }: ApartProps) => {
+const Apart = ({ features }: ApartProps) => {
   const data = features && features.length > 0 ? features : fallbackFeatures;
 
   return (

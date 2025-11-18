@@ -130,7 +130,7 @@ export default async function BrandManager() {
 
   const challengeItemsFinal = (
     cms?.challenges?.items?.length
-      ? cms.challenges.items.map((it, i) => ({
+      ? cms.challenges.items.map(it => ({
           title: it.title || '',
           desc: it.subtitle || '',
           sub: (it.bodyHtml || (it as any).body_html || (it as any).description || '') as string,
