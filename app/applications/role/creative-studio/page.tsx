@@ -12,12 +12,29 @@ import {
 import { Contact, Cta } from '@/components/layout';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
-import ApplicationHeroServer from '@/components/page/applications/ApplicationHero.server';
+import Hero from '@/components/page/applications/Hero';
 import Workflow from '@/components/page/applications/Workflow';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
+import * as LucideIcons from 'lucide-react';
+import { features } from '@/lib/features';
+import { getApplication } from '@/lib/cms/application';
 
-export default function CreativeStudio() {
+function toPascalCase(input: string) {
+  return input
+    .split(/[-_\s]+/)
+    .map(s => s.charAt(0).toUpperCase() + s.slice(1))
+    .join('');
+}
+
+function resolveIconComponent(iconKey?: string) {
+  if (!iconKey) return null;
+  const name = toPascalCase(iconKey);
+  const Icon = (LucideIcons as any)[name] as React.ElementType | undefined;
+  return Icon || null;
+}
+
+export default async function CreativeStudio() {
   const heroFallback = {
     title: 'More time to create, less time on admin',
     subtitle: 'Built for design teams who want to stay creative',
@@ -102,15 +119,58 @@ export default function CreativeStudio() {
     },
   ];
 
+  let cms = null as Awaited<ReturnType<typeof getApplication>> | null;
+  if (features.enabled) {
+    try {
+      cms = await getApplication('creative-studio');
+    } catch {}
+  }
+
+  const challengeItemsFinal = (
+    cms?.challenges?.items?.length
+      ? cms.challenges.items.map((it, i) => ({
+          title: it.title || '',
+          desc: it.subtitle || '',
+          sub: (it.bodyHtml || (it as any).body_html || (it as any).description || '') as string,
+          icon: resolveIconComponent((it as any).iconKey || (it as any).icon_key) || SquareStack,
+          buttonText: 'Learn More',
+          buttonLink: (it as any).linkUrl || (it as any).link_url || undefined,
+        }))
+      : challengeItems
+  ) as typeof challengeItems;
+
+  const benefitItemsFinal = (
+    cms?.benefits?.items?.length
+      ? cms.benefits.items.map((it, i) => ({
+          id: String((it as any).id || i),
+          title: it.title || '',
+          desc: it.subtitle || '',
+          sub: (it.bodyHtml || (it as any).body_html || (it as any).description || '') as string,
+          icon: resolveIconComponent((it as any).iconKey || (it as any).icon_key) || Lightbulb,
+        }))
+      : benefitItems
+  ) as typeof benefitItems;
+
   return (
     <div className="relative">
       <div className="container mx-auto mb-32">
         <PageHeader title="creative studio" />
 
         <div className="flex flex-col gap-10 md:gap-32">
-          <ApplicationHeroServer slug="creative-studio" fallback={heroFallback} />
-          <Challenges items={challengeItems} />
-          <Benefits items={benefitItems} highlightedText="Creative Studios" />
+          {(() => {
+            const heroProps = {
+              title: cms?.hero?.title || heroFallback.title,
+              subtitle: cms?.hero?.subtitle || heroFallback.subtitle,
+              description: cms?.hero?.bodyHtml || heroFallback.description,
+              ctaText: cms?.hero?.ctaText || (heroFallback as any)?.ctaText,
+              imageSrc: cms?.hero?.imageUrl || heroFallback.imageSrc,
+              mobileImageSrc: cms?.hero?.mobileImageUrl || heroFallback.mobileImageSrc,
+              imageAlt: cms?.hero?.imageAlt || heroFallback.imageAlt || '',
+            };
+            return <Hero {...heroProps} />;
+          })()}
+          <Challenges items={challengeItemsFinal} />
+          <Benefits items={benefitItemsFinal} highlightedText={cms?.benefits?.highlightedText || 'Creative Studios'} />
           <Workflow
             title={
               <>

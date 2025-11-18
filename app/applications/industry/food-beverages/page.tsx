@@ -11,12 +11,29 @@ import {
 } from 'lucide-react';
 import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
-import ApplicationHeroServer from '@/components/page/applications/ApplicationHero.server';
+import Hero from '@/components/page/applications/Hero';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
 import How from '@/components/page/applications/How';
+import * as LucideIcons from 'lucide-react';
+import { features } from '@/lib/features';
+import { getApplication } from '@/lib/cms/application';
 
-export default function FoodBeverages() {
+function toPascalCase(input: string) {
+  return input
+    .split(/[-_\s]+/)
+    .map(s => s.charAt(0).toUpperCase() + s.slice(1))
+    .join('');
+}
+
+function resolveIconComponent(iconKey?: string) {
+  if (!iconKey) return null;
+  const name = toPascalCase(iconKey);
+  const Icon = (LucideIcons as any)[name] as React.ElementType | undefined;
+  return Icon || null;
+}
+
+export default async function FoodBeverages() {
   const heroFallback = {
     title: 'Packaging that keeps pace with change',
     subtitle: 'Built for the fast-moving food and beverage industry',
@@ -134,16 +151,73 @@ export default function FoodBeverages() {
     },
   ];
 
+  let cms = null as Awaited<ReturnType<typeof getApplication>> | null;
+  if (features.enabled) {
+    try {
+      cms = await getApplication('food-beverages');
+    } catch {}
+  }
+
+  const challengeItemsFinal = (
+    cms?.challenges?.items?.length
+      ? cms.challenges.items.map((it, i) => ({
+          id: String((it as any).id || i),
+          title: it.title || '',
+          desc: it.subtitle || '',
+          sub: (it.bodyHtml || (it as any).body_html || (it as any).description || '') as string,
+          icon: resolveIconComponent((it as any).iconKey || (it as any).icon_key) || ListRestart,
+          buttonText: 'Learn More',
+          buttonLink: (it as any).linkUrl || (it as any).link_url || undefined,
+        }))
+      : challengeItems
+  ) as typeof challengeItems;
+
+  const howDataFinal = (
+    cms?.how?.items?.length
+      ? cms.how.items.map((it, idx) => ({
+          title: it.title || '',
+          description: (it.bodyHtml || (it as any).body_html || (it as any).description || '') as string,
+          iconName: toPascalCase(((it as any).iconKey || (it as any).icon_key || 'BadgeCheck') as string),
+          imageSrc: (it as any).imageUrl || (it as any).image_url || `/applications/3-${idx + 1}.svg`,
+          buttonText: 'Learn More',
+          buttonLink: (it as any).linkUrl || (it as any).link_url || undefined,
+        }))
+      : howData
+  ) as typeof howData;
+
+  const benefitItemsFinal = (
+    cms?.benefits?.items?.length
+      ? cms.benefits.items.map((it, i) => ({
+          id: String((it as any).id || i),
+          title: it.title || '',
+          desc: it.subtitle || '',
+          sub: (it.bodyHtml || (it as any).body_html || (it as any).description || '') as string,
+          icon: resolveIconComponent((it as any).iconKey || (it as any).icon_key) || ShieldUser,
+        }))
+      : benefitItems
+  ) as typeof benefitItems;
+
   return (
     <div className="relative">
       <div className="container mx-auto mb-32">
         <PageHeader title="food beverages" />
 
         <div className="flex flex-col gap-10 md:gap-32">
-          <ApplicationHeroServer slug="food-beverages" fallback={heroFallback} />
-          <Challenges items={challengeItems} />
-          <How howData={howData} />
-          <Benefits items={benefitItems} highlightedText="Food & Beverages" />
+          {(() => {
+            const heroProps = {
+              title: cms?.hero?.title || heroFallback.title,
+              subtitle: cms?.hero?.subtitle || heroFallback.subtitle,
+              description: cms?.hero?.bodyHtml || heroFallback.description,
+              ctaText: cms?.hero?.ctaText || (heroFallback as any)?.ctaText,
+              imageSrc: cms?.hero?.imageUrl || heroFallback.imageSrc,
+              mobileImageSrc: cms?.hero?.mobileImageUrl || heroFallback.mobileImageSrc,
+              imageAlt: cms?.hero?.imageAlt || heroFallback.imageAlt || '',
+            };
+            return <Hero {...heroProps} />;
+          })()}
+          <Challenges items={challengeItemsFinal} />
+          <How howData={howDataFinal} />
+          <Benefits items={benefitItemsFinal} highlightedText={cms?.benefits?.highlightedText || 'Food & Beverages'} />
           <Contact leadingText="The " highlightedText="Best Software" trailingText=" For Food & Beverage Brands" />
         </div>
       </div>
