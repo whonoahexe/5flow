@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { Separator } from '../ui/separator';
-import { Instagram, Linkedin, Youtube } from 'lucide-react';
 import Image from 'next/image';
+import { Instagram, Linkedin, Youtube } from 'lucide-react';
+import { Separator } from '../ui/separator';
 
 const pageLinks = [
   { href: '/about', label: 'About Us' },

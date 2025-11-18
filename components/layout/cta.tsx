@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { ArrowDown, ArrowRight, ArrowUp, ArrowUpRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import CtaPixelGrid from '@/components/core/cta-pixel-grid';
+import { Button } from '@/components/ui/button';
 
 interface CtaProps {
   leftTitle: string;

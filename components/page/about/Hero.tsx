@@ -2,7 +2,9 @@ import Image from 'next/image';
 import InlineHighlight from '@/components/core/inline-highlight';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 
-const Hero = () => {
+type HeroProps = { description?: string; propelisDescription?: string };
+
+const Hero = ({ description, propelisDescription }: HeroProps) => {
   const topRowImages = ['/about/about1.png', '/about/about2.png', '/about/about3.png'];
   const bottomRowImages = ['/about/about5.png', '/about/about6.png'];
 
@@ -54,7 +56,8 @@ const Hero = () => {
                   </div>
 
                   <div className="text-lg leading-snug tracking-tight sm:text-xl sm:leading-tight">
-                    {`The technology backbone for modern brand execution. Our intelligent platform services simplify
+                    {description ||
+                      `The technology backbone for modern brand execution. Our intelligent platform services simplify
                       complexity, connect workflows, and give brands the speed, accuracy and agility to thrive in
                       today’s fast moving world.`}
                   </div>
@@ -83,7 +86,8 @@ const Hero = () => {
             <div>The Propelis Group</div>
           </FullBleedLines>
           <FullBleedLines className="text-foreground max-w-3xl text-lg leading-snug tracking-tight sm:max-w-6xl sm:text-4xl md:leading-none">
-            {`We bring together decades of global brand expertise with the technology to define what’s next. A
+            {propelisDescription ||
+              `We bring together decades of global brand expertise with the technology to define what’s next. A
                 powerful blend of creative mastery and intelligent automation that transforms the way brands move from
                 concept to market.`}
           </FullBleedLines>

@@ -1,17 +1,17 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { toast } from 'sonner';
 import { MoveRightIcon } from 'lucide-react';
+import { countries as allCountries } from '@/lib/countries';
+import InlineHighlight from '@/components/core/inline-highlight';
+import FullBleedLines from '@/components/core/full-bleed-lines';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
-import FullBleedLines from '@/components/core/full-bleed-lines';
-import InlineHighlight from '../core/inline-highlight';
-import { toast } from 'sonner';
-import { countries as allCountries } from '@/lib/countries';
 
 type ContactProps = {
   leadingText?: string;

@@ -1,4 +1,4 @@
-import { Contact, Cta } from '@/components/layout';
+import { Contact } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/resources/Hero';
 import FilterSection from '@/components/page/resources/FilterSection';
@@ -128,14 +128,6 @@ export default function VideoGallery() {
           <Contact leadingText="Experience the full " highlightedText="solutions" trailingText=" live" />
         </div>
       </div>
-
-      <Cta
-        leftTitle="Experience"
-        leftSubtitle="What’s Next in"
-        rightTitle="Artwork Management"
-        rightDesc="Get a live demo of our advanced artwork management software by our product experts."
-        buttonText="Book A Demo"
-      />
     </div>
   );
 }

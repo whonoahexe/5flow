@@ -1,6 +1,6 @@
+import { getBlogBySlug, getBlogSlugs } from '@/lib/resources/blogs';
 import PageHeader from '@/components/core/page-header';
 import Markdown from '@/components/core/markdown';
-import { getBlogBySlug, getBlogSlugs } from '@/lib/resources/blogs';
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

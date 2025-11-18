@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ArrowRight, ArrowUpRight, Menu, X, ChevronDown } from 'lucide-react'; // added ChevronDown
+import { ArrowRight, ArrowUpRight, Menu, X, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
@@ -29,23 +29,31 @@ type NavItemLink = {
   type: 'link';
   href: string;
   label: string;
+  keyId?: string;
 };
 
 type NavItemDropdown = {
   type: 'dropdown';
   href: string;
   label: string;
+  keyId?: string;
   menu: DropdownMenuConfig;
 };
 
 type NavItem = NavItemLink | NavItemDropdown;
 
+export type NavigationProps = {
+  labels?: Record<string, string>;
+};
+
+// Fallback navigation items
 const NAV_ITEMS: NavItem[] = [
-  { type: 'link', href: '/about', label: 'ABOUT' },
+  { type: 'link', href: '/about', label: 'ABOUT', keyId: 'about' },
   {
     type: 'dropdown',
     href: '/products/wave',
     label: 'PRODUCTS',
+    keyId: 'products',
     menu: {
       items: [
         { href: '/products/wave', label: 'WAVE' },
@@ -62,6 +70,7 @@ const NAV_ITEMS: NavItem[] = [
     type: 'dropdown',
     href: '/solutions/artwork-management',
     label: 'SOLUTIONS',
+    keyId: 'solutions',
     menu: {
       items: [
         { href: '/solutions/artwork-management', label: 'ARTWORK MANAGEMENT' },
@@ -81,6 +90,7 @@ const NAV_ITEMS: NavItem[] = [
     type: 'dropdown',
     href: '/applications/role/brand-manager',
     label: 'APPLICATIONS',
+    keyId: 'applications',
     menu: {
       groups: [
         {
@@ -125,7 +135,7 @@ const NAV_ITEMS: NavItem[] = [
   //     columns: 1,
   //   },
   // },
-  { type: 'link', href: '/resources/blogs', label: 'RESOURCES' },
+  { type: 'link', href: '/resources/blogs', label: 'RESOURCES', keyId: 'resources' },
 ];
 
 function isActive(pathname: string, item: NavItem): boolean {
@@ -149,7 +159,7 @@ function isActive(pathname: string, item: NavItem): boolean {
   return false;
 }
 
-export function Navigation() {
+export function Navigation({ labels }: NavigationProps) {
   const pathname = usePathname();
   const activeMap = useMemo(() => {
     const map = new Map<string, boolean>();
@@ -249,6 +259,7 @@ export function Navigation() {
                 : 'flex flex-col';
             const offsetClass = menu.offsetClass ?? '';
             const itemWidthClass = menu.itemWidthClass ?? '';
+            const displayLabel = item.keyId && labels && labels[item.keyId] ? labels[item.keyId] : item.label;
 
             return (
               <DropdownMenu key={item.href}>
@@ -258,7 +269,7 @@ export function Navigation() {
                     className={cn('nav-pill px-4', itemActive && 'nav-pill--active')}
                     aria-current={itemActive ? 'page' : undefined}
                   >
-                    <span className="leading-[150%] font-bold tracking-tight">{item.label}</span>
+                    <span className="leading-[150%] font-bold tracking-tight">{displayLabel}</span>
                   </Link>
                 </DropdownMenuTrigger>
 
@@ -326,6 +337,7 @@ export function Navigation() {
             );
           }
 
+          const displayLabel = item.keyId && labels && labels[item.keyId] ? labels[item.keyId] : item.label;
           return (
             <Link
               key={item.href}
@@ -333,7 +345,7 @@ export function Navigation() {
               className={cn('nav-pill px-4', itemActive && 'nav-pill--active')}
               aria-current={itemActive ? 'page' : undefined}
             >
-              <span className="leading-[150%] font-bold tracking-tight">{item.label}</span>
+              <span className="leading-[150%] font-bold tracking-tight">{displayLabel}</span>
             </Link>
           );
         })}
@@ -368,6 +380,7 @@ export function Navigation() {
           <nav className="flex flex-col gap-3">
             {NAV_ITEMS.map(item => {
               if (item.type === 'link') {
+                const displayLabel = item.keyId && labels && labels[item.keyId] ? labels[item.keyId] : item.label;
                 return (
                   <Link
                     key={item.href}
@@ -378,7 +391,7 @@ export function Navigation() {
                       activeMap.get(item.href) && 'bg-muted'
                     )}
                   >
-                    {item.label}
+                    {displayLabel}
                   </Link>
                 );
               }
@@ -386,6 +399,7 @@ export function Navigation() {
               // For dropdowns: show a toggle button; children hidden until expanded
               const menu = item.menu;
               const isExpanded = !!expanded[item.href];
+              const displayLabel = item.keyId && labels && labels[item.keyId] ? labels[item.keyId] : item.label;
 
               return (
                 <div key={item.href} className="flex flex-col gap-2">
@@ -395,15 +409,12 @@ export function Navigation() {
                     aria-expanded={isExpanded}
                     className="hover:bg-muted flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-base font-semibold no-underline"
                   >
-                    <span>{item.label}</span>
+                    <span>{displayLabel}</span>
                     <ChevronDown className={cn('h-5 w-5 transition-transform', isExpanded && 'rotate-180')} />
                   </button>
-
                   {isExpanded && (
                     <div className="ml-3 flex flex-col gap-2">
-                      {/* Parent "View ..." link removed on mobile — show only available child items */}
-
-                      {/* flat items */}
+                      {/* Flat items */}
                       {menu.items && (
                         <div className="flex flex-col gap-1">
                           {menu.items.map(({ href, label }) => (
@@ -442,7 +453,6 @@ export function Navigation() {
               );
             })}
 
-            {/* Optional: include CTA inside mobile menu */}
             <div className="mt-3">
               <Link
                 href="/contact"

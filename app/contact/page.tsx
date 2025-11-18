@@ -1,4 +1,3 @@
-import { Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Form from '@/components/page/contact/Form';
 import Hero from '@/components/page/contact/Hero';
@@ -22,14 +21,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-
-      <Cta
-        leftTitle="Experience"
-        leftSubtitle="What’s Next in"
-        rightTitle="Artwork Management"
-        rightDesc="Get a live demo of our advanced artwork management software by our product experts."
-        buttonText="Book A Demo"
-      />
     </div>
   );
 }

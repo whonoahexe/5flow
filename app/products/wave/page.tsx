@@ -8,7 +8,10 @@ import {
   ShieldAlert,
   ShieldCheck,
 } from 'lucide-react';
-import { Contact, Cta } from '@/components/layout';
+import * as LucideIcons from 'lucide-react';
+import { features } from '@/lib/features';
+import { getProduct } from '@/lib/cms/product';
+import { Contact } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import InlineHighlight from '@/components/core/inline-highlight';
 import Hero from '@/components/page/product/Hero';
@@ -18,6 +21,20 @@ import Workflow from '@/components/page/product/Workflow';
 import How from '@/components/page/product/How';
 import Why from '@/components/page/product/Why';
 import Who from '@/components/page/home/Who';
+
+// Fallback data in case CMS is unavailable
+const heroData = {
+  logoSrc: '/product/wave.svg',
+  logoAlt: 'Wave Brand',
+  title: 'Artwork management, without the chaos',
+  subtitle: 'Faster progress from first draft to final approval.',
+  description:
+    'WAVE gives brand, packaging, and regulatory teams a single platform to brief, review, and approve artwork. No more confusion, no more delays. Just clear workflows that move projects forward.',
+  imageSrc: '/product/Solution_Banner_WAVE.jpg',
+  mobileImageSrc: '/product/Solution_Banner_WAVE_mobile.jpg',
+  imageWidth: 291,
+  imageAlt: 'rectangle',
+};
 
 const whatData = [
   [
@@ -168,26 +185,102 @@ const clientData = [
   'vitakraft.webp',
 ];
 
-export default function Wave() {
+// Utility
+function toPascalCase(input: string) {
+  return input
+    .split(/[-_\s]+/)
+    .map(s => s.charAt(0).toUpperCase() + s.slice(1))
+    .join('');
+}
+
+function resolveIconComponent(iconKey?: string) {
+  if (!iconKey) return null;
+  const name = toPascalCase(iconKey);
+  const Icon = (LucideIcons as any)[name] as React.ElementType | undefined;
+  return Icon || null;
+}
+
+export default async function Wave() {
+  let cms = null as Awaited<ReturnType<typeof getProduct>> | null;
+  if (features.enabled) {
+    try {
+      cms = await getProduct('wave');
+    } catch {}
+  }
+
+  const heroProps = {
+    ...heroData,
+    title: cms?.hero?.title || heroData.title,
+    subtitle: cms?.hero?.subtitle || heroData.subtitle,
+    description: cms?.hero?.bodyHtml || heroData.description,
+  };
+
+  const mappedWhat = (cms?.what?.items?.length ? cms!.what!.items : null) as any[] | null;
+  const whatDataFinal = mappedWhat
+    ? [
+        mappedWhat.slice(0, 2).map(item => ({
+          title: item.title || '',
+          subtitle: item.subtitle || '',
+          description: item.bodyHtml || item.body_html || item.description || '',
+          buttonLink: item.linkUrl || item.link_url || undefined,
+          icon: resolveIconComponent(item.iconKey || item.icon_key) || CalendarSync,
+        })),
+        mappedWhat.slice(2, 4).map(item => ({
+          title: item.title || '',
+          subtitle: item.subtitle || '',
+          description: item.bodyHtml || item.body_html || item.description || '',
+          buttonLink: item.linkUrl || item.link_url || undefined,
+          icon: resolveIconComponent(item.iconKey || item.icon_key) || FileStack,
+        })),
+      ]
+    : whatData;
+
+  const howDataFinal = (
+    cms?.how?.items?.length
+      ? cms!.how!.items.map(item => ({
+          title: item.title || '',
+          subtitle: item.subtitle || '',
+          description: item.bodyHtml || item.body_html || item.description || '',
+          buttonText: 'Learn more',
+          buttonLink: item.linkUrl || item.link_url || undefined,
+          imageSrc: item.imageUrl || item.image_url || '/product/1.svg',
+          iconName: toPascalCase((item.iconKey || item.icon_key || 'BadgeCheck') as string),
+        }))
+      : howData
+  ) as typeof howData;
+
+  const whyDataFinal = (
+    cms?.why?.items?.length
+      ? cms!.why!.items.map(item => ({
+          title: item.title || '',
+          desc: item.subtitle || '',
+          sub: item.bodyHtml || item.body_html || item.description || '',
+          icon: resolveIconComponent(item.iconKey || item.icon_key) || ShieldCheck,
+        }))
+      : whyData
+  ) as typeof whyData;
+
+  const workflowStatsFinal = cms?.workflow?.stats?.length ? cms.workflow.stats : workflowData.statsData;
+  const workflowSubtitleFinal = cms?.workflow?.subtitle || workflowData.subtitle;
+
+  const needFinal = {
+    title1: cms?.need?.title1 ?? needData.title,
+    highlightTitle: cms?.need?.highlightTitle ?? needData.highlightTitle,
+    title2: cms?.need?.title2 ?? needData.title2,
+    subtitle: cms?.need?.subtitle ?? needData.subtitle,
+    description: cms?.need?.bodyHtml ?? needData.description,
+    buttonText: cms?.need?.buttonText ?? needData.buttonText,
+  };
+
   return (
     <div className="relative">
       <div className="container mx-auto mb-32">
         <PageHeader title="wave" />
 
         <div className="mt-12 flex flex-col gap-16 md:gap-32">
-          <Hero
-            logoSrc="/product/wave.svg"
-            logoAlt="Wave Brand"
-            title="Artwork management, without the chaos"
-            subtitle="Faster progress from first draft to final approval."
-            description="WAVE gives brand, packaging, and regulatory teams a single platform to brief, review, and approve artwork. No more confusion, no more delays. Just clear workflows that move projects forward."
-            imageSrc="/product/Solution_Banner_WAVE.jpg"
-            mobileImageSrc="/product/Solution_Banner_WAVE_mobile.jpg"
-            imageWidth={291}
-            imageAlt="rectangle"
-          />
-          <What whatData={whatData} />
-          <How howData={howData} />
+          <Hero {...heroProps} />
+          <What whatData={whatDataFinal as any} />
+          <How howData={howDataFinal as any} />
           <Why
             sectionTitle={
               <>
@@ -195,37 +288,33 @@ export default function Wave() {
                 <InlineHighlight className="text-background">WAVE</InlineHighlight>
               </>
             }
-            whyData={whyData}
+            whyData={whyDataFinal as any}
           />
           <Need
-            title1={needData.title}
-            highlightTitle={needData.highlightTitle}
-            title2={needData.title2}
-            subtitle={needData.subtitle}
-            description={needData.description}
-            buttonText={needData.buttonText}
+            title1={needFinal.title1}
+            highlightTitle={needFinal.highlightTitle}
+            title2={needFinal.title2}
+            subtitle={needFinal.subtitle}
+            description={needFinal.description}
+            buttonText={needFinal.buttonText}
           />
-          <Who path="product/wave-clients" clients={clientData} />
+          {cms?.who?.clients?.length ? (
+            <Who title={cms.who.title} clients={cms.who.clients} />
+          ) : (
+            <Who path="product/wave-clients" clients={clientData.map(name => ({ imageUrl: name }))} />
+          )}
           <Workflow
             title={
               <>
                 Trusted <InlineHighlight>worldwide</InlineHighlight>
               </>
             }
-            subtitle={workflowData.subtitle}
-            statsData={workflowData.statsData}
+            subtitle={workflowSubtitleFinal}
+            statsData={workflowStatsFinal}
           />
           <Contact leadingText="Ready to " highlightedText="simplify" trailingText=" artwork management?" />
         </div>
       </div>
-
-      <Cta
-        leftTitle="Experience"
-        leftSubtitle="What’s Next in"
-        rightTitle="Artwork Management"
-        rightDesc="Get a live demo of our advanced artwork management software by our product experts."
-        buttonText="Book A Demo"
-      />
     </div>
   );
 }

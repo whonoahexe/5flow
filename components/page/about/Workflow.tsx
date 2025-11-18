@@ -8,7 +8,9 @@ const workflowImages = [
   { src: '/about/workflow3.png', width: 180, height: 120, alt: 'Workflow security process 3' },
 ];
 
-const Workflow = () => {
+type WorkflowProps = { introText?: string; isoText?: string };
+
+const Workflow = ({ introText, isoText }: WorkflowProps) => {
   return (
     <div className="flex w-full flex-col items-start gap-8 px-4 text-center sm:gap-14 sm:px-0">
       <FullBleedLines className="font-heading flex w-full justify-center">
@@ -19,8 +21,9 @@ const Workflow = () => {
         </b>
       </FullBleedLines>
       <FullBleedLines className="text-foreground mx-auto w-full max-w-3xl text-center text-lg leading-relaxed tracking-tight sm:max-w-5xl sm:text-4xl sm:leading-none">
-        At 5Flow, security is the foundation of how we work. Every workflow, every approval, every piece of data is
-        protected with enterprise-grade security standards.
+        {introText ||
+          `At 5Flow, security is the foundation of how we work. Every workflow, every approval, every piece of data is
+        protected with enterprise-grade security standards.`}
       </FullBleedLines>
       <FullBleedLines className="w-full">
         <div className="flex flex-col items-center gap-4 self-stretch overflow-hidden p-2 sm:flex-row sm:gap-2">
@@ -42,7 +45,8 @@ const Workflow = () => {
         </div>
       </FullBleedLines>
       <FullBleedLines className="text-foreground mx-auto w-full max-w-3xl text-center text-lg leading-relaxed tracking-tight sm:max-w-6xl sm:text-4xl sm:leading-none">
-        {`We’re ISO 27001 certified, but we go beyond compliance. Our Information Security Management System (ISMS) continuously monitors risks, applies preventive measures, and evolves to stay ahead of emerging threats.`}
+        {isoText ||
+          `We’re ISO 27001 certified, but we go beyond compliance. Our Information Security Management System (ISMS) continuously monitors risks, applies preventive measures, and evolves to stay ahead of emerging threats.`}
       </FullBleedLines>
     </div>
   );
