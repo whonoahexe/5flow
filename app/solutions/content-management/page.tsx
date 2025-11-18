@@ -2,7 +2,7 @@ import { ClockPlus, RefreshCcw, Share2Icon, ShieldCheck } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getSolution } from '@/lib/cms/solution';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
@@ -47,7 +47,7 @@ const howData = [
     title: 'Centralized content hub',
     subtitle: 'One place for every claim and translation',
     description: 'Product data, claims, and text live in a single repository connected to artwork workflows.',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover the Hub',
     imageSrc: '/solutions/3-1.svg',
     iconName: 'FileText',
   },
@@ -55,7 +55,7 @@ const howData = [
     title: 'Structured workflows',
     subtitle: 'Content validated at the source',
     description: 'Approval processes ensure every line of copy is validated before reaching design or production.',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Workflows',
     imageSrc: '/solutions/3-2.svg',
     iconName: 'Workflow',
   },
@@ -63,7 +63,7 @@ const howData = [
     title: 'Version history',
     subtitle: 'Track every change across markets',
     description: 'Every edit is logged and accessible, giving teams confidence they’re using the latest content.',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Version Control',
     imageSrc: '/solutions/3-3.svg',
     iconName: 'SearchCheck',
   },
@@ -71,7 +71,7 @@ const howData = [
     title: 'Integration ready',
     subtitle: 'Connect with PIM, DAM, and ERP',
     description: 'Open APIs link content directly into your ecosystem, eliminating manual re-entry.',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Integrations',
     imageSrc: '/solutions/3-4.svg',
     iconName: 'Import',
   },
@@ -152,11 +152,11 @@ export default async function ContentManagement() {
   const workflowStatsFinal = cms?.workflow?.stats?.length
     ? cms.workflow.stats
     : [
-        { label: 'faster product launches', value: '75%' },
-        { label: 'fewer late files', value: '50%' },
-        { label: 'rework reduction', value: '25%' },
+        { label: 'leading global brands', value: '130+' },
+        { label: 'projects annually', value: '2M+' },
+        { label: 'unique users', value: '140K' },
       ];
-  const workflowSubtitleFinal = cms?.workflow?.subtitle || '';
+  const workflowSubtitleFinal = cms?.workflow?.subtitle || 'Numbers that matter';
 
   return (
     <div className="relative">
@@ -178,6 +178,16 @@ export default async function ContentManagement() {
           />
           <Contact leadingText="Prepared to " highlightedText="start feeling" trailingText=" content?" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="Get a live demo of our advanced artwork management solution."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

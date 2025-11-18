@@ -22,7 +22,7 @@ const Hero = ({
   imageSrc,
   mobileImageSrc,
   imageAlt = '',
-  ctaText = 'Book your live demo',
+  ctaText = 'See What’s Possible',
 }: HeroProps) => {
   return (
     <div className="relative mt-32 flex w-full flex-col items-center text-center sm:items-start sm:text-left">

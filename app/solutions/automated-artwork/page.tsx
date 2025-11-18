@@ -2,7 +2,7 @@ import { CircleDollarSign, FileStack, Lightbulb, Rocket } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getSolution } from '@/lib/cms/solution';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
@@ -31,9 +31,9 @@ const heroData = {
   logoSrc: '/logo.svg',
   logoAlt: '5Flow logo',
   title: 'Artwork at the speed of automation',
-  subtitle: 'Create, adapt, and deliver in minutes, not days',
+  subtitle: 'Design Once. Deliver Everywhere.',
   description:
-    '5Flow’s Automated Artwork solution transforms repetitive production work into a streamlined process. From resizing to multilingual rollouts, automation reduces manual effort, cuts errors, and accelerates delivery.',
+    '5Flow’s Automated Artwork solution handles repetitive work, so you can focus on creativity.. From resizing to multilingual rollouts, it eliminates manual effort, minimizes errors, and accelerates delivery.',
   buttonText: 'See it in Action',
   buttonLink: '/contact',
   imageSrc: '/solutions/automated-artwork.png',
@@ -47,7 +47,7 @@ const howData = [
     title: 'Template-driven design',
     subtitle: 'Automation built into templates',
     description: 'Predefined templates generate artwork variations quickly while keeping brand guidelines intact.',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Templates',
     imageSrc: '/solutions/5-1.svg',
     iconName: 'LayoutList',
   },
@@ -55,7 +55,7 @@ const howData = [
     title: 'Multilingual automation',
     subtitle: 'Translations applied instantly',
     description: 'Automated text handling applies approved translations across SKUs, cutting manual entry errors.',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Language Tools',
     imageSrc: '/solutions/5-2.svg',
     iconName: 'Languages',
   },
@@ -63,7 +63,7 @@ const howData = [
     title: 'Batch processing',
     subtitle: 'Scale without bottlenecks',
     description: 'Generate dozens or thousands of artworks at once, reducing turnaround from weeks to hours.',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Batch Processing',
     imageSrc: '/solutions/5-3.svg',
     iconName: 'Layers',
   },
@@ -72,7 +72,7 @@ const howData = [
     subtitle: 'Accuracy by default',
     description:
       'Built-in rules check barcodes, text placement, and compliance automatically before files go to print.',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Validation',
     imageSrc: '/solutions/5-4.svg',
     iconName: 'ShieldCheck',
   },
@@ -150,9 +150,9 @@ export default async function AutomatedArtwork() {
   const workflowStatsFinal = cms?.workflow?.stats?.length
     ? cms.workflow.stats
     : [
-        { label: 'faster product launches', value: '75%' },
-        { label: 'fewer late files', value: '50%' },
-        { label: 'rework reduction', value: '25%' },
+        { label: 'leading global brands', value: '130+' },
+        { label: 'projects annually', value: '2M+' },
+        { label: 'turnaround reduction times', value: '52%' },
       ];
   const workflowSubtitleFinal = cms?.workflow?.subtitle || '';
 
@@ -176,6 +176,16 @@ export default async function AutomatedArtwork() {
           />
           <Contact leadingText="Create artworks the " highlightedText="smart way" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="Get a live demo of our advanced artwork management solution."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

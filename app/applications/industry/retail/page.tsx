@@ -2,7 +2,7 @@ import { Files, History, FileStack, LaptopMinimalCheck, EyeOff, RotateCw, Share2
 import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getApplication } from '@/lib/cms/application';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/applications/Hero';
 import Challenges from '@/components/page/applications/Challenges';
@@ -26,13 +26,14 @@ function resolveIconComponent(iconKey?: string) {
 
 // Fallback data in case CMS is unavailable
 const heroFallback = {
-  title: 'Retail moves fast. So should your brand.',
+  title: 'Retail moves fast. Keep your brand ahead.',
   subtitle: 'Tools built for retailers dealing with high SKU velocity and seasonal pressure',
   description:
     'Retailers juggle thousands of SKUs, constant refreshes, and time-sensitive promotions. 5Flow helps you simplify workflows, reduce delays, and keep every campaign on shelf, on time, and on brand.',
   imageSrc: '/applications/industries/retail.jpg',
   imageAlt: 'Artwork management preview',
   mobileImageSrc: '/applications/industries/retail-mobile.jpg',
+  ctaText: 'See What’s Possible',
 };
 
 const challengeItems = [
@@ -42,7 +43,7 @@ const challengeItems = [
     desc: 'Too much volume, no control',
     sub: '5Flow centralizes artwork and content so retailers can manage SKU refreshes at scale without losing consistency.',
     icon: Files,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How 5Flow Helps Retail',
     buttonLink: '/solutions/artwork-management',
   },
   {
@@ -51,7 +52,7 @@ const challengeItems = [
     desc: 'Campaigns miss the shelf date',
     sub: 'Automated workflows move approvals faster and give teams full visibility into promo deadlines.',
     icon: History,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How 5Flow Helps Retail',
     buttonLink: '/solutions/artwork-management',
   },
   {
@@ -60,7 +61,7 @@ const challengeItems = [
     desc: 'More complexity, tighter timelines',
     sub: 'Dedicated workflows manage private-label artwork alongside branded products without confusion.',
     icon: FileStack,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How 5Flow Helps Retail',
     buttonLink: '/solutions/artwork-management',
   },
   {
@@ -69,7 +70,7 @@ const challengeItems = [
     desc: 'Errors multiply across vendors',
     sub: 'Suppliers access validated assets directly from 5Flow, cutting misprints and delays.',
     icon: LaptopMinimalCheck,
-    buttonText: 'Discover Asset Library',
+    buttonText: 'See How 5Flow Helps Retail',
     buttonLink: '/solutions/asset-library',
   },
   {
@@ -78,7 +79,7 @@ const challengeItems = [
     desc: 'Retailers can’t see where campaigns stall',
     sub: 'Dashboards and analytics show bottlenecks in real time, helping managers act before deadlines slip.',
     icon: EyeOff,
-    buttonText: 'Discover Data Analysis',
+    buttonText: 'See How 5Flow Helps Retail',
     buttonLink: '/solutions/data-analysis',
   },
 ];
@@ -156,6 +157,7 @@ export default async function Retail() {
     imageSrc: cms?.hero?.imageUrl || heroFallback.imageSrc,
     mobileImageSrc: cms?.hero?.mobileImageUrl || heroFallback.mobileImageSrc,
     imageAlt: cms?.hero?.imageAlt || heroFallback.imageAlt || '',
+    ctaText: cms?.hero?.ctaText || heroFallback.ctaText || 'Learn More',
   };
 
   const challengeItemsFinal = (
@@ -209,8 +211,18 @@ export default async function Retail() {
           <Challenges items={challengeItemsFinal} />
           <How howData={howDataFinal} />
           <Benefits items={benefitItemsFinal} highlightedText={cms?.benefits?.highlightedText || 'Retail'} />
-          <Contact leadingText="The " highlightedText="Best Software" trailingText=" For Retailers" />
+          <Contact leadingText="The " highlightedText="Leading Workflow Platform" trailingText=" For Retailers" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="Get a live demo of our advanced artwork management solution."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

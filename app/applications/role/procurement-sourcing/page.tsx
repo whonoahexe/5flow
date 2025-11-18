@@ -8,7 +8,7 @@ import {
   CircleCheckBig,
   LaptopMinimalCheck,
 } from 'lucide-react';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getApplication } from '@/lib/cms/application';
@@ -42,6 +42,7 @@ const heroFallback = {
     'Procurement teams are tasked with cutting costs and ensuring supplier efficiency — but artwork errors, misaligned assets, and reprints eat into budgets. 5Flow gives you control over assets, workflows, and approvals, so suppliers always receive the right files the first time.',
   imageSrc: '/applications/icp/Procurement.jpg',
   imageAlt: 'Artwork management preview',
+  ctaText: 'See What’s Possible',
   mobileImageSrc: '/applications/icp/Procurement-mobile.jpg',
 };
 
@@ -52,7 +53,7 @@ const challengeItems = [
     desc: 'Errors drive wasted spend',
     sub: '5Flow ensures suppliers receive the right, validated files every time, eliminating costly mistakes and reprints.',
     icon: CircleDollarSign,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How 5Flow Helps Procurement Teams',
     buttonLink: '/solutions/artwork-management',
   },
   {
@@ -61,7 +62,7 @@ const challengeItems = [
     desc: 'Wrong files stall production',
     sub: 'A centralized asset library gives suppliers direct access to approved artwork and cutter guides, keeping timelines intact.',
     icon: History,
-    buttonText: 'Discover Asset Library',
+    buttonText: 'See How 5Flow Helps Procurement Teams',
     buttonLink: '/solutions/asset-library',
   },
   {
@@ -70,7 +71,7 @@ const challengeItems = [
     desc: 'No clarity on project status or supplier readiness',
     sub: 'Dashboards show procurement teams where projects stand, so supplier alignment is proactive, not reactive.',
     icon: EyeOff,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How 5Flow Helps Procurement Teams',
     buttonLink: '/solutions/artwork-management',
   },
   {
@@ -79,7 +80,7 @@ const challengeItems = [
     desc: 'Email overload with suppliers',
     sub: 'Integrated communication reduces supplier emails by structuring feedback, clarifications, and approvals in one system.',
     icon: Repeat2,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How 5Flow Helps Procurement Teams',
     buttonLink: '/solutions/artwork-management',
   },
   {
@@ -88,7 +89,7 @@ const challengeItems = [
     desc: 'Errors slip through fragmented workflows',
     sub: 'Automated checks and traceability ensure suppliers work only with approved, accurate files.',
     icon: ShieldAlert,
-    buttonText: 'Discover Online Proofing',
+    buttonText: 'See How 5Flow Helps Procurement Teams',
     buttonLink: '/solutions/online-proofing',
   },
 ];
@@ -189,13 +190,23 @@ export default async function ProcurementSourcing() {
             }
             subtitle="Proven results across industries."
             statsData={[
-              { label: 'faster product launches', value: '75%' },
-              { label: 'fewer late files', value: '50%' },
-              { label: 'faster artwork adaptations', value: '80%' },
+              { label: 'leading global brands', value: '130+' },
+              { label: 'projects annually', value: '2M+' },
+              { label: 'turnaround reduction times', value: '52%' },
             ]}
           />
           <Contact leadingText="The Best Software For " highlightedText="Procurement & Sourcing Teams" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="Get a live demo of our advanced artwork management solution."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

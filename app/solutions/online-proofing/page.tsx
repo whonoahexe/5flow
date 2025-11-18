@@ -1,6 +1,6 @@
 import { CircleDollarSign, Rocket, ShieldCheck, Users } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import { features } from '@/lib/features';
 import { getSolution } from '@/lib/cms/solution';
 import InlineHighlight from '@/components/core/inline-highlight';
@@ -30,8 +30,8 @@ const heroData = {
   brandName: 'online proofing',
   logoSrc: '/logo.svg',
   logoAlt: '5Flow logo',
-  title: 'Proofing made simple',
-  subtitle: 'Centralize reviews and cut endless loops',
+  title: 'Document review made simple',
+  subtitle: 'All comments. All versions. All in one place.',
   description:
     '5Flow’s Online Proofing solution brings all stakeholders into one platform for clear, traceable approvals. From annotations to version comparisons, every review is faster, sharper, and audit ready.',
   buttonText: 'See it in Action',
@@ -46,32 +46,34 @@ const howData = [
     heading: 'Online Proofing',
     title: 'Online annotations',
     subtitle: 'Markups where they belong',
-    description: 'Reviewers add comments directly on artwork files, eliminating confusion and lost feedback.',
-    buttonText: 'Book A Demo',
+    description: 'Reviewers add comments directly on the document, eliminating confusion and lost feedback.',
+    buttonText: 'Discover Annotations',
     imageSrc: '/solutions/2-1.svg',
     iconName: 'StickyNote',
   },
   {
     title: 'Version comparison',
     subtitle: 'Spot changes instantly',
-    description: 'Compare old and new files side by side to ensure every requested update is complete and correct.',
-    buttonText: 'Book A Demo',
+    description:
+      'Compare previous  and new versions side by side to ensure every requested update is complete and correct.',
+    buttonText: 'Discover Version Control',
     imageSrc: '/solutions/2-2.svg',
     iconName: 'SquareSplitHorizontal',
   },
   {
     title: 'Automated approvals',
-    subtitle: 'Traceable, transparent sign offs',
-    description: 'Sequential or parallel approval paths keep projects moving while documenting every decision.',
-    buttonText: 'Book A Demo',
+    subtitle: 'Smart routing move you faster,',
+    description:
+      'Sequential or parallel approval paths keep projects moving - with every decision tracked and timestamped.',
+    buttonText: 'Discover Approvals',
     imageSrc: '/solutions/2-3.svg',
     iconName: 'CircleCheckBig',
   },
   {
     title: 'Audit trails',
-    subtitle: 'Compliance built into proofing',
-    description: 'Every annotation, change, and approval is logged for full regulatory compliance.',
-    buttonText: 'Book A Demo',
+    subtitle: 'Compliance built in',
+    description: 'Every annotation, change, and approval is logged for complete regulatory compliance.',
+    buttonText: 'Discover Compliance',
     imageSrc: '/solutions/2-4.svg',
     iconName: 'ShieldCheck',
   },
@@ -92,9 +94,10 @@ const whyData = [
     icon: ShieldCheck,
   },
   {
-    title: 'Lower costs',
-    subtitle: 'Reduce error driven waste',
-    description: 'Fewer mistakes mean fewer reprints and less wasted time and resources.',
+    title: 'Zero blind spots',
+    subtitle: 'Traceable. Transparent. Trusted.',
+    description:
+      'Every action, approval, and edit is recorded automatically, giving regulatory teams complete visibility and peace of mind.',
     icon: CircleDollarSign,
   },
   {
@@ -149,11 +152,11 @@ export default async function OnlineProofing() {
   const workflowStatsFinal = cms?.workflow?.stats?.length
     ? cms.workflow.stats
     : [
-        { label: 'faster product launches', value: '75%' },
-        { label: 'fewer late files', value: '50%' },
-        { label: 'rework reduction', value: '25%' },
+        { label: 'leading global brands', value: '130+' },
+        { label: 'projects annually', value: '2M+' },
+        { label: 'unique users', value: '140K' },
       ];
-  const workflowSubtitleFinal = cms?.workflow?.subtitle || '';
+  const workflowSubtitleFinal = cms?.workflow?.subtitle || 'Global brands simplify proofing cycles with 5Flow';
 
   return (
     <div className="relative">
@@ -175,6 +178,16 @@ export default async function OnlineProofing() {
           />
           <Contact leadingText="Ready to " highlightedText="error-proof" trailingText=" your launches?" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="See how Online Proofing can cut approval loops, strengthen compliance, and keep projects on track."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

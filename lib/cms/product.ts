@@ -8,6 +8,8 @@ export interface ProductItemRaw {
   description?: string;
   icon_key?: string;
   iconKey?: string;
+  button_text?: string;
+  buttonText?: string;
   link_url?: string;
   linkUrl?: string;
   image_url?: string;

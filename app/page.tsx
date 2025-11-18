@@ -1,4 +1,4 @@
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import ServerHero from '@/components/page/home/Hero.server';
 import ServerWhat from '@/components/page/home/What.server';
 import ServerHow from '@/components/page/home/How.server';
@@ -27,6 +27,16 @@ export default function Home() {
           <ServerWhy />
           <Contact />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="Get a live demo of our advanced artwork management solution."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

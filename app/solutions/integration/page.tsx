@@ -2,7 +2,7 @@ import { Eye, Lightbulb, Scaling, WorkflowIcon } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getSolution } from '@/lib/cms/solution';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
@@ -30,8 +30,8 @@ const heroData = {
   brandName: 'integration',
   logoSrc: '/logo.svg',
   logoAlt: '5Flow logo',
-  title: 'Connected workflows, seamless systems',
-  subtitle: 'Integration that eliminates silos and manual work.',
+  title: 'Connected workflows, less copy and paste',
+  subtitle: 'Integration that keeps your business in flow.',
   description:
     '5Flow’s Integration solution connects your PIM, DAM, ERP, and design tools into one unified workflow. No more copy-pasting, duplicate files, or disconnected systems. Just data flowing smoothly across your ecosystem.',
   buttonText: 'See it in Action',
@@ -47,7 +47,7 @@ const howData = [
     title: 'Open APIs',
     subtitle: 'Easy connection to any system',
     description: 'Flexible APIs connect 5Flow to PIM, DAM, ERP, and creative tools with minimal effort.',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover APIs',
     imageSrc: '/solutions/6-1.svg',
     iconName: 'ScreenShare',
   },
@@ -55,7 +55,7 @@ const howData = [
     title: 'Real-time sync',
     subtitle: 'Data flows instantly',
     description: 'Updates push across systems automatically, ensuring everyone works with the latest information.',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Sync',
     imageSrc: '/solutions/6-2.svg',
     iconName: 'RefreshCcw',
   },
@@ -63,15 +63,15 @@ const howData = [
     title: 'Scalable architecture',
     subtitle: 'Built to handle complexity',
     description: 'Integration scales from a few systems to enterprise-wide ecosystems across global teams.',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Scalability',
     imageSrc: '/solutions/6-3.svg',
     iconName: 'Scaling',
   },
   {
     title: 'Secure connections',
-    subtitle: 'Data protected end to end',
+    subtitle: 'Protected. Compliant. End-to-end.',
     description: 'Enterprise-grade security ensures integrations are safe, compliant, and reliable.',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Security',
     imageSrc: '/solutions/6-4.svg',
     iconName: 'ShieldCheck',
   },
@@ -149,9 +149,9 @@ export default async function Integration() {
   const workflowStatsFinal = cms?.workflow?.stats?.length
     ? cms.workflow.stats
     : [
-        { label: 'faster product launches', value: '75%' },
-        { label: 'fewer late files', value: '50%' },
-        { label: 'rework reduction', value: '25%' },
+        { label: 'leading global brands', value: '130+' },
+        { label: 'projects annually', value: '2M+' },
+        { label: 'unique users', value: '140K' },
       ];
   const workflowSubtitleFinal = cms?.workflow?.subtitle || '';
 
@@ -175,6 +175,16 @@ export default async function Integration() {
           />
           <Contact leadingText="Ready to connect your " highlightedText="artwork systems?" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="Get a live demo of our advanced artwork management solution."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

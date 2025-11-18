@@ -11,7 +11,7 @@ import {
 import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getProduct } from '@/lib/cms/product';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/product/Hero';
@@ -27,10 +27,11 @@ const heroData = {
   logoSrc: '/product/dragonfly.svg',
   logoAlt: 'Wave Brand',
   title: 'Make your projects fly',
-  subtitle: 'Streamlined workflows for complex brand execution',
+  subtitle: 'Communication and control. It’s second nature with Dragonfly.',
   description:
-    'Dragonfly is a web-based graphics and packaging management platform that cuts through miscommunication, complexity, and delays. Built for agility and scale, it keeps your brand projects moving on time, on budget, every time.',
+    'Dragonfly is a web-based graphics and packaging management tool that cuts through miscommunication, complexity, and confusion. Launch new products on time, on budget, every time with Dragonfly.',
   imageSrc: '/product/Solution_Banner_Dragonfly.jpg',
+  buttonText: 'Book A Demo',
   mobileImageSrc: '/product/Solution_Banner_Dragonfly_mobile.jpg',
   imageWidth: 376,
   imageAlt: 'rectangle',
@@ -55,8 +56,8 @@ const whatData = [
   ],
   [
     {
-      title: 'Manual reporting',
-      subtitle: 'Hours wasted building spreadsheets',
+      title: 'Complexity',
+      subtitle: 'Hours wasted sending emails, remainders and spreadsheets',
       description: 'Teams spend more time making reports than moving projects forward.',
       icon: UserPen,
       buttonLink: '/solutions/data-analytics',
@@ -77,7 +78,7 @@ const howData = [
     subtitle: 'Flexibility built into every project',
     description:
       'Dragonfly adapts to your needs with templates, task-driven processes, and rules that make change easy.',
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'Discover Workflows',
     buttonLink: '/solutions/artwork-management',
     imageSrc: '/product/2-1.svg',
     iconName: 'Workflow',
@@ -87,7 +88,7 @@ const howData = [
     subtitle: 'Clear visibility for every team member',
     description:
       'Customizable dashboards and task lists keep information where you need it, improving adoption and speed.',
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'Discover Dashboards',
     buttonLink: '/solutions/artwork-management',
     imageSrc: '/product/2-2.svg',
     iconName: 'LayoutDashboard',
@@ -97,7 +98,7 @@ const howData = [
     subtitle: 'Insights at the click of a button',
     description:
       'Schedule-driven reporting and PowerBI integration turn raw data into instant KPIs and process improvements.',
-    buttonText: 'Discover Data Analysis',
+    buttonText: 'Discover Reporting',
     buttonLink: '/solutions/data-analytics',
     imageSrc: '/product/2-3.svg',
     iconName: 'ChartNoAxesCombined',
@@ -145,9 +146,9 @@ const needData = {
   title1: 'Flexible ',
   highlightTitle: 'pricing',
   title2: '  for every organization',
-  subtitle: 'From small teams to global enterprises',
+  subtitle: 'From mid-size teams to global enterprises',
   description:
-    "WAVE scales with your business. Whether you're managing a few artworks or thousands across multiple markets, our pricing has something for everyone.",
+    'Dragonfly adapts to your scale and complexity. Pricing flexes to match your workflow needs, with options for configuration, integration, and support.',
   buttonText: 'Talk to Us',
 };
 
@@ -167,13 +168,12 @@ const clientData = [
 
 const workflowData = {
   title: 'Trusted by global leaders',
-  subtitle:
-    'Mondelez, Kellanova, and global FMCG leaders use Dragonfly as their packaging and marketing execution backbone.',
+  subtitle: `L’Oréal, Colgate-Palmolive, and global FMCG leaders use Dragonfly as their packaging and marketing execution backbone.`,
   buttonText: 'See Case Studies',
   statsData: [
     {
       value: '4.5K+',
-      label: 'global users at Mondelez',
+      label: `global users at L’Oréal`,
     },
     {
       value: 'Integration',
@@ -315,6 +315,16 @@ export default async function Dragonfly() {
           />
           <Contact leadingText="Ready to make your projects " highlightedText="fly" trailingText="?" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="Get a live demo of our advanced artwork management solution."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

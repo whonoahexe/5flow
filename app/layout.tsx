@@ -65,15 +65,6 @@ export default function RootLayout({
           {/* <PatternOverlay side="both" margin="container" containerAlign="outside" /> */}
           <PageTransition>{children}</PageTransition>
         </main>
-        <div className="pt-12 md:pt-20">
-          <Cta
-            leftTitle="Experience"
-            leftSubtitle="What’s Next in"
-            rightTitle="Artwork Management"
-            rightDesc="Get a live demo of our advanced artwork management solution."
-            buttonText="Book A Demo"
-          />
-        </div>
         <Footer />
 
         {/* Fixed */}

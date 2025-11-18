@@ -12,7 +12,7 @@ import {
 import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getApplication } from '@/lib/cms/application';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/applications/Hero';
 import Challenges from '@/components/page/applications/Challenges';
@@ -52,7 +52,7 @@ const challengeItems = [
     desc: 'One drug, dozens of SKUs',
     sub: '5Flow manages translations centrally and applies them consistently across markets, reducing the risk of mislabeling.',
     icon: Languages,
-    buttonText: 'Discover Content Management',
+    buttonText: 'See How 5Flow Helps Pharma Teams',
   },
   {
     id: 'regulatory-pressure',
@@ -60,7 +60,7 @@ const challengeItems = [
     desc: 'Regulations change, workflows don’t',
     sub: 'Preconfigured compliance checklists and validation rules ensure every label meets FDA, EMA, and regional standards.',
     icon: ShieldAlert,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How 5Flow Helps Pharma Teams',
     buttonLink: '/solutions/artwork-management',
   },
   {
@@ -69,7 +69,7 @@ const challengeItems = [
     desc: 'Audits require endless proof',
     sub: 'Every approval, annotation, and change is logged, creating an instant audit trail for inspections.',
     icon: UserRoundPen,
-    buttonText: 'Discover Online Proofing',
+    buttonText: 'See How 5Flow Helps Pharma Teams',
     buttonLink: '/solutions/online-proofing',
   },
   {
@@ -78,7 +78,7 @@ const challengeItems = [
     desc: 'Updates overwhelm manual workflows',
     sub: 'Automated workflows distribute approved changes quickly, keeping packaging aligned with new formulations.',
     icon: ListRestart,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How 5Flow Helps Pharma Teams',
     buttonLink: '/solutions/artwork-management',
   },
   {
@@ -87,7 +87,7 @@ const challengeItems = [
     desc: 'Errors aren’t just costly, they’re dangerous',
     sub: 'Built-in validation rules flag missing warnings, dosage errors, or misplaced barcodes before files go to print.',
     icon: ShieldPlus,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How 5Flow Helps Pharma Teams',
     buttonLink: '/solutions/artwork-management',
   },
 ];
@@ -221,6 +221,16 @@ export default async function HealthPharma() {
           <Benefits items={benefitItemsFinal} highlightedText={cms?.benefits?.highlightedText || 'Health & Pharma'} />
           <Contact leadingText="The " highlightedText="Best Software" trailingText=" For Healthcare & Pharma" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="Get a live demo of our advanced artwork management solution."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

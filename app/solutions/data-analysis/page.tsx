@@ -2,7 +2,7 @@ import { AlarmClockCheck, Lightbulb, RefreshCcwDot, Settings } from 'lucide-reac
 import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getSolution } from '@/lib/cms/solution';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
@@ -43,7 +43,7 @@ const howData = [
     subtitle: 'See progress as it happens',
     description:
       'Track every workflow and task in real time with dashboards that visualize project health and timelines.',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Monitoring',
     imageSrc: '/solutions/7-1.svg',
     iconName: 'View',
   },
@@ -53,7 +53,7 @@ const howData = [
     description:
       'AI-driven algorithms identify patterns that indicate delays or approval loops, helping teams prevent them.',
     icon: '/solutions/rectangle.png',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Analytics',
     imageSrc: '/solutions/7-2.svg',
     iconName: 'ChartNoAxesCombined',
   },
@@ -63,7 +63,7 @@ const howData = [
     description:
       'Design dashboards for brand, regulatory, or design teams, so everyone sees what’s most relevant to them.',
     icon: '/solutions/rectangle.png',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Dashboards',
     imageSrc: '/solutions/7-3.svg',
     iconName: 'LayoutDashboard',
   },
@@ -72,7 +72,7 @@ const howData = [
     subtitle: 'Learn from every project',
     description: 'Analyze performance over time to identify improvement opportunities and benchmark progress.',
     icon: '/solutions/rectangle.png',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Opportunities',
     imageSrc: '/solutions/7-4.svg',
     iconName: 'TrendingUp',
   },
@@ -151,9 +151,9 @@ export default async function DataAnalysis() {
   const workflowStatsFinal = cms?.workflow?.stats?.length
     ? cms.workflow.stats
     : [
-        { label: 'faster product launches', value: '75%' },
-        { label: 'fewer late files', value: '50%' },
-        { label: 'faster artwork adaptations', value: '80%' },
+        { label: 'leading global brands', value: '130+' },
+        { label: 'projects annually', value: '2M+' },
+        { label: 'turnaround reduction times', value: '52%' },
       ];
   const workflowSubtitleFinal = cms?.workflow?.subtitle || '';
 
@@ -177,6 +177,16 @@ export default async function DataAnalysis() {
           />
           <Contact leadingText="Ready to " highlightedText="turn data" trailingText=" into action?" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="See how 5Flow helps you make every decision smarter."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

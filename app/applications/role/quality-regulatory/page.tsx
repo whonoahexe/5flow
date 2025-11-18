@@ -8,7 +8,7 @@ import {
   History,
   SquareCheckBig,
 } from 'lucide-react';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getApplication } from '@/lib/cms/application';
@@ -36,7 +36,7 @@ function resolveIconComponent(iconKey?: string) {
 
 // Fallback data in case CMS is unavailable
 const heroFallback = {
-  title: 'Compliance without compromise',
+  title: 'Move Fast. Stay Compliant. Never Compromise.',
   subtitle: 'Tools built for regulatory and quality descers who can’t afford mistakes',
   description:
     'Regulatory and quality managers need accuracy at every step. From label updates to final approvals, 5Flow ensures complete traceability, audit-ready workflows, and risk-free compliance.',
@@ -53,7 +53,7 @@ const challengeItems = [
     desc: 'A single missed warning can trigger fines',
     sub: '5Flow provides audit-ready workflows with version control and approval trails, so nothing slips through.',
     icon: ShieldAlert,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How It Helps Regulatory Teams',
     buttonLink: '/solutions/artwork-management',
   },
   {
@@ -62,7 +62,7 @@ const challengeItems = [
     desc: 'One change creates errors across markets',
     sub: 'Centralized content management pushes validated updates consistently into every SKU and region.',
     icon: FileStack,
-    buttonText: 'Discover Content Management',
+    buttonText: 'See How It Helps Regulatory Teams',
     buttonLink: '/solutions/content-management',
   },
   {
@@ -71,7 +71,7 @@ const challengeItems = [
     desc: 'Approvals get lost in email chains',
     sub: 'All approvals are tracked, timestamped, and linked directly to artwork, giving you end-to-end visibility.',
     icon: FileSearch2,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How It Helps Regulatory Teams',
     buttonLink: '/solutions/artwork-management',
   },
   {
@@ -80,7 +80,7 @@ const challengeItems = [
     desc: 'Teams can’t prove compliance quickly',
     sub: 'With built-in records, reports are generated instantly for audits and inspections.',
     icon: ShieldQuestionMark,
-    buttonText: 'Discover Data Analysis',
+    buttonText: 'See How It Helps Regulatory Teams',
     buttonLink: '/solutions/data-analysis',
   },
   {
@@ -89,7 +89,7 @@ const challengeItems = [
     desc: 'Delays put launches at risk',
     sub: 'Automated workflows move files faster while maintaining full accuracy and compliance checks.',
     icon: History,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How It Helps Regulatory Teams',
     buttonLink: '/solutions/artwork-management',
   },
 ];
@@ -190,13 +190,23 @@ export default async function QualityRegulatory() {
             }
             subtitle="Proven with pharma, healthcare, and FMCG."
             statsData={[
-              { label: 'faster product launches', value: '75%' },
-              { label: 'fewer late files', value: '50%' },
-              { label: 'faster artwork adaptations', value: '80%' },
+              { label: 'leading global brands', value: '130+' },
+              { label: 'projects annually', value: '2M+' },
+              { label: 'turnaround reduction times', value: '52%' },
             ]}
           />
           <Contact leadingText="The Best Software For " highlightedText="Regulatory & Quality Managers" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="Get a live demo of our advanced artwork management solution."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

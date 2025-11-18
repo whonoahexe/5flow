@@ -2,7 +2,7 @@ import { CalendarClock, CircleDollarSign, EyeOff, Rocket, ShieldAlert, Target, U
 import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getProduct } from '@/lib/cms/product';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/product/Hero';
@@ -17,11 +17,12 @@ import Who from '@/components/page/home/Who';
 const heroData = {
   logoSrc: '/product/mediabox.svg',
   logoAlt: 'Wave Brand',
-  title: 'Bring your brand to life',
-  subtitle: 'Creative workflows made easy and accurate',
+  title: 'Less Work. More Flow.',
+  subtitle: 'Workflows made easy and accurate',
   description:
-    'Mediabox is a web-based workflow management platform that simplifies creative and marketing operations. From briefing to approvals, it keeps projects moving, reduces errors, and helps teams deliver on-brand campaigns faster.',
+    'Mediabox is a web-based workflow management tool  that will empower you to bring your brand to life with ease and accuracy.. Mediabox unlocks efficiencies through workflow process, status visibility and online approval.',
   imageSrc: '/product/Solution_Banner_Mediabox.jpg',
+  buttonText: 'Book A Demo',
   mobileImageSrc: '/product/Solution_Banner_Mediabox_mobile.jpg',
   imageWidth: 245,
   imageAlt: 'rectangle',
@@ -30,7 +31,7 @@ const heroData = {
 const whatData = [
   [
     {
-      title: 'Disconnected tools',
+      title: 'Fragmented systems',
       subtitle: 'Creative work scattered across platforms',
       description: 'Teams waste time moving between systems, losing files, and duplicating tasks.',
       icon: Unplug,
@@ -46,7 +47,7 @@ const whatData = [
   ],
   [
     {
-      title: 'Costly errors',
+      title: 'Rigid tools',
       subtitle: 'Late or inaccurate assets impact campaigns',
       description: 'Wrong files, missed versions, or compliance slip-ups drive costly rework and missed deadlines.',
       icon: CircleDollarSign,
@@ -66,9 +67,8 @@ const howData = [
   {
     title: 'Centralized platform',
     subtitle: 'One place for every asset',
-    description:
-      'Mediabox organizes creative projects and assets in a single system, reducing duplication and confusion.',
-    buttonText: 'Discover Artwork Management',
+    description: `Mediabox let's you stay on top of your project deadlines with the project management features.`,
+    buttonText: 'Discover the Platform',
     buttonLink: '/solutions/artwork-management',
     imageSrc: '/product/3-1.svg',
     iconName: 'MonitorCloud',
@@ -77,7 +77,7 @@ const howData = [
     title: 'Streamlined approvals',
     subtitle: 'Faster, traceable reviews',
     description: 'Online approvals with version history and annotations keep projects clear, compliant, and on track.',
-    buttonText: 'Discover Online Proofing',
+    buttonText: 'Discover Approvals',
     buttonLink: '/solutions/online-proofing',
     imageSrc: '/product/3-2.svg',
     iconName: 'CircleCheckBig',
@@ -86,14 +86,14 @@ const howData = [
     title: 'Error reduction',
     subtitle: 'Accuracy built into every step',
     description: 'Automated validation and structured workflows reduce mistakes, reprints, and compliance risks.',
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'Discover Accuracy',
     buttonLink: '/solutions/artwork-management',
     imageSrc: '/product/3-3.svg',
     iconName: 'ShieldAlert',
   },
   {
-    title: 'Clear reporting',
-    subtitle: 'Real-time insights for better control',
+    title: 'Easy to search, fast to find',
+    subtitle: 'Check, access, and share all documents from a single source of truth.',
     description: 'Dashboards and analytics give teams full visibility of project health, deadlines, and bottlenecks.',
     buttonText: 'Discover Data Analysis',
     buttonLink: '/solutions/data-analytics',
@@ -106,13 +106,13 @@ const whyData = [
   {
     title: 'Faster time-to-market',
     desc: 'Launch campaigns without delays',
-    sub: 'Cut validation lead time by up to 67 percent with streamlined approvals and workflow automation.',
+    sub: 'Cut validation lead time by up to 67% with streamlined approvals and workflow automation.',
     icon: Rocket,
   },
   {
     title: 'Fewer errors',
     desc: 'Reduce costly mistakes and late files',
-    sub: 'Up to 45 percent fewer errors and 50 percent fewer late assets keep campaigns accurate and reliable.',
+    sub: 'Up to 45% fewer errors and 50% fewer late assets keep campaigns accurate and reliable.',
     icon: ShieldAlert,
   },
   {
@@ -124,7 +124,7 @@ const whyData = [
   {
     title: 'Team productivity',
     desc: 'Clear workflows, confident delivery',
-    sub: 'With 60,000 users worldwide, Mediabox empowers teams to collaborate effectively and focus on creative impact.',
+    sub: 'Mediabox accelerates productivity with consistent workflow tasks and the ability to do on-the-fly changes.',
     icon: Target,
   },
 ];
@@ -143,8 +143,8 @@ const workflowData = {
       label: 'faster validation lead time',
     },
     {
-      value: '50%',
-      label: 'fewer late files',
+      value: '2M+',
+      label: 'projects annually',
     },
     {
       value: '60K+',
@@ -306,8 +306,18 @@ export default async function Mediabox() {
             subtitle={workflowSubtitleFinal}
             statsData={workflowStatsFinal}
           />
-          <Contact leadingText="Ready for " highlightedText="out-of-the-box" trailingText=" creative workflows?" />
+          <Contact leadingText="Ready for " highlightedText="flexible" trailingText=" creative workflows?" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="Get a live demo of our advanced artwork management solution."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ import {
   Rocket,
   ChartArea,
 } from 'lucide-react';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getApplication } from '@/lib/cms/application';
@@ -37,22 +37,23 @@ function resolveIconComponent(iconKey?: string) {
 
 // Fallback data in case CMS is unavailable
 const heroFallback = {
-  title: 'Brand control, simplified',
+  title: 'Brand control at speed',
   subtitle: 'Solutions built for brand managers who need speed and scale',
   description:
     'As a brand manager, you deal with exploding SKUs, endless approvals, and pressure to hit launch dates. 5Flow centralizes workflows, content, and artwork so you can keep projects moving and your brand consistent across markets.',
   imageSrc: '/applications/icp/BrandManager.jpg',
   imageAlt: 'Artwork management preview',
   mobileImageSrc: '/applications/icp/BrandManager-mobile.jpg',
+  ctaText: `See What's Possible`,
 };
 
 const challengeItems = [
   {
-    title: 'SKU refresh overload',
+    title: 'SKU overload',
     desc: 'Too many variants to keep track of',
     sub: '5Flow unifies artwork, claims, and content in one platform so every SKU stays visible, aligned, and on brand.',
     icon: FileStack,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How It Helps Brand Managers',
     buttonLink: '/solutions/artwork-management',
   },
   {
@@ -60,7 +61,7 @@ const challengeItems = [
     desc: 'Reviews drag out launch cycle',
     sub: 'Automated workflows route tasks to the right people, track approvals, and cut wasted time.',
     icon: CircleCheckBig,
-    buttonText: 'Discover Online Proofing',
+    buttonText: 'See How It Helps Brand Managers',
     buttonLink: '/solutions/online-proofing',
   },
   {
@@ -68,7 +69,7 @@ const challengeItems = [
     desc: 'Inconsistent claims across markets',
     sub: 'A central content hub ensures approved copy flows into every artwork and market without manual errors.',
     icon: FileText,
-    buttonText: 'Discover Content Management',
+    buttonText: 'See How It Helps Brand Managers',
     buttonLink: '/solutions/content-management',
   },
   {
@@ -76,7 +77,7 @@ const challengeItems = [
     desc: 'You can’t see where projects stall',
     sub: 'Dashboards highlight bottlenecks and delays so you can act early and keep launches on track.',
     icon: Eye,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How It Helps Brand Managers',
     buttonLink: '/solutions/artwork-management',
   },
   {
@@ -84,7 +85,7 @@ const challengeItems = [
     desc: 'A single mistake costs millions',
     sub: 'Built-in version control and audit trails ensure only validated files make it to market.',
     icon: ShieldQuestionMark,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How It Helps Brand Managers',
     buttonLink: '/solutions/artwork-management',
   },
 ];
@@ -181,13 +182,23 @@ export default async function BrandManager() {
             }
             subtitle="Success stories that resonate."
             statsData={[
-              { label: 'faster product launches', value: '75%' },
-              { label: 'fewer late files', value: '50%' },
-              { label: 'faster artwork adaptations', value: '80%' },
+              { label: 'leading global brands', value: '130+' },
+              { label: 'projects annually', value: '2M+' },
+              { label: 'turnaround reduction times', value: '52%' },
             ]}
           />
-          <Contact leadingText="The Best Software For " highlightedText="Brand Managers" />
+          <Contact leadingText="Trusted by Brand Managers" highlightedText=" Who Deliver" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="Get a live demo of our advanced artwork management solution."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

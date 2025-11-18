@@ -43,6 +43,7 @@ const heroFallback = {
     'Creative studios should be focused on big ideas, not chasing files or juggling endless markups. 5Flow clears the clutter by automating production work, centralizing approvals, and giving designers back the time to design.',
   imageSrc: '/applications/icp/Marketing.jpg',
   imageAlt: 'Artwork management preview',
+  ctaText: 'See What’s Possible',
   mobileImageSrc: '/applications/icp/Marketing-mobile.jpg',
 };
 
@@ -52,7 +53,7 @@ const challengeItems = [
     desc: 'Feedback chaos from multiple stakeholders',
     sub: '5Flow consolidates markups, comments, and approvals in one place, so designers act on clear direction instead of conflicting feedback.',
     icon: SquareStack,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How It Helps Creatives',
     buttonLink: '/solutions/artwork-management',
   },
   {
@@ -60,7 +61,7 @@ const challengeItems = [
     desc: 'Creativity lost to resizing and adaptations',
     sub: 'Automated artwork tools handle resizing, formatting, and multilingual rollouts, freeing teams to focus on design.',
     icon: Repeat2,
-    buttonText: 'Discover Automated Artwork',
+    buttonText: 'See How It Helps Creatives',
     buttonLink: '/solutions/automated-artwork',
   },
   {
@@ -68,7 +69,7 @@ const challengeItems = [
     desc: 'Teams rework the wrong files',
     sub: 'Centralized version control ensures studios always work with the latest, approved artwork.',
     icon: EyeOff,
-    buttonText: 'Discover Asset Library',
+    buttonText: 'See How It Helps Creatives',
     buttonLink: '/solutions/asset-library',
   },
   {
@@ -76,7 +77,7 @@ const challengeItems = [
     desc: 'File sharing across email, drives, and chats',
     sub: 'Integrated communication tools connect creative, brand, and regulatory teams directly to the artwork.',
     icon: MessageCircleQuestionMark,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How It Helps Creatives',
     buttonLink: '/solutions/artwork-management',
   },
   {
@@ -84,7 +85,7 @@ const challengeItems = [
     desc: 'Designers left waiting for approvals',
     sub: 'Automated workflows route files to the right stakeholders at the right time, keeping creative projects on schedule.',
     icon: History,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How It Helps Creatives',
     buttonLink: '/solutions/artwork-management',
   },
 ];
@@ -181,12 +182,12 @@ export default async function CreativeStudio() {
             }
             subtitle="Proven results across industries."
             statsData={[
-              { label: 'faster product launches', value: '75%' },
-              { label: 'fewer late files', value: '50%' },
-              { label: 'faster artwork adaptations', value: '80%' },
+              { label: 'leading global brands', value: '130+' },
+              { label: 'projects annually', value: '2M+' },
+              { label: 'turnaround reduction times', value: '52%' },
             ]}
           />
-          <Contact leadingText="The Best Software For " highlightedText="Brand Managers" />
+          <Contact leadingText="Trusted by Top Creative and Design Studios " highlightedText="Worldwide" />
         </div>
       </div>
     </div>

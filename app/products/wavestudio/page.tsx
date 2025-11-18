@@ -2,7 +2,7 @@ import { CalendarClock, CalendarX2, FileXIcon, History, Lightbulb, Rocket, Scali
 import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getProduct } from '@/lib/cms/product';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/product/Hero';
 import How from '@/components/page/product/How';
@@ -22,6 +22,7 @@ const heroData = {
     'WaveStudio combines automation with creative expertise. We turn endless artwork requests into fast, accurate, on-brand outputs so you can keep creating without burning out.',
   imageSrc: '/product/Solution_Banner_WAVESTUDIO.jpg',
   mobileImageSrc: '/product/Solution_Banner_WAVESTUDIO_mobile.jpg',
+  buttonText: 'Start a Project',
   imageWidth: 677,
   imageAlt: 'rectangle',
 };
@@ -66,7 +67,7 @@ const howData = [
     title: 'Smart automation',
     subtitle: 'Automation handles the repetitive stuff',
     description: "Our tech automates resizing, formatting, and versioning so your designers don't have to.",
-    buttonText: 'Discover Automated Artwork',
+    buttonText: 'Discover Automation',
     buttonLink: '/solutions/automated-artwork',
     imageSrc: '/product/4-1.svg',
     iconName: 'Settings',
@@ -75,7 +76,7 @@ const howData = [
     title: 'Creative consistency',
     subtitle: 'Guardrails built into every file',
     description: 'Templates, brand rules, and quality checks keep everything looking sharp and on brand.',
-    buttonText: 'Discover Automated Artwork',
+    buttonText: 'Discover Asset Hub',
     buttonLink: '/solutions/automated-artwork',
     imageSrc: '/product/4-2.svg',
     iconName: 'RefreshCcw',
@@ -85,7 +86,7 @@ const howData = [
     subtitle: 'More output without more headcount',
     description:
       'We extend your team with production firepower so you can handle ten times the work without the stress.',
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'Discover Scale',
     buttonLink: '/solutions/artwork-management',
     imageSrc: '/product/4-3.svg',
     iconName: 'Scaling',
@@ -94,7 +95,7 @@ const howData = [
     title: 'Faster delivery',
     subtitle: 'Campaigns go live on time',
     description: 'Agile workflows and parallel production cycles mean deadlines are always met.',
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'Discover Speed',
     buttonLink: '/solutions/artwork-management',
     imageSrc: '/product/4-4.svg',
     iconName: 'Zap',
@@ -286,6 +287,16 @@ export default async function Wavestudio() {
           />
           <Contact leadingText="Ready to make " highlightedText="more" trailingText=" with less?" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Ready"
+          leftSubtitle="To make"
+          rightTitle="More with Less?"
+          rightDesc="Scale artwork production, cut turnaround times, and keep your brand sharp without adding headcount."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

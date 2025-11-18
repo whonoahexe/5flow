@@ -1,3 +1,4 @@
+import { Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Form from '@/components/page/contact/Form';
 import Hero from '@/components/page/contact/Hero';
@@ -16,10 +17,20 @@ export default function Contact() {
               {`We're here to help you move faster, smarter, and with less complexity`}
             </FullBleedLines>
             <FullBleedLines className="max-w-2xl text-sm md:text-base">
-              {`Whether you want a product demo, a pricing discussion, or just answers to your workflow questions, the 5Flow team is ready. Reach out to us by filling the form and we'll get back to you quickly.`}
+              {`Whether you want a product demo, a pricing discussion, or just answers to your workflow questions, the 5Flow team is ready. Let's bring your vision to life.`}
             </FullBleedLines>
           </div>
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="Get a live demo of our advanced artwork management solution."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

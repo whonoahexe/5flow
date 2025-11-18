@@ -2,7 +2,7 @@ import { CircleGauge, RefreshCcw, ShieldCheck, Zap } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getSolution } from '@/lib/cms/solution';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
@@ -47,7 +47,7 @@ const howData = [
     title: 'Centralized repository',
     subtitle: 'Every file in one hub',
     description: 'Logos, artworks, cutter guides, and more stored securely with access controls.',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Repository',
     imageSrc: '/solutions/4-1.svg',
     iconName: 'LayoutDashboard',
   },
@@ -55,7 +55,7 @@ const howData = [
     title: 'Advanced search',
     subtitle: 'Find assets instantly',
     description: 'Metadata tagging and filters make searching fast and accurate.',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Search',
     imageSrc: '/solutions/4-2.svg',
     iconName: 'ScanSearch',
   },
@@ -63,7 +63,7 @@ const howData = [
     title: 'Access control',
     subtitle: 'The right file for the right user',
     description: 'Role-based permissions ensure stakeholders only see what they need.',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Access Control',
     imageSrc: '/solutions/4-3.svg',
     iconName: 'LockKeyhole',
   },
@@ -71,7 +71,7 @@ const howData = [
     title: 'Connected to workflows',
     subtitle: 'Assets always in sync',
     description: 'Linked directly to artwork and content management for accuracy and speed.',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Integration',
     imageSrc: '/solutions/4-4.svg',
     iconName: 'Route',
   },
@@ -149,11 +149,11 @@ export default async function AssetLibrary() {
   const workflowStatsFinal = cms?.workflow?.stats?.length
     ? cms.workflow.stats
     : [
-        { label: 'faster product launches', value: '75%' },
-        { label: 'fewer late files', value: '50%' },
-        { label: 'rework reduction', value: '25%' },
+        { label: 'leading global brands', value: '130+' },
+        { label: 'projects annually', value: '2M+' },
+        { label: 'unique users', value: '140K' },
       ];
-  const workflowSubtitleFinal = cms?.workflow?.subtitle || '';
+  const workflowSubtitleFinal = cms?.workflow?.subtitle || 'Numbers that matter';
 
   return (
     <div className="relative">
@@ -175,6 +175,16 @@ export default async function AssetLibrary() {
           />
           <Contact leadingText="Time to turn your packaging liabilities into " highlightedText="assets" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="Get a live demo of our advanced artwork management solution."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

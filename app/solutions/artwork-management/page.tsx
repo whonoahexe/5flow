@@ -2,7 +2,7 @@ import { CircleDollarSign, Rocket, Scaling, ShieldCheck } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getSolution } from '@/lib/cms/solution';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
@@ -30,7 +30,7 @@ const heroData = {
   title: 'Artwork management without the chaos',
   subtitle: 'Centralize, streamline, and simplify every artwork project',
   description:
-    'Our Artwork Management ensures that brands, designers, and regulatory teams finally get one source of truth. No more version hunts, long email threads, or missed deadlines. Just a clear, connected workflow that keeps projects accurate and on time.',
+    'Our Artwork Management ensures that brands, retailers, and producers finally get one source of truth. No more version hunts, long email threads, or missed deadlines. Just a clear, connected workflow that keeps projects accurate and on time.',
   imageSrc: '/solutions/artwork-management.png',
   imageAlt: 'Artwork management preview',
   mobileImageSrc: '/solutions/artwork-management-mobile.png',
@@ -43,7 +43,7 @@ const howData = [
     subtitle: 'One hub for every file',
     description:
       'Artwork files, cutter guides, and declarations all live in one place. No more scattered assets across teams.',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Centralization',
     imageSrc: '/solutions/1.svg',
     iconName: 'MonitorCog',
   },
@@ -52,27 +52,26 @@ const howData = [
     subtitle: 'Work moves without bottlenecks',
     description: 'Approvals, reviews, and updates route automatically to the right person, keeping projects on track.',
     icon: '/solutions/rectangle.png',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Automation',
     imageSrc: '/solutions/2.svg',
     iconName: 'Workflow',
   },
   {
-    title: 'Version control',
-    subtitle: 'Every change documented',
-    description:
-      'Every update is tracked and logged. Teams work with confidence, knowing they always have the latest version.',
+    title: 'Clear Briefs',
+    subtitle: 'Intelligence begins with a clear brief.',
+    description: 'Start projects with clear information from the beginning, aligned to your personal preferences',
     icon: '/solutions/rectangle.png',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Clear Briefs',
     imageSrc: '/solutions/3.svg',
     iconName: 'SearchCheck',
   },
   {
-    title: 'Integrated communication',
-    subtitle: 'Approvals without the noise',
+    title: 'Dashboards',
+    subtitle: 'Your project. All in one view.',
     description:
-      'Comments, markups, and approvals happen in-platform, not across email chains, reducing confusion and delays.',
+      'See all of your activity at once. Our customized widgets allow you to view on-going projects, tasks and deadlines with direct access to hot projects, files pending approval, and more.',
     icon: '/solutions/rectangle.png',
-    buttonText: 'Book A Demo',
+    buttonText: 'Discover Dashboards',
     imageSrc: '/solutions/4.svg',
     iconName: 'MessageSquarePlus',
   },
@@ -151,9 +150,9 @@ export default async function ArtworkManagement() {
   const workflowStatsFinal = cms?.workflow?.stats?.length
     ? cms.workflow.stats
     : [
-        { label: 'faster product launches', value: '75%' },
-        { label: 'fewer late files', value: '50%' },
-        { label: ' rework reduction', value: '25%' },
+        { label: 'leading global brands', value: '130+' },
+        { label: 'projects annually', value: '2M+' },
+        { label: 'unique users', value: '140K' },
       ];
   const workflowSubtitleFinal = cms?.workflow?.subtitle || '';
 
@@ -177,6 +176,16 @@ export default async function ArtworkManagement() {
           />
           <Contact leadingText="Ready to " highlightedText="simplify" trailingText=" artwork management?" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="See how 5Flow’s Artwork Management solution can streamline your process, reduce errors, and accelerate launches."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ import {
 import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getApplication } from '@/lib/cms/application';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/applications/Hero';
 import Challenges from '@/components/page/applications/Challenges';
@@ -52,16 +52,16 @@ const challengeItems = [
     desc: 'Leaflet approved, label delayed, carton missing updates',
     sub: '5Flow links every component in one workflow so labels, cartons, and inserts move forward together.',
     icon: History,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How 5Flow Helps Consumer Goods Brands',
     buttonLink: '/solutions/artwork-management',
   },
   {
     id: 'language-heavy-packs',
-    title: 'Language-heavy packs\n drive reprints',
+    title: 'Copy-heavy packs drive reprints',
     desc: 'Multilingual detergent or appliance packs rarely pass error-free',
     sub: 'Centralized translation and version control ensure approved text flows into every SKU variant without manual copy-paste errors.',
     icon: Languages,
-    buttonText: 'Discover Content Management',
+    buttonText: 'See How 5Flow Helps Consumer Goods Brands',
     buttonLink: '/solutions/content-management',
   },
   {
@@ -70,7 +70,7 @@ const challengeItems = [
     desc: 'Holiday or event packaging fragments supplier timelines',
     sub: 'Automated workflows align suppliers and vendors on promo pack assets, cutting delays and misprints.',
     icon: ClockAlert,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How 5Flow Helps Consumer Goods Brands',
     buttonLink: '/solutions/artwork-management',
   },
   {
@@ -79,7 +79,7 @@ const challengeItems = [
     desc: 'Same product, different labeling rules by region',
     sub: 'Market-specific workflows adapt global packs to local labeling requirements while preserving brand consistency.',
     icon: MapPinPlus,
-    buttonText: 'Discover Automated Artwork',
+    buttonText: 'See How 5Flow Helps Consumer Goods Brands',
     buttonLink: '/solutions/automated-artwork',
   },
   {
@@ -88,7 +88,7 @@ const challengeItems = [
     desc: 'One late component delays the entire launch',
     sub: 'Dashboards give real-time status on every carton, leaflet, and label, so managers can unblock projects early.',
     icon: EyeOff,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How 5Flow Helps Consumer Goods Brands',
     buttonLink: '/solutions/artwork-management',
   },
 ];
@@ -222,6 +222,16 @@ export default async function ConsumerGoods() {
           <Benefits items={benefitItemsFinal} highlightedText={cms?.benefits?.highlightedText || 'Consumer Goods'} />
           <Contact leadingText="The " highlightedText="Best Software" trailingText=" For Consumer Goods Brands" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="Get a live demo of our advanced artwork management solution."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

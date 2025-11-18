@@ -12,7 +12,7 @@ import {
 import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getApplication } from '@/lib/cms/application';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/applications/Hero';
 import Challenges from '@/components/page/applications/Challenges';
@@ -52,7 +52,7 @@ const challengeItems = [
     desc: 'Packaging can’t keep up',
     sub: '5Flow centralizes ingredient data and pushes updates into artwork automatically, keeping labels accurate.',
     icon: ListRestart,
-    buttonText: 'Discover Content Management',
+    buttonText: 'See How 5Flow Helps Pharma Teams',
     buttonLink: '/solutions/content-management',
   },
   {
@@ -61,7 +61,7 @@ const challengeItems = [
     desc: 'Small errors create big recalls',
     sub: 'Automated validation rules check allergen and nutrition panels to prevent mislabeling.',
     icon: ShieldAlert,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How 5Flow Helps Pharma Teams',
     buttonLink: '/solutions/artwork-management',
   },
   {
@@ -70,7 +70,7 @@ const challengeItems = [
     desc: 'Green messaging often inconsistent',
     sub: 'Content hubs manage sustainability claims and certifications, ensuring consistent and compliant messaging.',
     icon: CircleCheckBig,
-    buttonText: 'Discover Content Management',
+    buttonText: 'See How 5Flow Helps Pharma Teams',
     buttonLink: '/solutions/content-management',
   },
   {
@@ -79,7 +79,7 @@ const challengeItems = [
     desc: 'One product, multiple standards',
     sub: 'Multi-language and regional workflows adapt packaging for each market without losing control.',
     icon: GlobeLock,
-    buttonText: 'Discover Content Management',
+    buttonText: 'See How 5Flow Helps Pharma Teams',
     buttonLink: '/solutions/content-management',
   },
   {
@@ -88,7 +88,7 @@ const challengeItems = [
     desc: 'Campaigns miss their shelf window',
     sub: 'Automated workflows streamline approvals across marketing, regulatory, and suppliers, cutting delays.',
     icon: History,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How 5Flow Helps Pharma Teams',
     buttonLink: '/solutions/artwork-management',
   },
 ];
@@ -222,6 +222,16 @@ export default async function FoodBeverages() {
           <Benefits items={benefitItemsFinal} highlightedText={cms?.benefits?.highlightedText || 'Food & Beverages'} />
           <Contact leadingText="The " highlightedText="Best Software" trailingText=" For Food & Beverage Brands" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="Get a live demo of our advanced artwork management solution."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

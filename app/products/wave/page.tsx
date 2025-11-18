@@ -11,7 +11,7 @@ import {
 import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getProduct } from '@/lib/cms/product';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import InlineHighlight from '@/components/core/inline-highlight';
 import Hero from '@/components/page/product/Hero';
@@ -26,10 +26,10 @@ import Who from '@/components/page/home/Who';
 const heroData = {
   logoSrc: '/product/wave.svg',
   logoAlt: 'Wave Brand',
-  title: 'Artwork management, without the chaos',
+  title: 'Creative and Artwork management, without the chaos',
   subtitle: 'Faster progress from first draft to final approval.',
   description:
-    'WAVE gives brand, packaging, and regulatory teams a single platform to brief, review, and approve artwork. No more confusion, no more delays. Just clear workflows that move projects forward.',
+    'WAVE gives brand, packaging, and regulatory teams a single platform to brief, review, and approve assets. No more confusion, no more delays. Just clear workflows that move projects forward.',
   imageSrc: '/product/Solution_Banner_WAVE.jpg',
   mobileImageSrc: '/product/Solution_Banner_WAVE_mobile.jpg',
   imageWidth: 291,
@@ -40,24 +40,24 @@ const whatData = [
   [
     {
       title: 'Endless approval loops',
-      subtitle: 'Too many rounds, too much wasted time',
+      subtitle: 'Too many rounds, too many reminders, too slow',
       description: 'Without control, multiple versions float around, causing errors, confusion, and rework.',
       buttonLink: '/solutions/online-proofing',
       icon: CalendarSync,
     },
     {
-      title: 'Version chaos',
-      subtitle: 'No one knows which file is final?',
-      description: 'Without control, multiple versions float around, causing errors, confusion, and rework.',
+      title: 'Growing complexity',
+      subtitle: 'Too many emails, agencies and just too many people involved',
+      description: 'Without control, it creates silos that slow down execution.',
       buttonLink: '/solutions/asset-library',
       icon: FileStack,
     },
   ],
   [
     {
-      title: 'Compliance risks',
-      subtitle: 'A single missed change can cost millions',
-      description: 'Incorrect labels or missed regulatory updates create compliance nightmares and market delays.',
+      title: 'Risk of errors',
+      subtitle: 'Fast-paced markets leave no room for delays.',
+      description: 'Inconsistent data and processes make it harder to stay on-brand and compliant.',
       buttonLink: '/solutions/artwork-management',
       icon: ShieldAlert,
     },
@@ -86,7 +86,7 @@ const howData = [
     title: 'Centralized files',
     subtitle: 'One version, one source of truth',
     description: 'Every artwork, asset, and update lives in one platform, so teams always work from the right file.',
-    buttonText: 'Discover Asset Library',
+    buttonText: 'Discover Asset Hub',
     buttonLink: '/solutions/asset-library',
     imageSrc: '/product/2.svg',
     iconName: 'FileStack',
@@ -96,7 +96,7 @@ const howData = [
     subtitle: 'Every step documented, every change tracked',
     description:
       'With audit-ready records, version control, and regulatory checks, WAVE makes compliance part of the process.',
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'Discover Compliance',
     buttonLink: '/solutions/artwork-management',
     imageSrc: '/product/3.svg',
     iconName: 'ShieldCheck',
@@ -105,7 +105,7 @@ const howData = [
     title: 'Live project visibility',
     subtitle: 'See status, spot bottlenecks, stay in control',
     description: 'Dashboards, milestones, and timelines give managers instant clarity with no chasing updates.',
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'Discover Visibility',
     buttonLink: '/solutions/artwork-management',
     imageSrc: '/product/4.svg',
     iconName: 'Eye',
@@ -140,12 +140,12 @@ const whyData = [
 ];
 
 const workflowData = {
-  subtitle: 'From retailers to pharma to FMCG, everyone loves to surf the WAVE',
+  subtitle: 'From CPGs, to retailers to pharma, everyone loves to surf the WAVE',
   buttonText: 'See Case Studies',
   statsData: [
     {
-      value: '50k+',
-      label: 'active users',
+      value: '500k+',
+      label: 'projects annually',
     },
     {
       value: '300K+',
@@ -168,7 +168,7 @@ const needData = {
   title2: ' for a smooth WAVE ride',
   subtitle: 'From small teams to global enterprises',
   description:
-    "WAVE scales with your business. Whether you're managing a few artworks or thousands across multiple markets, our pricing has something for everyone.",
+    'Wave grows with you, from small teams to enterprise operations - with a flexible model that fits every stage of your business.',
   buttonText: 'Talk to Us',
 };
 
@@ -241,7 +241,7 @@ export default async function Wave() {
           title: item.title || '',
           subtitle: item.subtitle || '',
           description: item.bodyHtml || item.body_html || item.description || '',
-          buttonText: 'Learn more',
+          buttonText: item.buttonText || item.button_text || 'Learn more',
           buttonLink: item.linkUrl || item.link_url || undefined,
           imageSrc: item.imageUrl || item.image_url || '/product/1.svg',
           iconName: toPascalCase((item.iconKey || item.icon_key || 'BadgeCheck') as string),
@@ -306,7 +306,7 @@ export default async function Wave() {
           <Workflow
             title={
               <>
-                Trusted <InlineHighlight>worldwide</InlineHighlight>
+                Real brands, real users, real <InlineHighlight>impact.</InlineHighlight>
               </>
             }
             subtitle={workflowSubtitleFinal}
@@ -314,6 +314,16 @@ export default async function Wave() {
           />
           <Contact leadingText="Ready to " highlightedText="simplify" trailingText=" artwork management?" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="Get a live demo of our advanced artwork management solution."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );

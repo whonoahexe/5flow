@@ -12,7 +12,7 @@ import {
 import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getApplication } from '@/lib/cms/application';
-import { Contact } from '@/components/layout';
+import { Contact, Cta } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/applications/Hero';
 import Challenges from '@/components/page/applications/Challenges';
@@ -47,12 +47,21 @@ const heroFallback = {
 
 const challengeItems = [
   {
+    id: 'high-sku-velocity',
+    title: 'High SKU velocity',
+    desc: 'Deadlines missed for seasonal launches',
+    sub: 'Automated approvals and real-time dashboards keep new launches and promos shelf-ready on time.',
+    icon: History,
+    buttonText: 'See How 5Flow Helps Beauty Brands',
+    buttonLink: '/solutions/artwork-management',
+  },
+  {
     id: 'shade-finish-launches',
-    title: 'Shade and finish launches multiply',
-    desc: 'Variants overwhelm workflows',
+    title: 'Variants overwhelm workflows',
+    desc: 'Multiple variants lead to lower quality',
     sub: '5Flow automates variant artwork creation so new shades and finishes roll out consistently across packaging lines.',
     icon: LayoutDashboard,
-    buttonText: 'Discover Automated Artwork',
+    buttonText: 'See How 5Flow Helps Beauty Brands',
     buttonLink: '/solutions/automated-artwork',
   },
   {
@@ -61,26 +70,8 @@ const challengeItems = [
     desc: 'Marketing and packaging out of sync',
     sub: 'Centralized content hubs keep approved claims aligned across regions, SKUs, and campaigns.',
     icon: Grid2X2,
-    buttonText: 'Discover Content Management',
+    buttonText: 'See How 5Flow Helps Beauty Brands',
     buttonLink: '/solutions/content-management',
-  },
-  {
-    id: 'regional-labeling',
-    title: 'Regional labeling rules',
-    desc: 'One product, many standards',
-    sub: 'Multi-language workflows adapt labels for each region while preserving brand consistency.',
-    icon: GlobeLock,
-    buttonText: 'Discover Content Management',
-    buttonLink: '/solutions/content-management',
-  },
-  {
-    id: 'high-sku-velocity',
-    title: 'High SKU velocity',
-    desc: 'Deadlines missed for seasonal launches',
-    sub: 'Automated approvals and real-time dashboards keep new launches and promos shelf-ready on time.',
-    icon: History,
-    buttonText: 'Discover Artwork Management',
-    buttonLink: '/solutions/artwork-management',
   },
   {
     id: 'fragmented-collaboration',
@@ -88,8 +79,17 @@ const challengeItems = [
     desc: 'Teams and suppliers working in silos',
     sub: 'Integrated workflows connect brand, design, regulatory, and suppliers in one traceable system.',
     icon: MessageCircleQuestionMark,
-    buttonText: 'Discover Artwork Management',
+    buttonText: 'See How 5Flow Helps Beauty Brands',
     buttonLink: '/solutions/artwork-management',
+  },
+  {
+    id: 'regional-labeling',
+    title: 'Regional labeling rules',
+    desc: 'One product, many standards',
+    sub: 'Multi-language workflows adapt labels for each region while preserving brand consistency.',
+    icon: GlobeLock,
+    buttonText: 'See How 5Flow Helps Beauty Brands',
+    buttonLink: '/solutions/content-management',
   },
 ];
 
@@ -224,6 +224,16 @@ export default async function BeautyCosmetics() {
           />
           <Contact leadingText="The " highlightedText="Best Software" trailingText=" For Beauty & Cosmetics Brands" />
         </div>
+      </div>
+
+      <div className="pt-12 md:pt-20">
+        <Cta
+          leftTitle="Experience"
+          leftSubtitle="What’s Next in"
+          rightTitle="Artwork Management"
+          rightDesc="Get a live demo of our advanced artwork management solution."
+          buttonText="Book A Demo"
+        />
       </div>
     </div>
   );
