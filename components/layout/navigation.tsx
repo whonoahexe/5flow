@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ArrowRight, ArrowUpRight, Menu, X, ChevronDown } from 'lucide-react'; // added ChevronDown
+import { ArrowRight, ArrowUpRight, Menu, X, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
@@ -46,6 +46,7 @@ export type NavigationProps = {
   labels?: Record<string, string>;
 };
 
+// Fallback navigation items
 const NAV_ITEMS: NavItem[] = [
   { type: 'link', href: '/about', label: 'ABOUT', keyId: 'about' },
   {
@@ -413,9 +414,7 @@ export function Navigation({ labels }: NavigationProps) {
                   </button>
                   {isExpanded && (
                     <div className="ml-3 flex flex-col gap-2">
-                      {/* Parent "View ..." link removed on mobile — show only available child items */}
-
-                      {/* flat items */}
+                      {/* Flat items */}
                       {menu.items && (
                         <div className="flex flex-col gap-1">
                           {menu.items.map(({ href, label }) => (
@@ -454,7 +453,6 @@ export function Navigation({ labels }: NavigationProps) {
               );
             })}
 
-            {/* Optional: include CTA inside mobile menu */}
             <div className="mt-3">
               <Link
                 href="/contact"

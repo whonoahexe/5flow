@@ -4,6 +4,7 @@ interface FullBleedLinesProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
 }
 
+// Hid the grid lines (add border in future if needed)
 const FullBleedLines = ({ className, children, ...rest }: FullBleedLinesProps) => {
   return (
     <div

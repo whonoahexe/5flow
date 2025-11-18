@@ -22,6 +22,7 @@ const toPx = (v?: string | number): number | undefined => {
   return m ? parseFloat(m[1]) : undefined;
 };
 
+// Removed margins (kept for future reference)
 const PatternOverlay = ({
   side = 'left',
   margin = '152px',

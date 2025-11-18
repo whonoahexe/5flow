@@ -2,6 +2,7 @@ import { features } from '@/lib/features';
 import { getNavigationLabels } from '@/lib/cms/navigation';
 import { Navigation } from './navigation';
 
+// Server component to fetch navigation labels and render from CMS
 export async function ServerNavigation() {
   let labelsMap: Record<string, string> | undefined = undefined;
 

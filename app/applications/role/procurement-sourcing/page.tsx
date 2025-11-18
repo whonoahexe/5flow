@@ -8,17 +8,18 @@ import {
   CircleCheckBig,
   LaptopMinimalCheck,
 } from 'lucide-react';
-import { Contact, Cta } from '@/components/layout';
+import { Contact } from '@/components/layout';
+import * as LucideIcons from 'lucide-react';
+import { features } from '@/lib/features';
+import { getApplication } from '@/lib/cms/application';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/applications/Hero';
 import Workflow from '@/components/page/applications/Workflow';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
-import * as LucideIcons from 'lucide-react';
-import { features } from '@/lib/features';
-import { getApplication } from '@/lib/cms/application';
 
+// Utility
 function toPascalCase(input: string) {
   return input
     .split(/[-_\s]+/)
@@ -33,96 +34,97 @@ function resolveIconComponent(iconKey?: string) {
   return Icon || null;
 }
 
+// Fallback data in case CMS is unavailable
+const heroFallback = {
+  title: 'Procurement made predictable',
+  subtitle: 'Accuracy and efficiency across your supply chain',
+  description:
+    'Procurement teams are tasked with cutting costs and ensuring supplier efficiency — but artwork errors, misaligned assets, and reprints eat into budgets. 5Flow gives you control over assets, workflows, and approvals, so suppliers always receive the right files the first time.',
+  imageSrc: '/applications/icp/Procurement.jpg',
+  imageAlt: 'Artwork management preview',
+  mobileImageSrc: '/applications/icp/Procurement-mobile.jpg',
+};
+
+const challengeItems = [
+  {
+    id: 'costly-reprints',
+    title: 'Costly reprints',
+    desc: 'Errors drive wasted spend',
+    sub: '5Flow ensures suppliers receive the right, validated files every time, eliminating costly mistakes and reprints.',
+    icon: CircleDollarSign,
+    buttonText: 'Discover Artwork Management',
+    buttonLink: '/solutions/artwork-management',
+  },
+  {
+    id: 'supply-chain-delays',
+    title: 'Supply chain delays',
+    desc: 'Wrong files stall production',
+    sub: 'A centralized asset library gives suppliers direct access to approved artwork and cutter guides, keeping timelines intact.',
+    icon: History,
+    buttonText: 'Discover Asset Library',
+    buttonLink: '/solutions/asset-library',
+  },
+  {
+    id: 'lack-of-visibility',
+    title: 'Lack of visibility',
+    desc: 'No clarity on project status or supplier readiness',
+    sub: 'Dashboards show procurement teams where projects stand, so supplier alignment is proactive, not reactive.',
+    icon: EyeOff,
+    buttonText: 'Discover Artwork Management',
+    buttonLink: '/solutions/artwork-management',
+  },
+  {
+    id: 'manual-back-and-forth',
+    title: 'Manual back-and-forth',
+    desc: 'Email overload with suppliers',
+    sub: 'Integrated communication reduces supplier emails by structuring feedback, clarifications, and approvals in one system.',
+    icon: Repeat2,
+    buttonText: 'Discover Artwork Management',
+    buttonLink: '/solutions/artwork-management',
+  },
+  {
+    id: 'inconsistent-quality',
+    title: 'Inconsistent quality',
+    desc: 'Errors slip through fragmented workflows',
+    sub: 'Automated checks and traceability ensure suppliers work only with approved, accurate files.',
+    icon: ShieldAlert,
+    buttonText: 'Discover Online Proofing',
+    buttonLink: '/solutions/online-proofing',
+  },
+];
+
+const benefitItems = [
+  {
+    id: 'predictable-supply',
+    title: 'Predictable supply chain',
+    desc: 'No surprises, fewer delays',
+    sub: 'With validated files and structured workflows, suppliers receive exactly what they need, when they need it.',
+    icon: CircleCheckBig,
+  },
+  {
+    id: 'cost-efficiency',
+    title: 'Cost efficiency',
+    desc: 'Save budgets by eliminating waste',
+    sub: 'Fewer reprints and less manual rework directly reduce costs across production.',
+    icon: CircleDollarSign,
+  },
+  {
+    id: 'supplier-alignment',
+    title: 'Supplier alignment',
+    desc: 'A single source of truth for partners',
+    sub: 'Centralized access ensures suppliers always work with approved artwork and assets.',
+    icon: LaptopMinimalCheck,
+  },
+  {
+    id: 'risk-reduction',
+    title: 'Risk reduction',
+    desc: 'Compliance built into procurement',
+    sub: 'Every file is tracked and validated, minimizing risks from errors or outdated materials.',
+    icon: ShieldCheck,
+  },
+];
+
 export default async function ProcurementSourcing() {
-  const heroFallback = {
-    title: 'Procurement made predictable',
-    subtitle: 'Accuracy and efficiency across your supply chain',
-    description:
-      'Procurement teams are tasked with cutting costs and ensuring supplier efficiency — but artwork errors, misaligned assets, and reprints eat into budgets. 5Flow gives you control over assets, workflows, and approvals, so suppliers always receive the right files the first time.',
-    imageSrc: '/applications/icp/Procurement.jpg',
-    imageAlt: 'Artwork management preview',
-    mobileImageSrc: '/applications/icp/Procurement-mobile.jpg',
-  };
-
-  const challengeItems = [
-    {
-      id: 'costly-reprints',
-      title: 'Costly reprints',
-      desc: 'Errors drive wasted spend',
-      sub: '5Flow ensures suppliers receive the right, validated files every time, eliminating costly mistakes and reprints.',
-      icon: CircleDollarSign,
-      buttonText: 'Discover Artwork Management',
-      buttonLink: '/solutions/artwork-management',
-    },
-    {
-      id: 'supply-chain-delays',
-      title: 'Supply chain delays',
-      desc: 'Wrong files stall production',
-      sub: 'A centralized asset library gives suppliers direct access to approved artwork and cutter guides, keeping timelines intact.',
-      icon: History,
-      buttonText: 'Discover Asset Library',
-      buttonLink: '/solutions/asset-library',
-    },
-    {
-      id: 'lack-of-visibility',
-      title: 'Lack of visibility',
-      desc: 'No clarity on project status or supplier readiness',
-      sub: 'Dashboards show procurement teams where projects stand, so supplier alignment is proactive, not reactive.',
-      icon: EyeOff,
-      buttonText: 'Discover Artwork Management',
-      buttonLink: '/solutions/artwork-management',
-    },
-    {
-      id: 'manual-back-and-forth',
-      title: 'Manual back-and-forth',
-      desc: 'Email overload with suppliers',
-      sub: 'Integrated communication reduces supplier emails by structuring feedback, clarifications, and approvals in one system.',
-      icon: Repeat2,
-      buttonText: 'Discover Artwork Management',
-      buttonLink: '/solutions/artwork-management',
-    },
-    {
-      id: 'inconsistent-quality',
-      title: 'Inconsistent quality',
-      desc: 'Errors slip through fragmented workflows',
-      sub: 'Automated checks and traceability ensure suppliers work only with approved, accurate files.',
-      icon: ShieldAlert,
-      buttonText: 'Discover Online Proofing',
-      buttonLink: '/solutions/online-proofing',
-    },
-  ];
-
-  const benefitItems = [
-    {
-      id: 'predictable-supply',
-      title: 'Predictable supply chain',
-      desc: 'No surprises, fewer delays',
-      sub: 'With validated files and structured workflows, suppliers receive exactly what they need, when they need it.',
-      icon: CircleCheckBig,
-    },
-    {
-      id: 'cost-efficiency',
-      title: 'Cost efficiency',
-      desc: 'Save budgets by eliminating waste',
-      sub: 'Fewer reprints and less manual rework directly reduce costs across production.',
-      icon: CircleDollarSign,
-    },
-    {
-      id: 'supplier-alignment',
-      title: 'Supplier alignment',
-      desc: 'A single source of truth for partners',
-      sub: 'Centralized access ensures suppliers always work with approved artwork and assets.',
-      icon: LaptopMinimalCheck,
-    },
-    {
-      id: 'risk-reduction',
-      title: 'Risk reduction',
-      desc: 'Compliance built into procurement',
-      sub: 'Every file is tracked and validated, minimizing risks from errors or outdated materials.',
-      icon: ShieldCheck,
-    },
-  ];
-
   let cms = null as Awaited<ReturnType<typeof getApplication>> | null;
   if (features.enabled) {
     try {

@@ -1,8 +1,8 @@
 import React from 'react';
+import Link from 'next/link';
 import { MoveUpRight } from 'lucide-react';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 
 interface HeroProps {
   title: string;

@@ -8,7 +8,10 @@ import {
   ShieldAlert,
   ShieldCheck,
 } from 'lucide-react';
-import { Contact, Cta } from '@/components/layout';
+import * as LucideIcons from 'lucide-react';
+import { features } from '@/lib/features';
+import { getProduct } from '@/lib/cms/product';
+import { Contact } from '@/components/layout';
 import PageHeader from '@/components/core/page-header';
 import InlineHighlight from '@/components/core/inline-highlight';
 import Hero from '@/components/page/product/Hero';
@@ -18,10 +21,8 @@ import Workflow from '@/components/page/product/Workflow';
 import How from '@/components/page/product/How';
 import Why from '@/components/page/product/Why';
 import Who from '@/components/page/home/Who';
-import * as LucideIcons from 'lucide-react';
-import { features } from '@/lib/features';
-import { getProduct } from '@/lib/cms/product';
 
+// Fallback data in case CMS is unavailable
 const heroData = {
   logoSrc: '/product/wave.svg',
   logoAlt: 'Wave Brand',
@@ -184,6 +185,7 @@ const clientData = [
   'vitakraft.webp',
 ];
 
+// Utility
 function toPascalCase(input: string) {
   return input
     .split(/[-_\s]+/)

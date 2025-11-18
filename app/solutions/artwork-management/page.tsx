@@ -1,15 +1,16 @@
 import { CircleDollarSign, Rocket, Scaling, ShieldCheck } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
+import { features } from '@/lib/features';
+import { getSolution } from '@/lib/cms/solution';
 import { Contact } from '@/components/layout';
+import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
 import How from '@/components/page/product/How';
 import Why from '@/components/page/solutions/Why';
 import Workflow from '@/components/page/product/Workflow';
-import InlineHighlight from '@/components/core/inline-highlight';
-import { features } from '@/lib/features';
-import { getSolution } from '@/lib/cms/solution';
 
+// Utility
 function toPascalCase(input: string) {
   return input
     .split(/[-_\s]+/)
@@ -24,89 +25,89 @@ function resolveIconComponent(iconKey?: string) {
   return Icon || null;
 }
 
-export default async function ArtworkManagement() {
-  const heroData = {
-    title: 'Artwork management without the chaos',
-    subtitle: 'Centralize, streamline, and simplify every artwork project',
+// Fallback Data in case CMS is unavailable
+const heroData = {
+  title: 'Artwork management without the chaos',
+  subtitle: 'Centralize, streamline, and simplify every artwork project',
+  description:
+    'Our Artwork Management ensures that brands, designers, and regulatory teams finally get one source of truth. No more version hunts, long email threads, or missed deadlines. Just a clear, connected workflow that keeps projects accurate and on time.',
+  imageSrc: '/solutions/artwork-management.png',
+  imageAlt: 'Artwork management preview',
+  mobileImageSrc: '/solutions/artwork-management-mobile.png',
+};
+
+const howData = [
+  {
+    heading: 'Artwork Management',
+    title: 'Centralized platform',
+    subtitle: 'One hub for every file',
     description:
-      'Our Artwork Management ensures that brands, designers, and regulatory teams finally get one source of truth. No more version hunts, long email threads, or missed deadlines. Just a clear, connected workflow that keeps projects accurate and on time.',
-    imageSrc: '/solutions/artwork-management.png',
-    imageAlt: 'Artwork management preview',
-    mobileImageSrc: '/solutions/artwork-management-mobile.png',
-  };
+      'Artwork files, cutter guides, and declarations all live in one place. No more scattered assets across teams.',
+    buttonText: 'Book A Demo',
+    imageSrc: '/solutions/1.svg',
+    iconName: 'MonitorCog',
+  },
+  {
+    title: 'Automated workflows',
+    subtitle: 'Work moves without bottlenecks',
+    description: 'Approvals, reviews, and updates route automatically to the right person, keeping projects on track.',
+    icon: '/solutions/rectangle.png',
+    buttonText: 'Book A Demo',
+    imageSrc: '/solutions/2.svg',
+    iconName: 'Workflow',
+  },
+  {
+    title: 'Version control',
+    subtitle: 'Every change documented',
+    description:
+      'Every update is tracked and logged. Teams work with confidence, knowing they always have the latest version.',
+    icon: '/solutions/rectangle.png',
+    buttonText: 'Book A Demo',
+    imageSrc: '/solutions/3.svg',
+    iconName: 'SearchCheck',
+  },
+  {
+    title: 'Integrated communication',
+    subtitle: 'Approvals without the noise',
+    description:
+      'Comments, markups, and approvals happen in-platform, not across email chains, reducing confusion and delays.',
+    icon: '/solutions/rectangle.png',
+    buttonText: 'Book A Demo',
+    imageSrc: '/solutions/4.svg',
+    iconName: 'MessageSquarePlus',
+  },
+];
 
-  const howData = [
-    {
-      heading: 'Artwork Management',
-      title: 'Centralized platform',
-      subtitle: 'One hub for every file',
-      description:
-        'Artwork files, cutter guides, and declarations all live in one place. No more scattered assets across teams.',
-      buttonText: 'Book A Demo',
-      imageSrc: '/solutions/1.svg',
-      iconName: 'MonitorCog',
-    },
-    {
-      title: 'Automated workflows',
-      subtitle: 'Work moves without bottlenecks',
-      description:
-        'Approvals, reviews, and updates route automatically to the right person, keeping projects on track.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'Book A Demo',
-      imageSrc: '/solutions/2.svg',
-      iconName: 'Workflow',
-    },
-    {
-      title: 'Version control',
-      subtitle: 'Every change documented',
-      description:
-        'Every update is tracked and logged. Teams work with confidence, knowing they always have the latest version.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'Book A Demo',
-      imageSrc: '/solutions/3.svg',
-      iconName: 'SearchCheck',
-    },
-    {
-      title: 'Integrated communication',
-      subtitle: 'Approvals without the noise',
-      description:
-        'Comments, markups, and approvals happen in-platform, not across email chains, reducing confusion and delays.',
-      icon: '/solutions/rectangle.png',
-      buttonText: 'Book A Demo',
-      imageSrc: '/solutions/4.svg',
-      iconName: 'MessageSquarePlus',
-    },
-  ];
+const whyData = [
+  {
+    heading: 'Artwork Management',
+    title: 'Faster launches',
+    subtitle: 'Products reach shelves on time',
+    description:
+      'Automated workflows and clear approvals cut cycle time, helping brands stay ahead in fast-moving markets.',
+    icon: Rocket,
+  },
+  {
+    title: 'Lower costs',
+    subtitle: 'Less waste, fewer errors',
+    description: 'Accurate artwork reduces reprints, saves money, and improves supplier efficiency.',
+    icon: CircleDollarSign,
+  },
+  {
+    title: 'Stronger compliance',
+    subtitle: 'Built-in audit readiness',
+    description: 'Track every update and approval for audit-ready records that protect against compliance risks.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Scale with clarity',
+    subtitle: 'Manage thousands of artworks easily',
+    description: 'From ten SKUs to ten thousand, the system scales with your business without adding complexity.',
+    icon: Scaling,
+  },
+];
 
-  const whyData = [
-    {
-      heading: 'Artwork Management',
-      title: 'Faster launches',
-      subtitle: 'Products reach shelves on time',
-      description:
-        'Automated workflows and clear approvals cut cycle time, helping brands stay ahead in fast-moving markets.',
-      icon: Rocket,
-    },
-    {
-      title: 'Lower costs',
-      subtitle: 'Less waste, fewer errors',
-      description: 'Accurate artwork reduces reprints, saves money, and improves supplier efficiency.',
-      icon: CircleDollarSign,
-    },
-    {
-      title: 'Stronger compliance',
-      subtitle: 'Built-in audit readiness',
-      description: 'Track every update and approval for audit-ready records that protect against compliance risks.',
-      icon: ShieldCheck,
-    },
-    {
-      title: 'Scale with clarity',
-      subtitle: 'Manage thousands of artworks easily',
-      description: 'From ten SKUs to ten thousand, the system scales with your business without adding complexity.',
-      icon: Scaling,
-    },
-  ];
-
+export default async function ArtworkManagement() {
   let cms = null as Awaited<ReturnType<typeof getSolution>> | null;
   if (features.enabled) {
     try {

@@ -1,15 +1,16 @@
 import { CircleGauge, RefreshCcw, ShieldCheck, Zap } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
+import { features } from '@/lib/features';
+import { getSolution } from '@/lib/cms/solution';
 import { Contact } from '@/components/layout';
+import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
 import How from '@/components/page/product/How';
 import Why from '@/components/page/solutions/Why';
 import Workflow from '@/components/page/product/Workflow';
-import InlineHighlight from '@/components/core/inline-highlight';
-import { features } from '@/lib/features';
-import { getSolution } from '@/lib/cms/solution';
 
+// utility
 function toPascalCase(input: string) {
   return input
     .split(/[-_\s]+/)
@@ -24,86 +25,87 @@ function resolveIconComponent(iconKey?: string) {
   return Icon || null;
 }
 
+// Fallback Data in case CMS is unavailable
+const heroData = {
+  brandName: 'asset library',
+  logoSrc: '/logo.svg',
+  logoAlt: '5Flow logo',
+  title: 'One library for every asset',
+  subtitle: 'Centralize, search, and share with confidence',
+  description:
+    '5Flow’s Asset Library brings every artwork, cutter guide, logo, and marketing file into one secure, searchable hub. No more Dropbox chaos, email attachments, or outdated files — just the right asset, always ready.',
+  buttonText: 'See it in Action',
+  buttonLink: '/contact',
+  imageSrc: '/solutions/asset-library.png',
+  imageAlt: 'Asset library preview',
+  mobileImageSrc: '/solutions/asset-library-mobile.png',
+};
+
+const howData = [
+  {
+    heading: 'Asset Library',
+    title: 'Centralized repository',
+    subtitle: 'Every file in one hub',
+    description: 'Logos, artworks, cutter guides, and more stored securely with access controls.',
+    buttonText: 'Book A Demo',
+    imageSrc: '/solutions/4-1.svg',
+    iconName: 'LayoutDashboard',
+  },
+  {
+    title: 'Advanced search',
+    subtitle: 'Find assets instantly',
+    description: 'Metadata tagging and filters make searching fast and accurate.',
+    buttonText: 'Book A Demo',
+    imageSrc: '/solutions/4-2.svg',
+    iconName: 'ScanSearch',
+  },
+  {
+    title: 'Access control',
+    subtitle: 'The right file for the right user',
+    description: 'Role-based permissions ensure stakeholders only see what they need.',
+    buttonText: 'Book A Demo',
+    imageSrc: '/solutions/4-3.svg',
+    iconName: 'LockKeyhole',
+  },
+  {
+    title: 'Connected to workflows',
+    subtitle: 'Assets always in sync',
+    description: 'Linked directly to artwork and content management for accuracy and speed.',
+    buttonText: 'Book A Demo',
+    imageSrc: '/solutions/4-4.svg',
+    iconName: 'Route',
+  },
+];
+
+const whyData = [
+  {
+    heading: 'Asset Library',
+    title: 'Brand consistency',
+    subtitle: 'The right asset every time',
+    description: 'One central library ensures teams and suppliers always use approved assets.',
+    icon: RefreshCcw,
+  },
+  {
+    title: 'Productivity boost',
+    subtitle: 'Less searching, more doing',
+    description: 'Teams save hours by finding assets instantly, freeing time for high-value work.',
+    icon: Zap,
+  },
+  {
+    title: 'Supply chain efficiency',
+    subtitle: 'Faster collaboration with partners',
+    description: 'Suppliers and printers access validated files directly, cutting delays and rework.',
+    icon: CircleGauge,
+  },
+  {
+    title: 'Risk reduction',
+    subtitle: 'Eliminate errors from outdated files',
+    description: 'Always-on version control ensures outdated or unapproved assets never reach production.',
+    icon: ShieldCheck,
+  },
+];
+
 export default async function AssetLibrary() {
-  const heroData = {
-    brandName: 'asset library',
-    logoSrc: '/logo.svg',
-    logoAlt: '5Flow logo',
-    title: 'One library for every asset',
-    subtitle: 'Centralize, search, and share with confidence',
-    description:
-      '5Flow’s Asset Library brings every artwork, cutter guide, logo, and marketing file into one secure, searchable hub. No more Dropbox chaos, email attachments, or outdated files — just the right asset, always ready.',
-    buttonText: 'See it in Action',
-    buttonLink: '/contact',
-    imageSrc: '/solutions/asset-library.png',
-    imageAlt: 'Asset library preview',
-    mobileImageSrc: '/solutions/asset-library-mobile.png',
-  };
-
-  const howData = [
-    {
-      heading: 'Asset Library',
-      title: 'Centralized repository',
-      subtitle: 'Every file in one hub',
-      description: 'Logos, artworks, cutter guides, and more stored securely with access controls.',
-      buttonText: 'Book A Demo',
-      imageSrc: '/solutions/4-1.svg',
-      iconName: 'LayoutDashboard',
-    },
-    {
-      title: 'Advanced search',
-      subtitle: 'Find assets instantly',
-      description: 'Metadata tagging and filters make searching fast and accurate.',
-      buttonText: 'Book A Demo',
-      imageSrc: '/solutions/4-2.svg',
-      iconName: 'ScanSearch',
-    },
-    {
-      title: 'Access control',
-      subtitle: 'The right file for the right user',
-      description: 'Role-based permissions ensure stakeholders only see what they need.',
-      buttonText: 'Book A Demo',
-      imageSrc: '/solutions/4-3.svg',
-      iconName: 'LockKeyhole',
-    },
-    {
-      title: 'Connected to workflows',
-      subtitle: 'Assets always in sync',
-      description: 'Linked directly to artwork and content management for accuracy and speed.',
-      buttonText: 'Book A Demo',
-      imageSrc: '/solutions/4-4.svg',
-      iconName: 'Route',
-    },
-  ];
-
-  const whyData = [
-    {
-      heading: 'Asset Library',
-      title: 'Brand consistency',
-      subtitle: 'The right asset every time',
-      description: 'One central library ensures teams and suppliers always use approved assets.',
-      icon: RefreshCcw,
-    },
-    {
-      title: 'Productivity boost',
-      subtitle: 'Less searching, more doing',
-      description: 'Teams save hours by finding assets instantly, freeing time for high-value work.',
-      icon: Zap,
-    },
-    {
-      title: 'Supply chain efficiency',
-      subtitle: 'Faster collaboration with partners',
-      description: 'Suppliers and printers access validated files directly, cutting delays and rework.',
-      icon: CircleGauge,
-    },
-    {
-      title: 'Risk reduction',
-      subtitle: 'Eliminate errors from outdated files',
-      description: 'Always-on version control ensures outdated or unapproved assets never reach production.',
-      icon: ShieldCheck,
-    },
-  ];
-
   let cms = null as Awaited<ReturnType<typeof getSolution>> | null;
   if (features.enabled) {
     try {

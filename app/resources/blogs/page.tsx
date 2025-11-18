@@ -1,11 +1,12 @@
-import { Contact, Cta } from '@/components/layout';
+import { Contact } from '@/components/layout';
+import { getBlogCards } from '@/lib/resources/blogs';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/resources/Hero';
 import FilterSection from '@/components/page/resources/FilterSection';
-import { getBlogCards } from '@/lib/resources/blogs';
 
 export default function Blogs() {
   const blogItems = getBlogCards();
+
   return (
     <div className="relative">
       <div className="container mx-auto mb-32">

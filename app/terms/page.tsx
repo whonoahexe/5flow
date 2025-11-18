@@ -1,12 +1,12 @@
-import type { Metadata } from 'next';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import type { Metadata } from 'next';
 import { draftMode } from 'next/headers';
-import PageHeader from '@/components/core/page-header';
-import Markdown from '@/components/core/markdown';
-import HtmlContent from '../../components/core/html-content';
 import { features } from '@/lib/features';
 import { getDraftLegalPage, getLegalPage } from '@/lib/cms/legal';
+import PageHeader from '@/components/core/page-header';
+import Markdown from '@/components/core/markdown';
+import HtmlContent from '@/components/core/html-content';
 
 export const metadata: Metadata = {
   title: 'Terms and Conditions | 5Flow',

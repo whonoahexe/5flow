@@ -18,11 +18,11 @@ import {
   BookOpen,
   Lightbulb,
 } from 'lucide-react';
+import type { BlogCardItem } from '@/lib/resources/blogs';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card } from '@/components/ui/card';
 import FullBleedLines from '@/components/core/full-bleed-lines';
-import type { BlogCardItem } from '@/lib/resources/blogs';
 
 interface TabItem {
   title: string;

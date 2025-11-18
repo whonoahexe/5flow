@@ -1,6 +1,6 @@
-import Pixel from '@/components/core/pixel';
-import { cn } from '@/lib/utils';
 import type { CSSProperties, ReactNode } from 'react';
+import { cn } from '@/lib/utils';
+import Pixel from '@/components/core/pixel';
 
 const colorVarMap: Record<string, string> = {
   background: 'var(--background)',

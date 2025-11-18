@@ -1,15 +1,16 @@
 import { CircleDollarSign, Rocket, ShieldCheck, Users } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import { Contact } from '@/components/layout';
+import { features } from '@/lib/features';
+import { getSolution } from '@/lib/cms/solution';
+import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/solutions/Hero';
 import How from '@/components/page/product/How';
 import Why from '@/components/page/solutions/Why';
 import Workflow from '@/components/page/product/Workflow';
-import InlineHighlight from '@/components/core/inline-highlight';
-import { features } from '@/lib/features';
-import { getSolution } from '@/lib/cms/solution';
 
+// Utility
 function toPascalCase(input: string) {
   return input
     .split(/[-_\s]+/)
@@ -24,86 +25,87 @@ function resolveIconComponent(iconKey?: string) {
   return Icon || null;
 }
 
+// Fallback Data in case CMS is ununavailable
+const heroData = {
+  brandName: 'online proofing',
+  logoSrc: '/logo.svg',
+  logoAlt: '5Flow logo',
+  title: 'Proofing made simple',
+  subtitle: 'Centralize reviews and cut endless loops',
+  description:
+    '5Flow’s Online Proofing solution brings all stakeholders into one platform for clear, traceable approvals. From annotations to version comparisons, every review is faster, sharper, and audit ready.',
+  buttonText: 'See it in Action',
+  buttonLink: '/contact',
+  imageSrc: '/solutions/online-proofing.png',
+  imageAlt: 'Online proofing preview',
+  mobileImageSrc: '/solutions/online-proofing-mobile.png',
+};
+
+const howData = [
+  {
+    heading: 'Online Proofing',
+    title: 'Online annotations',
+    subtitle: 'Markups where they belong',
+    description: 'Reviewers add comments directly on artwork files, eliminating confusion and lost feedback.',
+    buttonText: 'Book A Demo',
+    imageSrc: '/solutions/2-1.svg',
+    iconName: 'StickyNote',
+  },
+  {
+    title: 'Version comparison',
+    subtitle: 'Spot changes instantly',
+    description: 'Compare old and new files side by side to ensure every requested update is complete and correct.',
+    buttonText: 'Book A Demo',
+    imageSrc: '/solutions/2-2.svg',
+    iconName: 'SquareSplitHorizontal',
+  },
+  {
+    title: 'Automated approvals',
+    subtitle: 'Traceable, transparent sign offs',
+    description: 'Sequential or parallel approval paths keep projects moving while documenting every decision.',
+    buttonText: 'Book A Demo',
+    imageSrc: '/solutions/2-3.svg',
+    iconName: 'CircleCheckBig',
+  },
+  {
+    title: 'Audit trails',
+    subtitle: 'Compliance built into proofing',
+    description: 'Every annotation, change, and approval is logged for full regulatory compliance.',
+    buttonText: 'Book A Demo',
+    imageSrc: '/solutions/2-4.svg',
+    iconName: 'ShieldCheck',
+  },
+];
+
+const whyData = [
+  {
+    heading: 'Online Proofing',
+    title: 'Faster launches',
+    subtitle: 'Cut approval cycles in half',
+    description: 'Clear reviews and automated sign offs reduce cycle times, keeping launches on schedule.',
+    icon: Rocket,
+  },
+  {
+    title: 'Stronger compliance',
+    subtitle: 'Always audit ready',
+    description: 'Every approval loop is documented, giving regulatory teams full traceability.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Lower costs',
+    subtitle: 'Reduce error driven waste',
+    description: 'Fewer mistakes mean fewer reprints and less wasted time and resources.',
+    icon: CircleDollarSign,
+  },
+  {
+    title: 'Better collaboration',
+    subtitle: 'Everyone aligned in one system',
+    description: 'With centralized proofing, feedback is structured, traceable, and easy to act on.',
+    icon: Users,
+  },
+];
+
 export default async function OnlineProofing() {
-  const heroData = {
-    brandName: 'online proofing',
-    logoSrc: '/logo.svg',
-    logoAlt: '5Flow logo',
-    title: 'Proofing made simple',
-    subtitle: 'Centralize reviews and cut endless loops',
-    description:
-      '5Flow’s Online Proofing solution brings all stakeholders into one platform for clear, traceable approvals. From annotations to version comparisons, every review is faster, sharper, and audit ready.',
-    buttonText: 'See it in Action',
-    buttonLink: '/contact',
-    imageSrc: '/solutions/online-proofing.png',
-    imageAlt: 'Online proofing preview',
-    mobileImageSrc: '/solutions/online-proofing-mobile.png',
-  };
-
-  const howData = [
-    {
-      heading: 'Online Proofing',
-      title: 'Online annotations',
-      subtitle: 'Markups where they belong',
-      description: 'Reviewers add comments directly on artwork files, eliminating confusion and lost feedback.',
-      buttonText: 'Book A Demo',
-      imageSrc: '/solutions/2-1.svg',
-      iconName: 'StickyNote',
-    },
-    {
-      title: 'Version comparison',
-      subtitle: 'Spot changes instantly',
-      description: 'Compare old and new files side by side to ensure every requested update is complete and correct.',
-      buttonText: 'Book A Demo',
-      imageSrc: '/solutions/2-2.svg',
-      iconName: 'SquareSplitHorizontal',
-    },
-    {
-      title: 'Automated approvals',
-      subtitle: 'Traceable, transparent sign offs',
-      description: 'Sequential or parallel approval paths keep projects moving while documenting every decision.',
-      buttonText: 'Book A Demo',
-      imageSrc: '/solutions/2-3.svg',
-      iconName: 'CircleCheckBig',
-    },
-    {
-      title: 'Audit trails',
-      subtitle: 'Compliance built into proofing',
-      description: 'Every annotation, change, and approval is logged for full regulatory compliance.',
-      buttonText: 'Book A Demo',
-      imageSrc: '/solutions/2-4.svg',
-      iconName: 'ShieldCheck',
-    },
-  ];
-
-  const whyData = [
-    {
-      heading: 'Online Proofing',
-      title: 'Faster launches',
-      subtitle: 'Cut approval cycles in half',
-      description: 'Clear reviews and automated sign offs reduce cycle times, keeping launches on schedule.',
-      icon: Rocket,
-    },
-    {
-      title: 'Stronger compliance',
-      subtitle: 'Always audit ready',
-      description: 'Every approval loop is documented, giving regulatory teams full traceability.',
-      icon: ShieldCheck,
-    },
-    {
-      title: 'Lower costs',
-      subtitle: 'Reduce error driven waste',
-      description: 'Fewer mistakes mean fewer reprints and less wasted time and resources.',
-      icon: CircleDollarSign,
-    },
-    {
-      title: 'Better collaboration',
-      subtitle: 'Everyone aligned in one system',
-      description: 'With centralized proofing, feedback is structured, traceable, and easy to act on.',
-      icon: Users,
-    },
-  ];
-
   let cms = null as Awaited<ReturnType<typeof getSolution>> | null;
   if (features.enabled) {
     try {

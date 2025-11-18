@@ -8,17 +8,18 @@ import {
   History,
   SquareCheckBig,
 } from 'lucide-react';
-import { Contact, Cta } from '@/components/layout';
+import { Contact } from '@/components/layout';
+import * as LucideIcons from 'lucide-react';
+import { features } from '@/lib/features';
+import { getApplication } from '@/lib/cms/application';
 import InlineHighlight from '@/components/core/inline-highlight';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/applications/Hero';
 import Workflow from '@/components/page/applications/Workflow';
 import Challenges from '@/components/page/applications/Challenges';
 import Benefits from '@/components/page/applications/Benefits';
-import * as LucideIcons from 'lucide-react';
-import { features } from '@/lib/features';
-import { getApplication } from '@/lib/cms/application';
 
+// Utility
 function toPascalCase(input: string) {
   return input
     .split(/[-_\s]+/)
@@ -33,97 +34,98 @@ function resolveIconComponent(iconKey?: string) {
   return Icon || null;
 }
 
+// Fallback data in case CMS is unavailable
+const heroFallback = {
+  title: 'Compliance without compromise',
+  subtitle: 'Tools built for regulatory and quality descers who can’t afford mistakes',
+  description:
+    'Regulatory and quality managers need accuracy at every step. From label updates to final approvals, 5Flow ensures complete traceability, audit-ready workflows, and risk-free compliance.',
+  imageSrc: '/applications/icp/Quality.jpg',
+  imageAlt: 'Artwork management preview',
+  ctaText: 'Get a Live Demo',
+  mobileImageSrc: '/applications/icp/Quality-mobile.jpg',
+};
+
+const challengeItems = [
+  {
+    id: 'high-compliance-risk',
+    title: 'High compliance risk',
+    desc: 'A single missed warning can trigger fines',
+    sub: '5Flow provides audit-ready workflows with version control and approval trails, so nothing slips through.',
+    icon: ShieldAlert,
+    buttonText: 'Discover Artwork Management',
+    buttonLink: '/solutions/artwork-management',
+  },
+  {
+    id: 'cascading-label-updates',
+    title: 'Cascading label updates',
+    desc: 'One change creates errors across markets',
+    sub: 'Centralized content management pushes validated updates consistently into every SKU and region.',
+    icon: FileStack,
+    buttonText: 'Discover Content Management',
+    buttonLink: '/solutions/content-management',
+  },
+  {
+    id: 'lack-of-traceability',
+    title: 'Lack of traceability',
+    desc: 'Approvals get lost in email chains',
+    sub: 'All approvals are tracked, timestamped, and linked directly to artwork, giving you end-to-end visibility.',
+    icon: FileSearch2,
+    buttonText: 'Discover Artwork Management',
+    buttonLink: '/solutions/artwork-management',
+  },
+  {
+    id: 'fragmented-documentation',
+    title: 'Fragmented documentation',
+    desc: 'Teams can’t prove compliance quickly',
+    sub: 'With built-in records, reports are generated instantly for audits and inspections.',
+    icon: ShieldQuestionMark,
+    buttonText: 'Discover Data Analysis',
+    buttonLink: '/solutions/data-analysis',
+  },
+  {
+    id: 'slow-manual-processes',
+    title: 'Slow, manual processes',
+    desc: 'Delays put launches at risk',
+    sub: 'Automated workflows move files faster while maintaining full accuracy and compliance checks.',
+    icon: History,
+    buttonText: 'Discover Artwork Management',
+    buttonLink: '/solutions/artwork-management',
+  },
+];
+
+const benefitItems = [
+  {
+    id: 'risk-reduction',
+    title: 'Risk reduction',
+    desc: 'Compliance built into every workflow',
+    sub: 'With approvals and traceability hardwired into the system, you protect your brand from costly mistakes.',
+    icon: ShieldCheck,
+  },
+  {
+    id: 'audit-readiness',
+    title: 'Audit readiness',
+    desc: 'Be prepared at any moment',
+    sub: 'Automatic documentation means audit trails are always up to date, cutting stress and prep time.',
+    icon: SquareCheckBig,
+  },
+  {
+    id: 'faster-approvals',
+    title: 'Faster approvals',
+    desc: 'Compliance without delays',
+    sub: 'Clear, automated approvals keep compliance strong while accelerating time to market.',
+    icon: ZapIcon,
+  },
+  {
+    id: 'confidence-scale',
+    title: 'Confidence at scale',
+    desc: 'Manage thousands of SKUs accurately',
+    sub: 'Even in complex global portfolios, accuracy stays consistent across every product and market.',
+    icon: FileStack,
+  },
+];
+
 export default async function QualityRegulatory() {
-  const heroFallback = {
-    title: 'Compliance without compromise',
-    subtitle: 'Tools built for regulatory and quality descers who can’t afford mistakes',
-    description:
-      'Regulatory and quality managers need accuracy at every step. From label updates to final approvals, 5Flow ensures complete traceability, audit-ready workflows, and risk-free compliance.',
-    imageSrc: '/applications/icp/Quality.jpg',
-    imageAlt: 'Artwork management preview',
-    ctaText: 'Get a Live Demo',
-    mobileImageSrc: '/applications/icp/Quality-mobile.jpg',
-  };
-
-  const challengeItems = [
-    {
-      id: 'high-compliance-risk',
-      title: 'High compliance risk',
-      desc: 'A single missed warning can trigger fines',
-      sub: '5Flow provides audit-ready workflows with version control and approval trails, so nothing slips through.',
-      icon: ShieldAlert,
-      buttonText: 'Discover Artwork Management',
-      buttonLink: '/solutions/artwork-management',
-    },
-    {
-      id: 'cascading-label-updates',
-      title: 'Cascading label updates',
-      desc: 'One change creates errors across markets',
-      sub: 'Centralized content management pushes validated updates consistently into every SKU and region.',
-      icon: FileStack,
-      buttonText: 'Discover Content Management',
-      buttonLink: '/solutions/content-management',
-    },
-    {
-      id: 'lack-of-traceability',
-      title: 'Lack of traceability',
-      desc: 'Approvals get lost in email chains',
-      sub: 'All approvals are tracked, timestamped, and linked directly to artwork, giving you end-to-end visibility.',
-      icon: FileSearch2,
-      buttonText: 'Discover Artwork Management',
-      buttonLink: '/solutions/artwork-management',
-    },
-    {
-      id: 'fragmented-documentation',
-      title: 'Fragmented documentation',
-      desc: 'Teams can’t prove compliance quickly',
-      sub: 'With built-in records, reports are generated instantly for audits and inspections.',
-      icon: ShieldQuestionMark,
-      buttonText: 'Discover Data Analysis',
-      buttonLink: '/solutions/data-analysis',
-    },
-    {
-      id: 'slow-manual-processes',
-      title: 'Slow, manual processes',
-      desc: 'Delays put launches at risk',
-      sub: 'Automated workflows move files faster while maintaining full accuracy and compliance checks.',
-      icon: History,
-      buttonText: 'Discover Artwork Management',
-      buttonLink: '/solutions/artwork-management',
-    },
-  ];
-
-  const benefitItems = [
-    {
-      id: 'risk-reduction',
-      title: 'Risk reduction',
-      desc: 'Compliance built into every workflow',
-      sub: 'With approvals and traceability hardwired into the system, you protect your brand from costly mistakes.',
-      icon: ShieldCheck,
-    },
-    {
-      id: 'audit-readiness',
-      title: 'Audit readiness',
-      desc: 'Be prepared at any moment',
-      sub: 'Automatic documentation means audit trails are always up to date, cutting stress and prep time.',
-      icon: SquareCheckBig,
-    },
-    {
-      id: 'faster-approvals',
-      title: 'Faster approvals',
-      desc: 'Compliance without delays',
-      sub: 'Clear, automated approvals keep compliance strong while accelerating time to market.',
-      icon: ZapIcon,
-    },
-    {
-      id: 'confidence-scale',
-      title: 'Confidence at scale',
-      desc: 'Manage thousands of SKUs accurately',
-      sub: 'Even in complex global portfolios, accuracy stays consistent across every product and market.',
-      icon: FileStack,
-    },
-  ];
-
   let cms = null as Awaited<ReturnType<typeof getApplication>> | null;
   if (features.enabled) {
     try {
