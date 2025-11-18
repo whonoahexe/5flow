@@ -84,7 +84,12 @@ const Who = ({ path = 'home', clients = DEFAULT_CLIENTS, title }: WhoProps) => {
               key={i}
             >
               <div className="flex w-full items-center justify-center p-8">
-                <Image src={`/${path}/${item.imageUrl}`} alt={item.altText || 'Client Logo'} width={150} height={75} />
+                <Image
+                  src={item.imageUrl?.startsWith('http') ? item.imageUrl : `/${path}/${item.imageUrl}`}
+                  alt={item.altText || 'Client Logo'}
+                  width={150}
+                  height={75}
+                />
               </div>
             </div>
           ))}

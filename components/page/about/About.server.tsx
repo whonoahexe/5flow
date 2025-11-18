@@ -46,7 +46,6 @@ export default async function AboutServerSections() {
 
   try {
     const page = await getGenericPageBySlug('about');
-    console.log(page);
     if (!page) {
       return (
         <>
