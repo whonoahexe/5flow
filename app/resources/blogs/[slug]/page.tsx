@@ -1,6 +1,6 @@
 import { getBlogBySlug, getBlogSlugs } from '@/lib/resources/blogs';
-import PageHeader from '@/components/core/page-header';
 import Markdown from '@/components/core/markdown';
+import Image from 'next/image';
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -9,8 +9,17 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
   return (
     <div className="relative">
+      {post.image ? (
+        <div className="relative h-[45vh] min-h-[320px] w-full">
+          <Image src={post.image} alt={post.title} fill className="object-cover" priority />
+          <div
+            className="to-background pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent"
+            aria-hidden="true"
+          />
+        </div>
+      ) : null}
+
       <div className="container mx-auto mb-32">
-        <PageHeader title="blog" />
         <div className="mx-auto max-w-3xl py-10">
           <h1 className="font-heading mb-6 text-3xl leading-tight tracking-tight sm:text-4xl">{post.title}</h1>
           <div className="text-foreground/60 mb-8 text-sm">{new Date(post.date).toLocaleDateString()}</div>
