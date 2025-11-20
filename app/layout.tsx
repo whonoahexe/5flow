@@ -32,6 +32,10 @@ export default function RootLayout({
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-MG3FF2TP');
         `}</Script>
+        <Script
+          src="https://cdn-cookieyes.com/client_data/2c83cea1e3263d53080b1b74/script.js%2522%3E%3C/script%3E"
+          strategy="afterInteractive"
+        ></Script>
       </head>
       <body
         className={`${centuryGothic.variable} ${metropolis.variable} bg-background text-foreground flex min-h-screen flex-col font-sans antialiased`}
