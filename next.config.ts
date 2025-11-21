@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
         protocol: 'http',
         hostname: mediaHost,
       },
+      new URL('https://cms.5flowtech.com/**'),
     ],
   },
 };

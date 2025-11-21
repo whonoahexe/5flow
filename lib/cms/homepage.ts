@@ -42,15 +42,29 @@ export interface HomepageData {
   };
 }
 
-function parseJsonArray(value: unknown): HomepageItemRaw[] {
+function parseJsonArray<T = HomepageItemRaw>(value: unknown): T[] {
   if (typeof value !== 'string') return [];
   try {
     const parsed = JSON.parse(value);
-    if (Array.isArray(parsed)) return parsed as HomepageItemRaw[];
+    if (Array.isArray(parsed)) return parsed as T[];
     return [];
   } catch {
     return [];
   }
+}
+
+function inferAltTextFromUrl(url: string): string | undefined {
+  if (!url) return undefined;
+  const filename = url.split('/').pop()?.split('?')[0] ?? '';
+  if (!filename) return undefined;
+  const withoutExtension = filename.replace(/\.[^.]+$/, '');
+  const normalized = withoutExtension.replace(/[-_]+/g, ' ').trim();
+  if (!normalized) return undefined;
+  return normalized
+    .split(' ')
+    .map(part => (part ? part[0].toUpperCase() + part.slice(1) : ''))
+    .join(' ')
+    .trim();
 }
 
 export async function getHomepage(): Promise<HomepageData | null> {
@@ -68,10 +82,10 @@ export async function getHomepage(): Promise<HomepageData | null> {
     ctaUrl: meta.hero_cta_url || meta.cta_url || page.acf?.cta_url,
   };
 
-  const whatItems = parseJsonArray(page.acf.what_items_json);
-  const howItems = parseJsonArray(page.acf.how_body_html);
-  const whoItems = parseJsonArray(page.acf.who_items_json);
-  const whyItems = parseJsonArray(page.acf.why_items_json);
+  const whatItems = parseJsonArray<HomepageItemRaw>(page.acf.what_items_json);
+  const howItems = parseJsonArray<HomepageItemRaw>(page.acf.how_body_html);
+  const whoItems = parseJsonArray<HomepageItemRaw | string>(page.acf.who_items_json);
+  const whyItems = parseJsonArray<HomepageItemRaw>(page.acf.why_items_json);
 
   return {
     hero: hero,
@@ -88,8 +102,16 @@ export async function getHomepage(): Promise<HomepageData | null> {
     who: {
       title: page.acf.who_title,
       clients: whoItems.map(ci => {
+        if (typeof ci === 'string') {
+          return {
+            imageUrl: ci,
+            altText: inferAltTextFromUrl(ci) || 'Client Logo',
+          };
+        }
+
         const url = ci.image_url || ci.imageUrl || '';
-        return { imageUrl: url, altText: ci.title || ci.subtitle || 'Client Logo' };
+        const altText = ci.title || ci.subtitle || inferAltTextFromUrl(url) || 'Client Logo';
+        return { imageUrl: url, altText };
       }),
     },
     why: {
