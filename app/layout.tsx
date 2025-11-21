@@ -4,7 +4,7 @@ import { ReactLenis } from 'lenis/react';
 import { centuryGothic, metropolis } from '@/lib/fonts';
 import { hideTranslationWidget, customizeAccessibilityWidget } from '@/lib/accessibility-widget';
 import { Toaster } from '@/components/ui/sonner';
-import { Cta, Footer } from '@/components/layout';
+import { Footer } from '@/components/layout';
 import { ServerNavigation } from '@/components/layout/navigation.server';
 import PageTransition from '@/components/layout/page-transition';
 import FixedActions from '@/components/layout/fixed-actions';
