@@ -88,11 +88,11 @@ export async function getProduct(slug: string): Promise<ProductData | null> {
   const meta: Record<string, any> = page.meta || page.acf || {};
 
   const hero = {
-    title: meta.hero_title || page.title?.rendered,
-    subtitle: meta.hero_subtitle,
-    bodyHtml: meta.hero_body_html || meta.hero_bodyhtml,
-    ctaText: meta.hero_cta_text,
-    ctaUrl: meta.hero_cta_url,
+    title: meta.hero_title || page.acf?.hero_title,
+    subtitle: meta.hero_subtitle || page.acf?.hero_subtitle,
+    bodyHtml: meta.hero_body_html || meta.hero_bodyhtml || page.acf?.hero_body_html,
+    ctaText: meta.hero_cta_text || page.acf?.hero_cta_text,
+    ctaUrl: meta.hero_cta_url || page.acf?.hero_cta_urls,
   };
 
   const whatItems = parseJsonArray(meta.what_items_json || page.acf?.what_items_json);

@@ -33,7 +33,7 @@ export default function RootLayout({
           })(window,document,'script','dataLayer','GTM-MG3FF2TP');
         `}</Script>
         <Script
-          src="https://cdn-cookieyes.com/client_data/2c83cea1e3263d53080b1b74/script.js%2522%3E%3C/script%3E"
+          src="https://cdn-cookieyes.com/client_data/2c83cea1e3263d53080b1b74/script.js"
           strategy="afterInteractive"
         ></Script>
       </head>
