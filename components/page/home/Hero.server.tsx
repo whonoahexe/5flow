@@ -18,6 +18,7 @@ export default async function ServerHero() {
           subTitle={homepage.hero?.subtitle}
           bodyHtml={homepage.hero?.bodyHtml}
           buttonText={homepage.hero?.ctaText}
+          buttonUrl={homepage.hero?.ctaUrl}
         />
       );
     }

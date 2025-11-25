@@ -2,11 +2,16 @@
 import InlineHighlight from '@/components/core/inline-highlight';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 
-type HeroProps = { description?: string; propelisDescription?: string };
+type HeroProps = { description?: string; propelisDescription?: string; images?: string[] };
 
-const Hero = ({ description, propelisDescription }: HeroProps) => {
-  const topRowImages = ['/about/about1.png', '/about/about2.png', '/about/about3.png'];
-  const bottomRowImages = ['/about/about5.png', '/about/about6.png'];
+const Hero = ({ description, propelisDescription, images }: HeroProps) => {
+  const defaultTopRowImages = ['/about/about1.png', '/about/about2.png', '/about/about3.png'];
+  const defaultBottomRowImages = ['/about/about5.png', '/about/about6.png'];
+  const defaultSideImage = '/about/about4.png';
+
+  const topRowImages = images?.slice(0, 3) || defaultTopRowImages;
+  const sideImage = images?.[3] || defaultSideImage;
+  const bottomRowImages = images?.slice(4, 6) || defaultBottomRowImages;
 
   return (
     <>
@@ -45,7 +50,7 @@ const Hero = ({ description, propelisDescription }: HeroProps) => {
                 width={304}
                 height={295}
                 alt="About image 4"
-                src="/about/about4.png"
+                src={sideImage}
               />
             </div>
 

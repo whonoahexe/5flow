@@ -29,6 +29,8 @@ export interface ProductData {
     bodyHtml?: string;
     ctaText?: string;
     ctaUrl?: string;
+    imageUrl?: string;
+    mobileImageUrl?: string;
   } | null;
   what?: {
     title?: string;
@@ -101,7 +103,9 @@ export async function getProduct(slug: string): Promise<ProductData | null> {
     subtitle: meta.hero_subtitle || page.acf?.hero_subtitle,
     bodyHtml: meta.hero_body_html || meta.hero_bodyhtml || page.acf?.hero_body_html,
     ctaText: meta.hero_cta_text || page.acf?.hero_cta_text,
-    ctaUrl: meta.hero_cta_url || page.acf?.hero_cta_urls,
+    ctaUrl: meta.hero_cta_url || page.acf?.hero_cta_url,
+    imageUrl: meta.hero_image_url || page.acf?.hero_image_url,
+    mobileImageUrl: meta.hero_mobile_image_url || meta.hero_image_mobile_url || page.acf?.hero_mobile_image_url,
   };
 
   const whatItems = parseJsonArray(meta.what_items_json || page.acf?.what_items_json);

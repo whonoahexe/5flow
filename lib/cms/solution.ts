@@ -29,6 +29,8 @@ export interface SolutionData {
     bodyHtml?: string;
     ctaText?: string;
     ctaUrl?: string;
+    imageUrl?: string;
+    mobileImageUrl?: string;
   } | null;
   how?: {
     title?: string;
@@ -87,6 +89,8 @@ export async function getSolution(slug: string): Promise<SolutionData | null> {
     bodyHtml: meta.hero_body_html || meta.hero_bodyhtml || page.acf?.hero_body_html,
     ctaText: meta.hero_cta_text || page.acf?.hero_cta_text,
     ctaUrl: meta.hero_cta_url || page.acf?.hero_cta_urls,
+    imageUrl: meta.hero_image_url || page.acf?.hero_image_url,
+    mobileImageUrl: meta.hero_mobile_image_url || meta.hero_image_mobile_url || page.acf?.hero_mobile_image_url,
   };
 
   const howItems = parseJsonArray(meta.how_items_json || page.acf?.how_items_json);

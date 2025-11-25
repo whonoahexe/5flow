@@ -83,4 +83,5 @@ export interface CmsGenericPage {
   title: string;
   bodyHtml: string;
   updatedAt: string;
+  heroImages?: string[];
 }

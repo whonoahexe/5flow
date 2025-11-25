@@ -121,6 +121,8 @@ export default async function DataAnalysis() {
     subtitle: cms?.hero?.subtitle || heroData.subtitle,
     description: cms?.hero?.bodyHtml || heroData.description,
     buttonText: cms?.hero?.ctaText,
+    imageSrc: cms?.hero?.imageUrl || heroData.imageSrc,
+    mobileImageSrc: cms?.hero?.mobileImageUrl || heroData.mobileImageSrc,
   };
 
   const howDataFinal = (

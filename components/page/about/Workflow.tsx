@@ -2,15 +2,25 @@ import Image from 'next/image';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import InlineHighlight from '@/components/core/inline-highlight';
 
-const workflowImages = [
-  { src: '/about/workflow2.png', width: 200, height: 120, alt: 'Workflow security process 1' },
-  { src: '/about/workflow1.png', width: 160, height: 120, alt: 'Workflow security process 2' },
-  { src: '/about/workflow3.png', width: 180, height: 120, alt: 'Workflow security process 3' },
-];
+type WorkflowProps = { introText?: string; isoText?: string; images?: string[] };
 
-type WorkflowProps = { introText?: string; isoText?: string };
+const Workflow = ({ introText, isoText, images }: WorkflowProps) => {
+  const defaultImages = [
+    { src: '/about/workflow2.png', width: 200, height: 120, alt: 'Workflow security process 1' },
+    { src: '/about/workflow1.png', width: 160, height: 120, alt: 'Workflow security process 2' },
+    { src: '/about/workflow3.png', width: 180, height: 120, alt: 'Workflow security process 3' },
+  ];
 
-const Workflow = ({ introText, isoText }: WorkflowProps) => {
+  const displayImages =
+    images && images.length >= 3
+      ? images.slice(0, 3).map((src, i) => ({
+          src,
+          width: defaultImages[i]?.width || 200,
+          height: defaultImages[i]?.height || 120,
+          alt: `Workflow security process ${i + 1}`,
+        }))
+      : defaultImages;
+
   return (
     <div className="flex w-full flex-col items-start gap-8 px-4 text-center sm:gap-14 sm:px-0">
       <FullBleedLines className="font-heading flex w-full justify-center">
@@ -27,7 +37,7 @@ const Workflow = ({ introText, isoText }: WorkflowProps) => {
       </FullBleedLines>
       <FullBleedLines className="w-full">
         <div className="flex flex-col items-center gap-4 self-stretch overflow-hidden p-2 sm:flex-row sm:gap-2">
-          {workflowImages.map((image, index) => (
+          {displayImages.map((image, index) => (
             <div
               key={index}
               className="bg-background flex h-32 w-full items-center justify-center overflow-hidden rounded-xl px-20 sm:h-38 sm:flex-1 sm:rounded-2xl md:px-0"

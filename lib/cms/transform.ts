@@ -182,6 +182,20 @@ export function toGenericPage(rawUnknown: unknown): CmsGenericPage {
   const content = raw['content'];
   const contentRendered = (content as AnyObj)?.['rendered'];
   const modified = raw['modified'];
+  const acf = (raw['acf'] as AnyObj) || {};
+
+  let heroImages: string[] = [];
+  if (Array.isArray(acf['hero_images'])) {
+    heroImages = acf['hero_images'].map((img: any) => img.url || img).filter((s: any) => typeof s === 'string');
+  } else if (typeof acf['hero_images_json'] === 'string') {
+    try {
+      const parsed = JSON.parse(acf['hero_images_json'] as string);
+      if (Array.isArray(parsed)) {
+        heroImages = parsed.map((img: any) => img.url || img).filter((s: any) => typeof s === 'string');
+      }
+    } catch {}
+  }
+
   return {
     slug: typeof slug === 'string' ? slug : String(slug ?? ''),
     title: typeof title === 'string' ? title : typeof titleRendered === 'string' ? titleRendered : '',
@@ -189,5 +203,6 @@ export function toGenericPage(rawUnknown: unknown): CmsGenericPage {
       typeof content === 'string' ? content : typeof contentRendered === 'string' ? contentRendered : ''
     ),
     updatedAt: typeof modified === 'string' ? modified : new Date().toISOString(),
+    heroImages: heroImages.length > 0 ? heroImages : undefined,
   };
 }

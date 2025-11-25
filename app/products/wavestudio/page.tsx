@@ -199,6 +199,8 @@ export default async function Wavestudio() {
     subtitle: cms?.hero?.subtitle || heroData.subtitle,
     description: cms?.hero?.bodyHtml || heroData.description,
     ctaText: cms?.hero?.ctaText || '/contact',
+    imageSrc: cms?.hero?.imageUrl || heroData.imageSrc,
+    mobileImageSrc: cms?.hero?.mobileImageUrl || heroData.mobileImageSrc,
   };
 
   const mappedWhat = (cms?.what?.items?.length ? cms!.what!.items : null) as any[] | null;

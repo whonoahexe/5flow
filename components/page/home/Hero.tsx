@@ -10,9 +10,10 @@ type Props = {
   subTitle?: string;
   bodyHtml?: string;
   buttonText?: string;
+  buttonUrl?: string;
 };
 
-const Hero = ({ title, subTitle, bodyHtml, buttonText }: Props) => {
+const Hero = ({ title, subTitle, bodyHtml, buttonText, buttonUrl }: Props) => {
   return (
     <div className="relative flex min-h-dvh flex-col justify-center">
       <div className="pointer-events-none absolute top-16 bottom-0 left-1/2 -z-10 w-screen -translate-x-1/2 sm:top-20 md:top-22">
@@ -44,7 +45,7 @@ const Hero = ({ title, subTitle, bodyHtml, buttonText }: Props) => {
           </div>
         </FullBleedLines>
         <FullBleedLines>
-          <Link href="/contact" className="flex">
+          <Link href={buttonUrl ?? '/contact'} className="flex">
             <Button
               size="lg"
               className="group/cta-hero active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-3 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-300 ease-[var(--easing-smooth)] hover:gap-0 active:translate-x-px active:scale-[0.99] active:ring-2 active:ring-offset-2"

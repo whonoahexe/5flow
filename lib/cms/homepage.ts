@@ -77,9 +77,9 @@ export async function getHomepage(): Promise<HomepageData | null> {
   const hero = {
     title: meta.hero_title || meta.title || page.acf?.hero_title,
     subtitle: meta.hero_subtitle || meta.subtitle || page.acf?.hero_subtitle,
-    bodyHtml: meta.hero_body_html || meta.bodyhtml || page.acf?.hero_bodyhtml,
-    ctaText: meta.hero_cta_text || meta.cta || page.acf?.cta,
-    ctaUrl: meta.hero_cta_url || meta.cta_url || page.acf?.cta_url,
+    bodyHtml: meta.hero_body_html || meta.bodyhtml || page.acf?.hero_body_text,
+    ctaText: meta.hero_cta_text || meta.cta || page.acf?.hero_cta_text,
+    ctaUrl: meta.hero_cta_url || meta.cta_url || page.acf?.hero_cta_url,
   };
 
   const whatItems = parseJsonArray<HomepageItemRaw>(page.acf.what_items_json);
