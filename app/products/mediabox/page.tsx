@@ -153,6 +153,12 @@ const workflowData = {
   ],
 };
 
+const workflowTitleFallback = (
+  <>
+    Trusted by <InlineHighlight>global brands</InlineHighlight>
+  </>
+);
+
 const needData = {
   title1: '',
   highlightTitle: 'Pricing',
@@ -207,24 +213,25 @@ export default async function Mediabox() {
     title: cms?.hero?.title || heroData.title,
     subtitle: cms?.hero?.subtitle || heroData.subtitle,
     description: cms?.hero?.bodyHtml || heroData.description,
+    ctaText: cms?.hero?.ctaText || '/contact',
   };
 
   const mappedWhat = (cms?.what?.items?.length ? cms!.what!.items : null) as any[] | null;
   const whatDataFinal = mappedWhat
     ? [
-        mappedWhat.slice(0, 2).map(item => ({
+        mappedWhat.slice(0, 2).map((item, idx) => ({
           title: item.title || '',
           subtitle: item.subtitle || '',
           description: item.bodyHtml || item.body_html || item.description || '',
           buttonLink: item.linkUrl || item.link_url || undefined,
-          icon: resolveIconComponent(item.iconKey || item.icon_key) || Unplug,
+          icon: resolveIconComponent(item.iconKey || item.icon_key) || (idx === 0 ? Unplug : CalendarClock),
         })),
-        mappedWhat.slice(2, 4).map(item => ({
+        mappedWhat.slice(2, 4).map((item, idx) => ({
           title: item.title || '',
           subtitle: item.subtitle || '',
           description: item.bodyHtml || item.body_html || item.description || '',
           buttonLink: item.linkUrl || item.link_url || undefined,
-          icon: resolveIconComponent(item.iconKey || item.icon_key) || CalendarClock,
+          icon: resolveIconComponent(item.iconKey || item.icon_key) || (idx === 0 ? CircleDollarSign : EyeOff),
         })),
       ]
     : whatData;
@@ -235,10 +242,10 @@ export default async function Mediabox() {
           title: item.title || '',
           subtitle: item.subtitle || '',
           description: item.bodyHtml || item.body_html || item.description || '',
-          buttonText: 'Learn more',
-          buttonLink: item.linkUrl || item.link_url || undefined,
-          imageSrc: item.imageUrl || item.image_url || '/product/3-1.svg',
-          iconName: toPascalCase((item.iconKey || item.icon_key || 'BadgeCheck') as string),
+          buttonText: item.buttonText || item.button_text || 'Learn more',
+          buttonLink: item.buttonLink || item.linkUrl || item.link_url || undefined,
+          imageSrc: item.imageSrc || item.imageUrl || item.image_url || '/product/3-1.svg',
+          iconName: toPascalCase((item.iconName || item.iconKey || item.icon_key || 'BadgeCheck') as string),
         }))
       : howData
   ) as typeof howData;
@@ -256,6 +263,33 @@ export default async function Mediabox() {
 
   const workflowStatsFinal = cms?.workflow?.stats?.length ? cms.workflow.stats : workflowData.statsData;
   const workflowSubtitleFinal = cms?.workflow?.subtitle || workflowData.subtitle;
+  let workflowTitleFinal: React.ReactNode = workflowTitleFallback;
+  if (cms?.workflow?.title?.trim()) {
+    const rawTitle = cms.workflow.title!.trim();
+    const highlight = cms.workflow.highlight?.trim();
+    if (highlight) {
+      const idx = rawTitle.indexOf(highlight);
+      if (idx !== -1) {
+        const before = rawTitle.slice(0, idx);
+        const after = rawTitle.slice(idx + highlight.length);
+        workflowTitleFinal = (
+          <>
+            {before}
+            <InlineHighlight>{highlight}</InlineHighlight>
+            {after}
+          </>
+        );
+      } else {
+        workflowTitleFinal = (
+          <>
+            {rawTitle} <InlineHighlight>{highlight}</InlineHighlight>
+          </>
+        );
+      }
+    } else {
+      workflowTitleFinal = rawTitle;
+    }
+  }
 
   const needFinal = {
     title1: cms?.need?.title1 ?? needData.title1,
@@ -265,6 +299,8 @@ export default async function Mediabox() {
     description: cms?.need?.bodyHtml ?? needData.description,
     buttonText: cms?.need?.buttonText ?? needData.buttonText,
   };
+
+  console.log(cms?.why);
 
   return (
     <div className="relative">
@@ -292,20 +328,15 @@ export default async function Mediabox() {
             description={needFinal.description}
             buttonText={needFinal.buttonText}
           />
-          {cms?.who?.clients?.length ? (
-            <Who title={cms.who.title} clients={cms.who.clients} />
-          ) : (
-            <Who path="product/mediabox-clients" clients={clientData.map(name => ({ imageUrl: name }))} />
-          )}
-          <Workflow
-            title={
-              <>
-                Trusted by <InlineHighlight>global brands</InlineHighlight>
-              </>
-            }
-            subtitle={workflowSubtitleFinal}
-            statsData={workflowStatsFinal}
-          />
+          {(() => {
+            const cmsClients = (cms?.who?.clients || []).filter(c => c.imageUrl);
+            return cmsClients.length ? (
+              <Who title={cms?.who?.title} clients={cmsClients} />
+            ) : (
+              <Who path="product/mediabox-clients" clients={clientData.map(name => ({ imageUrl: name }))} />
+            );
+          })()}
+          <Workflow title={workflowTitleFinal} subtitle={workflowSubtitleFinal} statsData={workflowStatsFinal} />
           <Contact leadingText="Ready for " highlightedText="flexible" trailingText=" creative workflows?" />
         </div>
       </div>

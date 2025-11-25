@@ -53,7 +53,7 @@ function parseJsonArray<T = HomepageItemRaw>(value: unknown): T[] {
   }
 }
 
-function inferAltTextFromUrl(url: string): string | undefined {
+export function inferAltTextFromUrl(url: string): string | undefined {
   if (!url) return undefined;
   const filename = url.split('/').pop()?.split('?')[0] ?? '';
   if (!filename) return undefined;

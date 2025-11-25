@@ -3,6 +3,7 @@ import * as LucideIcons from 'lucide-react';
 import { features } from '@/lib/features';
 import { getProduct } from '@/lib/cms/product';
 import { Contact, Cta } from '@/components/layout';
+import Who from '@/components/page/home/Who';
 import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/product/Hero';
 import How from '@/components/page/product/How';
@@ -153,6 +154,12 @@ const workflowData = {
   ],
 };
 
+const workflowTitleFallback = (
+  <>
+    <InlineHighlight>Faster</InlineHighlight> rollouts, <InlineHighlight>fewer </InlineHighlight> headaches
+  </>
+);
+
 const needData = {
   title1: '',
   highlightTitle: 'Pay',
@@ -191,24 +198,25 @@ export default async function Wavestudio() {
     title: cms?.hero?.title || heroData.title,
     subtitle: cms?.hero?.subtitle || heroData.subtitle,
     description: cms?.hero?.bodyHtml || heroData.description,
+    ctaText: cms?.hero?.ctaText || '/contact',
   };
 
   const mappedWhat = (cms?.what?.items?.length ? cms!.what!.items : null) as any[] | null;
   const whatDataFinal = mappedWhat
     ? [
-        mappedWhat.slice(0, 2).map(item => ({
+        mappedWhat.slice(0, 2).map((item, idx) => ({
           title: item.title || '',
           subtitle: item.subtitle || '',
           description: item.bodyHtml || item.body_html || item.description || '',
           buttonLink: item.linkUrl || item.link_url || undefined,
-          icon: resolveIconComponent(item.iconKey || item.icon_key) || History,
+          icon: resolveIconComponent(item.iconKey || item.icon_key) || (idx === 0 ? History : FileXIcon),
         })),
-        mappedWhat.slice(2, 4).map(item => ({
+        mappedWhat.slice(2, 4).map((item, idx) => ({
           title: item.title || '',
           subtitle: item.subtitle || '',
           description: item.bodyHtml || item.body_html || item.description || '',
           buttonLink: item.linkUrl || item.link_url || undefined,
-          icon: resolveIconComponent(item.iconKey || item.icon_key) || CalendarClock,
+          icon: resolveIconComponent(item.iconKey || item.icon_key) || (idx === 0 ? CalendarClock : CalendarX2),
         })),
       ]
     : whatData;
@@ -220,9 +228,9 @@ export default async function Wavestudio() {
           subtitle: item.subtitle || '',
           description: item.bodyHtml || item.body_html || item.description || '',
           buttonText: 'Learn more',
-          buttonLink: item.linkUrl || item.link_url || undefined,
-          imageSrc: item.imageUrl || item.image_url || '/product/4-1.svg',
-          iconName: toPascalCase((item.iconKey || item.icon_key || 'BadgeCheck') as string),
+          buttonLink: item.buttonLink || item.linkUrl || item.link_url || undefined,
+          imageSrc: item.imageSrc || item.imageUrl || item.image_url || '/product/4-1.svg',
+          iconName: toPascalCase((item.iconName || item.iconKey || item.icon_key || 'BadgeCheck') as string),
         }))
       : howData
   ) as typeof howData;
@@ -240,6 +248,33 @@ export default async function Wavestudio() {
 
   const workflowStatsFinal = cms?.workflow?.stats?.length ? cms.workflow.stats : workflowData.statsData;
   const workflowSubtitleFinal = cms?.workflow?.subtitle || workflowData.subtitle;
+  let workflowTitleFinal: React.ReactNode = workflowTitleFallback;
+  if (cms?.workflow?.title?.trim()) {
+    const rawTitle = cms.workflow.title!.trim();
+    const highlight = cms.workflow.highlight?.trim();
+    if (highlight) {
+      const idx = rawTitle.indexOf(highlight);
+      if (idx !== -1) {
+        const before = rawTitle.slice(0, idx);
+        const after = rawTitle.slice(idx + highlight.length);
+        workflowTitleFinal = (
+          <>
+            {before}
+            <InlineHighlight>{highlight}</InlineHighlight>
+            {after}
+          </>
+        );
+      } else {
+        workflowTitleFinal = (
+          <>
+            {rawTitle} <InlineHighlight>{highlight}</InlineHighlight>
+          </>
+        );
+      }
+    } else {
+      workflowTitleFinal = rawTitle;
+    }
+  }
 
   const needFinal = {
     title1: cms?.need?.title1 ?? needData.title1,
@@ -276,15 +311,11 @@ export default async function Wavestudio() {
             description={needFinal.description}
             buttonText={needFinal.buttonText}
           />
-          <Workflow
-            title={
-              <>
-                <InlineHighlight>Faster</InlineHighlight> rollouts, <InlineHighlight>fewer </InlineHighlight> headaches
-              </>
-            }
-            subtitle={workflowSubtitleFinal}
-            statsData={workflowStatsFinal}
-          />
+          {(() => {
+            const cmsClients = (cms?.who?.clients || []).filter(c => c.imageUrl);
+            return cmsClients.length ? <Who title={cms?.who?.title} clients={cmsClients} /> : null;
+          })()}
+          <Workflow title={workflowTitleFinal} subtitle={workflowSubtitleFinal} statsData={workflowStatsFinal} />
           <Contact leadingText="Ready to make " highlightedText="more" trailingText=" with less?" />
         </div>
       </div>

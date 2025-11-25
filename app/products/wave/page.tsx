@@ -162,6 +162,12 @@ const workflowData = {
   ],
 };
 
+const workflowTitleFallback = (
+  <>
+    Real brands, real users, real <InlineHighlight>impact.</InlineHighlight>
+  </>
+);
+
 const needData = {
   title: 'Flexible ',
   highlightTitle: 'pricing',
@@ -213,24 +219,25 @@ export default async function Wave() {
     title: cms?.hero?.title || heroData.title,
     subtitle: cms?.hero?.subtitle || heroData.subtitle,
     description: cms?.hero?.bodyHtml || heroData.description,
+    ctaText: cms?.hero?.ctaText || '/contact',
   };
 
   const mappedWhat = (cms?.what?.items?.length ? cms!.what!.items : null) as any[] | null;
   const whatDataFinal = mappedWhat
     ? [
-        mappedWhat.slice(0, 2).map(item => ({
+        mappedWhat.slice(0, 2).map((item, idx) => ({
           title: item.title || '',
           subtitle: item.subtitle || '',
           description: item.bodyHtml || item.body_html || item.description || '',
           buttonLink: item.linkUrl || item.link_url || undefined,
-          icon: resolveIconComponent(item.iconKey || item.icon_key) || CalendarSync,
+          icon: resolveIconComponent(item.iconKey || item.icon_key) || (idx === 0 ? CalendarSync : FileStack),
         })),
-        mappedWhat.slice(2, 4).map(item => ({
+        mappedWhat.slice(2, 4).map((item, idx) => ({
           title: item.title || '',
           subtitle: item.subtitle || '',
           description: item.bodyHtml || item.body_html || item.description || '',
           buttonLink: item.linkUrl || item.link_url || undefined,
-          icon: resolveIconComponent(item.iconKey || item.icon_key) || FileStack,
+          icon: resolveIconComponent(item.iconKey || item.icon_key) || (idx === 0 ? ShieldAlert : EyeOff),
         })),
       ]
     : whatData;
@@ -242,26 +249,56 @@ export default async function Wave() {
           subtitle: item.subtitle || '',
           description: item.bodyHtml || item.body_html || item.description || '',
           buttonText: item.buttonText || item.button_text || 'Learn more',
-          buttonLink: item.linkUrl || item.link_url || undefined,
-          imageSrc: item.imageUrl || item.image_url || '/product/1.svg',
-          iconName: toPascalCase((item.iconKey || item.icon_key || 'BadgeCheck') as string),
+          buttonLink: item.buttonLink || item.linkUrl || item.link_url || undefined,
+          imageSrc: item.imageSrc || item.imageUrl || item.image_url || '/product/1.svg',
+          iconName: toPascalCase((item.iconName || item.iconKey || item.icon_key || 'BadgeCheck') as string),
         }))
       : howData
   ) as typeof howData;
 
   const whyDataFinal = (
     cms?.why?.items?.length
-      ? cms!.why!.items.map(item => ({
+      ? cms!.why!.items.map((item, idx) => ({
           title: item.title || '',
           desc: item.subtitle || '',
           sub: item.bodyHtml || item.body_html || item.description || '',
-          icon: resolveIconComponent(item.iconKey || item.icon_key) || ShieldCheck,
+          icon:
+            resolveIconComponent(item.iconKey || item.icon_key) ||
+            (idx === 0 ? Rocket : idx === 1 ? HeartHandshake : idx === 2 ? ShieldCheck : CircleDollarSign),
         }))
       : whyData
   ) as typeof whyData;
 
   const workflowStatsFinal = cms?.workflow?.stats?.length ? cms.workflow.stats : workflowData.statsData;
   const workflowSubtitleFinal = cms?.workflow?.subtitle || workflowData.subtitle;
+  let workflowTitleFinal: React.ReactNode = workflowTitleFallback;
+  if (cms?.workflow?.title?.trim()) {
+    const rawTitle = cms.workflow.title!.trim();
+    const highlight = cms.workflow.highlight?.trim();
+    if (highlight) {
+      const idx = rawTitle.indexOf(highlight);
+      if (idx !== -1) {
+        const before = rawTitle.slice(0, idx);
+        const after = rawTitle.slice(idx + highlight.length);
+        workflowTitleFinal = (
+          <>
+            {before}
+            <InlineHighlight>{highlight}</InlineHighlight>
+            {after}
+          </>
+        );
+      } else {
+        // highlight not found inside title, append separately
+        workflowTitleFinal = (
+          <>
+            {rawTitle} <InlineHighlight>{highlight}</InlineHighlight>
+          </>
+        );
+      }
+    } else {
+      workflowTitleFinal = rawTitle;
+    }
+  }
 
   const needFinal = {
     title1: cms?.need?.title1 ?? needData.title,
@@ -271,6 +308,8 @@ export default async function Wave() {
     description: cms?.need?.bodyHtml ?? needData.description,
     buttonText: cms?.need?.buttonText ?? needData.buttonText,
   };
+
+  console.log(cms?.who?.clients);
 
   return (
     <div className="relative">
@@ -298,20 +337,14 @@ export default async function Wave() {
             description={needFinal.description}
             buttonText={needFinal.buttonText}
           />
-          {cms?.who?.clients?.length ? (
-            <Who title={cms.who.title} clients={cms.who.clients} />
-          ) : (
-            <Who path="product/wave-clients" clients={clientData.map(name => ({ imageUrl: name }))} />
-          )}
-          <Workflow
-            title={
-              <>
-                Real brands, real users, real <InlineHighlight>impact.</InlineHighlight>
-              </>
-            }
-            subtitle={workflowSubtitleFinal}
-            statsData={workflowStatsFinal}
-          />
+          {(() => {
+            return cms?.who?.clients.length ? (
+              <Who title={cms?.who?.title} clients={cms.who.clients} />
+            ) : (
+              <Who path="product/wave-clients" clients={clientData.map(name => ({ imageUrl: name }))} />
+            );
+          })()}
+          <Workflow title={workflowTitleFinal} subtitle={workflowSubtitleFinal} statsData={workflowStatsFinal} />
           <Contact leadingText="Ready to " highlightedText="simplify" trailingText=" artwork management?" />
         </div>
       </div>
