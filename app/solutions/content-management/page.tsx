@@ -121,6 +121,7 @@ export default async function ContentManagement() {
     title: cms?.hero?.title || heroData.title,
     subtitle: cms?.hero?.subtitle || heroData.subtitle,
     description: cms?.hero?.bodyHtml || heroData.description,
+    buttonText: cms?.hero?.ctaText,
   };
 
   const howDataFinal = (

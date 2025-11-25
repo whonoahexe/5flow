@@ -8,10 +8,15 @@ export interface SolutionItemRaw {
   description?: string;
   icon_key?: string;
   iconKey?: string;
+  iconName?: string;
+  button_text?: string;
+  buttonText?: string;
   link_url?: string;
   linkUrl?: string;
   image_url?: string;
   imageUrl?: string;
+  imageSrc?: string;
+  buttonLink?: string;
   heading?: string;
   value?: string;
   label?: string;
@@ -22,14 +27,20 @@ export interface SolutionData {
     title?: string;
     subtitle?: string;
     bodyHtml?: string;
+    ctaText?: string;
+    ctaUrl?: string;
   } | null;
   how?: {
+    title?: string;
     items: SolutionItemRaw[];
   } | null;
   why?: {
+    title?: string;
     items: SolutionItemRaw[];
   } | null;
   workflow?: {
+    title?: string;
+    highlight?: string;
     subtitle?: string;
     stats: { value: string; label: string }[];
   } | null;
@@ -65,15 +76,17 @@ function parseStatsArray(value: unknown): { value: string; label: string }[] {
 
 export async function getSolution(slug: string): Promise<SolutionData | null> {
   // Expect CPT 'solution' or page by slug 'solutions/<slug>' — using CPT for parity
-  const raw = await wpFetch(`/wp-json/wp/v2/solution?slug=${encodeURIComponent(slug)}`);
+  const raw = await wpFetch(`/wp-json/wp/v2/pages?slug=${encodeURIComponent(slug)}`);
   if (!Array.isArray(raw) || raw.length === 0) return null;
   const page: any = raw[0];
   const meta: Record<string, any> = page.meta || page.acf || {};
 
   const hero = {
-    title: meta.hero_title || page.title?.rendered,
-    subtitle: meta.hero_subtitle,
-    bodyHtml: meta.hero_body_html || meta.hero_bodyhtml,
+    title: page.acf?.hero_title,
+    subtitle: meta.hero_subtitle || page.acf?.hero_subtitle,
+    bodyHtml: meta.hero_body_html || meta.hero_bodyhtml || page.acf?.hero_body_html,
+    ctaText: meta.hero_cta_text || page.acf?.hero_cta_text,
+    ctaUrl: meta.hero_cta_url || page.acf?.hero_cta_urls,
   };
 
   const howItems = parseJsonArray(meta.how_items_json || page.acf?.how_items_json);
@@ -81,7 +94,9 @@ export async function getSolution(slug: string): Promise<SolutionData | null> {
   const workflowStats = parseStatsArray(meta.workflow_stats_json || page.acf?.workflow_stats_json);
 
   const workflow = {
-    subtitle: meta.workflow_subtitle,
+    title: meta.workflow_title || page.acf?.workflow_title,
+    highlight: meta.workflow_title_highlight || page.acf?.workflow_title_highlight,
+    subtitle: meta.workflow_subtitle || page.acf?.workflow_subtitle,
     stats: workflowStats,
   };
 

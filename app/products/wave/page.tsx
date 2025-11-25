@@ -219,7 +219,7 @@ export default async function Wave() {
     title: cms?.hero?.title || heroData.title,
     subtitle: cms?.hero?.subtitle || heroData.subtitle,
     description: cms?.hero?.bodyHtml || heroData.description,
-    ctaText: cms?.hero?.ctaText || '/contact',
+    ctaText: cms?.hero?.ctaText || '',
   };
 
   const mappedWhat = (cms?.what?.items?.length ? cms!.what!.items : null) as any[] | null;
