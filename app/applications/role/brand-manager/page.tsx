@@ -35,6 +35,22 @@ function resolveIconComponent(iconKey?: string) {
   return Icon || null;
 }
 
+function renderWorkflowTitle(title: string, highlight?: string) {
+  if (!highlight) return title;
+  const parts = title.split(highlight);
+  console.log(parts);
+  return (
+    <>
+      {parts.map((part, i) => (
+        <span key={i}>
+          {part}
+          {i < parts.length && <InlineHighlight>{highlight}</InlineHighlight>}
+        </span>
+      ))}
+    </>
+  );
+}
+
 // Fallback data in case CMS is unavailable
 const heroFallback = {
   title: 'Brand control at speed',
@@ -121,6 +137,20 @@ const benefitItems = [
   },
 ];
 
+const workflowFallback = {
+  title: (
+    <>
+      Trusted by <InlineHighlight>Brand Managers</InlineHighlight> Across The Globe
+    </>
+  ),
+  subtitle: 'Success stories that resonate.',
+  statsData: [
+    { label: 'leading global brands', value: '130+' },
+    { label: 'projects annually', value: '2M+' },
+    { label: 'turnaround reduction times', value: '52%' },
+  ],
+};
+
 export default async function BrandManager() {
   let cms = null as Awaited<ReturnType<typeof getApplication>> | null;
   if (features.enabled) {
@@ -154,6 +184,8 @@ export default async function BrandManager() {
       : benefitItems
   ) as typeof benefitItems;
 
+  console.log(cms?.workflow);
+
   return (
     <div className="relative">
       <div className="container mx-auto mb-32">
@@ -176,16 +208,12 @@ export default async function BrandManager() {
           <Benefits items={benefitItemsFinal} highlightedText={cms?.benefits?.highlightedText || 'Brand Managers'} />
           <Workflow
             title={
-              <>
-                Trusted by <InlineHighlight>Brand Managers</InlineHighlight> Across The Globe
-              </>
+              cms?.workflow?.title
+                ? renderWorkflowTitle(cms.workflow.title, cms.workflow.highlightedText)
+                : workflowFallback.title
             }
-            subtitle="Success stories that resonate."
-            statsData={[
-              { label: 'leading global brands', value: '130+' },
-              { label: 'projects annually', value: '2M+' },
-              { label: 'turnaround reduction times', value: '52%' },
-            ]}
+            subtitle={cms?.workflow?.subtitle || workflowFallback.subtitle}
+            statsData={cms?.workflow?.stats?.length ? cms.workflow.stats : workflowFallback.statsData}
           />
           <Contact leadingText="Trusted by Brand Managers" highlightedText=" Who Deliver" />
         </div>

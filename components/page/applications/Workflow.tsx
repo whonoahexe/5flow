@@ -12,7 +12,7 @@ interface WorkflowProps {
   statsData: WorkflowStat[];
 }
 
-const Workflow = ({ title, statsData }: WorkflowProps) => {
+const Workflow = ({ title, subtitle, statsData }: WorkflowProps) => {
   return (
     <div className="font-heading relative flex w-full flex-col gap-8 px-4 sm:px-6">
       <FullBleedLines className="flex flex-1 flex-col items-center justify-between gap-8 sm:flex-row sm:gap-0">
@@ -21,6 +21,12 @@ const Workflow = ({ title, statsData }: WorkflowProps) => {
             {title}
           </b>
           <ArrowDown className="text-accent1 h-20 w-20 sm:h-32 sm:w-32" strokeWidth={1.5} />
+        </div>
+
+        <div className="flex flex-col items-center gap-6 py-4 text-center sm:items-start sm:gap-10 sm:py-7 sm:text-left">
+          <b className="relative max-w-full text-xl leading-tight tracking-tight sm:max-w-xl sm:text-2xl sm:leading-none">
+            {subtitle}
+          </b>
         </div>
       </FullBleedLines>
 

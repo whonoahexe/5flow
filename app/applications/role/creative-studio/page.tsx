@@ -35,6 +35,21 @@ function resolveIconComponent(iconKey?: string) {
   return Icon || null;
 }
 
+function renderWorkflowTitle(title: string, highlight?: string) {
+  if (!highlight) return title;
+  const parts = title.split(highlight);
+  return (
+    <>
+      {parts.map((part, i) => (
+        <span key={i}>
+          {part}
+          {i < parts.length - 1 && <InlineHighlight>{highlight}</InlineHighlight>}
+        </span>
+      ))}
+    </>
+  );
+}
+
 // Fallback data in case CMS is unavailable
 const heroFallback = {
   title: 'More time to create, less time on admin',
@@ -121,6 +136,20 @@ const benefitItems = [
   },
 ];
 
+const workflowFallback = {
+  title: (
+    <>
+      The <InlineHighlight>Best Software </InlineHighlight> for Creative & Design Studios
+    </>
+  ),
+  subtitle: 'Proven results across industries.',
+  statsData: [
+    { label: 'leading global brands', value: '130+' },
+    { label: 'projects annually', value: '2M+' },
+    { label: 'turnaround reduction times', value: '52%' },
+  ],
+};
+
 export default async function CreativeStudio() {
   let cms = null as Awaited<ReturnType<typeof getApplication>> | null;
   if (features.enabled) {
@@ -176,16 +205,12 @@ export default async function CreativeStudio() {
           <Benefits items={benefitItemsFinal} highlightedText={cms?.benefits?.highlightedText || 'Creative Studios'} />
           <Workflow
             title={
-              <>
-                The <InlineHighlight>Best Software </InlineHighlight> for Creative & Design Studios
-              </>
+              cms?.workflow?.title
+                ? renderWorkflowTitle(cms.workflow.title, cms.workflow.highlightedText)
+                : workflowFallback.title
             }
-            subtitle="Proven results across industries."
-            statsData={[
-              { label: 'leading global brands', value: '130+' },
-              { label: 'projects annually', value: '2M+' },
-              { label: 'turnaround reduction times', value: '52%' },
-            ]}
+            subtitle={cms?.workflow?.subtitle || workflowFallback.subtitle}
+            statsData={cms?.workflow?.stats?.length ? cms.workflow.stats : workflowFallback.statsData}
           />
           <Contact leadingText="Trusted by Top Creative and Design Studios " highlightedText="Worldwide" />
         </div>

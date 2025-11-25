@@ -34,6 +34,21 @@ function resolveIconComponent(iconKey?: string) {
   return Icon || null;
 }
 
+function renderWorkflowTitle(title: string, highlight?: string) {
+  if (!highlight) return title;
+  const parts = title.split(highlight);
+  return (
+    <>
+      {parts.map((part, i) => (
+        <span key={i}>
+          {part}
+          {i < parts.length - 1 && <InlineHighlight>{highlight}</InlineHighlight>}
+        </span>
+      ))}
+    </>
+  );
+}
+
 // Fallback data in case CMS is unavailable
 const heroFallback = {
   title: 'Procurement made predictable',
@@ -125,6 +140,20 @@ const benefitItems = [
   },
 ];
 
+const workflowFallback = {
+  title: (
+    <>
+      The <InlineHighlight>Best Software </InlineHighlight> for Procurement & Sourcing
+    </>
+  ),
+  subtitle: 'Proven results across industries.',
+  statsData: [
+    { label: 'leading global brands', value: '130+' },
+    { label: 'projects annually', value: '2M+' },
+    { label: 'turnaround reduction times', value: '52%' },
+  ],
+};
+
 export default async function ProcurementSourcing() {
   let cms = null as Awaited<ReturnType<typeof getApplication>> | null;
   if (features.enabled) {
@@ -184,16 +213,12 @@ export default async function ProcurementSourcing() {
           />
           <Workflow
             title={
-              <>
-                The <InlineHighlight>Best Software </InlineHighlight> for Procurement & Sourcing
-              </>
+              cms?.workflow?.title
+                ? renderWorkflowTitle(cms.workflow.title, cms.workflow.highlightedText)
+                : workflowFallback.title
             }
-            subtitle="Proven results across industries."
-            statsData={[
-              { label: 'leading global brands', value: '130+' },
-              { label: 'projects annually', value: '2M+' },
-              { label: 'turnaround reduction times', value: '52%' },
-            ]}
+            subtitle={cms?.workflow?.subtitle || workflowFallback.subtitle}
+            statsData={cms?.workflow?.stats?.length ? cms.workflow.stats : workflowFallback.statsData}
           />
           <Contact leadingText="The Best Software For " highlightedText="Procurement & Sourcing Teams" />
         </div>
