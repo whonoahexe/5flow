@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = getBlogBySlug(slug);
+  const post = await getBlogBySlug(slug);
   if (!post) return <div className="container mx-auto py-20">Post not found.</div>;
 
   return (
@@ -30,6 +30,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   );
 }
 
-export function generateStaticParams() {
-  return getBlogSlugs().map(slug => ({ slug }));
+export async function generateStaticParams() {
+  const slugs = await getBlogSlugs();
+  return slugs.map(slug => ({ slug }));
 }

@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { features } from '@/lib/features';
+import { getCmsBlogs, getCmsBlogBySlug, getAllCmsBlogSlugs } from '@/lib/cms/blog';
 
 export type BlogFrontmatter = {
   slug: string;
@@ -23,7 +25,7 @@ export type BlogCardItem = {
 
 const BLOGS_DIR = path.join(process.cwd(), 'content', 'blogs');
 
-export function getBlogSlugs(): string[] {
+function getBlogSlugsLocal(): string[] {
   if (!fs.existsSync(BLOGS_DIR)) return [];
   return fs
     .readdirSync(BLOGS_DIR)
@@ -31,7 +33,15 @@ export function getBlogSlugs(): string[] {
     .map(file => file.replace(/\.(md|mdx)$/i, ''));
 }
 
-export function getBlogBySlug(slug: string): Blog | null {
+export async function getBlogSlugs(): Promise<string[]> {
+  if (features.blog) {
+    const cmsSlugs = await getAllCmsBlogSlugs();
+    if (cmsSlugs.length > 0) return cmsSlugs;
+  }
+  return getBlogSlugsLocal();
+}
+
+function getBlogBySlugLocal(slug: string): Blog | null {
   const mdPathMd = path.join(BLOGS_DIR, `${slug}.md`);
   const mdPathMdx = path.join(BLOGS_DIR, `${slug}.mdx`);
   const filePath = fs.existsSync(mdPathMd) ? mdPathMd : fs.existsSync(mdPathMdx) ? mdPathMdx : null;
@@ -51,11 +61,34 @@ export function getBlogBySlug(slug: string): Blog | null {
   return { ...frontmatter, content };
 }
 
-export function getAllBlogs(): Blog[] {
-  return getBlogSlugs()
-    .map(slug => getBlogBySlug(slug))
+export async function getBlogBySlug(slug: string): Promise<Blog | null> {
+  if (features.blog) {
+    const cmsBlog = await getCmsBlogBySlug(slug);
+    if (cmsBlog) return cmsBlog;
+  }
+  return getBlogBySlugLocal(slug);
+}
+
+function getAllBlogsLocal(): Blog[] {
+  return getBlogSlugsLocal()
+    .map(slug => getBlogBySlugLocal(slug))
     .filter((b): b is Blog => !!b)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+export async function getAllBlogs(): Promise<Blog[]> {
+  // Note: This fetches full content for all blogs.
+  // For CMS, we might want to avoid this if possible, or implement a bulk fetch.
+  // Currently, we only use this for local fallback in getBlogCards.
+  // If needed for CMS, we would need to fetch all posts with content.
+  if (features.blog) {
+    // Not implemented efficiently for CMS yet, as it's not primarily used.
+    // We could fetch all posts and map them.
+    const slugs = await getAllCmsBlogSlugs();
+    const blogs = await Promise.all(slugs.map(slug => getCmsBlogBySlug(slug)));
+    return blogs.filter((b): b is Blog => !!b);
+  }
+  return getAllBlogsLocal();
 }
 
 function toExcerpt(markdown: string, maxChars = 180): string {
@@ -75,8 +108,13 @@ function toExcerpt(markdown: string, maxChars = 180): string {
   return stripped.slice(0, maxChars).replace(/\s+\S*$/, '') + '…';
 }
 
-export function getBlogCards(): BlogCardItem[] {
-  return getAllBlogs().map(b => ({
+export async function getBlogCards(): Promise<BlogCardItem[]> {
+  if (features.blog) {
+    const cmsCards = await getCmsBlogs();
+    if (cmsCards.length > 0) return cmsCards;
+  }
+
+  return getAllBlogsLocal().map(b => ({
     title: b.title,
     desc: toExcerpt(b.content),
     date: b.date,

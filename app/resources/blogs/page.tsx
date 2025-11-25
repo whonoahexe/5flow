@@ -4,8 +4,8 @@ import PageHeader from '@/components/core/page-header';
 import Hero from '@/components/page/resources/Hero';
 import FilterSection from '@/components/page/resources/FilterSection';
 
-export default function Blogs() {
-  const blogItems = getBlogCards();
+export default async function Blogs() {
+  const blogItems = await getBlogCards();
 
   return (
     <div className="relative">
