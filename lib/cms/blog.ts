@@ -68,13 +68,14 @@ export async function getCmsBlogs(): Promise<BlogCardItem[]> {
     // Removed context=edit to avoid 401 errors
     const posts = (await wpFetch('/wp-json/wp/v2/posts?_embed&per_page=100')) as WpPost[];
     return posts.map(post => {
-      const { image, date, title } = parsePostData(post);
+      const { image, imageFocus, date, title } = parsePostData(post);
 
       return {
         title,
         desc: '', // User requested no description
         date,
         image,
+        imageFocus,
         link: `/resources/blogs/${post.slug}`,
       };
     });

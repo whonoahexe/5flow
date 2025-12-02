@@ -21,6 +21,7 @@ export type BlogCardItem = {
   desc: string;
   date: string;
   image: string;
+  imageFocus?: string;
   link: string; // /resources/blogs/[slug]
 };
 
