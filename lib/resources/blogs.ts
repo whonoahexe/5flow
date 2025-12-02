@@ -9,6 +9,7 @@ export type BlogFrontmatter = {
   title: string;
   date: string; // ISO or human-readable
   image?: string;
+  imageFocus?: string;
 };
 
 export type Blog = BlogFrontmatter & {

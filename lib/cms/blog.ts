@@ -8,6 +8,9 @@ export interface WpPost {
   title: { rendered: string };
   content: { rendered: string; raw?: string };
   excerpt: { rendered: string; raw?: string };
+  acf?: {
+    image_focus?: string;
+  };
   _embedded?: {
     'wp:featuredmedia'?: Array<{
       source_url: string;
@@ -48,10 +51,13 @@ function parsePostData(post: WpPost) {
   // Date priority: Post Date
   const date = formatDate(post.date);
 
+  const imageFocus = post.acf?.image_focus;
+
   return {
     content,
     frontmatter: {},
     image,
+    imageFocus,
     date,
     title: decodeHtmlEntities(post.title.rendered),
   };
@@ -85,13 +91,14 @@ export async function getCmsBlogBySlug(slug: string): Promise<Blog | null> {
     if (posts.length === 0) return null;
     const post = posts[0];
 
-    const { content, image, date, title } = parsePostData(post);
+    const { content, image, imageFocus, date, title } = parsePostData(post);
 
     return {
       slug: post.slug,
       title,
       date,
       image,
+      imageFocus,
       content,
     };
   } catch (error) {

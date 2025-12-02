@@ -11,7 +11,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     <div className="relative">
       {post.image ? (
         <div className="relative h-[45vh] min-h-[320px] w-full">
-          <Image src={post.image} alt={post.title} fill className="object-cover" priority />
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="object-cover"
+            style={{ objectPosition: post.imageFocus || 'center' }}
+            priority
+          />
           <div
             className="to-background pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent"
             aria-hidden="true"
