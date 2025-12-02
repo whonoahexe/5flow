@@ -1,6 +1,5 @@
 import { wpFetch } from './client';
 import { Blog, BlogCardItem } from '@/lib/resources/blogs';
-import matter from 'gray-matter';
 
 export interface WpPost {
   id: number;
@@ -24,9 +23,10 @@ function formatDate(dateString: string): string {
   }
 }
 
-function cleanWpContent(content: string): string {
-  return content
-    .replace(/&#8212;/g, '---')
+function decodeHtmlEntities(text: string): string {
+  return text
+    .replace(/&#8211;/g, '–')
+    .replace(/&#8212;/g, '—')
     .replace(/&#8216;/g, "'")
     .replace(/&#8217;/g, "'")
     .replace(/&#8220;/g, '"')
@@ -35,37 +35,25 @@ function cleanWpContent(content: string): string {
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
-    .replace(/<\/p>/g, '\n\n')
-    .replace(/<br\s*\/?>/g, '\n')
-    .replace(/<[^>]+>/g, '') // Strip all other tags
-    .trim();
+    .replace(/&#038;/g, '&')
+    .replace(/&#039;/g, "'");
 }
 
 function parsePostData(post: WpPost) {
-  // Try to get raw content, or clean the rendered content
-  let content = post.content.raw || cleanWpContent(post.content.rendered);
+  const content = post.content.rendered;
 
-  let frontmatter: any = {};
-  try {
-    const parsed = matter(content);
-    frontmatter = parsed.data;
-    content = parsed.content;
-  } catch (e) {
-    // Ignore if parsing fails
-  }
+  // Image priority: Featured Image > Fallback
+  const image = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/product/rectangle.png';
 
-  // Image priority: Frontmatter > Featured Image > Fallback
-  const image = frontmatter.image || post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/product/rectangle.png';
-
-  // Date priority: Frontmatter > Post Date
-  const date = formatDate(frontmatter.date || post.date);
+  // Date priority: Post Date
+  const date = formatDate(post.date);
 
   return {
     content,
-    frontmatter,
+    frontmatter: {},
     image,
     date,
-    title: frontmatter.title || post.title.rendered,
+    title: decodeHtmlEntities(post.title.rendered),
   };
 }
 

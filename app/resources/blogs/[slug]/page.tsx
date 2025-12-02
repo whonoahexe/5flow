@@ -1,5 +1,5 @@
 import { getBlogBySlug, getBlogSlugs } from '@/lib/resources/blogs';
-import Markdown from '@/components/core/markdown';
+import HtmlContent from '@/components/core/html-content';
 import Image from 'next/image';
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
@@ -23,7 +23,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         <div className="mx-auto max-w-3xl py-10">
           <h1 className="font-heading mb-6 text-3xl leading-tight tracking-tight sm:text-4xl">{post.title}</h1>
           <div className="text-foreground/60 mb-8 text-sm">{new Date(post.date).toLocaleDateString()}</div>
-          <Markdown content={post.content} />
+          <HtmlContent html={post.content} />
         </div>
       </div>
     </div>
