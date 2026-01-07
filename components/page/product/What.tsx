@@ -42,8 +42,6 @@ const What = ({ whatData }: WhatProps) => {
                 <div className="flex flex-col justify-between gap-4 text-base sm:flex-row sm:gap-0 sm:text-xl">
                   <p className="flex max-w-full flex-1 leading-tight tracking-tight sm:max-w-88 sm:leading-none">
                     {problem.subtitle}
-                  </p>
-                  <p className="flex max-w-full flex-1 leading-tight tracking-tight sm:max-w-88 sm:leading-none">
                     {problem.description}
                   </p>
                 </div>
