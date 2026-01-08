@@ -56,7 +56,7 @@ const whatData = [
   [
     {
       title: 'Risk of errors',
-      subtitle: 'Fast-paced markets leave no room for delays.',
+      subtitle: 'Fast-paced markets leave no room for delays',
       description: 'Inconsistent data and processes make it harder to stay on-brand and compliant.',
       buttonLink: '/solutions/artwork-management',
       icon: ShieldAlert,
