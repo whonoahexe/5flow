@@ -133,7 +133,7 @@ export default async function ArtworkManagement() {
           buttonText: 'Book A Demo',
           buttonLink: item.linkUrl || item.link_url || undefined,
           imageSrc: item.imageUrl || item.image_url || `/solutions/${idx + 1}.svg`,
-          iconName: toPascalCase((item.iconKey || item.icon_key || 'BadgeCheck') as string),
+          iconName: toPascalCase((item.iconName || item.iconKey || item.icon_key || 'BadgeCheck') as string),
         }))
       : howData
   ) as typeof howData;
