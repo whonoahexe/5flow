@@ -135,7 +135,7 @@ export default async function ContentManagement() {
           buttonText: 'Book A Demo',
           buttonLink: (item as any).linkUrl || (item as any).link_url || undefined,
           imageSrc: (item as any).imageUrl || (item as any).image_url || `/solutions/3-${idx + 1}.svg`,
-          iconName: toPascalCase(((item as any).iconKey || (item as any).icon_key || 'BadgeCheck') as string),
+          iconName: toPascalCase(((item as any).iconName || (item as any).iconKey || (item as any).icon_key || 'BadgeCheck') as string),
         }))
       : howData
   ) as typeof howData;
