@@ -21,6 +21,7 @@ import What from '@/components/page/product/What';
 import Why from '@/components/page/product/Why';
 import Workflow from '@/components/page/product/Workflow';
 import Who from '@/components/page/home/Who';
+import VideoShowcase from '@/components/page/product/VideoShowcase';
 
 // Fallback data in case CMS is unavailable
 const heroData = {
@@ -344,6 +345,12 @@ export default async function Dragonfly() {
             );
           })()}
           <Workflow title={workflowTitleFinal} subtitle={workflowSubtitleFinal} statsData={workflowStatsFinal} />
+          <VideoShowcase
+            title="EXPLORE THE DRAGONFLY SOFTWARE."
+            subtitle="There's nothing soft about it."
+            highlightedWord="soft"
+            videoUrl="https://cms.5flowtech.com/wp-content/uploads/2025/12/Dragonfly-Animation.mp4"
+          />
           <Contact leadingText="Ready to make your projects " highlightedText="fly" trailingText="?" />
         </div>
       </div>
