@@ -178,7 +178,7 @@ export default async function HealthPharma() {
       ? cms.how.items.map((it, idx) => ({
           title: it.title || '',
           description: (it.bodyHtml || (it as any).body_html || (it as any).description || '') as string,
-          iconName: toPascalCase(((it as any).iconName || (it as any).iconKey || (it as any).icon_key || 'BadgeCheck') as string),
+          iconName: toPascalCase(((it as any).iconKey || (it as any).icon_key || 'BadgeCheck') as string),
           imageSrc: (it as any).imageUrl || (it as any).image_url || `/applications/2-${idx + 1}.svg`,
           buttonLink: (it as any).linkUrl || (it as any).link_url || undefined,
           buttonText: 'Learn More',
