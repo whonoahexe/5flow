@@ -182,7 +182,7 @@ export default async function Retail() {
           title: it.title || '',
           description: (it.bodyHtml || (it as any).body_html || (it as any).description || '') as string,
           imageSrc: (it as any).imageUrl || (it as any).image_url || `/applications/${idx + 1}.svg`,
-          iconName: toPascalCase(((it as any).iconKey || (it as any).icon_key || 'BadgeCheck') as string),
+          iconName: toPascalCase(((it as any).iconName || (it as any).iconKey || (it as any).icon_key || 'BadgeCheck') as string),
           buttonLink: (it as any).linkUrl || (it as any).link_url || undefined,
           buttonText: 'Learn More',
         }))
