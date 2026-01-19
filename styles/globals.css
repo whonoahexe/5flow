@@ -304,14 +304,33 @@ body,
   display: none !important;
 }
 
-/* Hide Google Translate top bar */
+/* Hide Google Translate top bar and notification */
 .goog-te-banner-frame {
+  display: none !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+/* Hide the "Translated into" notification bar */
+body > .skiptranslate {
+  display: none !important;
+}
+
+iframe.skiptranslate {
   display: none !important;
 }
 
 /* Remove the top margin added by Google Translate */
 body {
   top: 0 !important;
+  position: static !important;
+}
+
+html {
+  top: 0 !important;
+  position: static !important;
 }
 
 /* Hide Google Translate branding */
@@ -327,5 +346,16 @@ body {
 .skiptranslate iframe {
   visibility: hidden !important;
   height: 0 !important;
+  display: none !important;
+}
+
+/* Hide all Google Translate iframes */
+iframe[id^="goog-"] {
+  display: none !important;
+}
+
+/* Force hide the notification container */
+#goog-gt-tt,
+.goog-te-balloon-frame {
   display: none !important;
 }
