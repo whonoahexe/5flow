@@ -63,7 +63,33 @@ export default function RootLayout({
           {customizeAccessibilityWidget}
         </Script>
 
+        {/* Google Translate Widget */}
+        <Script
+          id="google-translate-script"
+          src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          strategy="afterInteractive"
+        />
+        <Script id="google-translate-init" strategy="afterInteractive">
+          {`
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement(
+                {
+                  pageLanguage: 'en',
+                  includedLanguages: 'en,de,fr,es,it,pt,nl,pl,sv,da,no,fi',
+                  layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                  autoDisplay: false,
+                },
+                'google_translate_element'
+              );
+            }
+          `}
+        </Script>
+
         <ReactLenis root />
+
+        {/* Hidden div for Google Translate to initialize */}
+        <div id="google_translate_element" style={{ display: 'none' }}></div>
+
         <ServerNavigation />
         <main className="relative flex-1">
           {/* <PatternOverlay side="both" margin="container" containerAlign="outside" /> */}
