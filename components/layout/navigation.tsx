@@ -14,6 +14,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import GoogleTranslateSwitcher from '@/components/GoogleTranslateSwitcher';
 
 type SimpleLink = { href: string; label: string };
 
@@ -351,8 +352,10 @@ export function Navigation({ labels }: NavigationProps) {
         })}
       </div>
 
-      {/* Cta - hidden on small screens */}
-      <div className="hidden md:inline-flex">
+      {/* Language Switcher & CTA - hidden on small screens */}
+      <div className="hidden md:inline-flex items-center gap-4">
+        <GoogleTranslateSwitcher />
+
         <Button
           asChild
           className="group/cta active:ring-primary/50 active:ring-offset-background inline-flex origin-left items-center justify-start gap-0 rounded-none !bg-transparent px-0 py-0 font-semibold tracking-tight transition-all duration-150 ease-[var(--easing-smooth)] active:translate-x-[1px] active:scale-[0.99] active:ring-2 active:ring-offset-2 has-[>svg]:px-0"
@@ -453,7 +456,11 @@ export function Navigation({ labels }: NavigationProps) {
               );
             })}
 
-            <div className="mt-3">
+            <div className="mt-3 flex flex-col gap-3">
+              <div className="flex justify-center">
+                <GoogleTranslateSwitcher />
+              </div>
+
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
