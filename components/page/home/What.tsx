@@ -34,19 +34,19 @@ const fallbackItems: WhatItem[] = [
     title: 'Faster Time-to-Market',
     desc: 'Increased pressure to deliver more, sooner',
     sub: 'With 5Flow: Meet demand and work faster with integrated workflows.',
-    iconKey: 'server-off',
+    iconKey: 'rocket',
   },
   {
     title: 'Rising Content Demands',
     desc: 'Always-on channels require more assets than teams can keep up with.',
     sub: 'With 5Flow: Accelerate approvals and keep launches on schedule.',
-    iconKey: 'clock-fading',
+    iconKey: 'calendar-clock',
   },
   {
     title: 'Risk of Errors',
     desc: 'Inconsistent data and processes make it harder to stay on-brand and compliant.',
     sub: '5FLOW scales execution globally while keeping it locally responsive and consistent.',
-    iconKey: 'zap-off',
+    iconKey: 'circle-alert',
   },
 ];
 
