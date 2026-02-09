@@ -51,11 +51,11 @@ const Hero = ({ title, subTitle, bodyHtml, buttonText, buttonUrl }: Props) => {
           </FullBleedLines>
         </div>
         <FullBleedLines>
-          <div className="text-foreground max-w-full text-sm tracking-tight sm:max-w-2xl sm:text-base md:max-w-3xl">
+          <div className="text-foreground max-w-full text-base tracking-tight sm:max-w-2xl sm:text-lg md:max-w-3xl md:text-xl">
             {bodyHtml ? (
               <HtmlContent html={bodyHtml} />
             ) : (
-              `5FLOW helps global brands unify workflows, speed up execution, and keep every touchpoint consistent. With our expertise in packaging, content, and creative production powered by intelligent automation, we transform the way brands operate in today’s connected world.`
+              `5FLOW helps global brands unify workflows, speed up execution, and keep every touchpoint consistent. With our expertise in packaging, content, and creative production powered by intelligent automation, we transform the way brands operate in today's connected world.`
             )}
           </div>
         </FullBleedLines>
