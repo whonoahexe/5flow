@@ -46,7 +46,7 @@ const Hero = ({ title, subTitle, bodyHtml, buttonText, buttonUrl }: Props) => {
 
           <FullBleedLines>
             <h1 className="font-heading text-primary text-2xl tracking-tighter sm:text-3xl md:text-5xl">
-              {subTitle ?? 'Faster. Smarter. At Scale.'}
+              {subTitle ?? 'Faster. Smarter. At scale.'}
             </h1>
           </FullBleedLines>
         </div>
