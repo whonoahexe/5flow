@@ -3,6 +3,7 @@ import { MoveUpRight } from 'lucide-react';
 import FullBleedLines from '@/components/core/full-bleed-lines';
 import { Button } from '@/components/ui/button';
 import HtmlContent from '@/components/core/html-content';
+import InlineHighlight from '@/components/core/inline-highlight';
 import HeroLottieBg from './HeroLottieBg';
 
 type Props = {
@@ -25,7 +26,21 @@ const Hero = ({ title, subTitle, bodyHtml, buttonText, buttonUrl }: Props) => {
         <div className="mt-12 flex flex-col gap-4 md:mt-24">
           <FullBleedLines>
             <p className="font-heading text-foreground max-w-full text-5xl font-semibold tracking-tighter sm:max-w-2xl sm:text-5xl md:max-w-4xl md:text-8xl">
-              {title ?? 'Take brand vision to market reality'}
+              {(title ?? 'Take brand vision to market reality').split(' ').map((word, i, arr) => {
+                const highlightWords = ['reality'];
+                const isLastWord = i === arr.length - 1;
+                return highlightWords.includes(word.toLowerCase()) ? (
+                  <span key={i}>
+                    <InlineHighlight>{word}</InlineHighlight>
+                    {!isLastWord && ' '}
+                  </span>
+                ) : (
+                  <span key={i}>
+                    {word}
+                    {!isLastWord && ' '}
+                  </span>
+                );
+              })}
             </p>
           </FullBleedLines>
 
