@@ -22,7 +22,7 @@ const Hero = ({ title, subTitle, bodyHtml, buttonText, buttonUrl }: Props) => {
       </div>
 
       {/* Hero content */}
-      <div className="flex flex-col gap-8 px-4 sm:px-2 md:gap-14">
+      <div className="flex flex-col gap-4 px-4 sm:px-2">
         <div className="mt-12 flex flex-col gap-4 md:mt-24">
           <FullBleedLines>
             <p className="font-heading text-foreground max-w-full text-5xl font-semibold tracking-tighter sm:max-w-2xl sm:text-5xl md:max-w-4xl md:text-8xl">
